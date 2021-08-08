@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_insert_photo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Cover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.165290179">
+        <g id="Main_lg" transform="translate(-1100.000000, -1458.000000)">
+            <g id="Cover_2_Gallery" transform="translate(375.000000, 1200.000000)">
+                <g id="line1" transform="translate(0.000000, 73.000000)">
+                    <g id="Editor/ic_insert_photo" transform="translate(720.000000, 180.000000)">
+                        <g id="ic_insert_photo">
+                            <polygon id="Bounds" points="0 0 40 0 40 40 0 40"></polygon>
+                            <path d="M35,31.6666667 L35,8.33333333 C35,6.5 33.5,5 31.6666667,5 L8.33333333,5 C6.5,5 5,6.5 5,8.33333333 L5,31.6666667 C5,33.5 6.5,35 8.33333333,35 L31.6666667,35 C33.5,35 35,33.5 35,31.6666667 L35,31.6666667 Z M14.1666667,22.5 L18.3333333,27.5166667 L24.1666667,20 L31.6666667,30 L8.33333333,30 L14.1666667,22.5 L14.1666667,22.5 Z" id="Icon" fill="#000000"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

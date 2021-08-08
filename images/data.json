@@ -1,0 +1,144 @@
+{ 
+    "APITab": "pages",
+    "APIMenus": {
+        "leftsidebar": [
+            {
+                "Accordions": [
+                    {   
+                        "link": "Accordions",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "Accordions",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "MoreViews": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "Tabs": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "ToggleDynamic": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "Cookie": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "Motion": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            },
+            {
+                "Counter": [
+                    {
+                        "link": "",
+                        "name": "Overview"
+                    },
+                    {
+                        "link": "",
+                        "name": "Getting Started"
+                    }
+                ]
+            }
+        ]
+    },
+    "searchItems" : {
+        "main": [
+            {
+                "name": "TriplexLab"
+            },
+            {
+                "name": "blog"
+            },
+            {
+                "name": "api"
+            },
+            {
+                "name": "html+css3"
+            },
+            {
+                "name": "javascript(es6+)"
+            },
+            {
+                "name": "ECMAScript2015"
+            }
+        ],
+        "popularity": [
+            {
+                "name": "Promise"
+            },
+            {
+                "name": "예약 기능"
+            },
+            {
+                "name": "prototype"
+            },
+            {
+                "name": "API"
+            },
+            {
+                "name": "인스타그램"
+            }
+        ],
+        "recommendation": [
+            {
+                "name": "유튜브(Youtube)"
+            },
+            {
+                "name": "Icon Font"
+            },
+            {
+                "name": "fetch"
+            },
+            {
+                "name": "라이브러리"
+            }
+        ]
+    }
+}

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Portfolio</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[ 나만의 시선, 나만의 콘텐츠로 꽉 찬 공간을 위해 준비했습니다. 세상에서 하나 뿐인 여러분의 포트폴리오를 자랑해주세요. ]]>
+		</description>
+		<license>
+			<![CDATA[ MIT License ]]>
+		</license>
+	</information>
+	<author>
+		<name>Tistory</name>
+		<homepage>https://www.tistory.com</homepage>
+		<email>tistoryblog@daum.net</email>
+	</author>
+	<default>
+		<entriesOnPage>6</entriesOnPage>
+		<entriesOnList>6</entriesOnList>
+		<recentEntries>4</recentEntries>
+		<recentComments>4</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>4</itemsOnGuestbook>
+		<tagsInCloud>20</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>8</expandComment>
+		<lengthOfRecentNotice>40</lengthOfRecentNotice>
+		<lengthOfRecentEntry>30</lengthOfRecentEntry>
+		<lengthOfRecentComment>40</lengthOfRecentComment>
+		<lengthOfRecentTrackback>40</lengthOfRecentTrackback>
+		<lengthOfLink>30</lengthOfLink>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>0</none>
+			<single>1</single>
+		</trackbackMessage>
+		<contentWidth>700</contentWidth>
+		<toolbar>white</toolbar>
+	</default>
+	<cover>
+		<item>
+			<name>featured</name>
+			<label>
+				<![CDATA[ 슬라이더 ]]>
+			</label>
+			<description>
+				<![CDATA[ 화면 높이 100%를 채우는 슬라이더입니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>post</name>
+			<label>
+				<![CDATA[ 갤러리 ]]>
+			</label>
+			<description>
+				<![CDATA[ 세로 직사각형 형태로 이미지를 출력합니다. 4배수 목록을 권장합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>card</name>
+			<label>
+				<![CDATA[ 섬네일 리스트 ]]>
+			</label>
+			<description>
+				<![CDATA[ 직사각형 섬네일 목록을 출력합니다. 4배수 목록을 권장합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>banner</name>
+			<label>
+				<![CDATA[ 와이드패널 ]]>
+			</label>
+			<description>
+				<![CDATA[ 배너 형태의 이미지를 차례로 쌓아서 출력합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>notice</name>
+			<label>
+				<![CDATA[ 리스트 ]]>
+			</label>
+			<description>
+				<![CDATA[ 좌측 섬네일을 포함하는 일반적인 리스트 형태입니다. ]]>
+			</description>
+		</item>
+	</cover>
+	<variables>
+		<variable>
+			<name>logoImage</name>
+			<label>로고 (높이 48px)</label>
+			<description></description>
+			<type>IMAGE</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>colorSet</name>
+			<label>컬러셋</label>
+			<description></description>
+			<type>SELECT</type>
+			<option>
+				<![CDATA[
+				[
+					{"name":"theme_pink", "label":"핑크", "value":"theme_pink"},
+					{"name":"theme_blue", "label":"블루", "value":"theme_blue"},
+					{"name":"theme_green", "label":"그린", "value":"theme_green"},
+					{"name":"theme_gray", "label":"그레이", "value":"theme_gray"},
+					{"name":"theme_orange", "label":"주황색", "value":"theme_orange"}
+				]
+			]]>
+			</option>
+			<default>theme_pink</default>
+		</variable>
+		<variable>
+			<name>listType</name>
+			<label>글 목록 형태</label>
+			<description></description>
+			<type>SELECT</type>
+			<option>
+				<![CDATA[
+				[
+					{"name":"related", "label":"블로그형", "value":"related"},
+					{"name":"notice", "label":"리스트형", "value":"notice"}
+				]
+			]]>
+			</option>
+			<default>related</default>
+		</variable>
+		<variable>
+			<name>footerCopyright</name>
+			<label>하단 카피라이트</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default>© 2018 TISTORY. All rights reserved.</default>
+		</variable>
+		<variable>
+			<name>footerLink1Name</name>
+			<label>하단 링크1 이름</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default>티스토리</default>
+		</variable>
+		<variable>
+			<name>footerLink1Url</name>
+			<label>하단 링크1 URL</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default>https://www.tistory.com/</default>
+		</variable>
+		<variable>
+			<name>footerLink2Name</name>
+			<label>하단 링크2 이름</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>footerLink2Url</name>
+			<label>하단 링크2 URL</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>footerLink3Name</name>
+			<label>하단 링크3 이름</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>footerLink3Url</name>
+			<label>하단 링크3 URL</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>footerLink4Name</name>
+			<label>하단 링크4 이름</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+		<variable>
+			<name>footerLink4Url</name>
+			<label>하단 링크4 URL</label>
+			<description></description>
+			<type>STRING</type>
+			<option></option>
+			<default></default>
+		</variable>
+	</variables>
+</skin>
