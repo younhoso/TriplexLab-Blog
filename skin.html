@@ -77,6 +77,43 @@
         return false
       },1000);                 /** 전체 페이지 로딩중(loader) 타임잉 제어 // */
        /** 최초 렌더링 시점에서의 darkMode 여부 체크 // */
+
+      /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
+       var viewModel = {
+          templateIE: function (browser, version) {
+            var template = '';
+            template += '<div class="result_inner">';
+            template += '<h2 class="tit">Sorry, '+browser+''+version+' browser does not support it.</h2>';
+            template += '</div>';
+            document.querySelector('body').innerHTML = template;
+            window.location = 'microsoft-edge:' + window.location.href;
+          },
+        };
+
+        var detectIE = function () {
+          var ua = window.navigator.userAgent;
+          var msie = ua.indexOf('MSIE');
+          if (msie > 0) {
+            // IE 10 이상 버전 채크
+            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+          }
+          var trident = ua.indexOf('Trident/');
+          if (trident > 0) {
+            // IE 11 버전 체크
+            var rv = ua.indexOf('rv:');
+            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+          }
+          // 다른 브라우저 리턴
+          return false;
+        };
+
+        // IE 또는 Edge 브라우저 버전 가져오기
+        var version = detectIE();
+
+        if (version) {
+          return viewModel.templateIE('IE', version);
+        }
+        /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
     });
   </script>
   <script charset="UTF-8" src="./images/common.js"></script>
