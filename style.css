@@ -68,6 +68,16 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 @-o-keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}
 @keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}
 
+@-webkit-keyframes wave{0%{margin-left:0}100%{margin-left:-3056px};}
+@-moz-keyframes wave{0%{margin-left:0}100%{margin-left:-3056px};}
+@-o-keyframes wave{0%{margin-left:0}100%{margin-left:-3056px};}
+@keyframes wave{0%{margin-left:0}100%{margin-left:-3056px};}
+
+@-webkit-keyframes swell{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-30px,0)};}
+@-moz-keyframes swell{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-30px,0)};}
+@-o-keyframes swell{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-30px,0)};}
+@keyframes swell{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-30px,0)};}
+
 /*  // darkmode, lightmode의 관한 STYLE */
 html[data-dark=false] .bg_them_mode {background-color: #fff;}
 html[data-dark=true] .bg_them_mode {background-color: #383b40;}
@@ -97,6 +107,10 @@ html[data-dark=true] .border_t {border-top: 1px solid #222529;}
 /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
 .result_inner {width: 100vw; height: 100vh; position: relative;}
 .result_inner .tit {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.ocean{width:100%;position:fixed;bottom:0;left:0;z-index:1;}
+.ocean .wave{background-image:url(/img/wave.svg);background-repeat:repeat-x;background-size:contain;position:absolute;top:-170px;width:6112px;height:170px;transform:translate3d(0,0,0);}
+.ocean .wave.wave01{animation:wave 26s cubic-bezier(.36,.45,.63,.53) infinite}
+.ocean .wave.wave02{top:-140px;background-position-x:50%;animation:wave 38s cubic-bezier(.36,.45,.63,.53) infinite,swell 5s ease -1.25s infinite;transform:translate3d(0,0,0);}
 /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 //*/
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
