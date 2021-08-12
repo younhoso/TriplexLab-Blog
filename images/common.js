@@ -8,6 +8,7 @@ $(function() {
 
     display_control();
     slider_control();
+    api_category();
     var tab_itme_wd = $('.tabs_itmes').width();
 
     $('input.inp_search').on('focus', function() {
@@ -111,6 +112,31 @@ $(function() {
       }
     });
 });
+
+function setCookie(name, value, day) {
+  const date = new Date(); 
+  date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000); 
+  document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/'; 
+};
+
+function getCookie(name) { 
+  const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+  return value? value[2] : null; 
+};
+
+function api_category() {
+  var pars = {
+    'accessToken' : getCookie('triplexlab_token'),
+    'outputType' : 'json',
+    'blogName' : 'https://triplexlab-api.tistory.com/'
+  }
+  $.ajax({
+    type:'GET',
+    url: 'https://www.tistory.com/apis/category/list?access_token='+pars.accessToken+'&output='+pars.outputType+'&blogName='+pars.blogName+''
+  }).done(function(data) {
+    console.log(data)
+  });
+};
 
 function slider_control() {
     var interleaveOffset = 0.5;
@@ -248,8 +274,15 @@ function slider_control() {
       $.ajax({
         type: 'get', dataType: "json", url: 'https://tistory3.daumcdn.net/tistory/4741094/skin/images/data.json',
       }).done(function(data) {
+        var localStorage_datafill = {
+          APIMenus : data.APIMenus,
+          APITab : data.APITab,
+          searchItems : data.searchItems,
+        }
+        setCookie('triplexlab_token', data.triplexlab_token, 1);
+
         if(typeof(Storage) !== 'undefined'){
-          localStorage.setItem('data', JSON.stringify(data))
+          localStorage.setItem('data', JSON.stringify(localStorage_datafill))
         }
         var localdata = localStorage.getItem('data');
         var searchItem = JSON.parse(localdata).searchItems;
