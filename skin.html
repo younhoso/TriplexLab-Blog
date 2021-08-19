@@ -79,16 +79,23 @@
        /** 최초 렌더링 시점에서의 darkMode 여부 체크 // */
 
       /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
-       var viewModel = {
-          templateIE: function (browser, version) {
-            var template = '';
-            template += '<div class="result_inner">';
-            template += '<h2 class="tit">Sorry, '+browser+''+version+' browser does not support it.</h2>';
-            template += '</div>';
-            document.querySelector('body').innerHTML = template;
-            window.location = 'microsoft-edge:' + window.location.href;
-          },
-        };
+      var body = document.querySelector('body'); 
+      var divInner = document.createElement('div');
+      var docfrag = document.createDocumentFragment();
+       
+       var templateIE = function(browser, version) {
+        var div = document.createElement('div');
+        div.classList.add('result_inner');
+        var h2 = document.createElement('h2');
+        h2.classList.add('tit')
+        h2.textContent = 'Sorry, '+browser+''+version+' browser does not support it.'
+        div.appendChild(h2);
+        docfrag.appendChild(div);
+        divInner.appendChild(docfrag.cloneNode(true));
+        
+        body.innerHTML = divInner.innerHTML;
+        window.location = 'microsoft-edge:' + window.location.href;
+       };
 
         var detectIE = function () {
           var ua = window.navigator.userAgent;
@@ -109,9 +116,9 @@
 
         // IE 또는 Edge 브라우저 버전 가져오기
         var version = detectIE();
-
+        
         if (version) {
-          return viewModel.templateIE('IE', version);
+          return templateIE('IE', version);
         }
         /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
     });
@@ -1049,7 +1056,6 @@
     </div>
     <!-- // wrap -->
   </s_t3>
-
 </body>
 <script>
   $('.article_view').find('table').each(function (idx, el) {
