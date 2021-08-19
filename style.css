@@ -986,14 +986,26 @@ aside .tag_board{width:100%}
 @media screen and (min-width:320px){
 
   /* 구독, 좋아요 custom */
-  #tt-body-page .subscribe {width: 55%;margin: 0 auto; box-sizing: border-box;border-radius: 5em;}
+  #tt-body-page .subscribe {width: 94%;margin: 0 auto; box-sizing: border-box;border-radius: 5em;}
   #tt-body-page .subscribe_inner { display: inline-block; padding: 10px 30px;border-radius: 5em; box-shadow: 0 5px 5px rgb(0 0 0 / 10%);}
-  #tt-body-page .subscribe_inner .list{ display: inline-block; vertical-align: middle; margin-right: 18px;}
+  #tt-body-page .subscribe_inner .list{ display: inline-block; vertical-align: middle; margin-right: 10px;}
   #tt-body-page .subscribe_inner .list:last-child {margin-right: 0;}
   #tt-body-page .subscribe_inner .list img {width: 100%; vertical-align: middle;}
-  #tt-body-page .subscribe_inner .logo {width: 50px; border-radius: 50%; overflow: hidden; }
-  #tt-body-page .subscribe_inner .text b{font-size: 22px;}
-  #tt-body-page .subscribe_inner .text .txt{font-size: 16px; margin: 0;}
-  #tt-body-page .subscribe_inner .btn { padding: 7px 15px; background-color: #333; color: #fff; border-radius: 1em;}
+  #tt-body-page .subscribe_inner .logo {width: 40px; border-radius: 50%; overflow: hidden; }
+  #tt-body-page .subscribe_inner .text b{font-size: 14px;}
+  #tt-body-page .subscribe_inner .text .txt{font-size: 10px; margin: 0;}
+  #tt-body-page .subscribe_inner .btn {background-color: #333; color: #fff; border-radius: 1em;}
 }
 /* ---- MO 상세페이지 ED ---- */
+/* ---- PC 상세페이지 ST ---- */
+@media screen and (min-width:1025px){
+
+  /* 구독, 좋아요 custom */
+  #tt-body-page .subscribe {width: 55%;}
+  #tt-body-page .subscribe_inner{padding: 10px 38px}
+  #tt-body-page .subscribe_inner .list {margin-right: 28px;}
+  #tt-body-page .subscribe_inner .logo {width: 45px;}
+  #tt-body-page .subscribe_inner .text b {font-size: 22px;}
+  #tt-body-page .subscribe_inner .text .txt{font-size: 16px;}
+}
+/* ---- PC 상세페이지 ED ---- */
