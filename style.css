@@ -726,7 +726,7 @@ aside .tag_board{width:100%}
 .area_view .article_header .info_text{width:100%;padding:0 20px;box-sizing:border-box}
 .area_view .article_header .title_post{width:100%;font-size:28px;line-height:38px}
 }
-.article_view{max-width:700px;margin:80px auto 0 auto}
+.article_view{max-width:820px;margin:80px auto 0 auto}
 .article_view p{margin-bottom:28px;font-size:16px;line-height:1.88;color:#666}
 .article_view h1,.article_view h2,.article_view h3,.article_view h4{font-weight:900;color:rgba(0,0,0,.87)}
 .article_view h1{font-size:32px;line-height:1.33}
@@ -994,7 +994,7 @@ aside .tag_board{width:100%}
   #tt-body-page .subscribe_inner .logo {width: 40px; border-radius: 50%; overflow: hidden; }
   #tt-body-page .subscribe_inner .text b{font-size: 14px;}
   #tt-body-page .subscribe_inner .text .txt{font-size: 10px; margin: 0;}
-  #tt-body-page .subscribe_inner .btn {background-color: #333; color: #fff; border-radius: 1em;}
+  #tt-body-page .subscribe_inner .btns {background-color: #333; padding: 7px 10px; box-sizing: border-box; color: #fff; border-radius: 1em;}
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
