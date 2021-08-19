@@ -972,8 +972,8 @@ aside .tag_board{width:100%}
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
 
-  .mo_footer_menu{display:none}
   .category_inner{display:none}
+  .mo_footer_menu{display:none}
 
   .category_list{position:relative}
   .category_list .sub_category_list{display:block}
@@ -981,3 +981,19 @@ aside .tag_board{width:100%}
   .close_icon{display:none}  
   #footer{padding:50px 0 50px 320px}
 }
+
+/* ---- MO 상세페이지 ST ---- */
+@media screen and (min-width:320px){
+
+  /* 구독, 좋아요 custom */
+  #tt-body-page .subscribe {width: 55%;margin: 0 auto; box-sizing: border-box;border-radius: 5em;}
+  #tt-body-page .subscribe_inner { display: inline-block; padding: 10px 30px;border-radius: 5em; box-shadow: 0 5px 5px rgb(0 0 0 / 10%);}
+  #tt-body-page .subscribe_inner .list{ display: inline-block; vertical-align: middle; margin-right: 18px;}
+  #tt-body-page .subscribe_inner .list:last-child {margin-right: 0;}
+  #tt-body-page .subscribe_inner .list img {width: 100%; vertical-align: middle;}
+  #tt-body-page .subscribe_inner .logo {width: 50px; border-radius: 50%; overflow: hidden; }
+  #tt-body-page .subscribe_inner .text b{font-size: 22px;}
+  #tt-body-page .subscribe_inner .text .txt{font-size: 16px; margin: 0;}
+  #tt-body-page .subscribe_inner .btn { padding: 7px 15px; background-color: #333; color: #fff; border-radius: 1em;}
+}
+/* ---- MO 상세페이지 ED ---- */
