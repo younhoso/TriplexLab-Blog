@@ -387,7 +387,7 @@ aside .tag_board{width:100%}
 .area_popup .area_search .btn_close{margin:-2px 0 0;text-align:right;padding:0 7px 2px 7px;height:30px}
 .area_popup .title_logo{font-weight:900;font-size:20px}
 }
-#footer{clear:both;margin-top:120px;padding:50px 0 50px 0;font-size:14px;font-weight:400;}
+#footer{clear:both;margin-top:120px;padding:50px 0 50px 0;font-size:14px;font-weight:400; border-top: 1px solid #e4e8eb;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:#777;line-height:1.27;text-decoration:none;z-index:21}
 #footer .link_footer:hover{border-bottom:1px solid #e4e8eb}
@@ -903,6 +903,7 @@ aside .tag_board{width:100%}
 
   .close_icon{cursor:pointer;}
 	.close_icon i {font-weight: 600;}
+  #tt-body-index #footer{border-top: none;}
 }
 /* ---- MO 매인페이지 ED ---- */
 /* ---- PC 매인페이지 ST ---- */
@@ -960,9 +961,7 @@ aside .tag_board{width:100%}
 /* ---- PC 매인페이지 ED ---- */
 @media screen and (min-width:2048px){
   .slide_item .link_slide .img_inner {width: 28%;-webkit-transform: translate(94%,-50%);transform: translate(94%,-50%);}
-
   .search {display: none;}
-
   .counter .counterfix {display: flex;justify-content:space-around;border-radius:.6em;background-color:#fff;}
   .counter .count {margin-bottom: 0;}
   .counter .count .txt{margin-top:0;display:inline-block;vertical-align:middle}
@@ -1009,14 +1008,14 @@ aside .tag_board{width:100%}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn {height: 0;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn_share {display: none !important;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn_etc {display: none !important;}
-  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon{position:fixed;top:10%;right:40px;display:block!important;border:1px solid #e1e1e1;background-color: #fff;padding:12px;box-sizing: border-box;border-radius:2rem;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon{position:fixed;top:80px;right:40px;display:block!important;border:1px solid #e1e1e1;background-color: #fff;padding:12px;box-sizing: border-box;border-radius:2rem;box-shadow: 0 5px 8px 0 rgb(33 37 41 / 5%);}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon.like_on {background-color: #fef6f9;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon .txt_like{width:35px;height:25px;line-height:25px!important;position:absolute;right:-23px;top:-10px;border:1px solid #e1e1e1;background-color:#fff;border-radius:2em;font-size:12px!important;}
   #tt-body-page .container_postbtn .postbtn_like + .btn_menu_toolbar {margin: 0;}
   #tt-body-page .container_postbtn .btn_post .ico_like {margin: 0;}
-  #tt-body-page .detail_side {display: block; position: fixed; top: 15.8%; right: 40px;}
+  #tt-body-page .detail_side {display: block; position: fixed; top: 140px; right: 40px;}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:55px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:center;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
   #tt-body-page .detail_side .side_item:hover::before {opacity: 1; visibility: visible; right: 45px;}
-  #tt-body-page .detail_side .share {border:1px solid #e1e1e1;background-color: #fff;padding:10px;box-sizing: border-box;border-radius:2em;}
+  #tt-body-page .detail_side .share {border:1px solid #e1e1e1;background-color: #fff;padding:10px;box-sizing: border-box;border-radius:2em; cursor: pointer; box-shadow: 0 5px 8px 0 rgb(33 37 41 / 5%);}
 }
 /* ---- PC 상세페이지 ED ---- */

@@ -1,11 +1,22 @@
 $(function() {
+    $('.share').on('click', function(){
+      $('.share_temp').fadeIn();
+      var input = $('.detail_side input');
+      input.val(window.location.href);
+      input.select();
+      var returnValue = document.execCommand('copy');
+      if (!returnValue) {
+        throw new Error('copied nothing');
+      }
+      alert('복사 되었습니다.');
+    });
     var arr_card = Array.from($('.type_card'));
     arr_card.reduce(function(acc,cur,idx){
       $(cur).addClass('id-'+idx);
       $(cur).find('.arrow_inner').addClass('id-'+idx);
       $(cur).find('.pagination_type_card').addClass('id-'+idx);
     },0);
-
+    
     display_control();
     slider_control();
     api_category();
@@ -359,6 +370,6 @@ function slider_control() {
       document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
     });
   };
-  
+
 
   
