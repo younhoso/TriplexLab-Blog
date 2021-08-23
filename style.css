@@ -432,7 +432,7 @@ aside .tag_board{width:100%}
 .area_view .article_header .info_text{max-width:700px;margin:0 auto;left:0;right:0;color:#fff;z-index:10;text-align:center}
 .type_article_header_common .info_text{position:relative;display:flex;height:100%;-ms-display:flexbox;display:-webkit-flex;flex-direction:column;justify-content:center;z-index:20}
 .type_article_header_cover .info_text{position:relative;display:flex;height:100%;-ms-display:flexbox;display:-webkit-flex;flex-direction:column;justify-content:center;z-index:20}
-.article_content{max-width:700px;margin:0 auto}
+.article_content{max-width:820px;margin:0 auto}
 .area_tag{padding:40px 0;border-bottom:1px solid #eee;border-top:1px solid #eee}
 .area_tag:after{content:'';display:block;clear:both}
 .area_tag .title_tag{float:left;margin:0;padding:0 40px 0 0;font-size:16px;font-weight:900;color:#333;text-align:center;padding-top:6px}
@@ -1007,5 +1007,12 @@ aside .tag_board{width:100%}
   #tt-body-page .subscribe_inner .logo {width: 45px;}
   #tt-body-page .subscribe_inner .text b {font-size: 22px;}
   #tt-body-page .subscribe_inner .text .txt{font-size: 16px;}
+  #tt-body-page .container_postbtn .postbtn_like {border: none;padding: 0 !important;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn_share {display: none !important;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn_etc {display: none !important;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon{position:fixed;top:10%;right:40px;display:block!important;border:1px solid #e1e1e1;padding:12px;box-sizing: border-box;border-radius:12px;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon.like_on {background-color: #fef6f9;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon .txt_like{width:35px;height:25px;line-height:25px!important;position:absolute;right:-23px;top:-10px;border:1px solid #e1e1e1;background-color:#fff;border-radius:2em;font-size:12px!important;}
+  #tt-body-page .container_postbtn .btn_post .ico_like {margin: 0;}
 }
 /* ---- PC 상세페이지 ED ---- */
