@@ -39,24 +39,25 @@ td,th{text-indent:0}
   .wrapper {padding: 0 40px;}
   .wrapper.p-top {padding: 40px 0 0 0;}
 }
-@font-face{font-family:ic-font;src:url(images/ic-font.eot?n2qu8);src:url(images/ic-font.eot?n2qu8#iefix) format('embedded-opentype'),url(images/ic-font.ttf?n2qu8) format('truetype'),url(images/ic-font.woff?n2qu8) format('woff'),url(images/ic-font.svg?n2qu8#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block}
-i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-.ic-right-thin:before{content:"\e900"}
-.ic-left-thin:before{content:"\e901"}
-.ic-plus-thin:before{content:"\e902"}
-.ic-gitbook:before{content:"\e903"}
-.ic-share:before{content:"\e904"}
-.ic-tr-1:before{content:"\e905"}
-.ic-sun:before{content:"\e906"}
-.ic-search:before{content:"\e907"}
-.ic-bell-1:before{content:"\e908"}
-.ic-play:before{content:"\e909"}
-.ic-pause:before{content:"\e90a"}
-.ic-moon:before{content:"\e90b"}
-.ic-close-10:before{content:"\e90c"}
-.ic-close-thin:before{content:"\e90d"}
-.ic-github:before{content:"\e90e"}
-.ic-file:before{content:"\e926"}
+@font-face{font-family:'ic-font';src:url(images/ic-font.eot?cplzsy);src:url(images/ic-font.eot?cplzsy#iefix) format('embedded-opentype'),url(images/ic-font.ttf?cplzsy) format('truetype'),url(images/ic-font.woff?cplzsy) format('woff'),url(images/ic-font.svg?cplzsy#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block;}
+i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+.ic-share:before{content:"\e900";}
+.ic-right-thin:before{content:"\e901";}
+.ic-left-thin:before{content:"\e902";}
+.ic-plus-thin:before{content:"\e903";}
+.ic-gitbook:before{content:"\e904";}
+.ic-tr-1:before{content:"\e905";}
+.ic-sun:before{content:"\e906";}
+.ic-search:before{content:"\e907";}
+.ic-bell-1:before{content:"\e908";}
+.ic-play:before{content:"\e909";}
+.ic-pause:before{content:"\e90a";}
+.ic-moon:before{content:"\e90b";}
+.ic-close-10:before{content:"\e90c";}
+.ic-close-thin:before{content:"\e90d";}
+.ic-github:before{content:"\e90e";}
+.ic-file:before{content:"\e926";}
 
 @-webkit-keyframes rotate{100%{transform:rotate(360deg)}}
 @-moz-keyframes rotate{100%{transform:rotate(360deg)}}
@@ -386,7 +387,7 @@ aside .tag_board{width:100%}
 .area_popup .area_search .btn_close{margin:-2px 0 0;text-align:right;padding:0 7px 2px 7px;height:30px}
 .area_popup .title_logo{font-weight:900;font-size:20px}
 }
-#footer{clear:both;margin-top:120px;padding:50px 0 50px 320px;font-size:14px;font-weight:400;}
+#footer{clear:both;margin-top:120px;padding:50px 0 50px 0;font-size:14px;font-weight:400;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:#777;line-height:1.27;text-decoration:none;z-index:21}
 #footer .link_footer:hover{border-bottom:1px solid #e4e8eb}
@@ -421,7 +422,6 @@ aside .tag_board{width:100%}
 .area_paging .link_ellipsis{display:none}
 .area_paging .selected{color:#333;background:0 0}
 }
-.area_view{position:relative}
 .area_view .area_article{padding-bottom:60px; padding-top: 4%;}
 .area_view .article_header{position:relative;}
 .api_detail .area_view .article_header{display: none;}
@@ -695,7 +695,7 @@ aside .tag_board{width:100%}
 .category_type_related .link_category strong{display:block;margin:12px 0 4px 0;font-size:17px}
 .category_type_related .link_category .text{margin:0 0 10px 0}
 }
-.area_view{max-width:1080px;margin:0 auto;padding:0 24px;word-break:break-word}
+.area_view{max-width:1080px;margin:0 auto;padding:0 24px;word-break:break-word;position: relative;}
 .area_index_category a{text-decoration:none}
 .area_index_category .list_category{list-style:none;border:none;box-sizing:border-box}
 .area_view .article_header .title_post{display:block;font-size:40px;line-height:1.5em}
@@ -903,8 +903,6 @@ aside .tag_board{width:100%}
 
   .close_icon{cursor:pointer;}
 	.close_icon i {font-weight: 600;}
-
-  #footer{padding:50px 0 50px 0}
 }
 /* ---- MO 매인페이지 ED ---- */
 /* ---- PC 매인페이지 ST ---- */
@@ -958,7 +956,6 @@ aside .tag_board{width:100%}
   .category_list .sub_category_list{display:block}
 
   .close_icon{display:none}  
-  #footer{padding:50px 0 50px 320px}
 }
 /* ---- PC 매인페이지 ED ---- */
 @media screen and (min-width:2048px){
@@ -978,8 +975,7 @@ aside .tag_board{width:100%}
   .category_list{position:relative}
   .category_list .sub_category_list{display:block}
 
-  .close_icon{display:none}  
-  #footer{padding:50px 0 50px 320px}
+  .close_icon{display:none}
 }
 
 /* ---- MO 상세페이지 ST ---- */
@@ -995,24 +991,32 @@ aside .tag_board{width:100%}
   #tt-body-page .subscribe_inner .text b{font-size: 14px;}
   #tt-body-page .subscribe_inner .text .txt{font-size: 10px; margin: 0;}
   #tt-body-page .subscribe_inner .btns {background-color: #333; padding: 7px 10px; box-sizing: border-box; color: #fff; border-radius: 1em;}
+  #tt-body-page .detail_side {display: none;}
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
 @media screen and (min-width:1025px){
 
   /* 구독, 좋아요 custom */
+  #tt-body-page .wrapper {max-width: unset; margin: auto;}
   #tt-body-page .subscribe {width: 55%;}
   #tt-body-page .subscribe_inner{padding: 10px 38px}
   #tt-body-page .subscribe_inner .list {margin-right: 28px;}
   #tt-body-page .subscribe_inner .logo {width: 45px;}
   #tt-body-page .subscribe_inner .text b {font-size: 22px;}
   #tt-body-page .subscribe_inner .text .txt{font-size: 16px;}
-  #tt-body-page .container_postbtn .postbtn_like {border: none;padding: 0 !important;}
+  #tt-body-page .container_postbtn .postbtn_like {width: 0; border: none;padding: 0 !important;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn {height: 0;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn_share {display: none !important;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn_etc {display: none !important;}
-  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon{position:fixed;top:10%;right:40px;display:block!important;border:1px solid #e1e1e1;padding:12px;box-sizing: border-box;border-radius:12px;}
+  #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon{position:fixed;top:10%;right:40px;display:block!important;border:1px solid #e1e1e1;background-color: #fff;padding:12px;box-sizing: border-box;border-radius:2rem;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon.like_on {background-color: #fef6f9;}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon .txt_like{width:35px;height:25px;line-height:25px!important;position:absolute;right:-23px;top:-10px;border:1px solid #e1e1e1;background-color:#fff;border-radius:2em;font-size:12px!important;}
+  #tt-body-page .container_postbtn .postbtn_like + .btn_menu_toolbar {margin: 0;}
   #tt-body-page .container_postbtn .btn_post .ico_like {margin: 0;}
+  #tt-body-page .detail_side {display: block; position: fixed; top: 15.8%; right: 40px;}
+  #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:55px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:center;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
+  #tt-body-page .detail_side .side_item:hover::before {opacity: 1; visibility: visible; right: 45px;}
+  #tt-body-page .detail_side .share {border:1px solid #e1e1e1;background-color: #fff;padding:10px;box-sizing: border-box;border-radius:2em;}
 }
 /* ---- PC 상세페이지 ED ---- */
