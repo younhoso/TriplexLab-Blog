@@ -39,8 +39,8 @@ td,th{text-indent:0}
   .wrapper {padding: 0 40px;}
   .wrapper.p-top {padding: 40px 0 0 0;}
 }
-@font-face{font-family:'ic-font';src:url(images/ic-font.eot?cplzsy);src:url(images/ic-font.eot?cplzsy#iefix) format('embedded-opentype'),url(images/ic-font.ttf?cplzsy) format('truetype'),url(images/ic-font.woff?cplzsy) format('woff'),url(images/ic-font.svg?cplzsy#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block;}
-i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+@font-face{font-family:'ic-font';src:url(images/ic-font.eot?fpt3bb);src:url(images/ic-font.eot?fpt3bb#iefix) format('embedded-opentype'),url(images/ic-font.ttf?fpt3bb) format('truetype'),url(images/ic-font.woff?fpt3bb) format('woff'),url(images/ic-font.svg?fpt3bb#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block}
+i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
 .ic-share:before{content:"\e900";}
 .ic-right-thin:before{content:"\e901";}
@@ -58,6 +58,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;
 .ic-close-thin:before{content:"\e90d";}
 .ic-github:before{content:"\e90e";}
 .ic-file:before{content:"\e926";}
+.ic-bubble:before{content:"\e96b";}
 
 @-webkit-keyframes rotate{100%{transform:rotate(360deg)}}
 @-moz-keyframes rotate{100%{transform:rotate(360deg)}}
@@ -1013,9 +1014,12 @@ aside .tag_board{width:100%}
   #tt-body-page .container_postbtn .postbtn_like .wrap_btn:nth-child(2) .btn_post .uoc-icon .txt_like{width:35px;height:25px;line-height:25px!important;position:absolute;right:-23px;top:-10px;border:1px solid #e1e1e1;background-color:#fff;border-radius:2em;font-size:12px!important;}
   #tt-body-page .container_postbtn .postbtn_like + .btn_menu_toolbar {margin: 0;}
   #tt-body-page .container_postbtn .btn_post .ico_like {margin: 0;}
-  #tt-body-page .detail_side {display: block; position: fixed; top: 140px; right: 40px;}
-  #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:55px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:center;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
+  #tt-body-page .detail_side {display: block;}
+  #tt-body-page .share_temp {height: 0; text-indent: -9px;}
+  #tt-body-page .detail_side .side_item.item1 {position: fixed; top: 130px; right: 40px;}
+  #tt-body-page .detail_side .side_item.item2 {position: fixed; top: 180px; right: 40px;}
+  #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:75px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:right;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
   #tt-body-page .detail_side .side_item:hover::before {opacity: 1; visibility: visible; right: 45px;}
-  #tt-body-page .detail_side .share {border:1px solid #e1e1e1;background-color: #fff;padding:10px;box-sizing: border-box;border-radius:2em; cursor: pointer; box-shadow: 0 5px 8px 0 rgb(33 37 41 / 5%);}
+  #tt-body-page .detail_side .common{width:40px;height:40px;line-height:40px;text-align:center;display:inline-block;font-size:16px;border:1px solid #e1e1e1;background-color:#fff;box-sizing:border-box;border-radius:2em;cursor:pointer;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%);}
 }
 /* ---- PC 상세페이지 ED ---- */
