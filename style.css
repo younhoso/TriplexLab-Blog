@@ -60,6 +60,8 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;
 .ic-file:before{content:"\e926";}
 .ic-bubble:before{content:"\e96b";}
 
+.icon_common{ font-size: 16px;}
+
 @-webkit-keyframes rotate{100%{transform:rotate(360deg)}}
 @-moz-keyframes rotate{100%{transform:rotate(360deg)}}
 @-o-keyframes rotate{100%{transform:rotate(360deg)}}
@@ -883,7 +885,7 @@ aside .tag_board{width:100%}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
 
-  .area_sidebar .box_sns .list_sns{display:flex}
+  .area_sidebar .box_sns .list_sns{display:flex;align-items: flex-end;}
   .area_sidebar .box_sns .list_sns li{margin-right:20px;text-align:center;}
   .area_sidebar .box_sns .list_sns li:nth-child(1){font-size:15px}
   .area_sidebar .box_sns .list_sns li:nth-child(2){font-size:16px}
@@ -1015,7 +1017,7 @@ aside .tag_board{width:100%}
   #tt-body-page .container_postbtn .postbtn_like + .btn_menu_toolbar {margin: 0;}
   #tt-body-page .container_postbtn .btn_post .ico_like {margin: 0;}
   #tt-body-page .detail_side {display: block;}
-  #tt-body-page .share_temp {height: 0; text-indent: -9px;}
+  #tt-body-page .share_temp {height: 0; text-indent: -99999px;}
   #tt-body-page .detail_side .side_item.item1 {position: fixed; top: 130px; right: 40px;}
   #tt-body-page .detail_side .side_item.item2 {position: fixed; top: 180px; right: 40px;}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:75px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:right;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}

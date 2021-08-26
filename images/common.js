@@ -10,6 +10,9 @@ $(function() {
       }
       alert('복사 되었습니다.');
     });
+    $('.comment').on('click', function(){
+      $('#comment').focus();
+    });
     var arr_card = Array.from($('.type_card'));
     arr_card.reduce(function(acc,cur,idx){
       $(cur).addClass('id-'+idx);
