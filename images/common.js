@@ -1,6 +1,9 @@
 $(function() {
     $('.share').on('click', function(){
-      $('.share_temp').fadeIn();
+      $('.share_temp').addClass('active');
+      setTimeout(function(){
+        $('.share_temp').removeClass('active');
+      },2000)
       var input = $('.detail_side input');
       input.val(window.location.href);
       input.select();
@@ -8,7 +11,6 @@ $(function() {
       if (!returnValue) {
         throw new Error('copied nothing');
       }
-      alert('복사 되었습니다.');
     });
     $('.comment').on('click', function(){
       $('#comment').focus();
