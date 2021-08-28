@@ -259,7 +259,7 @@ html{box-sizing:border-box}
 #wrap{position:relative;overflow:hidden}
 #container{position:relative;width:100%}
 #container:after{content:'';display:block;clear:both}
-#main{width:100%}
+#main{width:100%;padding-bottom: 120px; border-bottom: 1px solid #e4e8eb;}
 .box_header{position:fixed;width:100%;z-index:21; padding-left: 320px;border-bottom: 1px solid #e4e8eb;}
 .box_header .header_inner {display: flex;justify-content: flex-end; padding: 10px 0;}
 .box_header .header_icon_inner{margin-left:20px;display:block}
@@ -390,7 +390,7 @@ aside .tag_board{width:100%}
 .area_popup .area_search .btn_close{margin:-2px 0 0;text-align:right;padding:0 7px 2px 7px;height:30px}
 .area_popup .title_logo{font-weight:900;font-size:20px}
 }
-#footer{clear:both;margin-top:120px;padding:50px 0 50px 0;font-size:14px;font-weight:400; border-top: 1px solid #e4e8eb;}
+#footer{clear:both;padding:50px 0 50px 0;font-size:14px;font-weight:400;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:#777;line-height:1.27;text-decoration:none;z-index:21}
 #footer .link_footer:hover{border-bottom:1px solid #e4e8eb}
@@ -527,7 +527,7 @@ aside .tag_board{width:100%}
 @media screen and (max-width:1025px){
 .area_cover{margin-top:130px}
 }
-.title_section{position:relative;width:100%;margin:0 0 20px 0;font-size:22px;font-weight:900;color:#333}
+.title_section{position:relative;width:100%;margin:0 0 20px 0;font-size:22px;font-weight:900;color:inherit;}
 .type_featured{position:relative;margin-top:120px}
 .type_featured:after{content:'';display:block;clear:both}
 .type_featured .slide_zone{position:relative;width:100%;border-radius: 0.2em;}
@@ -596,6 +596,7 @@ aside .tag_board{width:100%}
 .category_type_post .link_category .info .name,.list_post .link_post .info .name{width:calc(100% - 32px);font-size:13px}
 }
 .type_card{width:100%;min-height:360px;padding-top: 50px; padding-bottom: 30px;overflow:hidden;border-bottom: 1px solid #e4e8eb;}
+.type_card:last-child {border-bottom: 0;}
 .type_card .swiper_type_card {overflow:hidden;position: relative;}
 .type_card .swiper_type_card .list_type_card{width:100%;}
 .type_card .type_card_prev { -webkit-transform: rotate(180deg);transform: rotate(180deg);position: absolute;left: -15px;top: 50%;font-size: 32px;color: #c3c3c3;}
@@ -653,10 +654,10 @@ aside .tag_board{width:100%}
 .category_type_notice .item_category,.list_type_notice .item_notice{padding:30px 0; width: 18.8%;float: left;margin-right: 20px;}
 .category_type_notice .item_category, .list_type_notice .item_notice:nth-child(5n) {margin-right:0;}
 .category_type_notice .item_category:after,.list_type_notice .item_notice:after{content:'';display:block;clear:both}
-.category_type_notice .link_category,.list_type_notice .link_notice{display:block;color:#333;transition:all .2s ease-out}
+.category_type_notice .link_category,.list_type_notice .link_notice{display:block;color:inherit;transition:all .2s ease-out}
 .category_type_notice .link_category:hover,.list_type_notice .link_notice:hover{color:rgba(0,0,0,.6)}
 .category_type_notice .link_category strong,.list_type_notice .link_notice strong{width:160px;display:block;font-size:16px;line-height:32px;font-weight:700;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
-.category_type_notice .link_category .text,.list_type_notice .link_notice .text{font-size:14px;line-height:24px;margin:6px 0 0 0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;color:#777;width:95%}
+.category_type_notice .link_category .text,.list_type_notice .link_notice .text{font-size:14px;line-height:24px;margin:6px 0 0 0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;color:inherit;width:95%}
 .category_type_notice .link_category .date,.list_type_notice .link_notice .date{display:block;font-size:13px;line-height:20px;opacity:.5}
 .category_type_notice .item_category:after{content:'';display:block;clear:both}
 @media screen and (max-width:1025px){

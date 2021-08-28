@@ -3,7 +3,7 @@ $(function() {
       $('.share_temp').addClass('active');
       setTimeout(function(){
         $('.share_temp').removeClass('active');
-      },2000)
+      },2000);
       var input = $('.detail_side input');
       input.val(window.location.href);
       input.select();
