@@ -208,7 +208,7 @@
               <s_sidebar_element>
               <!-- 메인 메뉴(API) -->
                 <div class="box_gnb api">
-                  <h3><a href="/pages/Reference">Reference Guides</a></h3>
+                  <h3><a href="/pages/Reference-Guides">Reference Guides</a></h3>
                   <!-- data 바인딩 -->
                 
                 </div>
@@ -622,8 +622,8 @@
                       <!-- // area_tag -->
                     </s_tag_label>
 
+                    <!-- area_related -->
                     <s_article_related>
-                      <!-- area_related -->
                       <div class="area_related">
                         <h3 class="title_related">관련글</h3>
                         <ul class="list_related">
@@ -640,8 +640,30 @@
                           </s_article_related_rep>
                         </ul>
                       </div>
-                      <!-- // area_related -->
                     </s_article_related>
+                    <!-- // area_related -->
+
+                    <s_article_prev>
+                      <h3>PREV POST</h3>
+                      <a href="[##_article_prev_link_##]">
+                        <h4>[##_article_prev_title_##]</h4>
+                        <p>[##_article_prev_date_##]</p>
+                        <s_article_prev_thumbnail>
+                          <img src="[##_article_prev_thumbnail_link_##]" alt="[##_article_prev_title_##]">
+                        </s_article_prev_thumbnail>
+                      </a>
+                    </s_article_prev>
+
+                    <s_article_next>
+                      <h3>NEXT POST</h3>
+                      <a href="[##_article_next_link_##]">
+                        <h4>[##_article_next_title_##]</h4>
+                        <p>[##_article_next_date_##]</p>
+                        <s_article_next_thumbnail>
+                          <img src="[##_article_next_thumbnail_link_##]" alt="[##_article_next_title_##]">
+                        </s_article_next_thumbnail>
+                      </a>
+                    </s_article_next>
 
                     <!-- area_reply -->
                     <div class="area_reply">
@@ -820,7 +842,16 @@
             <div class="article_view">
               [##_article_rep_desc_##]
             </div>
-          </div>
+            <div class="detail_side">
+              <div class="share_temp">
+                <input type="text" value="">
+                <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
+              </div>
+              <ul class="bg color">
+                <li class="side_item item1" data-title="Share"><span class="share common border_mode"><i class="ic-share"></i></span></li>
+              </ul>
+            </div>
+          </div>       
         </s_page_rep>
 
         <s_notice_rep>
