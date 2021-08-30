@@ -39,6 +39,7 @@ $(function() {
       $('body').css('overflow', '');
     });
 
+    // pages 페이지 리로드시점 
     window.location.pathname.split('/')[1] === 'pages' && (
       $('.tab_itme.api').addClass('on'),
       $('.box_gnb.api').addClass('on'),
