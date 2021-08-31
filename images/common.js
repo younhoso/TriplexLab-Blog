@@ -278,18 +278,15 @@ function slider_control() {
       },
     }
 
-    new Swiper('.type_notice .swiper_type_notice', {
+    var swiperTypeNotice = {
       slidesPerView: 3,
-      slidesPerGroup: 2,
       grid: {
         rows: 3
       },
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      }
-    });
+      spaceBetween: 10
+    }
+
+    new Swiper('.swiper_type_notice', swiperTypeNotice);
     new Swiper('.type_card.id-0 .swiper_type_card', swiperCardOptions);
     new Swiper('.type_card.id-1 .swiper_type_card', swiperCardOptions);
     new Swiper('.type_card.id-2 .swiper_type_card', swiperCardOptions);

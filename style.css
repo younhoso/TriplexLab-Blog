@@ -656,6 +656,11 @@ aside .tag_board{width:100%}
   height: 27vh;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
 }
 .category_type_notice .thumnail,.type_notice .thumnail{float:left;display:block;width:18%;padding-top: 15%;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.2em}
 .category_type_notice .info,.type_notice .info{overflow:hidden;}
