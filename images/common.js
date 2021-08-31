@@ -277,6 +277,19 @@ function slider_control() {
         el: '.scrollbar_type_card'
       },
     }
+
+    new Swiper('.type_notice .swiper_type_notice', {
+      slidesPerView: 3,
+      slidesPerGroup: 2,
+      grid: {
+        rows: 3
+      },
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      }
+    });
     new Swiper('.type_card.id-0 .swiper_type_card', swiperCardOptions);
     new Swiper('.type_card.id-1 .swiper_type_card', swiperCardOptions);
     new Swiper('.type_card.id-2 .swiper_type_card', swiperCardOptions);
