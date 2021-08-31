@@ -25,6 +25,8 @@ $(function() {
     display_control();
     slider_control();
     api_category();
+    window.addEventListener('resize', slider_control);
+
     var tab_itme_wd = $('.tabs_itmes').width();
 
     $('input.inp_search').on('focus', function() {
@@ -265,25 +267,40 @@ function slider_control() {
       });
     };
 
-    if(windowWidth <= 1025) { //모바일 해상도일때 경우
-      swiperCommonOptions();
-    } else {  //PC 해상도일때 경우
-      swiperCommonOptions();
-    }
+    swiperCommonOptions();
 
     var swiperCardOptions = {
       slidesPerView: 'auto',
       scrollbar: {
         el: '.scrollbar_type_card'
       },
+      navigation: {
+        nextEl: ".typeCard_next",
+        prevEl: ".typeCard_prev",
+      },
     }
 
     var swiperTypeNotice = {
       slidesPerView: 3,
       grid: {
-        rows: 3
+        rows: 4
       },
-      spaceBetween: 10
+      navigation: {
+        nextEl: ".typeNotice_next",
+        prevEl: ".typeNotice_prev",
+      },
+    }
+
+    if(windowWidth <= 1025) { //모바일 해상도일때 경우
+      swiperTypeNotice.allowTouchMove = true;
+      swiperCardOptions.allowTouchMove = true;
+      swiperTypeNotice.slidesPerGroup= 1;
+      swiperCardOptions.slidesPerGroup= 1;
+    } else {  //PC 해상도일때 경우
+      swiperTypeNotice.allowTouchMove = false;
+      swiperCardOptions.allowTouchMove = false;
+      swiperTypeNotice.slidesPerGroup= 3;
+      swiperCardOptions.slidesPerGroup= 3;
     }
 
     new Swiper('.swiper_type_notice', swiperTypeNotice);
