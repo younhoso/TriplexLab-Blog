@@ -25,7 +25,6 @@ $(function() {
     display_control();
     slider_control();
     api_category();
-    window.addEventListener('resize', slider_control);
 
     var tab_itme_wd = $('.tabs_itmes').width();
 
@@ -162,7 +161,8 @@ function slider_control() {
     var slide_data = $('.slide_zone').data('slide');
     var windowWidth = $( window ).width();
     
-    function swiperCommonOptions() {
+    /* // 매인 배너 영역 Swiper기능 */
+    (function(){
       var swiperOptions = {
         loop: false,
         watchSlidesProgress: true,
@@ -265,21 +265,10 @@ function slider_control() {
       $(".swiper-playpau").click(function(e){
         $(e.currentTarget).removeClass('on').siblings().addClass('on');
       });
-    };
+    })();
+    /* 매인 배너 영역 Swiper기능 // */
 
-    swiperCommonOptions();
-
-    var swiperCardOptions = {
-      slidesPerView: 'auto',
-      scrollbar: {
-        el: '.scrollbar_type_card'
-      },
-      navigation: {
-        nextEl: ".typeCard_next",
-        prevEl: ".typeCard_prev",
-      },
-    }
-
+    /* // BLOG STORY 배너 영역 Swiper기능 */
     var swiperTypeNotice = {
       slidesPerView: 3,
       grid: {
@@ -291,22 +280,37 @@ function slider_control() {
       },
     }
 
-    if(windowWidth <= 1025) { //모바일 해상도일때 경우
+    if( windowWidth <= 1025) { //모바일 해상도일때 경우
       swiperTypeNotice.allowTouchMove = true;
-      swiperCardOptions.allowTouchMove = true;
       swiperTypeNotice.slidesPerGroup= 1;
-      swiperCardOptions.slidesPerGroup= 1;
-    } else {  //PC 해상도일때 경우
+    } else {   //PC 해상도일때 경우
       swiperTypeNotice.allowTouchMove = false;
-      swiperCardOptions.allowTouchMove = false;
       swiperTypeNotice.slidesPerGroup= 3;
-      swiperCardOptions.slidesPerGroup= 3;
     }
-
     new Swiper('.swiper_type_notice', swiperTypeNotice);
-    new Swiper('.type_card.id-0 .swiper_type_card', swiperCardOptions);
-    new Swiper('.type_card.id-1 .swiper_type_card', swiperCardOptions);
-    new Swiper('.type_card.id-2 .swiper_type_card', swiperCardOptions);
+    /* BLOG STORY 배너 영역 Swiper기능 // */
+
+    /* // type_card 배너 영역(3군대) Swiper기능 */
+    $('.type_card').each(function(idx, el){
+      var swiperCardOptions = {
+        slidesPerView: 'auto',
+        navigation: {
+          nextEl: `.type_card.id-${idx} .typeCard_next`,
+          prevEl: `.type_card.id-${idx} .typeCard_prev`,
+        },
+      };
+
+      if( windowWidth <= 1025) { //모바일 해상도일때 경우
+        swiperCardOptions.allowTouchMove = true;
+        swiperCardOptions.slidesPerGroup= 1;
+      } else {   //PC 해상도일때 경우
+        swiperCardOptions.allowTouchMove = false;
+        swiperCardOptions.slidesPerGroup= 3;
+      }
+
+      new Swiper(`.type_card.id-${idx} .swiper_type_card`, swiperCardOptions);
+    });
+    /* type_card 배너 영역(3군대) Swiper기능 // */
 };
 
   function display_control() {
