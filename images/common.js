@@ -18,15 +18,26 @@ $(function() {
     var arr_card = Array.from($('.type_card'));
     arr_card.reduce(function(acc,cur,idx){
       $(cur).addClass('id-'+idx);
-      $(cur).find('.arrow_inner').addClass('id-'+idx);
-      $(cur).find('.pagination_type_card').addClass('id-'+idx);
     },0);
     
     display_control();
     slider_control();
     api_category();
+    
+    $('.tab_btn').on('click', function(){
+      $('.tab_item').siblings().removeClass('active');
 
-    var tab_itme_wd = $('.tabs_itmes').width();
+      $(this).each(function(idx, el){
+        var tab_btn_wd = $(el).width();
+
+        console.log(tab_btn_wd)
+
+        $(el).addClass('on').siblings().removeClass('on');
+        $('.visitant').hasClass("on") && (gsap.to(".line", {width: tab_btn_wd, x: (tab_btn_wd * 0.68), duration: 0.35}), $('.tab_item').eq(0).addClass('active'));
+        $('.story').hasClass("on") && (gsap.to(".line", {width: tab_btn_wd, x: (tab_btn_wd * 0.80), duration: 0.35}), $('.tab_item').eq(1).addClass('active'))
+      });
+      return false;
+    });
 
     $('input.inp_search').on('focus', function() {
       $(this).addClass('active');
@@ -40,13 +51,14 @@ $(function() {
       $('body').css('overflow', '');
     });
 
+    var tab_itme_wd = $('.tabs_itmes').width();
     // pages 페이지 리로드시점 
     window.location.pathname.split('/')[1] === 'pages' && (
       $('.tab_itme.api').addClass('on'),
       $('.box_gnb.api').addClass('on'),
       $('.tab_itme.blog').removeClass('on'),
       $('.box_gnb.blog').removeClass('on'),
-      $('.ani_on').stop().animate({left: (tab_itme_wd * 0.56)}, 150),
+      gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),
       $('#tt-body-page').addClass('api_detail')
     );
 
@@ -56,8 +68,8 @@ $(function() {
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
 
-      $('.api').hasClass("on") && ($('.ani_on').stop().animate({left: (tab_itme_wd * 0.56)}, 150), $('.box_gnb').eq(1).addClass('on'));
-      $('.blog').hasClass("on") && ($('.ani_on').stop().animate({left: (tab_itme_wd * 0.06)}, 150), $('.box_gnb').eq(0).addClass('on'));
+      $('.api').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),  $('.box_gnb').eq(1).addClass('on'));
+      $('.blog').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.01), duration: 0.15}),  $('.box_gnb').eq(0).addClass('on'));
       return false;
     });
 

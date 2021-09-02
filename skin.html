@@ -10,7 +10,7 @@
   <!-- // General META -->
   <meta property="og:site_name" content="FE Developer TriplexLab(트리플엑스랩)" />
   <meta property="og:title" content="FE Developer TriplexLab(트리플엑스랩)" />
-  <meta property="og:description" content="FE 개발의 주된 코딩을 한눈에 볼 수 있는 대표 블로그" />
+  <meta property="og:description" content="FE 개발의 주된 내용을 한눈에 볼 수 있는 대표 블로그" />
   <meta property="og:url" content="https://triplexlab.tistory.com/" />
   <meta property="og:image" content="https://tistory1.daumcdn.net/tistory/3222964/skin/images/url.png" />
   <meta property="og:type" content="individual" />
@@ -22,7 +22,7 @@
   <!-- 검색 META // -->
   <!-- // Semantic Tag META -->
   <meta name="keywords" content=“TriplexLab,트리플엑스랩,자바스크립트es6+,javascriptes6+,jses6+,typescript,frontdeveloperblog,frontdeveloper,blog,FE블로그,FE개발자,프론트앤드개발자,반응형,react,react라이브러리,jquery,jquery라이브러리,라이브러리,library,plugin”/>
-  <meta name="description" content="FE 개발의 주된 코딩 블로그" />
+  <meta name="description" content="FE 개발의 주된 내용을 블로그" />
   <!-- Semantic Tag META // -->
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
@@ -34,6 +34,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 	<script charset="UTF-8" src="./images/swiper.min.js"></script>
   <script src="https://unpkg.com/vh-check/dist/vh-check.min.js"></script>
+  <script src="./images/gsap.min.js"></script>
 	<script>
     $(function(){
       var darkModeN = function() {
@@ -440,22 +441,58 @@
                   </div>
                 </div>
                 <!-- // type_featured -->
-                <!-- 방문자수 -->
-                <div class="counter">
+              </s_cover>
+
+              <s_cover name='banner'>
+                <div class="tbas_inner border_b_mode">
                   <div class="wrapper">
-                    <div class="counterfix">
-                      <span class="count total">
-                        <div class="counter_progressbar">🙏🏻</div> 
-                        <div class="txt"><p>전체 방문자</p> <strong>[##_count_total_##]</strong></div>
-                      </span>
-                      <span class="count today">
-                        <div class="counter_progressbar">👋🏻</div>
-                        <div class="txt"><p>오늘 방문자</p> <strong>[##_count_today_##]</strong></div>
-                      </span>
-                      <span class="count yesterday">
-                        <div class="counter_progressbar">👍🏻</div>
-                        <div class="txt"><p>어제 방문자</p> <strong>[##_count_yesterday_##]</strong></div>
-                      </span>
+                    <div class="inner shadow border_mode">
+                      <div class="btn_inner">
+                        <ul class="tab_btn_inner">
+                          <li class="tab_btn visitant on">방문자수</li>
+                          <li class="tab_btn story">[##_cover_title_##]</li>
+                        </ul>
+                        <div class="line_inner">
+                          <i class="line"></i>
+                          <i class="bg_line"></i>
+                        </div>
+                      </div>
+                      <!-- 방문자수 -->
+                      <div class="tab_item counter active">
+                          <div class="counterfix bg_them_mode">
+                            <span class="count total border_mode">
+                              <div class="counter_progressbar">🙏🏻</div> 
+                              <div class="txt"><p>전체 방문자</p> <strong>[##_count_total_##]</strong></div>
+                            </span>
+                            <span class="count today border_mode">
+                              <div class="counter_progressbar">👋🏻</div>
+                              <div class="txt"><p>오늘 방문자</p> <strong>[##_count_today_##]</strong></div>
+                            </span>
+                            <span class="count yesterday border_mode">
+                              <div class="counter_progressbar">👍🏻</div>
+                              <div class="txt"><p>어제 방문자</p> <strong>[##_count_yesterday_##]</strong></div>
+                            </span>
+                          </div>
+                      </div>
+                      <!-- // 방문자수 -->
+
+                      <!-- type_banner  -->
+                      <div class="tab_item type_banner">
+                        <div class="list_type_banner">
+                          <s_cover_item>
+                            <div class="item_banner">
+                              <a href="[##_cover_item_url_##]" class="link_banner item-thumbnail">
+                                <div class="img_inner" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></div>
+                                <div class="box_content">
+                                  <strong>[##_cover_item_title_##]</strong>
+                                  <p class="text">[##_cover_item_summary_##]</p>
+                                </div>
+                              </a>
+                            </div>
+                          </s_cover_item>
+                        </div>
+                      </div>
+                      <!-- // type_banner -->
                     </div>
                   </div>
                 </div>
@@ -483,6 +520,7 @@
                 </div>
                 <!-- // type_post -->
               </s_cover>
+
               <s_cover name='card'>
                 <!-- type_card  -->
                 <div class="type_card border_b_mode">
@@ -506,29 +544,6 @@
                   </div>
                 </div>
                 <!-- // type_card -->
-              </s_cover>
-
-              <s_cover name='banner'>
-                <!-- type_banner  -->
-                <div class="type_banner border_b_mode">
-                  <div class="wrapper">
-                    <h2 class="title_section" style="display:none;">[##_cover_title_##]</h2>
-                    <div class="list_type_banner">
-                      <s_cover_item>
-                        <div class="item_banner">
-                          <a href="[##_cover_item_url_##]" class="link_banner item-thumbnail">
-                            <div class="img_inner" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></div>
-                            <div class="box_content">
-                              <strong>[##_cover_item_title_##]</strong>
-                              <p class="text">[##_cover_item_summary_##]</p>
-                            </div>
-                          </a>
-                        </div>
-                      </s_cover_item>
-                    </div>
-                  </div>
-                </div>
-                <!-- // type_banner -->
               </s_cover>
 
               <s_cover name='notice'>
