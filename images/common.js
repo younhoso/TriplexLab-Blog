@@ -282,7 +282,14 @@ function slider_control() {
 
     /* // BLOG STORY 배너 영역 Swiper기능 */
     var swiperTypeNotice = {
-      slidesPerView: 3,
+      breakpoints:{
+        320: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 3,
+        }
+      },
       grid: {
         rows: 4
       },
