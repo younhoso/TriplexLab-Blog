@@ -24,17 +24,21 @@ $(function() {
     slider_control();
     api_category();
     
+
     $('.tab_btn').on('click', function(){
       $('.tab_item').siblings().removeClass('active');
-
+      
       $(this).each(function(idx, el){
         var tab_btn_wd = $(el).width();
+        var tab_btn_wdPrev = $(this).prev().innerWidth();
+        var paddL = parseInt($(this).css('padding-left'));
 
-        console.log(tab_btn_wd)
+        var gsapAmi1 = { width: tab_btn_wd, x: 20, duration: 0.35 };
+        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, duration: 0.35 };
 
         $(el).addClass('on').siblings().removeClass('on');
-        $('.visitant').hasClass("on") && (gsap.to(".line", {width: tab_btn_wd, x: (tab_btn_wd * 0.68), duration: 0.35}), $('.tab_item').eq(0).addClass('active'));
-        $('.story').hasClass("on") && (gsap.to(".line", {width: tab_btn_wd, x: (tab_btn_wd * 0.80), duration: 0.35}), $('.tab_item').eq(1).addClass('active'))
+        $('.visitant').hasClass("on") && (gsap.to(".line", gsapAmi1), $('.tab_item').eq(0).addClass('active'));
+        $('.story').hasClass("on") && (gsap.to(".line", gsapAmi2), $('.tab_item').eq(1).addClass('active'))
       });
       return false;
     });
