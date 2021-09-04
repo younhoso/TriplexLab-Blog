@@ -22,7 +22,7 @@ $(function() {
     
     display_control();
     slider_control();
-    api_category();
+    api_postItem();
     
 
     $('.tab_btn').on('click', function(){
@@ -158,17 +158,33 @@ function getCookie(name) {
   return value? value[2] : null; 
 };
 
-function api_category() {
+function api_postItem() {
   var pars = {
     'accessToken' : getCookie('triplexlab_token'),
     'outputType' : 'json',
-    'blogName' : 'https://triplexlab-api.tistory.com/'
+    'blogName' : 'https://triplexlab-api.tistory.com/',
+    'sort':'id',
+    'count':'5',
+    'page':'1',
   }
+  const {accessToken, outputType, blogName, sort, count, page} = pars;
   $.ajax({
     type:'GET',
-    url: 'https://www.tistory.com/apis/category/list?access_token='+pars.accessToken+'&output='+pars.outputType+'&blogName='+pars.blogName+''
+    url: 'https://www.tistory.com/apis/post/list?access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&count='+count+'&sort='+sort+'&page='+page+''
   }).done(function(data) {
-    console.log(data)
+    // setCookie('close','Y',5);
+    var cookiedata = document.cookie;
+    var {posts} = data.tistory.item;
+    var newArr = new Array();
+    posts.forEach(function(el){
+      if(el.categoryId > 0){
+        newArr.push(el)
+      }
+    });
+
+    const {id, date} = newArr[0];
+    console.log(id);
+    console.log(date);
   });
 };
 
