@@ -23,7 +23,6 @@ $(function() {
     display_control();
     slider_control();
     api_postItem();
-    
 
     $('.tab_btn').on('click', function(){
       $('.tab_item').siblings().removeClass('active');
@@ -167,24 +166,11 @@ function api_postItem() {
     'count':'5',
     'page':'1',
   }
-  const {accessToken, outputType, blogName, sort, count, page} = pars;
+  const {accessToken, outputType, blogName, sort, page} = pars;
   $.ajax({
     type:'GET',
-    url: 'https://www.tistory.com/apis/post/list?access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&count='+count+'&sort='+sort+'&page='+page+''
+    url: 'https://www.tistory.com/apis/post/list?access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&sort='+sort+'&page='+page+''
   }).done(function(data) {
-    // setCookie('close','Y',5);
-    var cookiedata = document.cookie;
-    var {posts} = data.tistory.item;
-    var newArr = new Array();
-    posts.forEach(function(el){
-      if(el.categoryId > 0){
-        newArr.push(el)
-      }
-    });
-
-    const {id, date} = newArr[0];
-    console.log(id);
-    console.log(date);
   });
 };
 
@@ -352,100 +338,97 @@ function slider_control() {
     /* type_card 배너 영역(3군대) Swiper기능 // */
 };
 
-  function display_control() {
-    var $location = $(location),
-        pathname = $location.attr('pathname'),
-        href = $location.attr('href'),
-        parts = pathname.split('/');
+function display_control() {
+  var $location = $(location),
+      pathname = $location.attr('pathname'),
+      href = $location.attr('href'),
+      parts = pathname.split('/');
 
-      $.ajax({
-        type: 'get', dataType: "json", url: 'https://tistory3.daumcdn.net/tistory/4741094/skin/images/data.json',
-      }).done(function(data) {
-        var localStorage_datafill = {
-          APIMenus : data.APIMenus,
-          APITab : data.APITab,
-          searchItems : data.searchItems,
+    $.ajax({
+      type: 'get', dataType: "json", url: 'https://tistory3.daumcdn.net/tistory/4741094/skin/images/data.json',
+    }).done(function(data) {
+      var localStorage_datafill = {
+        APIMenus : data.APIMenus,
+        APITab : data.APITab,
+        searchItems : data.searchItems,
+      }
+      setCookie('triplexlab_token', data.triplexlab_token, 1);
+
+      if(typeof(Storage) !== 'undefined'){
+        localStorage.setItem('data', JSON.stringify(localStorage_datafill))
+      }
+      var localdata = localStorage.getItem('data');
+      var searchItem = JSON.parse(localdata).searchItems;
+      var apiMenus = JSON.parse(localdata).APIMenus;
+
+      var randomPopularity = searchItem.popularity.sort(() => Math.random() - 0.5);         //배열 요소에는 인기 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
+      var randomRecommendation = searchItem.recommendation.sort(() => Math.random() - 0.5); //배열 요소에는 추천 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
+
+      /**  // 추천 검색어 */
+      var template_recommendation = '';
+      template_recommendation += '<ul class="list_sidebar">';
+      randomRecommendation.reduce(function(acc, cur){
+        template_recommendation += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
+      },0);
+      template_recommendation += '</ul>';
+      /**  추천 검색어 // */
+      /**  // 인기 검색어 */
+      var template_popularity = '';
+      template_popularity += '<ul class="list_sidebar">';
+      randomPopularity.reduce(function(acc, cur){
+        template_popularity += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
+      },0);
+      template_popularity += '</ul>';
+      /** 인기 검색어 // */
+      
+      /** // api Menus  */
+      var template_apiMenus = '';
+      template_apiMenus += '<ul class="api_inner">';
+      apiMenus.leftsidebar.reduce(function(acc, cur){
+        var apiMenusKey = Object.keys(cur)[0];
+        template_apiMenus += '<h3>'+apiMenusKey+'</h3>';
+        for ( const property in cur ) {
+          cur[property].reduce(function(acc, cur){
+            template_apiMenus += '<li class="api_items"><a href="/pages/'+cur.link+'">'+cur.name+'</a></li>';
+          },0)
         }
-        setCookie('triplexlab_token', data.triplexlab_token, 1);
+      },0);
+      template_apiMenus += '</ul>';
+      /** api Menus // */
 
-        if(typeof(Storage) !== 'undefined'){
-          localStorage.setItem('data', JSON.stringify(localStorage_datafill))
-        }
-        var localdata = localStorage.getItem('data');
-        var searchItem = JSON.parse(localdata).searchItems;
-        var apiMenus = JSON.parse(localdata).APIMenus;
-
-        var randomPopularity = searchItem.popularity.sort(() => Math.random() - 0.5);         //배열 요소에는 인기 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
-        var randomRecommendation = searchItem.recommendation.sort(() => Math.random() - 0.5); //배열 요소에는 추천 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
-
-        /**  // 추천 검색어 */
-        var template_recommendation = '';
-        template_recommendation += '<ul class="list_sidebar">';
-        randomRecommendation.reduce(function(acc, cur){
-          template_recommendation += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
-        },0);
-        template_recommendation += '</ul>';
-        /**  추천 검색어 // */
-        /**  // 인기 검색어 */
-        var template_popularity = '';
-        template_popularity += '<ul class="list_sidebar">';
-        randomPopularity.reduce(function(acc, cur){
-          template_popularity += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
-        },0);
-        template_popularity += '</ul>';
-        /** 인기 검색어 // */
-        
-        /** // api Menus  */
-        var template_apiMenus = '';
-        template_apiMenus += '<ul class="api_inner">';
-        apiMenus.leftsidebar.reduce(function(acc, cur){
-          var apiMenusKey = Object.keys(cur)[0];
-          template_apiMenus += '<h3>'+apiMenusKey+'</h3>';
-          for ( const property in cur ) {
-            cur[property].reduce(function(acc, cur){
-              template_apiMenus += '<li class="api_items"><a href="/pages/'+cur.link+'">'+cur.name+'</a></li>';
-            },0)
-          }
-        },0);
-        template_apiMenus += '</ul>';
-        /** api Menus // */
-
-        $('.box_gnb.api').append(template_apiMenus);
-        $('.tag_recomme').append(template_recommendation);
-        $('.tag_popularity').append(template_popularity);
-      });
-
-     // 검색어 삭제
-     $('.btn_search_del').click(function() {
-      $('.inp_search').val('');
+      $('.box_gnb.api').append(template_apiMenus);
+      $('.tag_recomme').append(template_recommendation);
+      $('.tag_popularity').append(template_popularity);
     });
 
-    // 박스 헤더
-    if ($('#main .area_cover').children(':first-child').hasClass('type_featured')) {
-      $('#wrap').addClass('white');
-    } else if ($('#main .area_cover').length > 0) {
-      $('#main .area_cover').addClass('cover_margin');
-    }
+    // 검색어 삭제
+    $('.btn_search_del').click(function() {
+    $('.inp_search').val('');
+  });
 
-    // 글 출력이 있는 경우
-    if ($('.area_view').length != false) {
-      if($('#main > .area_cover:first-child > .type_featured:first-child, .type_article_header_cover').length) { $('#wrap').addClass('white');}
-    }
+  // 박스 헤더
+  if ($('#main .area_cover').children(':first-child').hasClass('type_featured')) {
+    $('#wrap').addClass('white');
+  } else if ($('#main .area_cover').length > 0) {
+    $('#main .area_cover').addClass('cover_margin');
+  }
 
-    // 로그인, 로그아웃 버튼 처리
-    if (window.T.config.USER.name) {
-      $('.btn-for-user').show();
-    } else {
-      $('.btn-for-guest').show();
-    }
+  // 글 출력이 있는 경우
+  if ($('.area_view').length != false) {
+    if($('#main > .area_cover:first-child > .type_featured:first-child, .type_article_header_cover').length) { $('#wrap').addClass('white');}
+  }
 
-    $('.btn-for-guest [data-action="login"]').click(function() {
-      document.location.href = 'https://www.tistory.com/auth/login?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
-    });
-    $('.btn-for-user [data-action="logout"]').click(function() {
-      document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
-    });
-  };
+  // 로그인, 로그아웃 버튼 처리
+  if (window.T.config.USER.name) {
+    $('.btn-for-user').show();
+  } else {
+    $('.btn-for-guest').show();
+  }
 
-
-  
+  $('.btn-for-guest [data-action="login"]').click(function() {
+    document.location.href = 'https://www.tistory.com/auth/login?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
+  });
+  $('.btn-for-user [data-action="logout"]').click(function() {
+    document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
+  });
+};
