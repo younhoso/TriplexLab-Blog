@@ -147,30 +147,55 @@ $(function() {
 });
 
 function setCookie(name, value, day) {
-  const date = new Date(); 
+  var date = new Date(); 
   date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000); 
   document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/'; 
 };
 
 function getCookie(name) { 
-  const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+  var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
   return value? value[2] : null; 
 };
 
 function api_postItem() {
-  var pars = {
-    'accessToken' : getCookie('triplexlab_token'),
-    'outputType' : 'json',
-    'blogName' : 'https://triplexlab-api.tistory.com/',
-    'sort':'id',
-    'count':'5',
-    'page':'1',
-  }
-  const {accessToken, outputType, blogName, sort, page} = pars;
+    var postListUrl = 'https://www.tistory.com/apis/post/list?';
+    var pars = {
+      'accessToken' : getCookie('triplexlab_token'),
+      'outputType' : 'json',
+      'blogName' : 'https://triplexlab-api.tistory.com/',
+      'sort':'id',
+      'count': '100',
+      'totalCount':'181',
+      'page':'2',
+    }
+    var {accessToken, outputType, blogName, page} = pars;
+
+ 
   $.ajax({
     type:'GET',
-    url: 'https://www.tistory.com/apis/post/list?access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&sort='+sort+'&page='+page+''
+    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
   }).done(function(data) {
+    var {item} = data.tistory;
+    var {count, totalCount, posts} = item;
+    var total_page = Math.ceil(totalCount / count);
+
+    function callback(dataItem) {
+      console.log(dataItem)
+    }
+
+    for(var i = 1; i <= total_page; i++){
+      var params = { 
+        'accessToken': getCookie('triplexlab_token'), 
+        'outputType': 'json', //# json 형식 지원 
+        'blogName': 'https://triplexlab-api.tistory.com/', //tistory.com 또는 블로그 주소 전체 
+        'page': i //페이지 번호
+      }
+      var {accessToken, outputType, blogName, page} = params;
+      $.ajax({
+        type:'GET',
+        url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
+      }).done(callback(item.page[1]))
+    };
   });
 };
 
