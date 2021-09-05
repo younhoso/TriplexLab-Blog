@@ -152,6 +152,7 @@
           <!--  로고 // -->
           <div class="header_icon_inner">
             <i class="icon ic-search"></i>
+            <a class="notice" href="/notice/4"><i class="icon ic-bell-1 on"></i></a>
             <i class="icon theme ic-sun "></i>
             <i class="icon theme ic-moon on"></i>
           </div>
@@ -791,7 +792,7 @@
                   </div>
                   <!-- // article_content -->
 
-                </div>
+                </article>
                 <!-- article_content -->
                 <!-- // detail_side -->
                 <div class="detail_side ">
@@ -806,6 +807,32 @@
                 </div>
                 <!-- detail_side // -->
             </s_permalink_article_rep>
+
+            <s_page_rep>
+              <div class="area_article color">
+                <div class="article_header">
+                  <div class="inner_header" style="background-image:url('<s_article_rep_thumbnail>[##_notice_rep_thumbnail_url_##]</s_article_rep_thumbnail>')">
+                    <div class="info_text">
+                      <strong class="title_post">[##_article_rep_title_##]</strong>
+                      <p class="info"><span class="date">[##_article_rep_date_##]
+                        </span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="article_view">
+                  [##_article_rep_desc_##]
+                </div>
+                <div class="detail_side">
+                  <div class="share_temp">
+                    <input type="text" value="">
+                    <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
+                  </div>
+                  <ul class="bg color">
+                    <li class="side_item item1" data-title="Share"><span class="share common border_mode"><i class="ic-share"></i></span></li>
+                  </ul>
+                </div>
+              </div>       
+            </s_page_rep>
           </s_article_rep>
         </div>
         <!-- // area_view -->
@@ -845,32 +872,6 @@
 
           <!-- // area_view -->
         </s_article_protected>
-
-        <s_page_rep>
-          <div class="area_article color">
-            <div class="article_header">
-              <div class="inner_header" style="background-image:url('<s_article_rep_thumbnail>[##_notice_rep_thumbnail_url_##]</s_article_rep_thumbnail>')">
-                <div class="info_text">
-                  <strong class="title_post">[##_article_rep_title_##]</strong>
-                  <p class="info"><span class="date">[##_article_rep_date_##]
-                    </span></p>
-                </div>
-              </div>
-            </div>
-            <div class="article_view">
-              [##_article_rep_desc_##]
-            </div>
-            <div class="detail_side">
-              <div class="share_temp">
-                <input type="text" value="">
-                <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
-              </div>
-              <ul class="bg color">
-                <li class="side_item item1" data-title="Share"><span class="share common border_mode"><i class="ic-share"></i></span></li>
-              </ul>
-            </div>
-          </div>       
-        </s_page_rep>
 
         <s_notice_rep>
           <s_index_article_rep>
@@ -1081,34 +1082,34 @@
 
     [##_revenue_list_lower_##]
 
-    <!-- footer -->
-    <footer id="footer" class="bg_them_mode color">
-      <div class="inner_footer">
-        <s_if_var_footerLink1Name>
-          <a href="[##_var_footerLink1Url_##]" class="link_footer">[##_var_footerLink1Name_##]</a>
-        </s_if_var_footerLink1Name>
-        <s_if_var_footerLink2Name>
-          <a href="[##_var_footerLink2Url_##]" class="link_footer">[##_var_footerLink2Name_##]</a>
-        </s_if_var_footerLink2Name>
-        <s_if_var_footerLink3Name>
-          <a href="[##_var_footerLink3Url_##]" class="link_footer">[##_var_footerLink3Name_##]</a>
-        </s_if_var_footerLink3Name>
-        <s_if_var_footerLink4Name>
-          <a href="[##_var_footerLink4Url_##]" class="link_footer">[##_var_footerLink4Name_##]</a>
-        </s_if_var_footerLink4Name>
-      </div>
-      <div>
-        <address>[##_var_footerCopyright_##]</address>
-      </div>
+      <!-- footer -->
+      <footer id="footer" class="bg_them_mode color">
+        <div class="inner_footer">
+          <s_if_var_footerLink1Name>
+            <a href="[##_var_footerLink1Url_##]" class="link_footer">[##_var_footerLink1Name_##]</a>
+          </s_if_var_footerLink1Name>
+          <s_if_var_footerLink2Name>
+            <a href="[##_var_footerLink2Url_##]" class="link_footer">[##_var_footerLink2Name_##]</a>
+          </s_if_var_footerLink2Name>
+          <s_if_var_footerLink3Name>
+            <a href="[##_var_footerLink3Url_##]" class="link_footer">[##_var_footerLink3Name_##]</a>
+          </s_if_var_footerLink3Name>
+          <s_if_var_footerLink4Name>
+            <a href="[##_var_footerLink4Url_##]" class="link_footer">[##_var_footerLink4Name_##]</a>
+          </s_if_var_footerLink4Name>
+        </div>
+        <div>
+          <address>[##_var_footerCopyright_##]</address>
+        </div>
 
-    </footer>
-    <!-- // footer -->
+      </footer>
+      <!-- // footer -->
 
-    <!-- 모비일 하단 메뉴 -->
-      <div class="mo_footer_menu">
-        <div class="menu plus"><a href="#0"><i class="icon ic-plus-thin"></i></a></div>
-      </div>
-    <!-- // 모비일 하단 메뉴 -->
+      <!-- 모비일 하단 메뉴 -->
+        <div class="mo_footer_menu">
+          <div class="menu plus"><a href="#0"><i class="icon ic-plus-thin"></i></a></div>
+        </div>
+      <!-- // 모비일 하단 메뉴 -->
     </div>
     <!-- // wrap -->
   </s_t3>

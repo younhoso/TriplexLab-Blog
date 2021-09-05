@@ -65,6 +65,11 @@ $(function() {
       $('#tt-body-page').addClass('api_detail')
     );
 
+    // notice 페이지 리로드시점 
+    window.location.pathname.split('/')[1] === 'notice' && (
+      $('.ic-bell-1').removeClass('on')
+    )
+
     $('.tab_itme').on('click', function(e) {
       e.preventDefault();
       $(e.target).siblings('.tab_itme').removeClass('on');
@@ -79,18 +84,6 @@ $(function() {
     Array.from((document.querySelectorAll('#container .inner_header span.date'))).forEach(function(el) {
       el.innerText = el.innerText.substr(0, 11);
     })
-
-    var modulesTemplate = function(data) {
-      var template = '';
-      template += '<ul class="items">';
-      $.each(data, function(idx, item){  
-        template += '<li class="item">'
-        template += '<a href='+item.link+'>'+ item.txt +'</a>'
-        template += '</li>';
-      });
-      template += '</ul>';
-      return template;
-    };
 
     var arrayText = $('.sub_category_list li').map(function(){
       return $.trim($(this).text());
@@ -112,7 +105,6 @@ $(function() {
     if( newPath === '/category/Modules'){
       $('#tt-body-category').addClass('modules')
 
-      // $('#main').html(modulesTemplate(jsonArray));
     } else if(newPath === '/category/Modules/Get%20Started') {
       $('.sub_category_list li').eq(0).addClass('active');
     } else if(newPath === '/category/Modules/Accordions') {
@@ -163,25 +155,17 @@ function api_postItem() {
       'accessToken' : getCookie('triplexlab_token'),
       'outputType' : 'json',
       'blogName' : 'https://triplexlab-api.tistory.com/',
-      'sort':'id',
-      'count': '100',
-      'totalCount':'181',
-      'page':'2',
+      'page':'1',
     }
     var {accessToken, outputType, blogName, page} = pars;
 
- 
   $.ajax({
     type:'GET',
     url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
   }).done(function(data) {
     var {item} = data.tistory;
-    var {count, totalCount, posts} = item;
+    var {count, totalCount} = item;
     var total_page = Math.ceil(totalCount / count);
-
-    function callback(dataItem) {
-      console.log(dataItem)
-    }
 
     for(var i = 1; i <= total_page; i++){
       var params = { 
@@ -194,9 +178,20 @@ function api_postItem() {
       $.ajax({
         type:'GET',
         url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
-      }).done(callback(item.page[1]))
+      }).done(function(dataItem){
+        callback.call(this, dataItem)
+      })
     };
   });
+
+  function callback(dataItem) {
+    var {item} = dataItem.tistory;
+    var {page, posts, totalCount} = item;
+    var [...copied] = posts;
+    var str = [...copied];
+
+    console.log(str);
+  };
 };
 
 function slider_control() {
