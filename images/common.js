@@ -65,10 +65,14 @@ $(function() {
       $('#tt-body-page').addClass('api_detail')
     );
 
-    // notice 페이지 리로드시점 
-    window.location.pathname.split('/')[1] === 'notice' && (
-      $('.ic-bell-1').removeClass('on')
-    )
+    /* notice 페이지 리로드시점 */    
+    var cookiedata = document.cookie;
+    if(cookiedata.indexOf('bell=Y') < 0){
+      $('.notice_js').addClass('on');
+    } else {
+      $('.notice_js').removeClass('on');
+    }
+     /* // notice 페이지 리로드시점 */
 
     $('.tab_itme').on('click', function(e) {
       e.preventDefault();
@@ -150,48 +154,35 @@ function getCookie(name) {
 };
 
 function api_postItem() {
-    var postListUrl = 'https://www.tistory.com/apis/post/list?';
+    var postListUrl = 'https://www.tistory.com/apis/post/read?';
     var pars = {
       'accessToken' : getCookie('triplexlab_token'),
       'outputType' : 'json',
       'blogName' : 'https://triplexlab-api.tistory.com/',
-      'page':'1',
+      'postId':'4',
     }
-    var {accessToken, outputType, blogName, page} = pars;
+    var {accessToken, outputType, blogName, postId} = pars;
 
   $.ajax({
     type:'GET',
-    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
+    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
   }).done(function(data) {
+    console.log(data)
     var {item} = data.tistory;
-    var {count, totalCount} = item;
-    var total_page = Math.ceil(totalCount / count);
+    var {content} = item;
+    // var total_page = Math.ceil(totalCount / count);
 
-    for(var i = 1; i <= total_page; i++){
-      var params = { 
-        'accessToken': getCookie('triplexlab_token'), 
-        'outputType': 'json', //# json 형식 지원 
-        'blogName': 'https://triplexlab-api.tistory.com/', //tistory.com 또는 블로그 주소 전체 
-        'page': i //페이지 번호
-      }
-      var {accessToken, outputType, blogName, page} = params;
-      $.ajax({
-        type:'GET',
-        url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
-      }).done(function(dataItem){
-        callback.call(this, dataItem)
-      })
-    };
+    $('.notice_js').on('click', function() {
+      setCookie('bell', 'Y', 10);
+      $(this).removeClass('on');
+      $('.notice_template .inner').html(content);
+      gsap.to('.notice_template', {y: -50, autoAlpha : 1, display:'block', duration: 0.25})
+    });
+
+    $('.closeIcon').on('click', function() {
+      gsap.to('.notice_template', {y: 50, autoAlpha : 0, display:'none', duration: 0.25})
+    });
   });
-
-  function callback(dataItem) {
-    var {item} = dataItem.tistory;
-    var {page, posts, totalCount} = item;
-    var [...copied] = posts;
-    var str = [...copied];
-
-    console.log(str);
-  };
 };
 
 function slider_control() {
