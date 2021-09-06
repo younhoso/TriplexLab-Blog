@@ -794,16 +794,16 @@
                   </article>
                   <!-- article_content -->
                   <!-- // detail_side -->
-                  <div class="detail_side ">
+                  <div class="detail_side "> <!-- 블로그 post 영역 -->
                     <div class="share_temp">
                       <input type="text" value="">
-                      <p class="txt_copy"><Strong>링크를 클립보드에 복사했습니다.</Strong></p>
+                      <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
                     </div>
                     <ul class="bg color">
-                      <li class="side_item item1" data-title="Share"><span class="share common border_mode"><i class="ic-share"></i></span></li>
+                      <li class="side_item item1" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
                       <li class="side_item item2" data-title="Comment"><span class="comment common border_mode"><i class="ic-bubble"></i></span></li>
                     </ul>
-                  </div>
+                  </div> <!-- 블로그 post 영역 // -->
                   <!-- detail_side // -->
               </s_permalink_article_rep>
 
@@ -821,15 +821,15 @@
                   <div class="article_view">
                     [##_article_rep_desc_##]
                   </div>
-                  <div class="detail_side">
+                  <div class="detail_side"> <!-- API 페이지 영역 -->
                     <div class="share_temp">
                       <input type="text" value="">
                       <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
                     </div>
                     <ul class="bg color">
-                      <li class="side_item item1" data-title="Share"><span class="share common border_mode"><i class="ic-share"></i></span></li>
+                      <li class="side_item item1" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
                     </ul>
-                  </div>
+                  </div> <!-- API 페이지 영역 // -->
                 </div>       
               </s_page_rep>
             </s_article_rep>
@@ -1110,7 +1110,9 @@
     <!-- // wrap -->
     <article class="notice_template" aria-label="TriplexLab 소계 글">
       <span class="closeIcon"><i class="ic-close-thin"></i></span>
-      <div class="inner"></div>
+      <div class="inner">
+        <div class="contents"></div>
+      </div>
     </article>
   </s_t3>
 </body>
