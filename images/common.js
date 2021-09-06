@@ -9,7 +9,7 @@ $(function() {
       input.val(window.location.href);
       input.select();
 
-       /* Copy the text inside the text field */
+       /* 텍스트 필드 안의 텍스트 복사 */
       navigator.clipboard.writeText(input.val());
     });
     $('.comment').on('click', function(){
