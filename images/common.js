@@ -189,9 +189,10 @@ function api_postItem() {
 
     
     var path = window.location.pathname;
+    console.log(typeof path)
     var parsRead2 = {
       ...pars,
-      'postId':path.substr(1),
+      'postId': path.substr(1),
     }
 
     var {accessToken, outputType, blogName, postId} = parsRead2;
@@ -199,7 +200,7 @@ function api_postItem() {
     $.ajax({
       type:'GET',
       url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
-    }).done(function(res) {
+    }).done(function(res, textStatus, xhr) {
       var {item} = res.tistory;
       Kakao.Link.createDefaultButton({
         container: '.share_kakao_js',
@@ -227,7 +228,7 @@ function api_postItem() {
           }
         ],
       })
-    });
+    })
   });
 };
 
