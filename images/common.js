@@ -155,7 +155,6 @@ function getCookie(name) {
 
 function api_postItem() {
     var postReadtUrl = 'https://www.tistory.com/apis/post/read?';
-    var postListUrl = 'https://www.tistory.com/apis/post/list?';
     var pars = {
       'accessToken' : getCookie('triplexlab_token'),
       'outputType' : 'json',
@@ -163,7 +162,7 @@ function api_postItem() {
     }
     var parsRead = {
       ...pars,
-      'postId':'4',
+      'postId':'66',
     }
     var {accessToken, outputType, blogName, postId} = parsRead;
 
@@ -187,37 +186,6 @@ function api_postItem() {
       $('.notice_template .contents').empty(content);
     });
   });
-
-  var parsList = {
-    ...pars,
-    'page':'1',
-  }
-  var {accessToken, outputType, blogName, page} = parsList;
-  $.ajax({
-    type:'GET',
-    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
-  }).done(function(data) {
-    var {item} = data.tistory;
-    var {totalCount, count} = item;
-    var total_page = Math.ceil(totalCount / count);
-
-    
-    var parsLists = {
-      ...pars,
-      'page':total_page,
-    };
-
-    var {accessToken, outputType, blogName, page} = parsLists;
-    $.ajax({
-      type:'GET',
-      url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
-    }).done(function(data) {
-      var {item} = data.tistory;
-      var {posts} = item;
-      console.log(posts[posts.length - 1])
-    })
-    
-  }); 
 };
 
 function slider_control() {
