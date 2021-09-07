@@ -88,21 +88,24 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:400;
   --g-bg-color: #fff;
   --s-bg-color: #e6e6e6;
   --s-menu-tabs : #ccc;
-  --color: #333;
+  --color-level-1: #333;
+  --color-level-2: rgb(157, 170, 182);
   --border-color: #e4e8eb;
-  --shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),0 2px 6px 2px rgb(60 64 67 / 15%);
+  --shadow: rgb(116 129 141 / 10%) 0px 3px 8px 0px;
 }
 [data-dark=true]{
   --g-bg-color: #343639;
   --s-bg-color: #222529;
   --s-menu-tabs : #383b40;
-  --color: #e6e6e6;
+  --color-level-1: #e6e6e6;
+  --color-level-2: #e6e6e6;
   --border-color: #656565;
 }
 
 .bg {background-color: var(--s-bg-color);}
 .bg_them_mode {background-color: var(--g-bg-color);}
-.color {color: var(--color);}
+.color {color: var(--color-level-1);}
+.color-2 {color: var(--color-level-2);}
 .sidebar_menu_tabs {background-color: var(--s-menu-tabs);}
 .border_mode {border:1px solid var(--border-color);}
 .border_b_mode {border-bottom:1px solid var(--border-color);}
@@ -1042,6 +1045,24 @@ aside .tag_board{width:100%}
   #tt-body-page .subscribe_inner .btns {background-color: #333; padding: 7px 10px; box-sizing: border-box; color: #fff; border-radius: 1em;}
   #tt-body-page .detail_side {display: none;}
   #tt-body-page .area_paging {display: none;}
+
+  #tt-body-page .direction{width:auto;margin:0;display:grid;padding:0;column-gap:24px;grid-template-rows:auto;grid-template-areas:"previous next";grid-template-columns:1fr 1fr;}
+  #tt-body-page .direction p {font-size: 12px;font-weight: 400; line-height: 1.625;}
+  #tt-body-page .direction h3 {font-size: 16px; font-weight: 600; line-height: 1.5; width: 80%; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+  #tt-body-page .direction .info {flex: 1 1 0%;}
+  #tt-body-page .direction .previous {display: flex; text-align: right; padding: 16px;
+    grid-area: previous / previous / previous / previous;
+    place-self: stretch;
+    align-items: center;
+  } 
+  #tt-body-page .direction .previous .left {flex: 0 0 auto;}
+  #tt-body-page .direction .next {display: flex; text-align: left; padding: 16px;
+    grid-area: next / next / next / next;
+    place-self: stretch;
+    box-shadow: rgb(116 129 141 / 10%) 0px 3px 8px 0px;
+    align-items: center;
+  }
+  #tt-body-page .direction .next .right {flex: 0 0 auto;}
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
@@ -1073,5 +1094,6 @@ aside .tag_board{width:100%}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:75px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:right;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
   #tt-body-page .detail_side .side_item:hover::before {opacity: 1; visibility: visible; right: 45px;}
   #tt-body-page .detail_side .common{width:40px;height:40px;line-height:40px;text-align:center;display:inline-block;font-size:16px;background-color:inherit;color: inherit;box-sizing:border-box;border-radius:2em;cursor:pointer;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%);}
+
 }
 /* ---- PC 상세페이지 ED ---- */

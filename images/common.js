@@ -154,24 +154,25 @@ function getCookie(name) {
 };
 
 function api_postItem() {
-    var postListUrl = 'https://www.tistory.com/apis/post/read?';
+    var postReadtUrl = 'https://www.tistory.com/apis/post/read?';
+    var postListUrl = 'https://www.tistory.com/apis/post/list?';
     var pars = {
       'accessToken' : getCookie('triplexlab_token'),
       'outputType' : 'json',
       'blogName' : 'https://triplexlab-api.tistory.com/',
+    }
+    var parsRead = {
+      ...pars,
       'postId':'4',
     }
-    var {accessToken, outputType, blogName, postId} = pars;
+    var {accessToken, outputType, blogName, postId} = parsRead;
 
   $.ajax({
     type:'GET',
-    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
+    url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
   }).done(function(data) {
-    console.log(data)
     var {item} = data.tistory;
     var {content} = item;
-    // var total_page = Math.ceil(totalCount / count);
-
     $('.notice_js').on('click', function() {
       setCookie('bell', 'Y', 1);
       $(this).removeClass('on');
@@ -186,6 +187,37 @@ function api_postItem() {
       $('.notice_template .contents').empty(content);
     });
   });
+
+  var parsList = {
+    ...pars,
+    'page':'1',
+  }
+  var {accessToken, outputType, blogName, page} = parsList;
+  $.ajax({
+    type:'GET',
+    url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
+  }).done(function(data) {
+    var {item} = data.tistory;
+    var {totalCount, count} = item;
+    var total_page = Math.ceil(totalCount / count);
+
+    
+    var parsLists = {
+      ...pars,
+      'page':total_page,
+    };
+
+    var {accessToken, outputType, blogName, page} = parsLists;
+    $.ajax({
+      type:'GET',
+      url: postListUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&page='+page
+    }).done(function(data) {
+      var {item} = data.tistory;
+      var {posts} = item;
+      console.log(posts[posts.length - 1])
+    })
+    
+  }); 
 };
 
 function slider_control() {
@@ -378,7 +410,7 @@ function display_control() {
       var randomPopularity = searchItem.popularity.sort(() => Math.random() - 0.5);         //배열 요소에는 인기 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
       var randomRecommendation = searchItem.recommendation.sort(() => Math.random() - 0.5); //배열 요소에는 추천 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
 
-      /**  // 추천 검색어 */
+      /** 추천 검색어 */
       var template_recommendation = '';
       template_recommendation += '<ul class="list_sidebar">';
       randomRecommendation.reduce(function(acc, cur){
@@ -386,7 +418,7 @@ function display_control() {
       },0);
       template_recommendation += '</ul>';
       /**  추천 검색어 // */
-      /**  // 인기 검색어 */
+      /**  인기 검색어 */
       var template_popularity = '';
       template_popularity += '<ul class="list_sidebar">';
       randomPopularity.reduce(function(acc, cur){
@@ -395,7 +427,7 @@ function display_control() {
       template_popularity += '</ul>';
       /** 인기 검색어 // */
       
-      /** // api Menus  */
+      /** api Menus  */
       var template_apiMenus = '';
       template_apiMenus += '<ul class="api_inner">';
       apiMenus.leftsidebar.reduce(function(acc, cur){
@@ -403,7 +435,7 @@ function display_control() {
         template_apiMenus += '<h3>'+apiMenusKey+'</h3>';
         for ( const property in cur ) {
           cur[property].reduce(function(acc, cur){
-            template_apiMenus += '<li class="api_items"><a href="/pages/'+cur.link+'">'+cur.name+'</a></li>';
+            template_apiMenus += '<li class="api_items"><a href="/'+cur.link+'">'+cur.name+'</a></li>';
           },0)
         }
       },0);

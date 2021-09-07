@@ -461,15 +461,15 @@
                         <div class="tab_item counter active">
                             <div class="counterfix bg_them_mode">
                               <span class="count total border_mode">
-                                <div class="counter_progressbar">🙏🏻</div> 
+                                <div class="counter_progressbar">🎉</div> 
                                 <div class="txt"><p>전체 방문자</p> <strong>[##_count_total_##]</strong></div>
                               </span>
                               <span class="count today border_mode">
-                                <div class="counter_progressbar">👋🏻</div>
+                                <div class="counter_progressbar">👋</div>
                                 <div class="txt"><p>오늘 방문자</p> <strong>[##_count_today_##]</strong></div>
                               </span>
                               <span class="count yesterday border_mode">
-                                <div class="counter_progressbar">👍🏻</div>
+                                <div class="counter_progressbar">👍</div>
                                 <div class="txt"><p>어제 방문자</p> <strong>[##_count_yesterday_##]</strong></div>
                               </span>
                             </div>
@@ -641,7 +641,7 @@
                       </s_tag_label>
 
                       <!-- area_related -->
-                      <s_article_related>
+                      <!-- <s_article_related>
                         <div class="area_related">
                           <h3 class="title_related">관련글</h3>
                           <ul class="list_related">
@@ -658,31 +658,32 @@
                             </s_article_related_rep>
                           </ul>
                         </div>
-                      </s_article_related>
+                      </s_article_related> -->
                       <!-- // area_related -->
-
-                      <s_article_prev>
-                        <h3>PREV POST</h3>
-                        <a href="[##_article_prev_link_##]">
-                          <h4>[##_article_prev_title_##]</h4>
-                          <p>[##_article_prev_date_##]</p>
-                          <s_article_prev_thumbnail>
-                            <img src="[##_article_prev_thumbnail_link_##]" alt="[##_article_prev_title_##]">
-                          </s_article_prev_thumbnail>
-                        </a>
-                      </s_article_prev>
-
-                      <s_article_next>
-                        <h3>NEXT POST</h3>
-                        <a href="[##_article_next_link_##]">
-                          <h4>[##_article_next_title_##]</h4>
-                          <p>[##_article_next_date_##]</p>
-                          <s_article_next_thumbnail>
-                            <img src="[##_article_next_thumbnail_link_##]" alt="[##_article_next_title_##]">
-                          </s_article_next_thumbnail>
-                        </a>
-                      </s_article_next>
-
+                      <div class="direction">
+                          <s_article_prev>
+                            <div class="previous direction_common border_mode shadow">
+                              <span class="left"><i class="ic-left-thin"></i></span>
+                              <div class="info">
+                                <p class="color-2">PREV</p>
+                                <a href="[##_article_prev_link_##]">
+                                  <h3>[##_article_prev_title_##]</h3>
+                                </a>
+                              </div>
+                            </div>
+                          </s_article_prev>
+                          <s_article_next>
+                            <div class="next direction_common border_mode shadow">
+                              <div class="info">
+                            <p class="color-2">NEXT</p>
+                            <a href="[##_article_next_link_##]">
+                              <h3>[##_article_next_title_##]</h3>
+                            </a>
+                              </div>
+                              <span class="right"><i class="ic-right-thin"></i></span>
+                            </div>
+                          </s_article_next>
+                      </div>
                       <!-- area_reply -->
                       <div class="area_reply">
 
@@ -821,7 +822,7 @@
                   <div class="article_view">
                     [##_article_rep_desc_##]
                   </div>
-                  <div class="detail_side"> <!-- API 페이지 영역 -->
+                  <div class="detail_side"> <!-- API 상세 페이지 영역 -->
                     <div class="share_temp">
                       <input type="text" value="">
                       <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
@@ -829,8 +830,8 @@
                     <ul class="bg color">
                       <li class="side_item item1" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
                     </ul>
-                  </div> <!-- API 페이지 영역 // -->
-                </div>       
+                  </div> <!-- API 상세 페이지 영역 // -->
+                </div>  
               </s_page_rep>
             </s_article_rep>
           </div>
