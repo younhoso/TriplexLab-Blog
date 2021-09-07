@@ -11,7 +11,8 @@ $(function() {
 
        /* 텍스트 필드 안의 텍스트 복사 */
       navigator.clipboard.writeText(input.val());
-    });
+    });    
+
     $('.comment').on('click', function(){
       $('#comment').focus();
     });
@@ -184,6 +185,48 @@ function api_postItem() {
       $('.notice_template').removeClass('on');
       $('.notice_template .contents').removeClass('on');
       $('.notice_template .contents').empty(content);
+    });
+
+    
+    var path = window.location.pathname;
+    var parsRead2 = {
+      ...pars,
+      'postId':path.substr(1),
+    }
+
+    var {accessToken, outputType, blogName, postId} = parsRead2;
+
+    $.ajax({
+      type:'GET',
+      url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
+    }).done(function(res) {
+      var {item} = res.tistory;
+      Kakao.Link.createDefaultButton({
+        container: '.share_kakao_js',
+        objectType: 'feed',
+        content: {
+          title: item['title'],
+          description: item['tags'],
+          imageUrl:
+            'https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo.jpg',
+          link: {
+            mobileWebUrl: item['postUrl'],
+            webUrl: item['postUrl'],
+          },
+        },
+        social: {
+          commentCount: parseInt(item['comments'])
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: item['postUrl'],
+              webUrl: item['postUrl'],
+            },
+          }
+        ],
+      })
     });
   });
 };

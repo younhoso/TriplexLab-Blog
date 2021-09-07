@@ -1050,18 +1050,11 @@ aside .tag_board{width:100%}
   #tt-body-page .direction p {font-size: 12px;font-weight: 400; line-height: 1.625;}
   #tt-body-page .direction h3 {font-size: 16px; font-weight: 600; line-height: 1.5; width: 80%; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
   #tt-body-page .direction .info {flex: 1 1 0%;}
-  #tt-body-page .direction .previous {display: flex; text-align: right; padding: 16px;
-    grid-area: previous / previous / previous / previous;
-    place-self: stretch;
-    align-items: center;
-  } 
+  #tt-body-page .direction .previous{display:flex;text-align:right;padding:16px;grid-area:previous/previous/previous/previous;place-self:stretch;align-items:center;cursor:pointer; -webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out;}
+  #tt-body-page .direction .previous:hover {border-color: #f60; color: #f60;}
   #tt-body-page .direction .previous .left {flex: 0 0 auto;}
-  #tt-body-page .direction .next {display: flex; text-align: left; padding: 16px;
-    grid-area: next / next / next / next;
-    place-self: stretch;
-    box-shadow: rgb(116 129 141 / 10%) 0px 3px 8px 0px;
-    align-items: center;
-  }
+  #tt-body-page .direction .next{display:flex;text-align:left;padding:16px;grid-area:next/next/next/next;place-self:stretch;box-shadow:rgb(116 129 141 / 10%) 0 3px 8px 0;align-items:center;cursor:pointer; -webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out;}
+  #tt-body-page .direction .next:hover {border-color: #f60; color: #f60;}
   #tt-body-page .direction .next .right {flex: 0 0 auto;}
 }
 /* ---- MO 상세페이지 ED ---- */
@@ -1091,9 +1084,9 @@ aside .tag_board{width:100%}
   #tt-body-page .share_temp .txt_copy{background-color:rgba(0,0,0,0.8);color:#fff;padding:20px;border-radius: 0.5em;box-sizing:border-box; z-index: 22;}
   #tt-body-page .detail_side .side_item.item1 {position: fixed; top: 135px; right: 40px;}
   #tt-body-page .detail_side .side_item.item2 {position: fixed; top: 185px; right: 40px;}
+  #tt-body-page .detail_side .side_item.item3 {position: fixed; top: 205px; right: 40px;}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);width:75px;display:block;position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:right;font-size:14px; opacity: 0; visibility: hidden; transition: all 0.25s ease-in-out;}
   #tt-body-page .detail_side .side_item:hover::before {opacity: 1; visibility: visible; right: 45px;}
   #tt-body-page .detail_side .common{width:40px;height:40px;line-height:40px;text-align:center;display:inline-block;font-size:16px;background-color:inherit;color: inherit;box-sizing:border-box;border-radius:2em;cursor:pointer;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%);}
-
 }
 /* ---- PC 상세페이지 ED ---- */
