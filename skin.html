@@ -74,12 +74,12 @@
       }
 
       setInterval(function() { /** //전체 페이지 로딩중(loader) 타임잉 제어 */
-        $('.loader_bg').fadeOut();
+        $('.loader_bg').fadeOut(200);
         return false
-      },1000);                 /** 전체 페이지 로딩중(loader) 타임잉 제어 // */
+      },800);                 /** 전체 페이지 로딩중(loader) 타임잉 제어 // */
        /** 최초 렌더링 시점에서의 darkMode 여부 체크 // */
 
-      /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
+      /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
       var docfrag = document.createDocumentFragment();
@@ -798,8 +798,8 @@
                     </div>
                     <ul class="bg color">
                       <li class="side_item item1" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
-                      <li class="side_item item2" data-title="kakao-Comment"><span class="share_kakao_js common border_mode"><i class="">카카오</i></span></li>
-                      <!-- <li class="side_item item2" data-title="Comment"><span class="comment common border_mode"><i class="ic-bubble"></i></span></li> -->
+                      <li class="side_item item2" data-title="kakao Share"><span class="share_kakao_js common border_mode"><i class="ic-kakao"></i></span></li>
+                      <li class="side_item item3" data-title="Comment"><span class="comment common border_mode"><i class="ic-comment"></i></span></li>
                     </ul>
                   </div> <!-- 블로그 post 영역 // -->
                   <!-- detail_side // -->
