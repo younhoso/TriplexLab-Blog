@@ -76,7 +76,6 @@ $(function() {
      /* // notice 페이지 리로드시점 */
 
     $('.tab_itme').on('click', function(e) {
-      e.preventDefault();
       $(e.target).siblings('.tab_itme').removeClass('on');
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
@@ -494,7 +493,6 @@ function display_control() {
   if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
     // 공감 클릭 이벤트 연결
     $('.detail_side .util_like').click(function (e) {
-      e.preventDefault();
       $('.postbtn_like .uoc-icon').trigger('click');
     });
     /* 공감 수 변경 시 처리 */
