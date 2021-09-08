@@ -37,7 +37,6 @@ td,th{text-indent:0}
 @media screen and (min-width:1025px){
   .banner_wrapper {max-width: 1680px; margin: 0 auto; padding: 0 40px;}
   .wrapper {padding: 0 40px;}
-  .wrapper.p-top {padding: 40px 0 0 0;}
 }
 
 @font-face {
