@@ -187,7 +187,7 @@ function api_postItem() {
       $('.notice_template .contents').empty(content);
     });
 
-    
+    var imgUrl= $('.inner_header').data('image');
     var path = window.location.pathname;
     console.log(typeof path)
     var parsRead2 = {
@@ -208,8 +208,7 @@ function api_postItem() {
         content: {
           title: item['title'],
           description: item['tags'],
-          imageUrl:
-            'https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo.jpg',
+          imageUrl: imgUrl,
           link: {
             mobileWebUrl: item['postUrl'],
             webUrl: item['postUrl'],

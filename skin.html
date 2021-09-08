@@ -586,7 +586,9 @@
                 <s_list_rep>
                   <li class="item_category">
                     <a href="[##_list_rep_link_##]" class="link_category">
-                      <span class="thumnail item-thumbnail"><s_list_rep_thumbnail style="background-image:url('[##_list_rep_thumbnail_##]')"></s_list_rep_thumbnail></span>
+                      <s_list_rep_thumbnail>
+                        <div class="thumnail item-thumbnail" style="background-image:url('[##_list_rep_thumbnail_##]')"></div>
+                      </s_list_rep_thumbnail>
                       <div class="info">
                         <strong class="name">[##_list_rep_title_##]</strong>
                         <p class="text summary">[##_list_rep_summary_##]</p>
@@ -799,10 +801,10 @@
                       <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다.</strong></p>
                     </div>
                     <ul class="bg color">
-                      <li class="util_like side_item item1" data-title="Like"><span class="common border_mode"><i class="ic-love"></i></span><span class="txt_count">-</span></li>
-                      <li class="side_item item2" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
-                      <li class="side_item item3" data-title="kakao Share"><span class="share_kakao_js common border_mode"><i class="ic-kakao"></i></span></li>
-                      <li class="side_item item4" data-title="Comment"><span class="comment common border_mode"><i class="ic-comment"></i></span></li>
+                      <li class="util_like side_item item1" data-title="Like"><span class="common border_mode bg_them_mode"><i class="ic-love"></i></span><span class="txt_count">-</span></li>
+                      <li class="side_item item2" data-title="Share"><span class="share_js common border_mode bg_them_mode"><i class="ic-share"></i></span></li>
+                      <li class="side_item item3" data-title="kakao Share"><span class="share_kakao_js common border_mode bg_them_mode"><i class="ic-kakao"></i></span></li>
+                      <li class="side_item item4" data-title="Comment"><span class="comment common border_mode bg_them_mode"><i class="ic-comment"></i></span></li>
                     </ul>
                   </div> <!-- 블로그 post 영역 // -->
                   <!-- detail_side // -->
@@ -894,12 +896,14 @@
 
                 <!-- 뷰페이지 상단 type css 구분 / type_article_header_common or type_article_header_cover -->
                 <div class="article_header notice_header_cover">
-                  <div class="inner_header"><s_notice_rep_thumbnail>style="background-image:url('[##_notice_rep_thumbnail_url_##]')"</s_notice_rep_thumbnail>
-                    <div class="info_text">
-                      <strong class="title_post">[##_notice_rep_title_##]</strong>
-                      <p class="info"><span class="date">[##_notice_rep_date_##]</span></p>
+                  <s_notice_rep_thumbnail>
+                    <div class="inner_header" data-image="background-image:url('[##_notice_rep_thumbnail_url_##]')"style="background-image:url('[##_notice_rep_thumbnail_url_##]')">
+                      <div class="info_text">
+                        <strong class="title_post">[##_notice_rep_title_##]</strong>
+                        <p class="info"><span class="date">[##_notice_rep_date_##]</span></p>
+                      </div>
                     </div>
-                  </div>
+                  </s_notice_rep_thumbnail>
               </div>
 
                 <!-- 에디터 영역 -->
