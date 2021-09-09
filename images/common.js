@@ -14,6 +14,7 @@ $(function() {
     });    
 
     $('.comment').on('click', function(){
+      gsap.to("html, body",{scrollTop: $(document).height(), duration: 0.5});
       $('#comment').focus();
     });
     var arr_card = Array.from($('.type_card'));
@@ -33,8 +34,8 @@ $(function() {
         var tab_btn_wdPrev = $(this).prev().innerWidth();
         var paddL = parseInt($(this).css('padding-left'));
 
-        var gsapAmi1 = { width: tab_btn_wd, x: 20, duration: 0.35 };
-        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, duration: 0.35 };
+        var gsapAmi1 = { width: tab_btn_wd, x: 20, ease: "elastic.out(1, 0.5)", duration: 0.35};
+        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, ease: "elastic.out(1, 0.5)", duration: 0.35};
 
         $(el).addClass('on').siblings().removeClass('on');
         $('.visitant').hasClass("on") && (gsap.to(".line", gsapAmi1), $('.tab_item').eq(0).addClass('active'));
@@ -56,8 +57,8 @@ $(function() {
     });
 
     var tab_itme_wd = $('.tabs_itmes').width();
-    // pages 페이지 리로드시점 
-    window.location.pathname.split('/')[1] === 'pages' && (
+    // entry 페이지 리로드시점 
+    window.location.pathname.split('/')[1] === 'entry' && (
       $('.tab_itme.api').addClass('on'),
       $('.box_gnb.api').addClass('on'),
       $('.tab_itme.blog').removeClass('on'),
@@ -201,27 +202,46 @@ function api_postItem() {
       url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
     }).done(function(res, textStatus, xhr) {
       var {item} = res.tistory;
+
+      var tags = new Array();
+      if(!item['tags'].tag){ // TAG가 없는 post인 경우
+        tags.push(`#TriplexLab, #${item['title']}`); // 디폴트 TAG
+      } else { // TAG가 있는 post인 경우
+        item['tags'].tag.forEach(function(_, i){
+          tags.push(`#${item['tags'].tag[i]}`); // 해당 포스트의 TAG들을 새로운 배열에 삽입
+        });
+      };
+
+      var datas = {
+        title: item['title'],
+        description: tags.join(),
+        imageUrl: imgUrl,
+        postUrl: item['postUrl'],
+        comments: parseInt(item['comments'])
+      }
+      var {title, description, imageUrl, postUrl, comments} = datas;
+
       Kakao.Link.createDefaultButton({
         container: '.share_kakao_js',
         objectType: 'feed',
         content: {
-          title: item['title'],
-          description: item['tags'],
-          imageUrl: imgUrl,
+          title: title,
+          description: description,
+          imageUrl: imageUrl,
           link: {
-            mobileWebUrl: item['postUrl'],
-            webUrl: item['postUrl'],
+            mobileWebUrl: postUrl,
+            webUrl: postUrl,
           },
         },
         social: {
-          commentCount: parseInt(item['comments'])
+          commentCount: comments
         },
         buttons: [
           {
             title: '웹으로 보기',
             link: {
-              mobileWebUrl: item['postUrl'],
-              webUrl: item['postUrl'],
+              mobileWebUrl: postUrl,
+              webUrl: postUrl,
             },
           }
         ],
