@@ -90,40 +90,6 @@ $(function() {
       el.innerText = el.innerText.substr(0, 11);
     })
 
-    var arrayText = $('.sub_category_list li').map(function(){
-      return $.trim($(this).text());
-    }).get();
-    var arrayAttr = $('.sub_category_list li').map(function(){
-      return $.trim($(this).find('a').attr('href'));
-    }).get();
-
-    var jsonArray = new Array();
-    arrayText.forEach((el, idx) => {
-      var jsonObj = new Object();
-      jsonObj.id = (idx+1);
-      jsonObj.txt = el;
-      jsonObj.link = arrayAttr[idx];
-      jsonArray.push(jsonObj)
-    });
-
-    var newPath = window.location.pathname
-    if( newPath === '/category/Modules'){
-      $('#tt-body-category').addClass('modules')
-
-    } else if(newPath === '/category/Modules/Get%20Started') {
-      $('.sub_category_list li').eq(0).addClass('active');
-    } else if(newPath === '/category/Modules/Accordions') {
-      $('.sub_category_list li').eq(1).addClass('active');
-    } else if(newPath === '/category/Modules/MoreViews') {
-      $('.sub_category_list li').eq(2).addClass('active');
-    }
-    
-    $('.link_tit').html('ALL');
-
-    $('.category_list').on('click', function(e) {
-      $(e.target).addClass('active');
-    });
-
     $('.mo_footer_menu').on('click', 'a', function() {
       $('.area_sidebar').addClass('on');
       $('#container').addClass('on');
@@ -204,14 +170,8 @@ function api_postItem() {
       var {item} = res.tistory;
 
       var tags = new Array();
-      if(!item['tags'].tag){ // TAG가 없는 post인 경우
-        tags.push(`#TriplexLab, #${item['title']}`); // 디폴트 TAG
-      } else { // TAG가 있는 post인 경우
-        item['tags'].tag.forEach(function(_, i){
-          tags.push(`#${item['tags'].tag[i]}`); // 해당 포스트의 TAG들을 새로운 배열에 삽입
-        });
-      };
-
+      item['tags']?.tag ? item['tags'].tag.forEach(function(_, i){tags.push(`#${item['tags'].tag[i]}`);}) : tags.push(`#TriplexLab, #${item['title']}`);
+      
       var datas = {
         title: item['title'],
         description: tags.join(),
