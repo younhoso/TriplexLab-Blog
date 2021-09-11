@@ -125,7 +125,7 @@ function api_postItem() {
     var pars = {
       'accessToken' : getCookie('triplexlab_token'),
       'outputType' : 'json',
-      'blogName' : 'https://triplexlab-api.tistory.com/',
+      'blogName' : 'triplexlab-api',
     }
     var parsRead = {
       ...pars,
@@ -155,7 +155,6 @@ function api_postItem() {
 
     var imgUrl= $('.inner_header').data('image');
     var path = window.location.pathname;
-    console.log(typeof path)
     var parsRead2 = {
       ...pars,
       'postId': path.substr(1),
@@ -171,15 +170,16 @@ function api_postItem() {
 
       var tags = new Array();
       item['tags']?.tag ? item['tags'].tag.forEach(function(_, i){tags.push(`#${item['tags'].tag[i]}`);}) : tags.push(`#TriplexLab, #${item['title']}`);
-      
+
       var datas = {
         title: item['title'],
         description: tags.join(),
         imageUrl: imgUrl,
         postUrl: item['postUrl'],
-        comments: parseInt(item['comments'])
+        comments: parseInt(item['comments']),
+        content: item['content']
       }
-      var {title, description, imageUrl, postUrl, comments} = datas;
+      var {title, description, imageUrl, postUrl, comments, content} = datas;
 
       Kakao.Link.createDefaultButton({
         container: '.share_kakao_js',
@@ -205,7 +205,7 @@ function api_postItem() {
             },
           }
         ],
-      })
+      }); /* Kakao.Link // */
     })
   });
 };

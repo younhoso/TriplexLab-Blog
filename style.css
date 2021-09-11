@@ -1042,7 +1042,7 @@ aside .tag_board{width:100%}
   .typeCard_prev {-webkit-transform:translate(-90px,0);transform:translate(-90px,0);}
 
   .type_notice .swiper_type_notice{width:100%;height:263px;margin-left:auto;margin-right:auto;position:relative;list-style:none;padding:0;overflow: hidden;z-index:1;}
-  .category_type_notice .list_category,.list_type_notice{flex-wrap: wrap;flex-direction: column;margin:0;padding:0;list-style:none;}
+  .category_type_notice .list_category,.list_type_notice{flex-wrap: wrap;flex-direction: column;margin:0;padding:0;list-style:none;pointer-events: auto;}
   .category_type_notice .item_category,.list_type_notice .item_notice {height:calc((100% - 20px)/ 4);}
   
   .type_banner .list_type_banner {display: flex;flex-wrap: nowrap; align-content: stretch;}
