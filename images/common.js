@@ -108,7 +108,6 @@ $(function() {
       }
     });
     
-
     /* 서식 관리 tabs */
     var tabs_warp = Array.from(document.querySelectorAll('.tabs_warp'));
     tabs_warp.forEach(function(el, idx){
@@ -120,17 +119,13 @@ $(function() {
       $(`.tabs_${idx+1}`).on('click', function(e){
         e.preventDefault();
         var attr = $(e.target).attr('href');
+        var txt = $(e.target).html();
         e.target !== this ? $(e.target).addClass('on').siblings().removeClass('on') : null
         $(attr).show().siblings().hide();
-
-        var btn_wdPrev = $(e.target).prev().width();
-        var btn_tabs_wd = $(e.target).width();
-        var gsapAmi1 = { width: !btn_wdPrev ? btn_tabs_wd * 1.5 : Math.floor(btn_tabs_wd * 1.2)+ 10, x: !btn_wdPrev ? 0 : Math.floor(btn_tabs_wd + btn_wdPrev)- 6, duration: 0.35};
-        e.target !== this ? gsap.to(`.tabs_inner.tabs_${idx+1} > span`, gsapAmi1) : null
+        $(`.tabs_inner.tabs_${idx+1} > span`).attr('class', txt);
       });
     });
     /* // 서식 관리 tabs */
-
 });
 
 function setCookie(name, value, day) {

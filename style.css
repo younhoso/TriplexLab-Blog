@@ -1121,12 +1121,13 @@ aside .tag_board{width:100%}
   #tt-body-page .direction .next .right {flex: 0 0 auto;font-weight: 600;}
 
   /* 서식 관리 */
-  #tt-body-page .tabs_inner {background-color: #282c34;padding: 20px;box-sizing: border-box;border-top-left-radius: 0.4em;border-top-right-radius: 0.4em;border-bottom: 1px solid rgba(99, 95, 104, 0.3);position: relative;}
-  #tt-body-page .tabs_inner .btn_tabs{margin: 0 20px; color: #fff;opacity: 0.5; position: relative; z-index: 1; -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;}
-  #tt-body-page .tabs_inner .btn_tabs:first-child{margin: 0;}
-  #tt-body-page .tabs_inner .btn_tabs:nth-child(3){margin: 0;}
-  #tt-body-page .tabs_inner .btn_tabs.on {cursor: auto; opacity: 1;}
-  #tt-body-page .tabs_inner span { width: 70px; height: 27px; display: inline-block; border-radius: 2em; background-color: #565656; position: absolute; top:15px; left: 9px; z-index: 0;}
+  #tt-body-page .tabs_inner {background-color: #282c34;border-top-left-radius: 0.4em;border-top-right-radius: 0.4em;border-bottom: 1px solid rgba(99, 95, 104, 0.3);position: relative;}
+  #tt-body-page .tabs_inner .btn_tabs{padding-left: 20px; padding-top: 20px; padding-bottom: 20px; color: #fff;opacity: 0.5; position: relative; z-index: 1; -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;}
+  #tt-body-page .tabs_inner .btn_tabs.on {cursor: auto; opacity: 1; font-weight: 600;}
+  #tt-body-page .tabs_inner span { width: 70px; height: 27px; display: inline-block; border-radius: 2em; background-color: #565656; position: absolute; top:15px; left: 9px; z-index: 0; -webkit-transition: all 0.18s ease-in-out; transition: all 0.18s ease-in-out;}
+  #tt-body-page .tabs_inner span.HTML {width: 70px; transform: translateX(0);}
+  #tt-body-page .tabs_inner span.CSS {width: 58px; transform: translateX(70px);}
+  #tt-body-page .tabs_inner span.JAVASCRIPT {width: 130px; transform: translateX(122px);} 
   #tt-body-page .hljs {border-radius: 0; border-bottom-left-radius: 0.4em; border-bottom-right-radius: 0.4em;}
   #tt-body-page .code_inner_1 {}
   #tt-body-page pre{display: none;}
