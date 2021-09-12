@@ -107,22 +107,26 @@ $(function() {
         e.currentTarget === e.target ? ($('.area_sidebar').removeClass('on'), $('#container').removeClass('on')) : null
       }
     });
+    
 
     /* 서식 관리 tabs */
     var tabs_warp = Array.from(document.querySelectorAll('.tabs_warp'));
     tabs_warp.forEach(function(el, idx){
       el.dataset.tabs = idx+1
-      
       if(idx+1 === parseInt(el.dataset.tabs)){
         $('.tabs_inner').eq(idx).addClass(`tabs_${idx+1}`);
       }
 
       $(`.tabs_${idx+1}`).on('click', function(e){
         e.preventDefault();
-        console.log($(e.target))
         var attr = $(e.target).attr('href');
         e.target !== this ? $(e.target).addClass('on').siblings().removeClass('on') : null
         $(attr).show().siblings().hide();
+
+        var btn_wdPrev = $(e.target).prev().width();
+        var btn_tabs_wd = $(e.target).width();
+        var gsapAmi1 = { width: !btn_wdPrev ? btn_tabs_wd * 1.5 : Math.floor(btn_tabs_wd * 1.2)+ 10, x: !btn_wdPrev ? 0 : Math.floor(btn_tabs_wd + btn_wdPrev)- 6, duration: 0.35};
+        e.target !== this ? gsap.to(`.tabs_inner.tabs_${idx+1} > span`, gsapAmi1) : null
       });
     });
     /* // 서식 관리 tabs */
