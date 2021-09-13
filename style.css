@@ -58,27 +58,92 @@ td,th{text-indent:0}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face{font-family:ic-font;src:url(images/ic-font.eot?dxxrjt);src:url(images/ic-font.eot?dxxrjt#iefix) format('embedded-opentype'),url(images/ic-font.ttf?dxxrjt) format('truetype'),url(images/ic-font.woff?dxxrjt) format('woff'),url(images/ic-font.svg?dxxrjt#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block;}
-i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:inherit;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.ic-love:before{content:"\e911"}
-.ic-comment:before{content:"\e910"}
-.ic-kakao:before{content:"\e900"}
-.ic-share:before{content:"\e903"}
-.ic-right-thin:before{content:"\e901"}
-.ic-left-thin:before{content:"\e902"}
-.ic-plus-thin:before{content:"\e904"}
-.ic-gitbook:before{content:"\e905"}
-.ic-tr-1:before{content:"\e906"}
-.ic-sun:before{content:"\e907"}
-.ic-search:before{content:"\e908"}
-.ic-bell-1:before{content:"\e909"}
-.ic-play:before{content:"\e90a"}
-.ic-pause:before{content:"\e90b"}
-.ic-moon:before{content:"\e90c"}
-.ic-close-10:before{content:"\e90d"}
-.ic-close-thin:before{content:"\e90e"}
-.ic-github:before{content:"\e90f"}
-.ic-file:before{content:"\e926"}
+@font-face {
+  font-family: 'ic-font';
+  src:  url('images/ic-font.eot?ajq2m1');
+  src:  url('images/ic-font.eot?ajq2m1#iefix') format('embedded-opentype'),
+    url('images/ic-font.ttf?ajq2m1') format('truetype'),
+    url('images/ic-font.woff?ajq2m1') format('woff'),
+    url('images/ic-font.svg?ajq2m1#ic-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ic-font' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-kakao:before {
+  content: "\e901";
+}
+.ic-right-thin:before {
+  content: "\e902";
+}
+.ic-left-thin:before {
+  content: "\e903";
+}
+.ic-share:before {
+  content: "\e904";
+}
+.ic-plus-thin:before {
+  content: "\e905";
+}
+.ic-gitbook:before {
+  content: "\e906";
+}
+.ic-tr-1:before {
+  content: "\e907";
+}
+.ic-sun:before {
+  content: "\e908";
+}
+.ic-search:before {
+  content: "\e909";
+}
+.ic-bell-1:before {
+  content: "\e90a";
+}
+.ic-play:before {
+  content: "\e90b";
+}
+.ic-pause:before {
+  content: "\e90c";
+}
+.ic-moon:before {
+  content: "\e90d";
+}
+.ic-close-10:before {
+  content: "\e90e";
+}
+.ic-close-thin:before {
+  content: "\e90f";
+}
+.ic-github:before {
+  content: "\e910";
+}
+.ic-comment:before {
+  content: "\e911";
+}
+.ic-file:before {
+  content: "\e926";
+}
+.ic-like:before {
+  content: "\e913";
+}
+.ic-copy:before {
+  content: "\e900";
+}
 
 .icon_common{ font-size: 16px;}
 
@@ -1084,7 +1149,11 @@ aside .tag_board{width:100%}
   #tt-body-page .tabs_inner span.HTML {width: 70px; transform: translateX(0);}
   #tt-body-page .tabs_inner span.CSS {width: 58px; transform: translateX(70px);}
   #tt-body-page .tabs_inner span.JAVASCRIPT {width: 130px; transform: translateX(122px);} 
-  #tt-body-page .hljs::-webkit-scrollbar{display:none}
+  #tt-body-page .code_inner {position: relative;}
+  /* code 에디터 Copy */
+  #tt-body-page .code_inner .code_btn{font-family: 'Montserrat'; font-weight: 600; position: absolute; bottom: 15px; right: 25px; color: #e6e6e6;}
+  #tt-body-page .code_inner .code_btn:hover:before{width: 75px;font-size: 14px;content:attr(data-txt);display:block;color:#e6e6e6;position:absolute;top:-30px;right:-28px;}
+  #tt-body-page .hljs::-webkit-scrollbar{display:none;}
   #tt-body-page .hljs{font-family: 'InputMono'; font-size: 14px; font-weight: 500; border-radius:0;border-bottom-left-radius:.4em;border-bottom-right-radius:.4em;min-width:100%;max-height:480px;width:auto;padding:1em 1.2em;box-sizing:border-box;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;color:#eee;-ms-overflow-style:none;scrollbar-width:none;overflow:auto;}
   #tt-body-page pre{display: none;}
   #tt-body-page pre:nth-child(1){display: block;}
@@ -1114,7 +1183,7 @@ aside .tag_board{width:100%}
   #tt-body-page .share_temp .txt_copy{background-color:#f60;color:#fff;padding:20px;border-radius: 0.5em;box-sizing:border-box; -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%);}
   #tt-body-page .detail_side .side_item {position: fixed; right: 40px;}
   #tt-body-page .detail_side .side_item .txt_count{width:35px;height:25px;line-height:25px; text-align: center; position:absolute;right:-23px;top:-10px;color: inherit; border-radius:2em;font-size:12px; background-color: var(--g-bg-color); border:1px solid var(--border-color);}
-  #tt-body-page .detail_side .side_item .ic-love.on {color: red;}
+  #tt-body-page .detail_side .side_item .ic-like.on {color: red;}
   #tt-body-page .detail_side .side_item.item1 {top: 100px; }
   #tt-body-page .detail_side .side_item.item2 {top: 150px;}
   #tt-body-page .detail_side .side_item.item3 {top: 200px;}

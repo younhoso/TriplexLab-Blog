@@ -124,6 +124,15 @@ $(function() {
         e.target !== this ? ($(e.target).addClass('on').siblings().removeClass('on'), $(`.tabs_inner.tabs_${idx+1} > span`).attr('class', txt)) : null
       });
     });
+    
+    /* code Copy */
+    $('.code_inner pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
+    $('.code_btn').on('click', function(){
+      var hljsTxt = $(this).next('.hljs').text();
+      navigator.clipboard.writeText(hljsTxt);/* 텍스트 필드 안의 텍스트 복사 */
+      $(this).attr('data-txt', 'Copied !')
+    });
+    /* // code Copy */
     /* // 서식 관리 tabs */
 });
 
@@ -501,7 +510,7 @@ function display_control() {
     function callback(mutationsList) {  
       var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
       if(mutationsList[0].type === 'attributes') {
-        $('.detail_side .util_like .ic-love').toggleClass('on');
+        $('.detail_side .util_like .ic-like').toggleClass('on');
         $('.detail_side .util_like .txt_count').text(txt_like);
       } 
     };
