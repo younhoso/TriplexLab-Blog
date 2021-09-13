@@ -24,18 +24,20 @@
   <meta name="keywords" content=“TriplexLab,트리플엑스랩,자바스크립트es6+,javascriptes6+,jses6+,typescript,frontdeveloperblog,frontdeveloper,blog,FE블로그,FE개발자,프론트앤드개발자,반응형,react,react라이브러리,jquery,jquery라이브러리,라이브러리,library,plugin”/>
   <meta name="description" content="FE 개발의 주된 내용을 블로그" />
   <!-- Semantic Tag META // -->
-  <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+  <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]"/>
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/AvenirLTStd/AvenirLTStd.css" />
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/SpoqaHanSans/SpoqaHanSans.css" />
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/icomoon/icomoon.css" />
-  <link rel="stylesheet" href="./images/swiper.min.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/AvenirLTStd/AvenirLTStd.css"/>
+  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/SpoqaHanSans/SpoqaHanSans.css"/>
+  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/icomoon/icomoon.css"/>
+  <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
+  <link rel="stylesheet" href="./images/swiper.min.css"/>
+  <link rel="stylesheet" href="./style.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 	<script charset="UTF-8" src="./images/swiper.min.js"></script>
-  <script src="https://unpkg.com/vh-check/dist/vh-check.min.js"></script>
-  <script src="./images/gsap.min.js"></script>
-	<script>
+  <script charset="UTF-8" src="https://unpkg.com/vh-check/dist/vh-check.min.js"></script>
+  <script charset="UTF-8" src="./images/highlight.min.js"></script>
+  <script charset="UTF-8" src="./images/gsap.min.js"></script>
+	<script >
     $(function(){
       var darkModeN = function() {
         $('.ic-sun').removeClass('on');
@@ -125,6 +127,7 @@
     });
   </script>
   <script charset="UTF-8" src="./images/common.js"></script>
+  <script>hljs.highlightAll();</script>
 </head>
 
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
@@ -592,7 +595,7 @@
 
                     <!-- 뷰페이지 상단 type css 구분 / type_article_header_common or type_article_header_cover -->
                     <div class="article_header type_article_header_cover">
-                        <div class="inner_header" data-image="[##_article_rep_thumbnail_raw_url_##]" <s_article_rep_thumbnail>style="background-image:url('[##_article_rep_thumbnail_raw_url_##]')"</s_article_rep_thumbnail>>
+                        <div class="inner_header" <s_article_rep_thumbnail>data-image="[##_article_rep_thumbnail_raw_url_##]" style="background-image:url('[##_article_rep_thumbnail_raw_url_##]')"</s_article_rep_thumbnail>>
                           <div class="info_text">
                             <strong class="title_post">[##_article_rep_title_##]</strong>
                             <p class="info"><span class="date">[##_article_rep_date_##]</span>ㆍ<span>[##_article_rep_category_##]</span></p>
@@ -876,7 +879,7 @@
                 <!-- 뷰페이지 상단 type css 구분 / type_article_header_common or type_article_header_cover -->
                 <div class="article_header notice_header_cover">
                   <s_notice_rep_thumbnail>
-                    <div class="inner_header" data-image="background-image:url('[##_notice_rep_thumbnail_url_##]')"style="background-image:url('[##_notice_rep_thumbnail_url_##]')">
+                    <div class="inner_header" style="background-image:url('[##_notice_rep_thumbnail_url_##]')">
                       <div class="info_text">
                         <strong class="title_post">[##_notice_rep_title_##]</strong>
                         <p class="info"><span class="date">[##_notice_rep_date_##]</span></p>

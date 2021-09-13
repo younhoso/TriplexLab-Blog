@@ -120,9 +120,8 @@ $(function() {
         e.preventDefault();
         var attr = $(e.target).attr('href');
         var txt = $(e.target).html();
-        e.target !== this ? $(e.target).addClass('on').siblings().removeClass('on') : null
         $(attr).show().siblings().hide();
-        $(`.tabs_inner.tabs_${idx+1} > span`).attr('class', txt);
+        e.target !== this ? ($(e.target).addClass('on').siblings().removeClass('on'), $(`.tabs_inner.tabs_${idx+1} > span`).attr('class', txt)) : null
       });
     });
     /* // 서식 관리 tabs */
@@ -184,7 +183,7 @@ function api_postItem() {
     $.ajax({
       type:'GET',
       url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
-    }).done(function(res, textStatus, xhr) {
+    }).done(function(res) {
       var {item} = res.tistory;
 
       var tags = new Array();
@@ -198,7 +197,9 @@ function api_postItem() {
         comments: parseInt(item['comments']),
         content: item['content']
       }
-      var {title, description, imageUrl, postUrl, comments, content} = datas;
+      var {title, description, imageUrl, postUrl, comments} = datas;
+
+      console.log(item)
 
       Kakao.Link.createDefaultButton({
         container: '.share_kakao_js',

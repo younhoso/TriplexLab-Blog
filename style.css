@@ -1,10 +1,29 @@
 @charset "UTF-8";
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap);
+/****************************** InputMono FONT ******************************/
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:300; src: local('☺'), url('images/InputMono-Light.woff') format('woff'), url('images/InputMono-Light.woff2') format('woff2'); }
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:400; src: local('☺'), url('images/InputMono-Regular.woff') format('woff'), url('images/InputMono-Regular.woff2') format('woff2'); }
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:500; src: local('☺'), url('images/InputMono-Medium.woff') format('woff'), url('images/InputMono-Medium.woff2') format('woff2'); }
+
+/****************************** Montserrat FONT ******************************/
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:300; src: local('☺'), url('images/Montserrat-Light.woff') format('woff'), url('images/Montserrat-Light.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:400; src: local('☺'), url('images/Montserrat-Regular.woff') format('woff'), url('images/Montserrat-Regular.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:500; src: local('☺'), url('images/Montserrat-Medium.woff') format('woff'), url('images/Montserrat-Medium.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:600; src: local('☺'), url('images/Montserrat-SemiBold.woff') format('woff'), url('images/Montserrat-SemiBold.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:700; src: local('☺'), url('images/Montserrat-Bold.woff') format('woff'), url('images/Montserrat-Bold.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:800; src: local('☺'), url('images/Montserrat-ExtraBold.woff') format('woff'), url('images/Montserrat-ExtraBold.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:900; src: local('☺'), url('images/Montserrat-Black.woff') format('woff'), url('images/Montserrat-Black.woff2') format('woff2'); }
+
+/****************************** Noto Sans KR FONT ******************************/
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:300; src: local('☺'), url('images/NotoSansKR-Light.woff') format('woff'), url('images/NotoSansKR-Light.woff2') format('woff2'); }
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:400; src: local('☺'), url('images/NotoSansKR-Regular.woff') format('woff'), url('images/NotoSansKR-Regular.woff2') format('woff2'); }
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:500; src: local('☺'), url('images/NotoSansKR-Medium.woff') format('woff'), url('images/NotoSansKR-Medium.woff2') format('woff2'); }
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:700; src: local('☺'), url('images/NotoSansKR-Bold.woff') format('woff'), url('images/NotoSansKR-Bold.woff2') format('woff2'); }
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:900; src: local('☺'), url('images/NotoSansKR-Black.woff') format('woff'), url('images/NotoSansKR-Black.woff2') format('woff2'); }
+
 body,html{height:100%}
 body{-webkit-text-size-adjust:none}
 blockquote,body,button,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,select,td,textarea,th,ul{margin:0;padding:0;box-sizing:border-box}
-body,button,input,select,strong,table,textarea{font-family:Montserrat,'Noto Sans KR','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움',dotum,sans-serif;font-size:16px;font-weight:400;word-break:keep-all;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body,button,input,select,strong,table,textarea{font-family:'Montserrat','Noto Sans KR','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움','dotum',sans-serif;font-size:16px;font-weight:400;word-break:keep-all;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}
 fieldset,iframe{border:0}
 img{width:100%;border:0;vertical-align:middle}
@@ -39,90 +58,27 @@ td,th{text-indent:0}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face {
-  font-family: 'ic-font';
-  src:  url('images/ic-font.eot?dxxrjt');
-  src:  url('images/ic-font.eot?dxxrjt#iefix') format('embedded-opentype'),
-    url('images/ic-font.ttf?dxxrjt') format('truetype'),
-    url('images/ic-font.woff?dxxrjt') format('woff'),
-    url('images/ic-font.svg?dxxrjt#ic-font') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-i {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'ic-font' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: inherit;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.ic-love:before {
-  content: "\e911";
-}
-.ic-comment:before {
-  content: "\e910";
-}
-.ic-kakao:before {
-  content: "\e900";
-}
-.ic-share:before {
-  content: "\e903";
-}
-.ic-right-thin:before {
-  content: "\e901";
-}
-.ic-left-thin:before {
-  content: "\e902";
-}
-.ic-plus-thin:before {
-  content: "\e904";
-}
-.ic-gitbook:before {
-  content: "\e905";
-}
-.ic-tr-1:before {
-  content: "\e906";
-}
-.ic-sun:before {
-  content: "\e907";
-}
-.ic-search:before {
-  content: "\e908";
-}
-.ic-bell-1:before {
-  content: "\e909";
-}
-.ic-play:before {
-  content: "\e90a";
-}
-.ic-pause:before {
-  content: "\e90b";
-}
-.ic-moon:before {
-  content: "\e90c";
-}
-.ic-close-10:before {
-  content: "\e90d";
-}
-.ic-close-thin:before {
-  content: "\e90e";
-}
-.ic-github:before {
-  content: "\e90f";
-}
-.ic-file:before {
-  content: "\e926";
-}
+@font-face{font-family:ic-font;src:url(images/ic-font.eot?dxxrjt);src:url(images/ic-font.eot?dxxrjt#iefix) format('embedded-opentype'),url(images/ic-font.ttf?dxxrjt) format('truetype'),url(images/ic-font.woff?dxxrjt) format('woff'),url(images/ic-font.svg?dxxrjt#ic-font) format('svg');font-weight:400;font-style:normal;font-display:block;}
+i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:inherit;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.ic-love:before{content:"\e911"}
+.ic-comment:before{content:"\e910"}
+.ic-kakao:before{content:"\e900"}
+.ic-share:before{content:"\e903"}
+.ic-right-thin:before{content:"\e901"}
+.ic-left-thin:before{content:"\e902"}
+.ic-plus-thin:before{content:"\e904"}
+.ic-gitbook:before{content:"\e905"}
+.ic-tr-1:before{content:"\e906"}
+.ic-sun:before{content:"\e907"}
+.ic-search:before{content:"\e908"}
+.ic-bell-1:before{content:"\e909"}
+.ic-play:before{content:"\e90a"}
+.ic-pause:before{content:"\e90b"}
+.ic-moon:before{content:"\e90c"}
+.ic-close-10:before{content:"\e90d"}
+.ic-close-thin:before{content:"\e90e"}
+.ic-github:before{content:"\e90f"}
+.ic-file:before{content:"\e926"}
 
 .icon_common{ font-size: 16px;}
 
@@ -1128,8 +1084,8 @@ aside .tag_board{width:100%}
   #tt-body-page .tabs_inner span.HTML {width: 70px; transform: translateX(0);}
   #tt-body-page .tabs_inner span.CSS {width: 58px; transform: translateX(70px);}
   #tt-body-page .tabs_inner span.JAVASCRIPT {width: 130px; transform: translateX(122px);} 
-  #tt-body-page .hljs {border-radius: 0; border-bottom-left-radius: 0.4em; border-bottom-right-radius: 0.4em;}
-  #tt-body-page .code_inner_1 {}
+  #tt-body-page .hljs::-webkit-scrollbar{display:none}
+  #tt-body-page .hljs{font-family: 'InputMono'; font-size: 14px; font-weight: 500; border-radius:0;border-bottom-left-radius:.4em;border-bottom-right-radius:.4em;min-width:100%;max-height:480px;width:auto;padding:1em 1.2em;box-sizing:border-box;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;color:#eee;-ms-overflow-style:none;scrollbar-width:none;overflow:auto;}
   #tt-body-page pre{display: none;}
   #tt-body-page pre:nth-child(1){display: block;}
 }
