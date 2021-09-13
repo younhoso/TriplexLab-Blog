@@ -532,8 +532,8 @@ aside .tag_board{width:100%}
 .article_content{max-width:820px;margin:0 auto}
 .area_tag{padding:20px 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);}
 .area_tag:after{content:'';display:block;clear:both}
-.area_tag .title_tag{float:left;margin:0;padding:0 40px 0 0;font-size:16px;font-weight:900;text-align:center;padding-top:6px}
-.area_tag .tag_content{overflow:hidden}
+.area_tag .title_tag{display: inline-block; vertical-align: bottom; margin:0;padding:0 40px 0 0;font-size:16px;font-weight:900;text-align:center;}
+.area_tag .tag_content{display: inline-block; vertical-align: bottom; overflow:hidden;}
 .area_tag .tag_content a{text-decoration:none;margin-left:5px;line-height:normal}
 .area_tag .tag_content a:hover{text-decoration:underline}
 .area_tag .tag_content a:first-child{margin-left:0}
