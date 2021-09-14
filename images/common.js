@@ -140,12 +140,13 @@ $(function() {
       setCookie('bell', 'Y', 5);
       $(this).removeClass('on');
       $('.notice_template').addClass('on');
-      $('.notice_template .contents').addClass('on');
+      var frag = document.getElementsByTagName('template')[0];
+      var copy = frag.content.cloneNode(true);
+      $('.notice_template .contents').html(copy);
     });
 
     $('.closeIcon').on('click', function() {
       $('.notice_template').removeClass('on');
-      $('.notice_template .contents').removeClass('on');
     });
     /* // 공지 사항 */
 });
