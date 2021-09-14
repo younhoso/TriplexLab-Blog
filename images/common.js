@@ -134,6 +134,20 @@ $(function() {
     });
     /* // code Copy */
     /* // 서식 관리 tabs */
+    
+    /* 공지 사항 */
+    $('.notice_js').on('click', function() {
+      setCookie('bell', 'Y', 5);
+      $(this).removeClass('on');
+      $('.notice_template').addClass('on');
+      $('.notice_template .contents').addClass('on');
+    });
+
+    $('.closeIcon').on('click', function() {
+      $('.notice_template').removeClass('on');
+      $('.notice_template .contents').removeClass('on');
+    });
+    /* // 공지 사항 */
 });
 
 function setCookie(name, value, day) {
@@ -154,31 +168,6 @@ function api_postItem() {
       'outputType' : 'json',
       'blogName' : 'triplexlab-api',
     }
-    var parsRead = {
-      ...pars,
-      'postId':'66',
-    }
-    var {accessToken, outputType, blogName, postId} = parsRead;
-
-  $.ajax({
-    type:'GET',
-    url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
-  }).done(function(data) {
-    var {item} = data.tistory;
-    var {content} = item;
-    $('.notice_js').on('click', function() {
-      setCookie('bell', 'Y', 1);
-      $(this).removeClass('on');
-      $('.notice_template').addClass('on');
-      $('.notice_template .contents').addClass('on');
-      $('.notice_template .contents').html(content);
-    });
-
-    $('.closeIcon').on('click', function() {
-      $('.notice_template').removeClass('on');
-      $('.notice_template .contents').removeClass('on');
-      $('.notice_template .contents').empty(content);
-    });
 
     var imgUrl= $('.inner_header').data('image');
     var path = window.location.pathname;
@@ -235,8 +224,7 @@ function api_postItem() {
           }
         ],
       }); /* Kakao.Link // */
-    })
-  });
+    });
 };
 
 function slider_control() {

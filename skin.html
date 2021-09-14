@@ -173,9 +173,7 @@
               <div class="img_logo toggle_dark"><img src="https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo.jpg" alt="triplexlab logo"></div>
               <div class="img_logo toggle_light"><img src="https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo2.jpg" alt="triplexlab logo"></div>
               <div class="tit_logo">
-                <s_not_var_logoImage>
-                  [##_title_##]
-                </s_not_var_logoImage>
+                [##_title_##]
               </div>
             </a>
             <div class="close_icon">
@@ -333,19 +331,6 @@
                     </s_rctrp_rep>
                   </ul>
                 </div>
-              </s_sidebar_element>
-              <s_sidebar_element>
-                <!-- 공지사항 -->
-                <s_rct_notice>
-                  <div class="tag_board">
-                    <h3 class="title_sidebar">공지사항</h3>
-                    <ul class="list_sidebar">
-                      <s_rct_notice_rep>
-                        <li class="item_sidebar"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></li>
-                      </s_rct_notice_rep>
-                    </ul>
-                  </div>
-                </s_rct_notice>
               </s_sidebar_element>
               <s_sidebar_element>
                 <!-- 글 보관함 -->
@@ -1094,10 +1079,28 @@
       <!-- // 모비일 하단 메뉴 -->
     </div>
     <!-- // wrap -->
-    <article class="notice_template" aria-label="TriplexLab 소계 글">
-      <span class="closeIcon"><i class="ic-close-thin"></i></span>
-      <div class="inner">
-        <div class="contents"></div>
+    <article class="notice_template bg_them_mode border_mode shadow" aria-label="TriplexLab 소계 글">
+      <div class="notice_wrap">
+        <h2 class="tit_list border_b_mode">새소식</h2>
+        <span class="closeIcon"><i class="ic-close-thin"></i></span>
+        <div class="inner">
+          <div class="contents">
+            <s_sidebar>
+              <s_sidebar_element>
+                <!-- 공지사항 -->
+                <s_rct_notice>
+                  <div class="tag_board">
+                    <ul id="notice_list" class="list_sidebar">
+                      <s_rct_notice_rep>
+                        <li class="item_sidebar"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></li>
+                      </s_rct_notice_rep>
+                    </ul>
+                  </div>
+                </s_rct_notice>
+              </s_sidebar_element>
+            </s_sidebar>
+          </div>
+        </div>
       </div>
     </article>
   </s_t3>
