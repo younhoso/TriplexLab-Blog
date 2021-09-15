@@ -21,6 +21,10 @@ $(function() {
     arr_card.reduce(function(acc,cur,idx){
       $(cur).addClass('id-'+idx);
     },0);
+    var arr_notice = Array.from($('.type_notice'));
+    arr_notice.reduce(function(acc,cur,idx){
+      $(cur).addClass('id-'+idx);
+    },0);
     
     display_control();
     slider_control();
