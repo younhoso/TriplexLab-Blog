@@ -85,8 +85,9 @@ $(function() {
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
 
-      $('.api').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),  $('.box_gnb').eq(1).addClass('on'));
-      $('.blog').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.01), duration: 0.15}),  $('.box_gnb').eq(0).addClass('on'));
+      $('.api').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),  $('.box_gnb').eq(1).addClass('on'),  $('.skin_link, .box_tool').addClass('fiex'));
+      $('.blog').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.01), duration: 0.15}),  $('.box_gnb').eq(0).addClass('on'), $('.skin_link, .box_tool').removeClass('fiex'));
+      
       return false;
     });
 

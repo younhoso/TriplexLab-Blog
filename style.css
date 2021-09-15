@@ -418,7 +418,8 @@ html{box-sizing:border-box}
 .area_sidebar .box_sns .box_sns_tit{font-size:18px;font-weight:600;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color);;vertical-align:-2px}
-.area_sidebar .box_tool{padding:30px 0 60px 0;}
+.area_sidebar .box_tool{padding:30px 0 60px 0; position:absolute; bottom: 0;}
+.area_sidebar .box_tool.fiex {position: static;}
 .area_sidebar .link_tool{position:relative;display:inline-block;margin-left:40px;font-size:14px;font-weight:700;}
 .area_sidebar .link_tool:first-child{margin-left:0}
 .area_sidebar .link_tool:first-child::before{content:''}
@@ -924,7 +925,8 @@ aside .tag_board{width:100%}
   .box_gnb.on:nth-child(1){display:block}
   .box_gnb.on:nth-child(2){display:block}
 
-  .skin_link {}
+  .skin_link {position: absolute;bottom: 140px;}
+  .skin_link.fiex {position: static;}
   .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
   .skin_link a {display: block; width: 240px;}
 
