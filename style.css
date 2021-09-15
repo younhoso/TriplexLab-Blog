@@ -398,8 +398,7 @@ html{box-sizing:border-box}
 .area_sidebar a{text-decoration:none}
 .area_sidebar ul{list-style:none;margin:0;padding:0}
 .area_sidebar button{background:0 0;border:0;border-radius:0;overflow:visible;cursor:pointer;}
-.area_sidebar .sidebar_contents{display:flex;flex-direction:column;justify-content:space-between;}
-.area_sidebar .sidebar_header{margin:50px 40px 50px 0;}
+.area_sidebar .sidebar_header{margin:50px 0 50px 0;}
 .area_sidebar .sidebar_header:after{content:'';display:block;clear:both}
 .area_sidebar .title_logo{float:left;margin:0;font-size:24px;font-weight:800;display: block;}
 .area_sidebar .btn_close{float:right;width:48px;font-size:24px;text-align:right;padding:0 7px 2px 7px}
@@ -419,7 +418,7 @@ html{box-sizing:border-box}
 .area_sidebar .box_sns .box_sns_tit{font-size:18px;font-weight:600;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color);;vertical-align:-2px}
-.area_sidebar .box_tool{padding:30px 0 80px 0}
+.area_sidebar .box_tool{padding:30px 0 60px 0;}
 .area_sidebar .link_tool{position:relative;display:inline-block;margin-left:40px;font-size:14px;font-weight:700;}
 .area_sidebar .link_tool:first-child{margin-left:0}
 .area_sidebar .link_tool:first-child::before{content:''}
@@ -925,6 +924,10 @@ aside .tag_board{width:100%}
   .box_gnb.on:nth-child(1){display:block}
   .box_gnb.on:nth-child(2){display:block}
 
+  .skin_link {}
+  .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
+  .skin_link a {display: block; width: 240px;}
+
   .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:4px 0}
   .swiper-container-vertical>.swiper-pagination-bullets{right:60px}
   .swiper-pagination-bullet {background: rgba(255,255,255,.8);}
@@ -990,7 +993,7 @@ aside .tag_board{width:100%}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
 
-  .area_sidebar {width:100%;height:100vh;position:fixed;top:20px;left:0; opacity: 0; visibility: hidden; padding-left:20px;padding-right:20px; box-sizing: border-box; z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+  .area_sidebar {width:100%;height:100vh;position:fixed;top:20px;left:0; padding: 0 40px; box-sizing: border-box; opacity: 0; visibility: hidden; z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
   .area_sidebar::-webkit-scrollbar{display:none}
   .area_sidebar.on{top:0; opacity: 1; visibility:initial;}
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
@@ -1001,7 +1004,7 @@ aside .tag_board{width:100%}
   .area_sidebar .box_sns .list_sns li{margin-right:20px;text-align:center;}
   .area_sidebar .box_sns .list_sns li:nth-child(1){font-size:15px}
   .area_sidebar .box_sns .list_sns li:nth-child(2){font-size:16px}
-  .area_sidebar .sidebar_contents{min-height:auto}
+  .area_sidebar .sidebar_contents{min-height:auto;}
 
   .mo_footer_menu{display:block;position:fixed;bottom:20px;right:20px;z-index:21}
   .mo_footer_menu .plus a {display: inline-block; box-sizing: border-box; padding: 0.28em;border-radius:50%;background-color:#f60;box-shadow: 0px 10px 22px rgba(255, 102, 0, 0.5);}
@@ -1047,7 +1050,6 @@ aside .tag_board{width:100%}
   .slide_item .link_slide {border-radius: 0.4em;overflow: hidden; background-size: contain; background-position: 100%; position: relative;}
   .slide_item .link_slide .img_inner {width: 24%;-webkit-transform:translate(120%,-50%);transform:translate(120%,-50%);}
 
-  .sidebar_menu .sidebar_menu_tabs{margin-right:40px}
   .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {width: 92%;height: 2px;top: unset; left: 50%;bottom:12%;right:0; -webkit-transform: translate(-50%, 10%); transform: translate(-50%, 10%);}
   .swiper-progress-bar {width: 92%; top: unset; bottom: 12%; left: 50%; -webkit-transform: translate(-50%, -10%); transform: translate(-50%, -10%);}
   .swi_btn {line-height: 40px;}
@@ -1081,7 +1083,7 @@ aside .tag_board{width:100%}
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
   
-  .area_sidebar {display:block;position:fixed;top:0;left:0;opacity: 1; visibility: initial;width:320px;height:100%;padding-left:40px;padding-right:0;box-sizing:border-box;}
+  .area_sidebar {display:block;position:fixed;top:0;left:0;opacity: 1; visibility: initial;width:320px;height:100%;}
   .area_sidebar .sidebar_contents{min-height:80%}
   .area_sidebar .sidebar_header .link_logo {display: block;}
   .area_sidebar .inner_sidebar .sidebar_header {text-align: center;}
