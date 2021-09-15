@@ -1019,8 +1019,8 @@ aside .tag_board{width:100%}
   .close_icon{cursor:pointer;}
 	.close_icon i {font-weight: 600;}
   
-  .notice_template{position:fixed;top:55px;right:60px;z-index:22;border-radius: 0.4em;opacity:0;visibility:hidden;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;}
-  .notice_template .notice_wrap {width:400px;}
+  .notice_template{position:absolute;top:55px;right:25px;z-index:22;border-radius: 0.4em;opacity:0;visibility:hidden;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;}
+  .notice_template .notice_wrap {width:220px;}
   .notice_template .tit_list {padding: 12px 0 12px 24px;font-size: 13px;}
   .notice_template.on { opacity:1; visibility:initial;}
   .notice_template .inner{max-height: 180px;overflow-y: auto;}
@@ -1094,7 +1094,10 @@ aside .tag_board{width:100%}
   .category_list{position:relative}
   .category_list .sub_category_list{display:block}
 
-  .close_icon{display:none}  
+  .close_icon{display:none}
+  
+  .notice_template {right: 60px;}
+  .notice_template .notice_wrap {width:400px;}
 }
 /* ---- PC 매인페이지 ED ---- */
 @media screen and (min-width:2048px){

@@ -137,7 +137,7 @@ $(function() {
     
     /* 공지 사항 */
     $('.notice_js').on('click', function() {
-      setCookie('bell', 'Y', 5);
+      setCookie('bell', 'Y', 7);
       $(this).removeClass('on');
       $('.notice_template').addClass('on');
       var frag = document.getElementsByTagName('template')[0];
@@ -147,6 +147,10 @@ $(function() {
 
     $('.closeIcon').on('click', function() {
       $('.notice_template').removeClass('on');
+    });
+
+    $(window).on('scroll', function() {
+      !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
     });
     /* // 공지 사항 */
 });
