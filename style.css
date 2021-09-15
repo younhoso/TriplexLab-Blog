@@ -457,7 +457,7 @@ html{box-sizing:border-box}
 .area_popup .tag_zone{padding-right:50px;min-height:150px;box-sizing:border-box;vertical-align:top}
 .list_sidebar{margin:0;padding:0;list-style:none}
 aside .list_sidebar .item_sidebar{padding-top:10px;box-sizing:border-box;margin-bottom:10px;border-radius:.8em}
-.list_sidebar .item_sidebar a{display:block;font-size:16px;color:#333;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.list_sidebar .item_sidebar a{display:block;font-size:16px;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tag_board{display:inline-block;box-sizing:border-box;vertical-align:top}
 aside .tag_board{width:100%}
 .sidebar_contents .tag_board{margin-bottom:20px}
