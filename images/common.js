@@ -265,28 +265,14 @@ function slider_control() {
               $(".swiper-progress-bar").removeClass("active");
               $(".swiper-progress-bar").eq(0).addClass("animate");
               $(".swiper-progress-bar").eq(0).addClass("active");
-
-              $('.slide_item.swiper-slide-next').find('.text').css('transform', 'translateX(100px)');
-              $('.slide_item.swiper-slide-next').find('.text_slide strong').css('transform', 'translateX(100px)');
             },
             slideChangeTransitionStart: function (el) {
-              var indx = el.activeIndex - el.previousIndex;
-
               $(".swiper-progress-bar").removeClass("animate");
               $(".swiper-progress-bar").removeClass("active");
               $(".swiper-progress-bar").eq(0).addClass("active");
-
-              $('.slide_item').eq(el.activeIndex).find('.text').css('transform', 'translateX(0)');
-              $('.slide_item').eq(el.activeIndex).find('.text_slide strong').css('transform', 'translateX(0)');
             },
             slideChangeTransitionEnd: function () {
               $(".swiper-progress-bar").eq(0).addClass("animate");
-
-              $('.slide_item.swiper-slide-prev').find('.text').css('transform', 'translateX(-100px)');
-              $('.slide_item.swiper-slide-prev').find('.text_slide strong').css('transform', 'translateX(-100px)');
-
-              $('.slide_item.swiper-slide-next').find('.text').css('transform', 'translateX(100px)');
-              $('.slide_item.swiper-slide-next').find('.text_slide strong').css('transform', 'translateX(100px)');
             },
             progress: function() {
               var swiper = this;
