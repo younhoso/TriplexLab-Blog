@@ -992,7 +992,7 @@ aside .tag_board{width:100%}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
 
-  .area_sidebar {width:100%;height:100vh;position:fixed;top:20px;left:0; padding: 0 20px 60px 20px; box-sizing: border-box; opacity: 0; visibility: hidden; z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);position:fixed;top:20px;left:0; padding: 0 20px 0 20px; box-sizing: border-box; opacity: 0; visibility: hidden; z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
   .area_sidebar::-webkit-scrollbar{display:none}
   .area_sidebar.on{top:0; opacity: 1; visibility:initial;}
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
@@ -1091,6 +1091,8 @@ aside .tag_board{width:100%}
   .area_sidebar .inner_sidebar .sidebar_header {text-align: center;}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{width: 32%;display: block; margin: 0 auto 10px auto;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: block;}
+
+  .area_sidebar .skin_link{width:85%;position:absolute;left:20px;bottom:140px;}
 
   .mo_footer_menu{display:none}
   .category_inner{display:none}

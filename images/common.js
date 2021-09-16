@@ -91,6 +91,12 @@ $(function() {
       return false;
     });
 
+    function setScreenSize() {
+      let vh = window.innerHeight * 0.01;
+      document.querySelector('.area_sidebar').style.setProperty('--vh', `${vh}px`);
+    }
+    setScreenSize();
+
     Array.from((document.querySelectorAll('#container .inner_header span.date'))).forEach(function(el) {
       el.innerText = el.innerText.substr(0, 11);
     })
