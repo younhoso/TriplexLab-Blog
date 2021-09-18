@@ -26,6 +26,7 @@ $(function() {
       $(cur).addClass('id-'+idx);
     },0);
     
+    detail_side();
     display_control();
     slider_control();
     api_postItem();
@@ -488,25 +489,52 @@ function display_control() {
   $('.btn-for-user [data-action="logout"]').click(function() {
     document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
   });
+};
 
-  $('.btn_post').attr('id','reaction'); //밑에서 Node 대상 찾기 위해서 이미로 id 넣어줌.
+function detail_side(){
+  var current = 0;
+
+  function add(el){
+    el.classList.add('on');
+    current = el;
+  }
+
+  function remove(el) {
+    el.classList.remove('on');
+  }
+
+  function control() {
+    if(currentItem){ 
+      remove(currentItem)
+    }
+  }
+
+  $('.btn_post').attr('id','reaction'); //Node 대상 찾기 위해서 이미로 id 넣어줌.
   /* 공감 아이콘 클릭 이벤트 처리 */
   if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
-    // 공감 클릭 이벤트 연결
-    $('.detail_side .util_like').click(function (e) {
-      $('.postbtn_like .uoc-icon').trigger('click');
-    });
+   
     /* 공감 수 변경 시 처리 */
     var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
     var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
     function callback(mutationsList) {  
       var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
       if(mutationsList[0].type === 'attributes') {
-        $('.detail_side .util_like .ic-like').toggleClass('on');
         $('.detail_side .util_like .txt_count').text(txt_like);
       } 
+      mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
     };
+    // 공감 클릭 이벤트 연결
+    $('.detail_side .util_like').click(function (e) {
+      $('.postbtn_like .uoc-icon').trigger('click');
+      !$('.postbtn_like .uoc-icon').hasClass('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //클릭 이벤트 시점에 변경
+    });
 
+    var sideUl = document.querySelector('.detail_side ul');
+    sideUl.addEventListener('click', function(e){
+      e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
+      e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
+    });
+    
     // 감시자 인스턴스 생성
     var observer = new MutationObserver(callback);
     // 감시할 대상 Node를 전달하여 감시 시작
