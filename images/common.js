@@ -531,8 +531,8 @@ function detail_side(){
 
     var sideUl = document.querySelector('.detail_side ul');
     sideUl.addEventListener('click', function(e){
-      e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
-      e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
+      // e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
+      // e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
     });
     
     // 감시자 인스턴스 생성
