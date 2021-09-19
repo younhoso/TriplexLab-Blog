@@ -26,10 +26,10 @@ $(function() {
       $(cur).addClass('id-'+idx);
     },0);
     
-    detail_side();
     display_control();
     slider_control();
     api_postItem();
+    detail_side();
 
     $('.tab_btn').on('click', function(){
       $('.tab_item').siblings().removeClass('active');
@@ -119,7 +119,7 @@ $(function() {
       if($(this).hasClass('on')){
         e.currentTarget === e.target ? ($('.area_sidebar').removeClass('on'), $('#container').removeClass('on')) : null
       }
-    });
+    }); 
     
     /* 서식 관리 tabs */
     var tabs_warp = Array.from(document.querySelectorAll('.tabs_warp'));
@@ -513,7 +513,6 @@ function detail_side(){
   $('.btn_post').attr('id','reaction'); //Node 대상 찾기 위해서 이미로 id 넣어줌.
   /* 공감 아이콘 클릭 이벤트 처리 */
   if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
-   
     /* 공감 수 변경 시 처리 */
     var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
     var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
@@ -521,7 +520,9 @@ function detail_side(){
       var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
       if(mutationsList[0].type === 'attributes') {
         $('.detail_side .util_like .txt_count').text(txt_like);
-      } 
+      } else {
+        console.log(txt_like)
+      }
       mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
     };
     // 공감 클릭 이벤트 연결
@@ -530,19 +531,20 @@ function detail_side(){
       !$('.postbtn_like .uoc-icon').hasClass('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //클릭 이벤트 시점에 변경
     });
 
-    var sideUl = document.querySelector('.detail_side ul');
-    sideUl.addEventListener('click', function(e){
-      // e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
-      // e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
-    });
+    // var sideUl = document.querySelector('.detail_side ul');
+    // sideUl.addEventListener('click', function(e){
+    //   e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
+    //   e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
+    // });
     
     // 감시자 인스턴스 생성
     var observer = new MutationObserver(callback);
     // 감시할 대상 Node를 전달하여 감시 시작
     observer.observe(targetNode, config);
-  /* 공감 수 변경 시 처리 // */
-
-    $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .uoc-count').text());
+    /* 공감 수 변경 시 처리 // */
+    setTimeout(function(){
+      $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
+    },450);
   }
   /* 공감 아이콘 클릭 이벤트 처리 */
 };
