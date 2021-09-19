@@ -39,8 +39,8 @@ $(function() {
         var tab_btn_wdPrev = $(this).prev().innerWidth();
         var paddL = parseInt($(this).css('padding-left'));
 
-        var gsapAmi1 = { width: tab_btn_wd, x: 20, ease: "elastic.out(1, 0.5)", duration: 0.35};
-        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, ease: "elastic.out(1, 0.5)", duration: 0.35};
+        var gsapAmi1 = { width: tab_btn_wd, x: 20, duration: 0.35};
+        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, duration: 0.35};
 
         $(el).addClass('on').siblings().removeClass('on');
         $('.visitant').hasClass("on") && (gsap.to(".line", gsapAmi1), $('.tab_item').eq(0).addClass('active'));
