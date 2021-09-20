@@ -54,26 +54,13 @@
         $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
       };
 
-      /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
-      var darkModeHnadner = function() {
-        if(JSON.parse(localStorage.getItem('darkMode')) === false){
-          darkModeY();
-        } else if(JSON.parse(localStorage.getItem('darkMode')) === true){
-          darkModeN();
-        }
-      };
-      /** 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) // */
-
       $('.header_icon_inner').on('click', '.theme', function(e) {
-        darkModeHnadner();
+        /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
+        JSON.parse(localStorage.getItem('darkMode')) ? darkModeN() : darkModeY()
       });
 
-      /** // 최초 렌더링 시점에서의 darkMode 여부 체크 */
-      if(JSON.parse(localStorage.getItem('darkMode')) === true){
-        darkModeY()
-      } else if(JSON.parse(localStorage.getItem('darkMode')) === false || JSON.parse(localStorage.getItem('darkMode')) === null){
-        darkModeN();
-      }
+      /** darkMode 여부 체크 (최초 렌더링 시점)*/
+      JSON.parse(localStorage.getItem('darkMode')) ? darkModeY() : darkModeN()
 
       setInterval(function() { /** //전체 페이지 로딩중(loader) 타임잉 제어 */
         $('.loader_bg').fadeOut(200);
