@@ -365,7 +365,6 @@ function slider_control() {
     
     /* LATEST STORY 배너 영역 Swiper기능 */
     $('.type_notice').each(function(idx, el) {
-      console.log(`.type_notice.id-${idx} .typeNotice_next`)
       var swiperTypeNotice = {
         breakpoints:{
           320: {

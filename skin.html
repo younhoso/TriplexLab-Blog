@@ -493,15 +493,15 @@
                 </s_cover>
 
                 <s_cover name='post'>
-                  <!-- type_post  -->
+                  <!-- type_post -->
                   <div class="type_post">
                     <h2 class="title_section">[##_cover_title_##]</h2>
 
                     <ul class="list_post">
                       <s_cover_item>
                         <li class="item_post">
-                          <a href="[##_cover_item_url_##]" class="link_post item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')">
-                            <div class="info">
+                          <a href="[##_cover_item_url_##]" class="link_post item-thumbnail" tabindex="-1" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')">
+                            <div class="info" style="">
                               <strong class="name">[##_cover_item_title_##]</strong>
                               <s_cover_item_article_info>
                                 <span class="date">[##_cover_item_date_##]</span>
@@ -516,22 +516,22 @@
                 </s_cover>
 
                 <s_cover name='card'>
-                  <!-- type_card  -->
+                  <!-- type_card -->
                   <div class="type_card border_b_mode">
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
                       <div class="swiper_type_card">
-                        <div class="list_type_card swiper-wrapper">
+                        <ul class="list_type_card swiper-wrapper">
                           <s_cover_item>
-                            <div class="item_card swiper-slide">
-                              <a href="[##_cover_item_url_##]" class="link_card">
+                            <li class="item_card swiper-slide">
+                              <a href="[##_cover_item_url_##]" tabindex="-1">
                                 <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
                                 <strong>[##_cover_item_title_##]</strong>
                                 <p class="text">[##_cover_item_summary_##]</p>
                               </a>
-                            </div>
+                            </li>
                           </s_cover_item>
-                        </div>
+                        </ul>
                       </div>
                       <div class="typeCard_next bg_them_mode color border_mode"><i class="ic-right-thin"></i></div>
                       <div class="typeCard_prev bg_them_mode color border_mode"><i class="ic-left-thin"></i></div>
@@ -541,7 +541,7 @@
                 </s_cover>
 
                 <s_cover name='notice'>
-                  <!-- type_list  -->
+                  <!-- type_list -->
                   <div class="type_notice border_b_mode ">
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
@@ -549,7 +549,7 @@
                             <ui class="list_type_notice swiper-wrapper">
                               <s_cover_item>
                                 <li class="item_notice swiper-slide">
-                                  <a href="[##_cover_item_url_##]" class="link_notice">
+                                  <a href="[##_cover_item_url_##]" class="link_notice" tabindex="-1">
                                     <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
                                     <div class="info">
                                       <strong>[##_cover_item_title_##]</strong>
