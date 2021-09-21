@@ -342,57 +342,57 @@ function slider_control() {
     /* 매인 배너 영역 Swiper기능 // */
 
     /* type_card 배너 영역(3군대) Swiper기능 */
-    $('.type_card').each(function(idx, el){
-      var swiperCardOptions = {
-        slidesPerView: 'auto',
-        navigation: {
-          nextEl: `.type_card.id-${idx} .typeCard_next`,
-          prevEl: `.type_card.id-${idx} .typeCard_prev`,
-        },
-      };
+    // $('.type_card').each(function(idx, el){
+    //   var swiperCardOptions = {
+    //     slidesPerView: 'auto',
+    //     navigation: {
+    //       nextEl: `.type_card.id-${idx} .typeCard_next`,
+    //       prevEl: `.type_card.id-${idx} .typeCard_prev`,
+    //     },
+    //   };
 
-      if( windowWidth <= 1025) { //모바일 해상도일때 경우
-        swiperCardOptions.allowTouchMove = true;
-        swiperCardOptions.slidesPerGroup= 1;
-      } else {   //PC 해상도일때 경우
-        swiperCardOptions.allowTouchMove = false;
-        swiperCardOptions.slidesPerGroup= 3;
-      }
+    //   if( windowWidth <= 1025) { //모바일 해상도일때 경우
+    //     swiperCardOptions.allowTouchMove = true;
+    //     swiperCardOptions.slidesPerGroup= 1;
+    //   } else {   //PC 해상도일때 경우
+    //     swiperCardOptions.allowTouchMove = false;
+    //     swiperCardOptions.slidesPerGroup= 3;
+    //   }
 
-      new Swiper(`.type_card.id-${idx} .swiper_type_card`, swiperCardOptions);
-    });
+    //   new Swiper(`.type_card.id-${idx} .swiper_type_card`, swiperCardOptions);
+    // });
     /* type_card 배너 영역(3군대) Swiper기능 // */
     
     /* LATEST STORY 배너 영역 Swiper기능 */
-    $('.type_notice').each(function(idx, el) {
-      var swiperTypeNotice = {
-        breakpoints:{
-          320: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 3,
-          }
-        },
-        grid: {
-          rows: 4
-        },
-        navigation: {
-          nextEl: `.type_notice.id-${idx} .typeNotice_next`,
-          prevEl: `.type_notice.id-${idx} .typeNotice_prev`,
-        },
-      }
+    // $('.type_notice').each(function(idx, el) {
+    //   var swiperTypeNotice = {
+    //     breakpoints:{
+    //       320: {
+    //         slidesPerView: 1,
+    //       },
+    //       768: {
+    //         slidesPerView: 3,
+    //       }
+    //     },
+    //     grid: {
+    //       rows: 4
+    //     },
+    //     navigation: {
+    //       nextEl: `.type_notice.id-${idx} .typeNotice_next`,
+    //       prevEl: `.type_notice.id-${idx} .typeNotice_prev`,
+    //     },
+    //   }
 
-      if( windowWidth <= 1025) { //모바일 해상도일때 경우
-        swiperTypeNotice.allowTouchMove = true;
-        swiperTypeNotice.slidesPerGroup= 1;
-      } else {   //PC 해상도일때 경우
-        swiperTypeNotice.allowTouchMove = false;
-        swiperTypeNotice.slidesPerGroup= 3;
-      }
+    //   if( windowWidth <= 1025) { //모바일 해상도일때 경우
+    //     swiperTypeNotice.allowTouchMove = true;
+    //     swiperTypeNotice.slidesPerGroup= 1;
+    //   } else {   //PC 해상도일때 경우
+    //     swiperTypeNotice.allowTouchMove = false;
+    //     swiperTypeNotice.slidesPerGroup= 3;
+    //   }
 
-      new Swiper(`.type_notice.id-${idx} .swiper_type_notice`, swiperTypeNotice);
-    });
+    //   new Swiper(`.type_notice.id-${idx} .swiper_type_notice`, swiperTypeNotice);
+    // });
     /* LATEST STORY 배너 영역 Swiper기능 // */
 };
 
