@@ -105,21 +105,13 @@ $(function() {
 
     $('.mo_footer_menu').on('click', 'a', function() {
       $('.area_sidebar').addClass('on');
-      $('#container').addClass('on');
       $('body').css('overflow', 'hidden');
     });
 
     $('.close_icon').on('click', function(e) {
       $('.area_sidebar').removeClass('on');
-      $('#container').removeClass('on');
       $('body').css('overflow', '');
     });
-
-    $('#container').on('click', function(e) {
-      if($(this).hasClass('on')){
-        e.currentTarget === e.target ? ($('.area_sidebar').removeClass('on'), $('#container').removeClass('on')) : null
-      }
-    }); 
     
     /* 서식 관리 tabs */
     var tabs_warp = Array.from(document.querySelectorAll('.tabs_warp'));
