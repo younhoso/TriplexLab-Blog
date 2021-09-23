@@ -209,15 +209,6 @@ i {
 .border_b_mode {border-bottom:1px solid var(--border-color);}
 .shadow {box-shadow:var(--shadow);}
 
-
-@media screen and (min-width:320px){
-	html[data-dark=false] .toggle_light, html[data-dark=true] .toggle_dark {display: none !important;}
-	html[data-dark=true] .toggle_light, html[data-dark=false] .toggle_dark {display: inline-block !important;}
-}
-@media screen and (min-width:1025px){
-	html[data-dark=false] .toggle_light, html[data-dark=true] .toggle_dark {display: none !important;}
-	html[data-dark=true] .toggle_light, html[data-dark=false] .toggle_dark {display: block !important;}
-}
 /* darkmode, lightmode의 관한 STYLE // */
 
 /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
@@ -1000,9 +991,9 @@ aside .tag_board{width:100%}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
 
-  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);position:fixed;top:20px;left:0; padding: 0 20px 0 20px; box-sizing: border-box; opacity: 0; visibility: hidden; display: none; z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);position:fixed;top:20px;left:0; padding: 0 20px 0 20px; box-sizing: border-box;z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch;display: none;}
   .area_sidebar::-webkit-scrollbar{display:none}
-  .area_sidebar.on{top:0; opacity: 1; visibility:initial; display: block;}
+  .area_sidebar.on{top:0;display: block;}
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}

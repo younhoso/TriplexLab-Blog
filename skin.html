@@ -38,28 +38,30 @@
   <script charset="UTF-8" src="./images/highlight.min.js"></script>
 	<script >
     $(function(){
-      var darkModeN = function() {
-        $('.ic-sun').removeClass('on');
-        $('.ic-moon').addClass('on');
-        var darkmode = false;
-        localStorage.setItem('darkMode', JSON.stringify(darkmode));
-        $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
-      };
-      var darkModeY = function() {
-        $('.ic-moon').removeClass('on');
-        $('.ic-sun').addClass('on');
-        var darkmode = true;
-        localStorage.setItem('darkMode', JSON.stringify(darkmode));
-        $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
-      };
+      /** darkMode 여부 체크 */
+        var darkModeN = function() {
+          $('.ic-sun').removeClass('on');
+          $('.ic-moon').addClass('on');
+          var darkmode = false;
+          localStorage.setItem('darkMode', JSON.stringify(darkmode));
+          $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
+        };
+        var darkModeY = function() {
+          $('.ic-moon').removeClass('on');
+          $('.ic-sun').addClass('on');
+          var darkmode = true;
+          localStorage.setItem('darkMode', JSON.stringify(darkmode));
+          $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
+        };
 
-      $('.header_icon_inner').on('click', '.theme', function(e) {
-        /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
-        JSON.parse(localStorage.getItem('darkMode')) ? darkModeN() : darkModeY()
-      });
+        $('.header_icon_inner').on('click', '.theme', function(e) {
+          /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
+          JSON.parse(localStorage.getItem('darkMode')) ? darkModeN() : darkModeY()
+        });
 
-      /** darkMode 여부 체크 (최초 렌더링 시점)*/
-      JSON.parse(localStorage.getItem('darkMode')) ? darkModeY() : darkModeN()
+        /** darkMode 여부 체크 (최초 렌더링 시점)*/
+        JSON.parse(localStorage.getItem('darkMode')) ? darkModeY() : darkModeN()
+      /** darkMode 여부 체크 // */
 
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
@@ -109,7 +111,6 @@
   <script charset="UTF-8" src="./images/common.js"></script>
   <script>hljs.highlightAll();</script>
 </head>
-
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
   <s_t3>
     <!-- // box_header -->
@@ -170,7 +171,6 @@
           <h1 class="title_logo">
             <a href="[##_blog_link_##]" title="[##_title_##]" class="link_logo">
               <div class="img_logo toggle_dark"><img src="https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo.jpg" alt="triplexlab logo"></div>
-              <div class="img_logo toggle_light"><img src="https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo2.jpg" alt="triplexlab logo"></div>
               <div class="tit_logo">
                 [##_title_##]
               </div>
