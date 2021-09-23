@@ -62,12 +62,6 @@
       /** darkMode 여부 체크 (최초 렌더링 시점)*/
       JSON.parse(localStorage.getItem('darkMode')) ? darkModeY() : darkModeN()
 
-      setInterval(function() { /** //전체 페이지 로딩중(loader) 타임잉 제어 */
-        $('.loader_bg').fadeOut(200);
-        return false
-      },800);                 /** 전체 페이지 로딩중(loader) 타임잉 제어 // */
-       /** 최초 렌더링 시점에서의 darkMode 여부 체크 // */
-
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
@@ -118,16 +112,6 @@
 </head>
 
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
-  <div class="loader_bg bg">
-    <div class="loader_inner">
-      <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-        </svg>
-      </div>
-      <div class="txt_inner color">Loading...</div>
-    </div>
-  </div>
   <s_t3>
     <!-- // box_header -->
     <header class="box_header bg_them_mode color border_b_mode">
