@@ -906,7 +906,9 @@ aside .tag_board{width:100%}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes{height:42px;display:flex;justify-content:space-around;align-items:center;color:#fff;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme{width:40%;height:30px;line-height:30px;font-weight: 600;text-align:center;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme:nth-child(2):after{content:'';display:inline-block;width:1px;height:14px;background-color:#fff;position:absolute;top:28%;right:calc(100% * -.15)}
-  .sidebar_menu .sidebar_menu_tabs .tabs_itmes .ani_on{height:26px;width:38%;border-radius:1.2em;background-color:#f60;position:absolute;top:19%;left:calc(100% * .06); -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%);}
+  .sidebar_menu .sidebar_menu_tabs .tabs_itmes li:first-child{height:26px;width:38%;border-radius:1.2em;background-color:#f60;position:absolute;top:19%;left:calc(100% * .06); -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); -webkit-transition: transform 0.1s ease-in-out; transition: transform 0.1s ease-in-out;}
+  .sidebar_menu .sidebar_menu_tabs .tabs_itmes .BLOG{transform: translateX(0px);}
+  .sidebar_menu .sidebar_menu_tabs .tabs_itmes .API{transform: translateX(120px);}
 
   .box_gnb{padding-bottom:40px;display:none}
   .box_gnb.on{display:block}
@@ -989,7 +991,9 @@ aside .tag_board{width:100%}
   .tbas_inner .inner{width:100%; border-radius: 0.4em;}
   .tbas_inner .btn_inner .tab_btn_inner {display: inline-block;}
   .tbas_inner .btn_inner .line_inner {margin-top: 20px;}
-  .tbas_inner .btn_inner .line{display:block;width:59px;height:3px;background-color:#f60;-webkit-transform: translate(20px, 0);transform: translate(20px, 0);}
+  .tbas_inner .btn_inner .line_inner i:first-child {display:block;width:59px;height:3px;background-color:#f60;-webkit-transition: transform 0.1s ease-in-out;transition: transform 0.1s ease-in-out;}
+  .tbas_inner .btn_inner .line_inner i.Number{-webkit-transform: translate(20px, 0);transform: translate(20px, 0);}
+  .tbas_inner .btn_inner .line_inner i.STORY{width: 102px; -webkit-transform: translate(103px, 0);transform: translate(103px, 0);}
   .tbas_inner .btn_inner .bg_line{width:100%;height:1px;display:block;background-color:var(--border-color);}
   .tab_btn {display: inline-block; padding: 20px 0 0 20px; cursor: pointer;}
   .tab_btn.on {font-weight: 600;}

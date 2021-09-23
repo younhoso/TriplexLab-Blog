@@ -14,8 +14,11 @@ $(function() {
     });    
 
     $('.comment').on('click', function(){
-      gsap.to("html, body",{scrollTop: $(document).height(), duration: 0.5});
+      $('html, body').animate({
+        scrollTop: $(document).height()
+      }, 500);
       $('#comment').focus();
+      return false;
     });
     var arr_card = Array.from($('.type_card'));
     arr_card.reduce(function(acc,cur,idx){
@@ -33,19 +36,10 @@ $(function() {
 
     $('.tab_btn').on('click', function(){
       $('.tab_item').siblings().removeClass('active');
-      
-      $(this).each(function(idx, el){
-        var tab_btn_wd = $(el).width();
-        var tab_btn_wdPrev = $(this).prev().innerWidth();
-        var paddL = parseInt($(this).css('padding-left'));
-
-        var gsapAmi1 = { width: tab_btn_wd, x: 20, duration: 0.35};
-        var gsapAmi2 = { width: tab_btn_wd, x: tab_btn_wdPrev + paddL + 6, duration: 0.35};
-
-        $(el).addClass('on').siblings().removeClass('on');
-        $('.visitant').hasClass("on") && (gsap.to(".line", gsapAmi1), $('.tab_item').eq(0).addClass('active'));
-        $('.story').hasClass("on") && (gsap.to(".line", gsapAmi2), $('.tab_item').eq(1).addClass('active'))
-      });
+      var dataTab = $(this).data('tabs');
+      $(this).addClass('on').siblings().removeClass('on');
+      $('.visitant').hasClass("on") && ($('.line_inner i:first-child').attr('class', dataTab), $('.tab_item').eq(0).addClass('active'));
+      $('.story').hasClass("on") && ($('.line_inner i:first-child').attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
       return false;
     });
 
@@ -62,16 +56,6 @@ $(function() {
     });
 
     var tab_itme_wd = $('.tabs_itmes').width();
-    // entry 페이지 리로드시점 
-    window.location.pathname.split('/')[1] === 'entry' && (
-      $('.tab_itme.api').addClass('on'),
-      $('.box_gnb.api').addClass('on'),
-      $('.tab_itme.blog').removeClass('on'),
-      $('.box_gnb.blog').removeClass('on'),
-      gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),
-      $('#tt-body-page').addClass('api_detail')
-    );
-
     /* notice 페이지 리로드시점 */    
     var cookiedata = document.cookie;
     if(cookiedata.indexOf('bell=Y') < 0){
@@ -86,9 +70,8 @@ $(function() {
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
 
-      $('.api').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.5), duration: 0.15}),  $('.box_gnb').eq(1).addClass('on'),  $('.skin_link, .box_tool').addClass('fiex'));
-      $('.blog').hasClass("on") && (gsap.to(".ani_on", {x: (tab_itme_wd * 0.01), duration: 0.15}),  $('.box_gnb').eq(0).addClass('on'), $('.skin_link, .box_tool').removeClass('fiex'));
-      
+      $('.blog').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'BLOG'), $('.box_gnb').eq(0).addClass('on'), $('.skin_link, .box_tool').removeClass('fiex'));
+      $('.api').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'API'), $('.box_gnb').eq(1).addClass('on'),  $('.skin_link, .box_tool').addClass('fiex'));
       return false;
     });
 

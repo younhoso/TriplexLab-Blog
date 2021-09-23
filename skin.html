@@ -36,7 +36,6 @@
 	<script charset="UTF-8" src="./images/swiper.min.js"></script>
   <script charset="UTF-8" src="https://unpkg.com/vh-check/dist/vh-check.min.js"></script>
   <script charset="UTF-8" src="./images/highlight.min.js"></script>
-  <script charset="UTF-8" src="./images/gsap.min.js"></script>
 	<script >
     $(function(){
       var darkModeN = function() {
@@ -185,7 +184,7 @@
           <div class="sidebar_menu">
             <div class="sidebar_menu_tabs">
               <ul class="tabs_itmes">
-                <li class="ani_on"></li>
+                <li class="BLOG"></li>
                 <li class="tab_itme blog on">BLOG</li>
                 <li class="tab_itme api">API</li>
               </ul>
@@ -427,11 +426,11 @@
                       <div class="inner shadow border_mode">
                         <div class="btn_inner">
                           <ul class="tab_btn_inner">
-                            <li class="tab_btn visitant on">방문자수</li>
-                            <li class="tab_btn story">[##_cover_title_##]</li>
+                            <li class="tab_btn visitant on" data-tabs="Number">방문자수</li>
+                            <li class="tab_btn story" data-tabs="STORY">[##_cover_title_##]</li>
                           </ul>
                           <div class="line_inner">
-                            <i class="line"></i>
+                            <i class="Number"></i>
                             <i class="bg_line"></i>
                           </div>
                         </div>
@@ -504,19 +503,17 @@
                   <div class="type_card border_b_mode">
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
-                      <div class="">
-                        <ul class="list_type_card">
-                          <s_cover_item>
-                            <li class="item_card">
-                              <a href="[##_cover_item_url_##]" tabindex="-1">
-                                <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
-                                <strong>[##_cover_item_title_##]</strong>
-                                <p class="text">[##_cover_item_summary_##]</p>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
+                      <ul class="list_type_card">
+                        <s_cover_item>
+                          <li class="item_card">
+                            <a href="[##_cover_item_url_##]" tabindex="-1">
+                              <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
+                              <strong>[##_cover_item_title_##]</strong>
+                              <p class="text">[##_cover_item_summary_##]</p>
+                            </a>
+                          </li>
+                        </s_cover_item>
+                      </ul>
                       <div class="typeCard_next bg_them_mode color border_mode"><i class="ic-right-thin"></i></div>
                       <div class="typeCard_prev bg_them_mode color border_mode"><i class="ic-left-thin"></i></div>
                     </div>
