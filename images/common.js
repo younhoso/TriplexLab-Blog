@@ -1,4 +1,5 @@
 $(function() {
+  console.log($('.area_sidebar').width())
     $('.share_js').on('click', function(){
       $('.share_temp').addClass('on');
       setTimeout(function(){
@@ -76,8 +77,10 @@ $(function() {
     });
 
     function setScreenSize() {
-      let vh = window.innerHeight * 0.01;
+      var vh = window.innerHeight * 0.01;
+      var vw = $('.area_sidebar').width() * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
     setScreenSize();
     window.addEventListener('resize', setScreenSize);
