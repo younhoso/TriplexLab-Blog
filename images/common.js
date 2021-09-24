@@ -1,5 +1,4 @@
 $(function() {
-  console.log($('.area_sidebar').width())
     $('.share_js').on('click', function(){
       $('.share_temp').addClass('on');
       setTimeout(function(){
@@ -71,8 +70,8 @@ $(function() {
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
 
-      $('.blog').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'BLOG'), $('.box_gnb').eq(0).addClass('on'), $('.skin_link, .box_tool').removeClass('fiex'));
-      $('.api').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'API'), $('.box_gnb').eq(1).addClass('on'),  $('.skin_link, .box_tool').addClass('fiex'));
+      $('.blog').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'BLOG'), $('.box_gnb').eq(0).addClass('on'));
+      $('.api').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'API'), $('.box_gnb').eq(1).addClass('on'));
       return false;
     });
 
@@ -395,7 +394,6 @@ function display_control() {
       }
       var localdata = localStorage.getItem('data');
       var searchItem = JSON.parse(localdata).searchItems;
-      var apiMenus = JSON.parse(localdata).APIMenus;
 
       var randomPopularity = searchItem.popularity.sort(() => Math.random() - 0.5);         //배열 요소에는 인기 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
       var randomRecommendation = searchItem.recommendation.sort(() => Math.random() - 0.5); //배열 요소에는 추천 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
@@ -416,23 +414,7 @@ function display_control() {
       },0);
       template_popularity += '</ul>';
       /** 인기 검색어 // */
-      
-      /** api Menus  */
-      var template_apiMenus = '';
-      template_apiMenus += '<ul class="api_inner">';
-      apiMenus.leftsidebar.reduce(function(acc, cur){
-        var apiMenusKey = Object.keys(cur)[0];
-        template_apiMenus += '<h3>'+apiMenusKey+'</h3>';
-        for ( const property in cur ) {
-          cur[property].reduce(function(acc, cur){
-            template_apiMenus += '<li class="api_items"><a href="/'+cur.link+'">'+cur.name+'</a></li>';
-          },0)
-        }
-      },0);
-      template_apiMenus += '</ul>';
-      /** api Menus // */
 
-      $('.box_gnb.api').append(template_apiMenus);
       $('.tag_recomme').append(template_recommendation);
       $('.tag_popularity').append(template_popularity);
     });

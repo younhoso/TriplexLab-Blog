@@ -915,12 +915,10 @@ aside .tag_board{width:100%}
   .box_gnb.on:nth-child(2){display:block}
 
   .area_sidebar .skin_link {width: 100%;}
-  .area_sidebar .skin_link.fiex {position: static;}
   .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
   .area_sidebar .skin_link a {display: block;}
 
   .area_sidebar .box_tool{ padding:30px 0 40px 0; position:static; bottom: 0; left: 0;}
-  .area_sidebar .box_tool.fiex {position: static;}
 
   .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:4px 0}
   .swiper-container-vertical>.swiper-pagination-bullets{right:60px}
@@ -1056,7 +1054,6 @@ aside .tag_board{width:100%}
   .slide_item .link_slide .img_inner {width: 24%;-webkit-transform:translate(120%,-50%);transform:translate(120%,-50%);}
 
   .area_sidebar .box_tool{padding:30px 0 60px 0; position:absolute; bottom: 0; left: unset;}
-  .area_sidebar .box_tool.fiex {position: static;}
 
   .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {width: 92%;height: 2px;top: unset; left: 50%;bottom:12%;right:0; -webkit-transform: translate(-50%, 10%); transform: translate(-50%, 10%);}
   .swiper-progress-bar {width: 92%; top: unset; bottom: 12%; left: 50%; -webkit-transform: translate(-50%, -10%); transform: translate(-50%, -10%);}
