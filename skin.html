@@ -38,31 +38,6 @@
   <script charset="UTF-8" src="./images/highlight.min.js"></script>
 	<script >
     $(function(){
-      /** darkMode 여부 체크 */
-        var darkModeN = function() {
-          $('.ic-sun').removeClass('on');
-          $('.ic-moon').addClass('on');
-          var darkmode = false;
-          localStorage.setItem('darkMode', JSON.stringify(darkmode));
-          $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
-        };
-        var darkModeY = function() {
-          $('.ic-moon').removeClass('on');
-          $('.ic-sun').addClass('on');
-          var darkmode = true;
-          localStorage.setItem('darkMode', JSON.stringify(darkmode));
-          $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
-        };
-
-        $('.header_icon_inner').on('click', '.theme', function(e) {
-          /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
-          JSON.parse(localStorage.getItem('darkMode')) ? darkModeN() : darkModeY()
-        });
-
-        /** darkMode 여부 체크 (최초 렌더링 시점)*/
-        JSON.parse(localStorage.getItem('darkMode')) ? darkModeY() : darkModeN()
-      /** darkMode 여부 체크 // */
-
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
@@ -127,8 +102,6 @@
           <div class="header_icon_inner">
             <i class="icon ic-search"></i>
             <i class="icon ic-bell-1 notice_js on"></i>
-            <i class="icon theme ic-sun "></i>
-            <i class="icon theme ic-moon on"></i>
           </div>
         </div>
 
@@ -184,15 +157,15 @@
           <div class="sidebar_menu">
             <div class="sidebar_menu_tabs">
               <ul class="tabs_itmes">
-                <li class="BLOG"></li>
-                <li class="tab_itme light on">Light</li>
-                <li class="tab_itme dark">Dark</li>
+                <li class="tabs"></li>
+                <li class="tab_itme light"><i class="icon theme ic-sun"></i>Light</li>
+                <li class="tab_itme dark"><i class="icon theme ic-moon"></i>Dark</li>
               </ul>
             </div>
             <s_sidebar>
               <s_sidebar_element>
                 <!-- 카테고리 -->
-                <div class="category">
+                <div class="category color">
                   [##_category_list_##]
                 </div>
               </s_sidebar_element>
@@ -494,17 +467,19 @@
                   <div class="type_card border_b_mode">
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
-                      <ul class="list_type_card">
-                        <s_cover_item>
-                          <li class="item_card">
-                            <a href="[##_cover_item_url_##]" tabindex="-1">
-                              <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
-                              <strong>[##_cover_item_title_##]</strong>
-                              <p class="text">[##_cover_item_summary_##]</p>
-                            </a>
-                          </li>
-                        </s_cover_item>
-                      </ul>
+                      <div class="inWrapper">
+                        <ul class="list_type_card">
+                          <s_cover_item>
+                            <li class="item_card">
+                              <a href="[##_cover_item_url_##]" tabindex="-1">
+                                <span class="thumnail item-thumbnail" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')"></span>
+                                <strong>[##_cover_item_title_##]</strong>
+                                <p class="text">[##_cover_item_summary_##]</p>
+                              </a>
+                            </li>
+                          </s_cover_item>
+                        </ul>
+                      </div>
                       <div class="typeCard_next bg_them_mode color border_mode"><i class="ic-right-thin"></i></div>
                       <div class="typeCard_prev bg_them_mode color border_mode"><i class="ic-left-thin"></i></div>
                     </div>
@@ -517,7 +492,7 @@
                   <div class="type_notice border_b_mode ">
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
-                        <div class="">
+                        <div class="inWrapper">
                             <ui class="list_type_notice">
                               <s_cover_item>
                                 <li class="item_notice">
@@ -586,7 +561,6 @@
                             </div>
                             <!-- // area_tag -->
                           </s_tag_label>
-                          <p class="info"><span class="date">[##_article_rep_simple_date_##]</span></p>
                         </div>
                       </div>
                   </div>

@@ -1,4 +1,9 @@
 $(function() {
+    var menuIcons = ['ic-html', 'ic-js', 'ic-uiux' ,'ic-etc'];
+    
+    $('.category_list > li a').each(function(idx, el){
+      $(el).prepend(`<i class="${menuIcons[idx]}"></i>`);
+    });
     $('.share_js').on('click', function(){
       $('.share_temp').addClass('on');
       setTimeout(function(){
@@ -55,7 +60,6 @@ $(function() {
       $('body').css('overflow', '');
     });
 
-    var tab_itme_wd = $('.tabs_itmes').width();
     /* notice 페이지 리로드시점 */    
     var cookiedata = document.cookie;
     if(cookiedata.indexOf('bell=Y') < 0){
@@ -70,10 +74,31 @@ $(function() {
       $('.box_gnb').siblings().removeClass('on');
       $(e.target).addClass('on');
 
-      $('.blog').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'BLOG'), $('.box_gnb').eq(0).addClass('on'));
-      $('.api').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'API'), $('.box_gnb').eq(1).addClass('on'));
+      $('.light').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.box_gnb').eq(0).addClass('on'));
+      $('.dark').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.box_gnb').eq(1).addClass('on'));
       return false;
     });
+
+    /** darkMode 여부 체크 */
+    var darkModeN = function() {
+      var darkmode = false;
+      localStorage.setItem('darkMode', JSON.stringify(darkmode));
+      $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
+    };
+    var darkModeY = function() {
+      var darkmode = true;
+      localStorage.setItem('darkMode', JSON.stringify(darkmode));
+      $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
+    };
+
+    $('.tab_itme').on('click', function(e) {
+      /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
+      $('.light').hasClass('on') ? darkModeN() : darkModeY()
+    });
+
+    /** darkMode 여부 체크 (최초 렌더링 시점)*/
+    JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
+    /** darkMode 여부 체크 // */
 
     function setScreenSize() {
       var vh = window.innerHeight * 0.01;
