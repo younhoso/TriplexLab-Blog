@@ -418,7 +418,7 @@ html{box-sizing:border-box}
 .area_sidebar .inner_sidebar{width:100%;left:0}
 .area_sidebar .area_sidebar .btn_close{margin-right:-16px}
 .area_sidebar .area_sidebar .title_logo{margin-bottom:30px}
-.area_sidebar .title_logo{width: 95%;display: flex; font-size:20px;justify-content: center;align-items: center;}
+.area_sidebar .title_logo{width: 95%;display: flex; font-size:20px;justify-content: space-between;align-items: center;}
 .area_sidebar .sidebar_header{margin:24px -10px 24px 0;padding-top:1px}
 .area_sidebar .btn_close{margin-top:-2px}
 .area_sidebar .link_item{font-size:16px}
@@ -999,7 +999,7 @@ aside .tag_board{width:100%}
   .area_sidebar::-webkit-scrollbar{display:none}
   .area_sidebar.on{top:0;display: block;}
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
-  .area_sidebar .inner_sidebar .sidebar_header .img_logo{width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
+  .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none; width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
 
   .area_sidebar .box_sns .list_sns{display:flex;align-items: flex-end;}
