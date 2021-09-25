@@ -102,7 +102,7 @@ $(function() {
 
     function setScreenSize() {
       var vh = window.innerHeight * 0.01;
-      var vw = $('.area_sidebar').width() * 0.01;
+      var vw = (window.innerWidth - 40) * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
       document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
