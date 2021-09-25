@@ -202,6 +202,7 @@ i {
   --color-level-1: #333;
   --color-level-2: rgb(157, 170, 182);
   --border-color: #e4e8eb;
+  --border-color-2: #ccc;
   --shadow: rgb(116 129 141 / 10%) 0px 3px 8px 0px;
 }
 [data-dark=true]{
@@ -211,6 +212,7 @@ i {
   --color-level-1: #e6e6e6;
   --color-level-2: #e6e6e6;
   --border-color: #656565;
+  --border-color-2: #656565;
   --shadow: rgb(193 193 193 / 10%) 0px 3px 8px 0px;
 }
 
@@ -401,7 +403,7 @@ html{box-sizing:border-box}
 .area_sidebar{position:relative}
 .area_sidebar a{text-decoration:none}
 .area_sidebar ul{list-style:none;margin:0;}
-.area_sidebar .category_list{padding:40px 0;font-weight: 600;}
+.area_sidebar .category_list{font-weight: 600;}
 .area_sidebar .category_list > li {margin-bottom: 20px;}
 .area_sidebar .category_list > li:last-child {margin-bottom: 0;}
 .area_sidebar .category_list > li i {margin-right: 5px;}
@@ -421,7 +423,7 @@ html{box-sizing:border-box}
 .area_sidebar .link_add{display:block;margin-bottom:28px;font-size:16px;font-weight:400;color:#888}
 .area_sidebar .link_add:hover{color:rgba(0,0,0,.87)}
 .area_sidebar .add_link,.area_sidebar .box_sns{margin-bottom:40px}
-.area_sidebar .box_sns .box_sns_tit{font-size:18px;font-weight:600;}
+.area_sidebar .box_sns .box_sns_tit{font-size:14px;font-weight:600;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color);;vertical-align:-2px}
 .area_sidebar .link_tool{position:relative;display:inline-block;margin-left:55px;font-size:14px;font-weight:700;}
@@ -429,6 +431,8 @@ html{box-sizing:border-box}
 .area_sidebar .link_tool:first-child::before{content:''}
 .area_sidebar .link_tool:before{content:'｜';position:absolute;top:3px;bottom:0;left:-48px;right:0;width:10px;margin-left:20px;font-size:11px;font-weight:lighter;color:#d3d4d7}
 .area_sidebar .link_tit{display:none}
+.category {margin:40px 0;}
+.sidebar_sns {padding: 40px 0 0 0; border-top: 1px solid var(--border-color-2);}
 @media screen and (max-width:768px){
 .area_sidebar .inner_sidebar{width:100%;left:0}
 .area_sidebar .area_sidebar .btn_close{margin-right:-16px}
@@ -997,13 +1001,13 @@ aside .tag_board{width:100%}
   
   .tbas_inner { padding-top: 40px; padding-bottom: 40px;}
   .tbas_inner .inner{width:100%; border-radius: 0.4em;}
-  .tbas_inner .btn_inner .tab_btn_inner {display: inline-block;}
+  .tbas_inner .btn_inner .tab_btn_inner {display: flex;}
   .tbas_inner .btn_inner .line_inner {margin-top: 20px;}
   .tbas_inner .btn_inner .line_inner i:first-child {display:block;width:59px;height:3px;background-color:#f60;-webkit-transition: transform 0.1s ease-in-out;transition: transform 0.1s ease-in-out;}
   .tbas_inner .btn_inner .line_inner i.Number{-webkit-transform: translate(20px, 0);transform: translate(20px, 0);}
-  .tbas_inner .btn_inner .line_inner i.STORY{width: 102px; -webkit-transform: translate(103px, 0);transform: translate(103px, 0);}
+  .tbas_inner .btn_inner .line_inner i.STORY{width: 102px; -webkit-transform: translate(99px, 0);transform: translate(99px, 0);}
   .tbas_inner .btn_inner .bg_line{width:100%;height:1px;display:block;background-color:var(--border-color);}
-  .tab_btn {display: inline-block; padding: 20px 0 0 20px; cursor: pointer;}
+  .tab_btn {padding: 20px 0 0 20px; cursor: pointer;}
   .tab_btn.on {font-weight: 600;}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
@@ -1015,10 +1019,10 @@ aside .tag_board{width:100%}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none; width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
 
-  .area_sidebar .box_sns .list_sns{display:flex;align-items: flex-end;}
-  .area_sidebar .box_sns .list_sns li{margin-right:20px;text-align:center;}
-  .area_sidebar .box_sns .list_sns li:nth-child(1){font-size:15px}
-  .area_sidebar .box_sns .list_sns li:nth-child(2){font-size:16px}
+  .area_sidebar .box_sns .list_sns li{font-size:16px;margin-bottom: 15px;font-weight: 600;}
+  .area_sidebar .box_sns .list_sns li:last-child{margin-bottom: 0;}
+  .area_sidebar .box_sns .list_sns li .icon_common {display: inline-block; vertical-align: middle; margin-right: 8px;}
+  .area_sidebar .box_sns .list_sns li .icon_txt {display: inline-block; vertical-align: middle;}
   .area_sidebar .sidebar_contents{min-height:auto;}
 
   .mo_footer_menu{display:block;position:fixed;bottom:20px;right:20px;z-index:21}
