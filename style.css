@@ -501,17 +501,14 @@ aside .tag_board{width:100%}
 
 .area_paging{text-align:center;}
 .area_paging a{text-decoration:none;}
-.area_paging .link_page{display:inline-block;margin-top:2px;font-size:24px;color:rgba(0,0,0,.25);}
+.area_paging .link_page{display:inline-block;margin-top:2px;font-size:24px;}
 .area_paging .link_page:hover{color: var(--color);}
 .area_paging .paging_num{display:inline-block;vertical-align:top;}
-.area_paging .link_num span{display:inline-block;min-width:28px;height:28px;margin:0 5px;font-size:13px;font-weight:600;line-height:28px;color:#000;}
-.area_paging .link_num:hover span{color:rgba(0,0,0,.87);}
-.area_paging .link_num span.selected{border-radius:999em;background:#000;color:#fff;}
+.area_paging .link_num span{display:inline-block;min-width:28px;height:28px;margin:0 5px;font-size:13px;font-weight:600;line-height:28px;}
+.area_paging .link_num span.selected{border-radius:999em;background: var(--color-level-1);color: var(--border-color);}
 .area_paging .selected:hover{text-decoration:none;}
 .area_paging .paging_slash{display:none;}
 @media screen and (max-width:1025px){
-.area_paging .link_page{color:rgba(0,0,0,.75);}
-.area_paging .link_page.no-more-next,.area_paging .link_page.no-more-prev{color:rgba(0,0,0,.15);}
 .area_paging .link_page span{font-size:24px;font-weight:600;}
 .area_paging .link_num{font-size:14px;font-weight:900;}
 .area_paging .link_num span{position:relative;}
@@ -522,7 +519,7 @@ aside .tag_board{width:100%}
 .area_paging .link_num span:not(.selected){display:none;}
 .area_paging .link_num:last-child span{display:inline-block;}
 .area_paging .link_ellipsis{display:none;}
-.area_paging .selected{color:#333;background:0 0;}
+.area_paging .selected{background:0 0;}
 }
 .area_view .area_article{padding-bottom:60px;}
 .area_view .article_header{position:relative;}
@@ -765,7 +762,7 @@ aside .tag_board{width:100%}
   .category_type_notice .link_category .text,.list_type_notice .link_notice .text{font-size:12px;line-height:1.5;-webkit-line-clamp:1;}
   .category_type_notice .info,.type_notice .info{flex: 1;padding-top:0;}
 }
-.area_category{max-width:1180px;margin:0 auto;padding:120px 24px 0 24px}
+.area_category{max-width:1180px;margin:0 auto;padding:120px 24px 0 24px;}
 .area_category a{text-decoration:none}
 .area_category ul{list-style:none;margin:0;padding:0;border:none;box-sizing:border-box}
 .area_category .title_section span{padding-left:8px;font-size:16px}
@@ -774,18 +771,18 @@ aside .tag_board{width:100%}
 .category_type_notice .link_category{background:0 0!important}
 .category_type_post .link_category .text{display:none}
 @media screen and (max-width:1025px){
-.area_category{margin-top:70px;padding-top:60px}
+.area_category{padding-top:60px}
 .area_category .title_section{text-align:left}
 }
 .category_type_related .list_category{list-style:none;margin:0 -8px;padding:0;border:none;box-sizing:border-box;font-size:0}
 .category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%}
 .category_type_related .item_category{display:inline-block;width:33.3%;margin-bottom:54px;vertical-align:top}
-.category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;color:#333}
+.category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;}
 .category_type_related .box_content{width:100%}
-.category_type_related .link_category strong{display:block;margin:18px 0 6px 0;line-height:28px;font-size:18px;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.category_type_related .link_related .info{display:inline-block;margin-top:20px;font-size:14px;color:rgba(0,0,0,.38);line-height:1.71}
+.category_type_related .link_category strong{display:block;margin:18px 0 6px 0;line-height:28px;font-size:18px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.category_type_related .link_related .info{display:inline-block;margin-top:20px;font-size:14px;line-height:1.71}
 .category_type_related .link_category .text{max-height:70px;margin:0 0 13px 0;font-size:14px;line-height:20px;overflow:hidden;opacity:.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;width:95%}
-.category_type_related .link_category .date{display:block;font-size:13px;line-height:20px;color:rgba(0,0,0,.38)}
+.category_type_related .link_category .date{display:block;font-size:13px;line-height:20px;}
 @media screen and (max-width:1025px){
 .category_type_related .item_category{width:100%;margin-bottom:30px!important}
 .category_type_related .link_category strong{display:block;margin:12px 0 4px 0;font-size:17px}
@@ -888,7 +885,7 @@ aside .tag_board{width:100%}
 /* ---- MO 매인페이지 ST ---- */
 @media screen and (min-width:320px){
   #wrap{padding-left:0;}
-  #main{padding-bottom: 40px;}
+  #main{min-height: 85vh; padding-bottom: 40px;}
   #container{position:static}
   #container::before{content:'';width:100%;height:100vh;position:fixed;top:0;left:0;z-index:-1;-webkit-transition:background-color .5s ease;transition:background-color .5s ease}
   #container.on::before{z-index:21;background-color:rgba(0,0,0,.7)}
