@@ -70,9 +70,9 @@ $(function() {
      /* // notice 페이지 리로드시점 */
 
     $('.tab_itme').on('click', function(e) {
-      $(e.target).siblings('.tab_itme').removeClass('on');
+      $(e.currentTarget).siblings('.tab_itme').removeClass('on');
       $('.box_gnb').siblings().removeClass('on');
-      $(e.target).addClass('on');
+      $(e.currentTarget).addClass('on');
 
       $('.light').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.box_gnb').eq(0).addClass('on'));
       $('.dark').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.box_gnb').eq(1).addClass('on'));
@@ -99,10 +99,12 @@ $(function() {
     /** darkMode 여부 체크 (최초 렌더링 시점)*/
     JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
     /** darkMode 여부 체크 // */
-
+    
+    var windowWidth = $( window ).width();
     function setScreenSize() {
+      var vw = 0;
       var vh = window.innerHeight * 0.01;
-      var vw = (window.innerWidth - 40) * 0.01;
+      windowWidth <= 1025 ? vw = (window.innerWidth - 40) * 0.01 : vw = ($('.area_sidebar').width() - 40) * 0.01
       document.documentElement.style.setProperty('--vh', `${vh}px`);
       document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
