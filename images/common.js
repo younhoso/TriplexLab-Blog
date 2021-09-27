@@ -170,36 +170,29 @@ $(function() {
       !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
     });
     /* // 공지 사항 */
-
-    $('.type_notice').each(function(idx, el){
-      // console.log(el); 
-    });
-
     
-    var slidePosition; // 활성화된 아이템 자기자신을 저장해놓는다.
-    var slideCount = $(".item_card").length - 1;
-
-    $('.typeCard_next').on('click', function(){
-      // if(currentIdx > slideCount) currentIdx = 0;
-
-      var typeCardIdx = $('.typeCard_next').index(this);
-      $('.type_card').each(function(idx, el){
-        var currentIdx = 0;
-        if(typeCardIdx === idx){
-          console.log(currentIdx)
-          console.log(typeCardIdx)
-          slidePosition = typeCardIdx * 298;
-          gsap.to(`.type_card.id-${typeCardIdx} .list_type_card`, 1.5, {x: -slidePosition, ease: Power4.easeOut });
-
-          currentIdx += 1;
-        }
-      })
-    });
-
-
-    function slidePrevEl(els) {
-      console.log(this)
+    
+    function moveSlide(num, idx){      
+      var slideNum = -num * 298;  //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
+      gsap.to(`.type_card.id-${idx} .list_type_card`, 1, {x: slideNum, ease: Power4.easeOut });
     }
+
+    $('.type_card').each(function(idx, _){
+      var currentIdx = 0;
+      var slideCount = $(`.type_card.id-${idx} .item_card`).length;
+      
+      $(`.type_card.id-${idx} .typeCard_next`).on('click', function(){
+        if(currentIdx < slideCount - 5) {
+          moveSlide(currentIdx += 1, idx);
+        }
+      });
+
+      $(`.type_card.id-${idx} .typeCard_prev`).on('click', function(){
+        if(currentIdx > 0) {
+          moveSlide(currentIdx -= 1, idx);
+        }
+      });
+    });
 });
 
 function setCookie(name, value, day) {
