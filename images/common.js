@@ -171,11 +171,16 @@ $(function() {
     });
     /* // 공지 사항 */
     
-    
-    function moveSlide(num, idx){      
-      var slideNum = -num * 298;  //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
+    /** 매인 페이지 각 색션마다 슬라이드 기능 구현 */
+    function moveSlideCard(num, idx){      
+      var slideNum = -num * $('.item_card').innerWidth();  //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
       gsap.to(`.type_card.id-${idx} .list_type_card`, 1, {x: slideNum, ease: Power4.easeOut });
-    }
+    };
+
+    function moveSlideNotice(num, idx) {
+      var slideNum = -num * $('.item_notice').innerWidth(); //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
+      gsap.to(`.type_notice.id-${idx} .list_type_notice`, 1, {x: slideNum, ease: Power4.easeOut });
+    };
 
     $('.type_card').each(function(idx, _){
       var currentIdx = 0;
@@ -183,16 +188,34 @@ $(function() {
       
       $(`.type_card.id-${idx} .typeCard_next`).on('click', function(){
         if(currentIdx < slideCount - 5) {
-          moveSlide(currentIdx += 1, idx);
+          moveSlideCard(currentIdx += 1, idx);
         }
       });
 
       $(`.type_card.id-${idx} .typeCard_prev`).on('click', function(){
         if(currentIdx > 0) {
-          moveSlide(currentIdx -= 1, idx);
+          moveSlideCard(currentIdx -= 1, idx);
         }
       });
     });
+
+    $('.type_notice').each(function(idx, _){
+      var currentIdx = 0;
+      var slideCount = $(`.type_notice.id-${idx} .item_notice`).length / 4;
+
+      $(`.type_notice.id-${idx} .typeNotice_next`).on('click', function(){
+        if(currentIdx < slideCount - 3) {
+          moveSlideNotice(currentIdx += 1, idx);
+        }
+      });
+
+      $(`.type_notice.id-${idx} .typeNotice_prev`).on('click', function(){
+        if(currentIdx > 0) {
+          moveSlideNotice(currentIdx -= 1, idx);
+        }
+      });
+    });
+    /** // 매인 페이지 각 색션마다 슬라이드 기능 구현 */
 });
 
 function setCookie(name, value, day) {
