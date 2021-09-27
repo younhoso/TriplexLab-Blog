@@ -990,7 +990,7 @@ aside .tag_board{width:100%}
   .search .ic-search{font-size:18px;font-weight:600;vertical-align:middle}
 
   .counter .count{ display: block;margin-bottom: 15px;width:100%;margin-right:20px;padding:20px;border-radius:.2em;}
-  .counter .count .visita {font-size: 12px;}
+  .counter .count .visita {font-size: 12px;font-weight: 800;}
   .counter .count .txt{margin-top:10px;display:block}
   .counter .count .txt strong{margin-top:5px;display:inline-block}
   .counter .count:last-child{margin-right:0}
