@@ -930,6 +930,7 @@ aside .tag_board{width:100%}
   .box_gnb.on:nth-child(1){display:block}
   .box_gnb.on:nth-child(2){display:block}
 
+  .area_sidebar .skin_link {width: 260px; margin: 0 auto;}
   .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
   .area_sidebar .skin_link a {display: block;}
 
