@@ -100,21 +100,19 @@ $(function() {
     JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
     /** // darkMode 여부 체크  */
 
-    function sidebarMenuSet(value, idx){
-      if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menu', JSON.stringify(value)), sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
+    function sidebarMenuSet(idx){
+      if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
     };
 
+    var _self = $('.list_category .category_list > li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
     function sidebarMenuGet(){
       $('.tt_category > li').attr('data-menu', JSON.parse(sessionStorage.getItem('menu')));
-      var _self = $('.list_category .category_list > li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
       _self.addClass('active').siblings('li').removeClass('active');
     };
     
     $('.category_list > li > a').on('click', function(e){
       var idx = $('.category_list > li > a').index(this);
-      var href = $(this).attr('href'),
-          hrefVal = href.split('/');
-      sidebarMenuSet(hrefVal[2], idx);
+      sidebarMenuSet(idx);
     });
 
     /** menu 여부 체크 (최초 렌더링 시점) */
@@ -124,8 +122,10 @@ $(function() {
         pathname = $location.attr('pathname'),
         parts = pathname.split('/');
 
-    if(parts[1] !== 'category'){
-      $('.tt_category > li').attr('data-menu', '');
+    if(parts[1] === 'category'){
+      _self.addClass('active');
+    } else {
+      _self.removeClass('active');
     };
   
     var windowWidth = $( window ).width();
@@ -286,14 +286,25 @@ function api_postItem() {
 
       var datas = {
         title: item['title'],
+        categoryId: item['categoryId'],
         description: tags.join(),
         imageUrl: imgUrl,
         postUrl: item['postUrl'],
         comments: parseInt(item['comments']),
         content: item['content']
       }
-      var {title, description, imageUrl, postUrl, comments} = datas;
+      var {title, categoryId, description, imageUrl, postUrl, comments} = datas;
 
+      // categoryIdNum는 api에서 받아오는 고유한 category Id입니다.
+      var categoryIdNum = ['941859', '963185', '941862', '950087'];
+      $('.category_list > li').each(function(idx, el){
+        if(categoryId === categoryIdNum[idx]){
+          $(el).addClass('active').slides().removeClass('active');
+        } else {
+          $(el).removeClass('active');
+        }
+      });
+      
       Kakao.Link.createDefaultButton({
         container: '.share_kakao_js',
         objectType: 'feed',
