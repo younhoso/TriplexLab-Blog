@@ -224,7 +224,6 @@ i {
 .border_mode {border:1px solid var(--border-color);}
 .border_b_mode {border-bottom:1px solid var(--border-color);}
 .shadow {box-shadow:var(--shadow);}
-
 /* darkmode, lightmode의 관한 STYLE // */
 
 /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
@@ -340,7 +339,6 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_orange .thema_apply .box_gnb li.active .link_sub_item::before{content:'';display:inline-block;float:right;width:5px;height:100%;background-color:#f60;position:absolute;right:0;top:0}
 .theme_orange .thema_apply .link_detail{background:#f60}
 .theme_orange .thema_apply .btn_arrow:hover{background-color:#f60;color:#fff}
-.theme_orange .thema_apply .active a{color:#fff}
 .theme_orange .thema_apply .slick-active button{background:#f60}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
@@ -1001,6 +999,15 @@ aside .tag_board{width:100%}
   .tab_btn.on {font-weight: 600;}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
+
+  .tt_category > li[data-menu='HTML%2BSCSS%28CSS3%29'] .category_list > li.active {color: #f60;position: relative;}
+  .tt_category > li[data-menu='HTML%2BSCSS%28CSS3%29'] .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 100%; background-color: #f60;position: absolute;}
+  .tt_category > li[data-menu='JAVASCRIPT'] .category_list > li.active {color: #f60;position: relative;}
+  .tt_category > li[data-menu='JAVASCRIPT'] .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 100%; background-color: #f60;position: absolute;}
+  .tt_category > li[data-menu='UI%20UX'] .category_list > li.active {color: #f60;position: relative;}
+  .tt_category > li[data-menu='UI%20UX'] .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 100%; background-color: #f60;position: absolute;}
+  .tt_category > li[data-menu='ETC'] .category_list > li.active {color: #f60;position: relative;}
+  .tt_category > li[data-menu='ETC'] .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 100%; background-color: #f60;position: absolute;}
   
   .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden;position:fixed;top:20px;left:0; box-sizing: border-box;z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch;display: none;}
   .area_sidebar .skin_link {width: 260px; height: 215px; margin: 0 auto;}
@@ -1104,7 +1111,12 @@ aside .tag_board{width:100%}
   .counter .count .txt{margin-top:0;display:flex;justify-content: space-between;align-items: baseline;}
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
-  
+
+  .tt_category > li[data-menu='HTML%2BSCSS%28CSS3%29'] .category_list > li.active::before {top: 0;right: 0;}
+  .tt_category > li[data-menu='JAVASCRIPT'] .category_list > li.active::before {top: 0;right: 0;}
+  .tt_category > li[data-menu='UI%20UX'] .category_list > li.active::before {top: 0;right: 0;}
+  .tt_category > li[data-menu='ETC'] .category_list > li.active::before {top: 0;right: 0;}
+
   .area_sidebar {display: block; width:300px;height:100%;border-right: 1px solid var(--border-color); position:fixed;top:0;left:0;opacity: 1; visibility: initial;}
   .area_sidebar .box_tool{padding:60px 0 40px 0; text-align: center;}
   .area_sidebar .sidebar_contents{min-height:80%}

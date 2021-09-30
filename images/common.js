@@ -1,8 +1,4 @@
-$(function() {
-  var $location = $(location),
-      pathname = $location.attr('pathname'),
-      parts = pathname.split('/');
-  
+$(function() {      
     var menuIcons = ['ic-html', 'ic-js', 'ic-uiux' ,'ic-etc'];
     
     $('.category_list > li a').each(function(idx, el){
@@ -86,24 +82,52 @@ $(function() {
     /** darkMode 여부 체크 */
     var darkModeN = function() {
       var darkmode = false;
-      localStorage.setItem('darkMode', JSON.stringify(darkmode));
+      if(typeof(Storage) !== 'undefined'){localStorage.setItem('darkMode', JSON.stringify(darkmode));}
       $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
     };
     var darkModeY = function() {
       var darkmode = true;
-      localStorage.setItem('darkMode', JSON.stringify(darkmode));
+      if(typeof(Storage) !== 'undefined'){localStorage.setItem('darkMode', JSON.stringify(darkmode));}
       $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
     };
 
-    $('.tab_itme').on('click', function(e) {
+    $('.tab_itme').on('click', function() {
       /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
       $('.light').hasClass('on') ? darkModeN() : darkModeY()
     });
 
     /** darkMode 여부 체크 (최초 렌더링 시점)*/
     JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
-    /** darkMode 여부 체크 // */
+    /** // darkMode 여부 체크  */
+
+    function sidebarMenuSet(value, idx){
+      if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menu', JSON.stringify(value)), sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
+    };
+
+    function sidebarMenuGet(){
+      $('.tt_category > li').attr('data-menu', JSON.parse(sessionStorage.getItem('menu')));
+      var _self = $('.list_category .category_list > li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
+      _self.addClass('active').siblings('li').removeClass('active');
+    };
     
+    $('.category_list > li > a').on('click', function(e){
+      var idx = $('.category_list > li > a').index(this);
+      var href = $(this).attr('href'),
+          hrefVal = href.split('/');
+      sidebarMenuSet(hrefVal[2], idx);
+    });
+
+    /** menu 여부 체크 (최초 렌더링 시점) */
+    JSON.parse(sessionStorage.getItem('menu')) && sidebarMenuGet();
+
+    var $location = $(location),
+        pathname = $location.attr('pathname'),
+        parts = pathname.split('/');
+
+    if(parts[1] !== 'category'){
+      $('.tt_category > li').attr('data-menu', '');
+    };
+  
     var windowWidth = $( window ).width();
     function setScreenSize() {
       var vw = 0;
