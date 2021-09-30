@@ -404,9 +404,8 @@ html{box-sizing:border-box}
 .area_sidebar a{text-decoration:none}
 .area_sidebar ul{list-style:none;margin:0;}
 .area_sidebar .category_list{font-weight: 600;}
-.area_sidebar .category_list > li.active a{color: #f60;}
 .area_sidebar .category_list > li a{height: 44px;line-height: 44px;padding: 0 26px;box-sizing: border-box;display: block;}
-.area_sidebar .category_list > li a:hover{background-color: var(--border-color-2);}
+.area_sidebar .category_list > li a:hover{background-color: var(--border-color-2);color: #f60;}
 .area_sidebar .category_list > li i {margin-right: 5px;}
 .area_sidebar button{background:0 0;border:0;border-radius:0;overflow:visible;cursor:pointer;}
 .area_sidebar .sidebar_header{margin:50px 0 50px 0;padding: 0 40px; box-sizing: border-box;}
@@ -487,7 +486,7 @@ aside .tag_board{width:100%}
 .area_popup .box_form{margin:0 -24px;padding:0 20px 25px 20px}
 .area_popup .title_sidebar{margin-top:32px;font-size:18px}
 .area_popup .tag_board,.area_popup .tag_zone{width:100%}
-.area_popup .item_sidebar{margin-bottom:10px;}
+.area_popup .item_sidebar{margin-bottom:10px;display: inline-block;}
 
 .area_popup div:nth-child(3),.area_popup div:nth-child(4),.area_popup div:nth-child(5){padding:0}
 .area_popup .area_search .btn_close{margin:-2px 0 0;text-align:right;padding:0 7px 2px 7px;height:30px}
@@ -1015,7 +1014,7 @@ aside .tag_board{width:100%}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
   .area_sidebar .box_sns .list_sns li{font-size:16px;font-weight: 600; }
   .area_sidebar .box_sns .list_sns li a{height:44px;line-height:44px;padding:0 26px;box-sizing:border-box;display:block;padding:0 26px;box-sizing:border-box; -webkit-transition: background-color .25s ease; transition: background-color .25s ease;}
-  .area_sidebar .box_sns .list_sns li a:hover {background-color: var(--border-color-2);}
+  .area_sidebar .box_sns .list_sns li a:hover {background-color: var(--border-color-2);color: #f60;}
   .area_sidebar .box_sns .list_sns li .icon_common {display: inline-block; vertical-align: middle; margin-right: 8px;}
   .area_sidebar .box_sns .list_sns li .icon_txt {display: inline-block; vertical-align: middle;}
   .area_sidebar .sidebar_contents{min-height:auto;}

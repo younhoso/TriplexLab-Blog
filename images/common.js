@@ -398,48 +398,8 @@ function slider_control() {
 };
 
 function display_control() {
-    $.ajax({
-      type: 'get', dataType: "json", url: 'https://tistory3.daumcdn.net/tistory/4741094/skin/images/data.json',
-    }).done(function(data) {
-      var localStorage_datafill = {
-        APIMenus : data.APIMenus,
-        APITab : data.APITab,
-        searchItems : data.searchItems,
-      }
-      setCookie('triplexlab_token', data.triplexlab_token, 1);
-
-      if(typeof(Storage) !== 'undefined'){
-        localStorage.setItem('data', JSON.stringify(localStorage_datafill))
-      }
-      var localdata = localStorage.getItem('data');
-      var searchItem = JSON.parse(localdata).searchItems;
-
-      var randomPopularity = searchItem.popularity.sort(() => Math.random() - 0.5);         //배열 요소에는 인기 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
-      var randomRecommendation = searchItem.recommendation.sort(() => Math.random() - 0.5); //배열 요소에는 추천 검색어들을 랜덤으로 추출하여 배열에 담씁니다.
-
-      /** 추천 검색어 */
-      var template_recommendation = '';
-      template_recommendation += '<ul class="list_sidebar">';
-      randomRecommendation.reduce(function(acc, cur){
-        template_recommendation += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
-      },0);
-      template_recommendation += '</ul>';
-      /**  추천 검색어 // */
-      /**  인기 검색어 */
-      var template_popularity = '';
-      template_popularity += '<ul class="list_sidebar">';
-      randomPopularity.reduce(function(acc, cur){
-        template_popularity += '<li class="item_sidebar"><a href="/search/'+cur.name+'">'+cur.name+'</a></li>';
-      },0);
-      template_popularity += '</ul>';
-      /** 인기 검색어 // */
-
-      $('.tag_recomme').append(template_recommendation);
-      $('.tag_popularity').append(template_popularity);
-    });
-
-    // 검색어 삭제
-    $('.btn_search_del').click(function() {
+  // 검색어 삭제
+  $('.btn_search_del').click(function() {
     $('.inp_search').val('');
   });
 
