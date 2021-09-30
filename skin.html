@@ -168,15 +168,18 @@
               </s_sidebar_element>
               <s_sidebar_element>
                 <!-- 카테고리 -->
-                <div class="category color">
-                  [##_category_list_##]
+                <div class="category">
+                  <h3 class="sidebar_tit">Menu</h3>
+                  <div class="list_category color">
+                    [##_category_list_##]
+                  </div>
                 </div>
               </s_sidebar_element>
               <s_sidebar_element>
                 <div class="sidebar_sns">
                   <!-- Social Channels(링크) -->
                   <div class="box_sns">
-                    <h3 class="box_sns_tit">SOCIAL CHANNELS</h3>
+                    <h3 class="sidebar_tit">Social Channels</h3>
                     <ul class="list_sns">
                         <li>
                           <a href="https://github.com/younhoso/modules" target="_blank"><i class="ic-github icon_common"></i><p class="icon_txt">GitHub</p></a>
@@ -217,74 +220,6 @@
           </div>
         </div>
       </div>
-    </aside>
-    <template>
-      <div class="inner_sidebar">
-        <div class="sidebar_header">
-          <h1 class="title_logo">
-            <a href="[##_blog_link_##]" title="[##_title_##]" class="link_logo">
-              <div class="img_logo toggle_dark"><img src="https://tistory1.daumcdn.net/tistory/4741094/skin/images/logo.jpg" alt="triplexlab logo"></div>
-            </a>
-            <div class="close_icon">
-              <i class="ic-close-thin"></i>
-            </div>
-          </h1>
-        </div>
-        <div class="sidebar_contents">
-          <div class="sidebar_menu">
-            <s_sidebar>
-              <s_sidebar_element>
-                <!-- Light Dark 모드 -->
-                <div class="sidebar_menu_tabs">
-                  <ul class="tabs_itmes">
-                    <li class="tabs"></li>
-                    <li class="tab_itme light"><i class="icon theme ic-sun"></i>Light</li>
-                    <li class="tab_itme dark"><i class="icon theme ic-moon"></i>Dark</li>
-                  </ul>
-                </div>
-                </s_sidebar_element>
-              <s_sidebar_element>
-                <!-- 카테고리 -->
-                <div class="category color">
-                  [##_category_list_##]
-                </div>
-              </s_sidebar_element>
-              <s_sidebar_element>
-                <div class="sidebar_sns">
-                  <!-- Social Channels(링크) -->
-                  <div class="box_sns">
-                    <h3 class="box_sns_tit">SOCIAL CHANNELS</h3>
-                    <ul class="list_sns">
-                        <li>
-                          <a href="https://github.com/younhoso/modules" target="_blank"><i class="ic-github icon_common"></i><p class="icon_txt">GitHub</p></a>
-                        </li>
-                        <li>
-                          <a href="https://triplexlab.gitbook.io/vanilla-js/" target="_blank"><i class="ic-gitbook icon_common"></i><p class="icon_txt">GitBook</p></a>
-                        </li>
-                    </ul>
-                  </div>
-                </div>
-              </s_sidebar_element>
-              <s_sidebar_element>
-                 <!-- 관리 -->
-                 <div class="box_tool">
-                  <div class="btn-for-guest">
-                    <a href="#" class="link_tool" data-action="login">로그인</a>
-                  </div>
-                  <div class="btn-for-user">
-                    <a href="#" class="link_tool" data-action="logout">로그아웃</a>
-                    <a href="[##_owner_url_##]/entry/post" class="link_tool">글쓰기</a>
-                    <a href="[##_owner_url_##]" class="link_tool">관리</a>
-                  </div>
-                </div>
-              </s_sidebar_element>
-            </s_sidebar>
-          </div>
-        </div>
-      </div>
-    </template>
-    <aside class="area_sidebar_mini thema_apply bg color">
-      <!-- template inner_sidebar 엘리먼트 바인딩 -->
     </aside>
     <!-- area_sidebar // -->
 
@@ -1105,11 +1040,6 @@
           <div class="menu plus"><a href="#0"><i class="icon ic-plus-thin"></i></a></div>
         </div>
       <!-- // 모비일 하단 메뉴 -->
-      <!-- sidebar_toggle -->
-      <div class="sidebar_toggle border_mode shadow bg_them_mode color">
-        <i class="ic-left-thin"></i>
-      </div>
-      <!-- // sidebar_toggle -->
     </div>
     <!-- // wrap -->
   </s_t3>

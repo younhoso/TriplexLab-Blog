@@ -1,24 +1,24 @@
 @charset "UTF-8";
 /****************************** InputMono FONT ******************************/
-@font-face { font-family:'InputMono'; font-style:normal; font-weight:300; src: local('☺'), url('images/InputMono-Light.woff') format('woff'), url('images/InputMono-Light.woff2') format('woff2'); }
-@font-face { font-family:'InputMono'; font-style:normal; font-weight:400; src: local('☺'), url('images/InputMono-Regular.woff') format('woff'), url('images/InputMono-Regular.woff2') format('woff2'); }
-@font-face { font-family:'InputMono'; font-style:normal; font-weight:500; src: local('☺'), url('images/InputMono-Medium.woff') format('woff'), url('images/InputMono-Medium.woff2') format('woff2'); }
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:300; src: local('☺'), url('images/InputMono-Light.woff') format('woff'), url('images/InputMono-Light.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:400; src: local('☺'), url('images/InputMono-Regular.woff') format('woff'), url('images/InputMono-Regular.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'InputMono'; font-style:normal; font-weight:500; src: local('☺'), url('images/InputMono-Medium.woff') format('woff'), url('images/InputMono-Medium.woff2') format('woff2'); font-display: swap;}
 
 /****************************** Montserrat FONT ******************************/
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:300; src: local('☺'), url('images/Montserrat-Light.woff') format('woff'), url('images/Montserrat-Light.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:400; src: local('☺'), url('images/Montserrat-Regular.woff') format('woff'), url('images/Montserrat-Regular.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:500; src: local('☺'), url('images/Montserrat-Medium.woff') format('woff'), url('images/Montserrat-Medium.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:600; src: local('☺'), url('images/Montserrat-SemiBold.woff') format('woff'), url('images/Montserrat-SemiBold.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:700; src: local('☺'), url('images/Montserrat-Bold.woff') format('woff'), url('images/Montserrat-Bold.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:800; src: local('☺'), url('images/Montserrat-ExtraBold.woff') format('woff'), url('images/Montserrat-ExtraBold.woff2') format('woff2'); }
-@font-face { font-family:'Montserrat'; font-style:normal; font-weight:900; src: local('☺'), url('images/Montserrat-Black.woff') format('woff'), url('images/Montserrat-Black.woff2') format('woff2'); }
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:300; src: local('☺'), url('images/Montserrat-Light.woff') format('woff'), url('images/Montserrat-Light.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:400; src: local('☺'), url('images/Montserrat-Regular.woff') format('woff'), url('images/Montserrat-Regular.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:500; src: local('☺'), url('images/Montserrat-Medium.woff') format('woff'), url('images/Montserrat-Medium.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:600; src: local('☺'), url('images/Montserrat-SemiBold.woff') format('woff'), url('images/Montserrat-SemiBold.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:700; src: local('☺'), url('images/Montserrat-Bold.woff') format('woff'), url('images/Montserrat-Bold.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:800; src: local('☺'), url('images/Montserrat-ExtraBold.woff') format('woff'), url('images/Montserrat-ExtraBold.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Montserrat'; font-style:normal; font-weight:900; src: local('☺'), url('images/Montserrat-Black.woff') format('woff'), url('images/Montserrat-Black.woff2') format('woff2'); font-display: swap;}
 
 /****************************** Noto Sans KR FONT ******************************/
-@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:300; src: local('☺'), url('images/NotoSansKR-Light.woff') format('woff'), url('images/NotoSansKR-Light.woff2') format('woff2'); }
-@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:400; src: local('☺'), url('images/NotoSansKR-Regular.woff') format('woff'), url('images/NotoSansKR-Regular.woff2') format('woff2'); }
-@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:500; src: local('☺'), url('images/NotoSansKR-Medium.woff') format('woff'), url('images/NotoSansKR-Medium.woff2') format('woff2'); }
-@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:700; src: local('☺'), url('images/NotoSansKR-Bold.woff') format('woff'), url('images/NotoSansKR-Bold.woff2') format('woff2'); }
-@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:900; src: local('☺'), url('images/NotoSansKR-Black.woff') format('woff'), url('images/NotoSansKR-Black.woff2') format('woff2'); }
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:300; src: local('☺'), url('images/NotoSansKR-Light.woff') format('woff'), url('images/NotoSansKR-Light.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:400; src: local('☺'), url('images/NotoSansKR-Regular.woff') format('woff'), url('images/NotoSansKR-Regular.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:500; src: local('☺'), url('images/NotoSansKR-Medium.woff') format('woff'), url('images/NotoSansKR-Medium.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:700; src: local('☺'), url('images/NotoSansKR-Bold.woff') format('woff'), url('images/NotoSansKR-Bold.woff2') format('woff2'); font-display: swap;}
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:900; src: local('☺'), url('images/NotoSansKR-Black.woff') format('woff'), url('images/NotoSansKR-Black.woff2') format('woff2'); font-display: swap;}
 
 body,html{height:100%}
 body{-webkit-text-size-adjust:none}
@@ -68,7 +68,7 @@ td,th{text-indent:0}
     url('images/ic-font.svg?4b6bv7#ic-font') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 i {
@@ -404,7 +404,8 @@ html{box-sizing:border-box}
 .area_sidebar a{text-decoration:none}
 .area_sidebar ul{list-style:none;margin:0;}
 .area_sidebar .category_list{font-weight: 600;}
-.area_sidebar .category_list > li a{height: 40px;line-height: 40px;padding: 0 26px;box-sizing: border-box;display: block;}
+.area_sidebar .category_list > li.active a{color: #f60;}
+.area_sidebar .category_list > li a{height: 44px;line-height: 44px;padding: 0 26px;box-sizing: border-box;display: block;}
 .area_sidebar .category_list > li a:hover{background-color: var(--border-color-2);}
 .area_sidebar .category_list > li i {margin-right: 5px;}
 .area_sidebar button{background:0 0;border:0;border-radius:0;overflow:visible;cursor:pointer;}
@@ -419,11 +420,11 @@ html{box-sizing:border-box}
 .area_sidebar .t_menu_category a,.area_sidebar .t_menu_guestbook a,.area_sidebar .t_menu_home a,.area_sidebar .t_menu_link_1 a,.area_sidebar .t_menu_link_10 a,.area_sidebar .t_menu_link_2 a,.area_sidebar .t_menu_link_3 a,.area_sidebar .t_menu_link_4 a,.area_sidebar .t_menu_link_5 a,.area_sidebar .t_menu_link_6 a,.area_sidebar .t_menu_link_7 a,.area_sidebar .t_menu_link_8 a,.area_sidebar .t_menu_link_9 a,.area_sidebar .t_menu_location a,.area_sidebar .t_menu_medialog a,.area_sidebar .t_menu_page a,.area_sidebar .t_menu_tag a{display:block;margin-bottom:28px;font-size:16px;font-weight:400;transition:all .2s ease-out;}
 .area_sidebar .tt_category .link_sub_item:hover{text-decoration:underline}
 .area_sidebar .sidebar_menu:after{content:'';display:block;clear:both}
-.area_sidebar .list_sns{font-size:14px;margin-top:20px;}
+.area_sidebar .list_sns{font-size:14px;margin-top:15px;}
 .area_sidebar .add_link a {height: 40px;line-height: 40px;padding: 0 26px;box-sizing: border-box;display: block;margin-bottom:28px;font-size:16px;font-weight:600;}
 .area_sidebar .add_link a:hover{background-color: var(--border-color-2);}
 .area_sidebar .add_link,.area_sidebar .box_sns{margin-bottom:40px}
-.area_sidebar .box_sns .box_sns_tit{font-size:14px;font-weight:600;padding: 0 26px;box-sizing: border-box;}
+.area_sidebar .sidebar_tit{font-size:14px;font-weight:600;padding: 0 26px;color: #777;box-sizing: border-box;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color);;vertical-align:-2px}
 .area_sidebar .link_tool{position:relative;display:inline-block;margin-left:45px;font-size:14px;font-weight:700;}
@@ -432,8 +433,7 @@ html{box-sizing:border-box}
 .area_sidebar .link_tool:before{content:'｜';position:absolute;top:3px;bottom:0;left:-48px;right:0;width:10px;margin-left:20px;font-size:11px;font-weight:lighter;color:#d3d4d7}
 .area_sidebar .link_tit{display:none}
 .category {margin:40px 0;}
-.sidebar_sns {padding: 40px 0 0 0; position: relative;}
-.sidebar_sns::before{content:'';width:85%;height:1px;margin:0 auto;background-color:var(--border-color-2);position:absolute;top:1px;left:50%;transform:translateX(-50%);}
+.category .list_category {margin-top: 15px;}
 @media screen and (max-width:768px){
 .area_sidebar .inner_sidebar{width:100%;left:0}
 .area_sidebar .area_sidebar .btn_close{margin-right:-16px}
@@ -957,8 +957,6 @@ aside .tag_board{width:100%}
   .category_type_notice .list_category,.list_type_notice::-webkit-scrollbar { display: none; }
   .category_type_notice .item_category,.list_type_notice .item_notice{ width: 95%; height:calc((100% - 20px)/ 4);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;pointer-events: auto;}
 
-  .sidebar_toggle{display:none;position:fixed;left:285px;top:70px;z-index:33;width:33px;height:33px;line-height:33px;text-align:center;font-size:16px;box-sizing:border-box;border-radius:2em;cursor:pointer;}
-  .sidebar_toggle i {font-size: 14px; font-weight: 600;}
   .list_type_card .item_card a {display: block;padding:0 10px 0 0;outline: none;}
   .list_type_card{-ms-overflow-style: none;}
   .list_type_card::-webkit-scrollbar { display: none; }
@@ -1006,7 +1004,7 @@ aside .tag_board{width:100%}
   .tab_item.active {display: block;}
   
   .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden;position:fixed;top:20px;left:0; box-sizing: border-box;z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch;display: none;}
-  .area_sidebar .skin_link {width: 260px; margin: 0 auto;}
+  .area_sidebar .skin_link {width: 260px; height: 215px; margin: 0 auto;}
   .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
   .area_sidebar .skin_link a {display: block;}
   .area_sidebar .box_tool{ padding:40px 26px; box-sizing: border-box; text-align: left;}
@@ -1016,7 +1014,7 @@ aside .tag_board{width:100%}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none; width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
   .area_sidebar .box_sns .list_sns li{font-size:16px;font-weight: 600; }
-  .area_sidebar .box_sns .list_sns li a{height:40px;line-height:40px;padding:0 26px;box-sizing:border-box;display:block;padding:0 26px;box-sizing:border-box; -webkit-transition: background-color .25s ease; transition: background-color .25s ease;}
+  .area_sidebar .box_sns .list_sns li a{height:44px;line-height:44px;padding:0 26px;box-sizing:border-box;display:block;padding:0 26px;box-sizing:border-box; -webkit-transition: background-color .25s ease; transition: background-color .25s ease;}
   .area_sidebar .box_sns .list_sns li a:hover {background-color: var(--border-color-2);}
   .area_sidebar .box_sns .list_sns li .icon_common {display: inline-block; vertical-align: middle; margin-right: 8px;}
   .area_sidebar .box_sns .list_sns li .icon_txt {display: inline-block; vertical-align: middle;}
@@ -1098,8 +1096,6 @@ aside .tag_board{width:100%}
   .category_type_notice .list_category,.list_type_notice{height:calc(4 * 48px + 18px * (4 - 1));}
   .category_type_notice .item_category,.list_type_notice .item_notice {width: calc((1700px - 4 * 24px) / 3);}
 
-  .sidebar_toggle {display:block;}
-
   .list_type_card .item_card a {padding:0 10px 58px 0;}
 
   .search {display: none;}
@@ -1110,12 +1106,12 @@ aside .tag_board{width:100%}
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
   
-  .area_sidebar {display: block; width:300px;height:100%;position:fixed;top:0;left:0;opacity: 1; visibility: initial;}
+  .area_sidebar {display: block; width:300px;height:100%;border-right: 1px solid var(--border-color); position:fixed;top:0;left:0;opacity: 1; visibility: initial;}
   .area_sidebar .box_tool{padding:60px 0 40px 0; text-align: center;}
   .area_sidebar .sidebar_contents{min-height:80%}
   .area_sidebar .sidebar_header .link_logo {display: block;}
   .area_sidebar .inner_sidebar .sidebar_header {text-align: center;}
-  .area_sidebar .inner_sidebar .sidebar_header .img_logo{width: 32%;display: block; margin: 0 auto 10px auto;}
+  .area_sidebar .inner_sidebar .sidebar_header .img_logo{width: 32%;height: 70px;display: block; margin: 0 auto 10px auto;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: block;}
 
   .mo_footer_menu{display:none}

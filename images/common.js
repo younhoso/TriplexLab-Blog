@@ -1,4 +1,8 @@
 $(function() {
+  var $location = $(location),
+      pathname = $location.attr('pathname'),
+      parts = pathname.split('/');
+  
     var menuIcons = ['ic-html', 'ic-js', 'ic-uiux' ,'ic-etc'];
     
     $('.category_list > li a').each(function(idx, el){
@@ -218,6 +222,7 @@ $(function() {
     /** // 매인 페이지 각 색션마다 슬라이드 기능 구현 */
 });
 
+
 function setCookie(name, value, day) {
   var date = new Date(); 
   date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000); 
@@ -393,11 +398,6 @@ function slider_control() {
 };
 
 function display_control() {
-  var $location = $(location),
-      pathname = $location.attr('pathname'),
-      href = $location.attr('href'),
-      parts = pathname.split('/');
-
     $.ajax({
       type: 'get', dataType: "json", url: 'https://tistory3.daumcdn.net/tistory/4741094/skin/images/data.json',
     }).done(function(data) {
