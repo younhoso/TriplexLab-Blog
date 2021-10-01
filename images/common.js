@@ -16,7 +16,22 @@ $(function() {
 
        /* 텍스트 필드 안의 텍스트 복사 */
       navigator.clipboard.writeText(input.val());
-    });    
+    });
+    $('.txt_state').on('click', function(){
+      $('.thankyou').addClass('on');
+      $('.cancel').addClass('on');
+      setTimeout(function(){
+        $('.thankyou').removeClass('on');
+        $('.cancel').removeClass('on');
+      },2000);
+      var input = $('.detail_side input');
+      
+      input.val(window.location.href);
+      input.select();
+
+       /* 텍스트 필드 안의 텍스트 복사 */
+      navigator.clipboard.writeText(input.val());
+    });
 
     $('.comment').on('click', function(){
       $('html, body').animate({
@@ -299,7 +314,7 @@ function api_postItem() {
       var categoryIdNum = ['941859', '963185', '941862', '950087'];
       $('.category_list > li').each(function(idx, el){
         if(categoryId === categoryIdNum[idx]){
-          $(el).addClass('active').slides().removeClass('active');
+          $(el).addClass('active').siblings().removeClass('active');
         } else {
           $(el).removeClass('active');
         }
@@ -433,6 +448,12 @@ function slider_control() {
 };
 
 function display_control() {
+  $.ajax({
+    type: 'get', dataType: "json", url: 'https://tistory4.daumcdn.net/tistory/4741094/skin/images/data.json',
+  }).done(function(data) {
+    setCookie('triplexlab_token', data.triplexlab_token, 1);
+  });
+
   // 검색어 삭제
   $('.btn_search_del').click(function() {
     $('.inp_search').val('');
