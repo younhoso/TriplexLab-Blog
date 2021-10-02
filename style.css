@@ -1004,7 +1004,7 @@ aside .tag_board{width:100%}
   .tt_category > li .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 100%; background-color: #f60;position: absolute;}
   
   .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden;position:fixed;top:20px;left:0; box-sizing: border-box;z-index:33;overflow-y:auto; webkit-overflow-scrolling:touch;display: none;}
-  .area_sidebar .skin_link {width: 260px; height: 215px; margin: 0 auto;}
+  .area_sidebar .skin_link {width: 260px; height: 273px; margin: 0 auto;}
   .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; }
   .area_sidebar .skin_link a {display: block;}
   .area_sidebar .box_tool{ padding:40px 26px; box-sizing: border-box; text-align: left;}
