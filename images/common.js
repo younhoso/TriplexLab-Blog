@@ -186,7 +186,7 @@ $(function() {
     });
     
     /* code Copy */
-    $('.code_inner pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
+    $('.article_view pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
     $('.code_btn').on('click', function(){
       var hljsTxt = $(this).next('.hljs').text();
       navigator.clipboard.writeText(hljsTxt);/* 텍스트 필드 안의 텍스트 복사 */
