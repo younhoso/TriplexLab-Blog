@@ -934,14 +934,14 @@ figure[data-ke-type=emoticon][data-ke-align=alignCenter]{width: 140px;}
   .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {font-size: 12px; font-weight: 600; left: 30px;}
   .swiper-pagination-progressbar{background:rgba(228,228,228,.4);}
   .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{height: 2px;}
-  .typeNotice_next{width:35px;height:35px;top:0;right:0;position:absolute;line-height:35px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-20px,-10px);transform:translate(-20px,-10px); cursor: pointer;z-index: 1;outline: none;}
+  .typeNotice_next{width:32px;height:32px;top:0;right:0;position:absolute;line-height:32px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-20px,-10px);transform:translate(-20px,-10px); cursor: pointer;z-index: 1;outline: none;}
   .typeNotice_next .ic-right-thin{font-size: 14px; font-weight: 600;}
-  .typeNotice_prev{width:35px;height:35px;top:0;right:0;position:absolute;line-height:35px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-70px,-10px);transform:translate(-70px,-10px); cursor: pointer;z-index: 1;outline: none;}
+  .typeNotice_prev{width:32px;height:32px;top:0;right:0;position:absolute;line-height:32px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-70px,-10px);transform:translate(-70px,-10px); cursor: pointer;z-index: 1;outline: none;}
   .typeNotice_prev .ic-left-thin{font-size: 14px; font-weight: 600;}
   .typeNotice_next.disabled,.typeNotice_prev.disabled{opacity:.35;cursor:auto;pointer-events:none;}
-  .typeCard_next {width:35px;height:35px;top:0;right:0;position:absolute;line-height:35px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-20px,-10px);transform:translate(-20px,-10px); cursor: pointer;z-index: 1;outline: none;}
+  .typeCard_next {width:32px;height:32px;top:0;right:0;position:absolute;line-height:32px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-20px,-10px);transform:translate(-20px,-10px); cursor: pointer;z-index: 1;outline: none;}
   .typeCard_next .ic-right-thin{font-size: 14px; font-weight: 600;}
-  .typeCard_prev {width:35px;height:35px;top:0;right:0;position:absolute;line-height:35px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-70px,-10px);transform:translate(-70px,-10px); cursor: pointer;z-index: 1;outline: none;}
+  .typeCard_prev {width:32px;height:32px;top:0;right:0;position:absolute;line-height:32px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-70px,-10px);transform:translate(-70px,-10px); cursor: pointer;z-index: 1;outline: none;}
   .typeCard_prev .ic-left-thin{font-size: 14px; font-weight: 600;}
   .typeCard_next.disabled,.typeCard_prev.disabled{opacity:.35;cursor:auto;pointer-events:none;}
   
@@ -1066,12 +1066,12 @@ figure[data-ke-type=emoticon][data-ke-align=alignCenter]{width: 140px;}
   .swiper_type_card:hover.swiper-container-horizontal > .swiper-scrollbar{opacity: 1;}
   .swiper-button-next.swiper-button-disabled .prev, .swiper-button-prev.swiper-button-disabled .prev{pointer-events: none;}
 
-  .typeNotice_next { -webkit-transform:translate(-40px,0);transform:translate(-40px,0);}
-  .typeNotice_prev {-webkit-transform:translate(-90px,0);transform:translate(-90px,0);}
+  .typeNotice_next { -webkit-transform:translate(-40px,-10px);transform:translate(-40px,-10px);}
+  .typeNotice_prev {-webkit-transform:translate(-85px,-10px);transform:translate(-85px,-10px);}
   .typeNotice_next, .typeNotice_prev{display: block;}
 
-  .typeCard_next {-webkit-transform:translate(-40px,0);transform:translate(-40px,0);}
-  .typeCard_prev {-webkit-transform:translate(-90px,0);transform:translate(-90px,0);}
+  .typeCard_next {-webkit-transform:translate(-40px,-10px);transform:translate(-40px,-10px);}
+  .typeCard_prev {-webkit-transform:translate(-85px,-10px);transform:translate(-85px,-10px);}
   .typeCard_next, .typeCard_prev {display: block;}
 
   .type_notice .swiper_type_notice{width:100%;height:263px;margin-left:auto;margin-right:auto;position:relative;list-style:none;padding:0;overflow: hidden;z-index:1;}
