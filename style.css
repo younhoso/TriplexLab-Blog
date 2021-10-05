@@ -765,7 +765,7 @@ aside .tag_board{width:100%}
 .area_category{padding-top:60px}
 .area_category .title_section{text-align:left}
 }
-.category_type_related .list_category{list-style:none;margin:0 -8px;padding-top:40px;border:none;box-sizing:border-box;font-size:0}
+.category_type_related .list_category{list-style:none;margin:0 -8px;padding-top:60px;border:none;box-sizing:border-box;font-size:0}
 .category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 6px;}
 .category_type_related .item_category{display:inline-block;width:25%;margin-bottom:54px;vertical-align:top}
 .category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;}
