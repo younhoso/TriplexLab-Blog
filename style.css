@@ -610,7 +610,8 @@ aside .tag_board{width:100%}
 @media screen and (max-width:1025px){
 .area_cover{margin-top:130px}
 }
-.title_section{position:relative;width:100%;margin:0 0 10px 0;font-size:48px;font-weight:900;color:inherit;}
+.title_list_section {font-size:48px;font-weight: 900;margin-bottom: 10px;}
+.title_section{position:relative;width:100%;margin:0 0 10px 0;font-size:24px;font-weight:900;color:inherit;}
 .txt_list_description {font-size:18px;}
 .type_featured{position:relative;margin-top:120px}
 .type_featured:after{content:'';display:block;clear:both}
@@ -667,6 +668,7 @@ aside .tag_board{width:100%}
 .category_type_post .link_category .info .name,.list_post .link_post .info .name{display:block;width:calc(100% - 80px);max-height:65px;margin:0 auto;font-size:20px;font-weight:500;line-height:1.33;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 @media screen and (max-width:1025px){
 .type_post{margin:60px auto 0 auto}
+.title_list_section {font-size: 1.8em;}
 .title_section{margin:0 0 20px 0;font-size:16px;text-align:left;}
 .type_post .title_section{text-align:center}
 .category_type_post,.list_post{margin:0 -1px}
