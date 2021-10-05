@@ -488,8 +488,11 @@ function slide() {
     var firstCard = $(`.type_card.id-${idx} .item_card`).first();
     var lastCard = $(`.type_card.id-${idx} .item_card`).last();
 
-    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
-    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
+    console.log(num)
+    console.log(slideCount)
+
+    num >= slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
+    num < slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
     num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
     num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
 
@@ -505,8 +508,8 @@ function slide() {
     var firstCard = $(`.type_notice.id-${idx} .item_notice`).first();
     var lastCard = $(`.type_notice.id-${idx} .item_notice`).last();
 
-    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
-    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
+    num >= slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
+    num < slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
     num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
     num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
 
