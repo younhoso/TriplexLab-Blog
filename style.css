@@ -669,7 +669,7 @@ aside .tag_board{width:100%}
 @media screen and (max-width:1025px){
 .type_post{margin:60px auto 0 auto}
 .title_list_section {font-size: 1.8em;}
-.title_section{margin:0 0 20px 0;font-size:16px;text-align:left;}
+.title_section{margin:0 0 20px 0;font-size:20px;text-align:left;}
 .type_post .title_section{text-align:center}
 .category_type_post,.list_post{margin:0 -1px}
 .category_type_post .item_category,.list_post .item_post{margin-bottom:1px}
@@ -775,6 +775,7 @@ aside .tag_board{width:100%}
 .category_type_related .link_category .text{max-height:70px;margin:0 0 13px 0;font-size:14px;line-height:20px;overflow:hidden;opacity:.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;width:95%}
 .category_type_related .link_category .date{display:block;font-size:13px;line-height:20px;}
 @media screen and (max-width:1025px){
+  .category_type_related .list_category {padding-top:40px;}
 .category_type_related .item_category{width:100%;margin-bottom:30px!important}
 .category_type_related .link_category strong{display:block;margin:12px 0 4px 0;font-size:17px}
 .category_type_related .link_category .text{margin:0 0 10px 0}
@@ -982,13 +983,13 @@ figure[data-ke-type=emoticon][data-ke-align=alignCenter]{width: 140px;}
   
   .tbas_inner { padding-top: 40px; padding-bottom: 40px;}
   .tbas_inner .inner{width:100%; border-radius: 0.4em;}
-  .tbas_inner .btn_inner .tab_btn_inner {display: flex;}
+  .tbas_inner .btn_inner .tab_btn_inner {display: flex;justify-content: flex-start;}
   .tbas_inner .btn_inner .line_inner {margin-top: 20px;}
   .tbas_inner .btn_inner .line_inner i:first-child {display:block;width:59px;height:3px;-webkit-transition: transform 0.1s ease-in-out;transition: transform 0.1s ease-in-out;}
   .tbas_inner .btn_inner .line_inner i.Number{-webkit-transform: translate(20px, 0);transform: translate(20px, 0);}
   .tbas_inner .btn_inner .line_inner i.STORY{width: 102px; -webkit-transform: translate(99px, 0);transform: translate(99px, 0);}
   .tbas_inner .btn_inner .bg_line{width:100%;height:1px;display:block;background-color:var(--border-color);}
-  .tab_btn {padding: 20px 0 0 20px; cursor: pointer;}
+  .tab_btn {padding: 20px 0 0 20px; cursor: pointer; white-space: nowrap;}
   .tab_btn.on {font-weight: 600;}
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
