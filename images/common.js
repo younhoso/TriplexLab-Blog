@@ -488,9 +488,6 @@ function slide() {
     var firstCard = $(`.type_card.id-${idx} .item_card`).first();
     var lastCard = $(`.type_card.id-${idx} .item_card`).last();
 
-    console.log(num)
-    console.log(slideCount)
-
     num >= slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
     num < slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
     num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
