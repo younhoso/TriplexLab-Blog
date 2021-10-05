@@ -51,7 +51,6 @@ $(function() {
   
   display_control();
   slider_control();
-  api_postItem();
   detail_side();
   slide();
 
@@ -198,7 +197,7 @@ $(function() {
   
   /* 공지 사항 */
   $('.notice_js').on('click', function() {
-    setCookie('bell', 'Y', 7);
+    setCookie('bell', 'Y', 5);
     $(this).removeClass('on');
     $('.notice_template').addClass('on');
     var frag = document.getElementsByTagName('template')[0];
@@ -226,81 +225,6 @@ document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path
 function getCookie(name) { 
 var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
 return value? value[2] : null; 
-};
-
-function api_postItem() {
-  var postReadtUrl = 'https://www.tistory.com/apis/post/read?';
-  var pars = {
-    'accessToken' : getCookie('triplexlab_token'),
-    'outputType' : 'json',
-    'blogName' : 'triplexlab-api',
-  }
-
-  var imgUrl= $('.inner_header').data('image');
-  var path = window.location.pathname;
-  var parsRead2 = {
-    ...pars,
-    'postId': path.substr(1),
-  }
-
-  var {accessToken, outputType, blogName, postId} = parsRead2;
-
-  $.ajax({
-    type:'GET',
-    url: postReadtUrl+'access_token='+accessToken+'&output='+outputType+'&blogName='+blogName+'&postId='+postId
-  }).done(function(res) {
-    var {item} = res.tistory;
-
-    var tags = new Array();
-    item['tags']?.tag ? item['tags'].tag.forEach(function(_, i){tags.push(`#${item['tags'].tag[i]}`);}) : tags.push(`#TriplexLab, #${item['title']}`);
-
-    var datas = {
-      title: item['title'],
-      categoryId: item['categoryId'],
-      description: tags.join(),
-      imageUrl: imgUrl,
-      postUrl: item['postUrl'],
-      comments: parseInt(item['comments']),
-      content: item['content']
-    }
-    var {title, categoryId, description, imageUrl, postUrl, comments} = datas;
-
-    // categoryIdNum는 api에서 받아오는 고유한 category Id입니다.
-    var categoryIdNum = ['941859', '963185', '941862', '950087'];
-    $('.category_list > li').each(function(idx, el){
-      if(categoryId === categoryIdNum[idx]){
-        $(el).addClass('active').siblings().removeClass('active');
-      } else {
-        $(el).removeClass('active');
-      }
-    });
-    
-    Kakao.Link.createDefaultButton({
-      container: '.share_kakao_js',
-      objectType: 'feed',
-      content: {
-        title: title,
-        description: description,
-        imageUrl: imageUrl,
-        link: {
-          mobileWebUrl: postUrl,
-          webUrl: postUrl,
-        },
-      },
-      social: {
-        commentCount: comments
-      },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: postUrl,
-            webUrl: postUrl,
-          },
-        }
-      ],
-    }); /* Kakao.Link // */
-  });
 };
 
 function slider_control() {
@@ -403,12 +327,6 @@ function slider_control() {
 };
 
 function display_control() {
-$.ajax({
-  type: 'get', dataType: "json", url: 'https://tistory4.daumcdn.net/tistory/4741094/skin/images/data.json',
-}).done(function(data) {
-  setCookie('triplexlab_token', data.triplexlab_token, 1);
-});
-
 // 검색어 삭제
 $('.btn_search_del').click(function() {
   $('.inp_search').val('');

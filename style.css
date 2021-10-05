@@ -1202,7 +1202,6 @@ figure[data-ke-type=emoticon][data-ke-align=alignCenter]{width: 140px;}
   #tt-body-page .detail_side .side_item.item1 {top: 100px; }
   #tt-body-page .detail_side .side_item.item2 {top: 150px;}
   #tt-body-page .detail_side .side_item.item3 {top: 200px;}
-  #tt-body-page .detail_side .side_item.item4 {top: 250px;}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);display:block;position:absolute;right:45px;top:50%;transform:translateY(-50%);text-align:right;padding:9px;font-size:14px;opacity:0;visibility:hidden;text-overflow:ellipsis;white-space:nowrap;background-color:#000;color:#fff;font-weight:600;border-radius:.5em; z-index: 5;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out;}
   #tt-body-page .detail_side .side_item::after{content:'';display:block;width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid #000;position:absolute;top:34%;right:40px;opacity:0;visibility:hidden;z-index: 4; -webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out;}
  
