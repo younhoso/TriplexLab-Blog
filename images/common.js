@@ -1,4 +1,4 @@
-$(function() {      
+$(function() {
   var menuIcons = ['ic-html', 'ic-js', 'ic-uiux' ,'ic-etc'];
   
   $('.category_list > li a').each(function(idx, el){
@@ -53,6 +53,7 @@ $(function() {
   slider_control();
   api_postItem();
   detail_side();
+  slide();
 
   $('.tab_btn').on('click', function(){
     $('.tab_item').siblings().removeClass('active');
@@ -213,86 +214,6 @@ $(function() {
     !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
   });
   /* // 공지 사항 */
-  
-  /** 매인 페이지 각 색션마다 슬라이드 기능 구현 */
-  function moveSlideCard(num, idx){
-    var slideCount = $(`.type_card.id-${idx} .item_card`).length - 5;
-    var firstCard = $(`.type_card.id-${idx} .item_card`).first();
-    var lastCard = $(`.type_card.id-${idx} .item_card`).last();
-
-    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
-    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
-    num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
-    num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
-
-    firstCard.hasClass('on') ? $(`.type_card.id-${idx} .typeCard_prev`).addClass('disabled') : $(`.type_card.id-${idx} .typeCard_prev`).removeClass('disabled')
-    lastCard.hasClass('on') ? $(`.type_card.id-${idx} .typeCard_next`).addClass('disabled') : $(`.type_card.id-${idx} .typeCard_next`).removeClass('disabled')
-
-    var slideNum = -num * $('.item_card').innerWidth();  //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
-    gsap.to(`.type_card.id-${idx} .list_type_card`, 1, {x: slideNum, ease: Power4.easeOut });
-  };
-
-  function moveSlideNotice(num, idx) {
-    var slideCount = ($(`.type_notice.id-${idx} .item_notice`).length / 4) - 3;
-    var firstCard = $(`.type_notice.id-${idx} .item_notice`).first();
-    var lastCard = $(`.type_notice.id-${idx} .item_notice`).last();
-
-    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
-    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
-    num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
-    num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
-
-    firstCard.hasClass('on') ? $(`.type_notice.id-${idx} .typeNotice_prev`).addClass('disabled') : $(`.type_notice.id-${idx} .typeNotice_prev`).removeClass('disabled')
-    lastCard.hasClass('on') ? $(`.type_notice.id-${idx} .typeNotice_next`).addClass('disabled') : $(`.type_notice.id-${idx} .typeNotice_next`).removeClass('disabled')
-
-    var slideNum = -num * $('.item_notice').innerWidth(); //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
-    gsap.to(`.type_notice.id-${idx} .list_type_notice`, 1, {x: slideNum, ease: Power4.easeOut });
-  };
- 
-  $('.type_card').each(function(idx, _){
-    var currentIdx = 0;
-    var firstCard = $(`.type_card.id-${idx} .item_card`).first();
-    var lastCard = $(`.type_card.id-${idx} .item_card`).last();
-    var slideCount = $(`.type_card.id-${idx} .item_card`).length;
-    
-    currentIdx === 0 && (firstCard.addClass('on'),lastCard.removeClass('on'));
-    firstCard.hasClass('on') && $('.typeCard_prev').addClass('disabled')
-
-    $(`.type_card.id-${idx} .typeCard_next`).on('click', function(){
-      if(currentIdx < slideCount - 5) {
-        moveSlideCard(currentIdx += 1, idx);
-      }
-    });
-
-    $(`.type_card.id-${idx} .typeCard_prev`).on('click', function(){
-      if(currentIdx > 0) {
-        moveSlideCard(currentIdx -= 1, idx);
-      }
-    });
-  });  
-
-  $('.type_notice').each(function(idx, _){
-    var currentIdx = 0;
-    var firstCard = $(`.type_notice.id-${idx} .item_notice`).first();
-    var lastCard = $(`.type_notice.id-${idx} .item_notice`).last();
-    var slideCount = $(`.type_notice.id-${idx} .item_notice`).length / 4;
-
-    currentIdx === 0 && (firstCard.addClass('on'),lastCard.removeClass('on'));
-    firstCard.hasClass('on') && $('.typeNotice_prev').addClass('disabled')
-
-    $(`.type_notice.id-${idx} .typeNotice_next`).on('click', function(){
-      if(currentIdx < slideCount - 3) {
-        moveSlideNotice(currentIdx += 1, idx);
-      }
-    });
-
-    $(`.type_notice.id-${idx} .typeNotice_prev`).on('click', function(){
-      if(currentIdx > 0) {
-        moveSlideNotice(currentIdx -= 1, idx);
-      }
-    });
-  });
-  /** // 매인 페이지 각 색션마다 슬라이드 기능 구현 */
 });
 
 
@@ -559,3 +480,85 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
 }
 /* 공감 아이콘 클릭 이벤트 처리 */
 };
+
+/** 매인 페이지 각 색션마다 슬라이드 기능 구현 */
+function slide() {
+  function moveSlideCard(num, idx){
+    var slideCount = $(`.type_card.id-${idx} .item_card`).length - 5;
+    var firstCard = $(`.type_card.id-${idx} .item_card`).first();
+    var lastCard = $(`.type_card.id-${idx} .item_card`).last();
+
+    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
+    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
+    num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
+    num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
+
+    firstCard.hasClass('on') ? $(`.type_card.id-${idx} .typeCard_prev`).addClass('disabled') : $(`.type_card.id-${idx} .typeCard_prev`).removeClass('disabled')
+    lastCard.hasClass('on') ? $(`.type_card.id-${idx} .typeCard_next`).addClass('disabled') : $(`.type_card.id-${idx} .typeCard_next`).removeClass('disabled')
+
+    var slideNum = -num * $('.item_card').innerWidth();  //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
+    gsap.to(`.type_card.id-${idx} .list_type_card`, 1, {x: slideNum, ease: Power4.easeOut });
+  };
+
+  function moveSlideNotice(num, idx) {
+    var slideCount = ($(`.type_notice.id-${idx} .item_notice`).length / 4) - 3;
+    var firstCard = $(`.type_notice.id-${idx} .item_notice`).first();
+    var lastCard = $(`.type_notice.id-${idx} .item_notice`).last();
+
+    num === slideCount && (firstCard.removeClass('on'), lastCard.addClass('on')) // 현재item의 마지막 요소 채크
+    num !== slideCount && (lastCard.removeClass('on')) // 현재item의 마지막 요소가 아닌것 채크
+    num > 0 && firstCard.removeClass('on'); // 현재item의 첫번째 요소보다 큰것 채크
+    num === 0 && (firstCard.addClass('on'), lastCard.removeClass('on')) // 현재item의 첫번째 요소랑 같은것 채크
+
+    firstCard.hasClass('on') ? $(`.type_notice.id-${idx} .typeNotice_prev`).addClass('disabled') : $(`.type_notice.id-${idx} .typeNotice_prev`).removeClass('disabled')
+    lastCard.hasClass('on') ? $(`.type_notice.id-${idx} .typeNotice_next`).addClass('disabled') : $(`.type_notice.id-${idx} .typeNotice_next`).removeClass('disabled')
+
+    var slideNum = -num * $('.item_notice').innerWidth(); //slideNum은 활성화된 아이템 자기자신을 저장해놓는다.
+    gsap.to(`.type_notice.id-${idx} .list_type_notice`, 1, {x: slideNum, ease: Power4.easeOut });
+  };
+
+  $('.type_card').each(function(idx, _){
+    var currentIdx = 0;
+    var firstCard = $(`.type_card.id-${idx} .item_card`).first();
+    var lastCard = $(`.type_card.id-${idx} .item_card`).last();
+    var slideCount = $(`.type_card.id-${idx} .item_card`).length;
+
+    currentIdx === 0 && (firstCard.addClass('on'),lastCard.removeClass('on'));
+    firstCard.hasClass('on') && $('.typeCard_prev').addClass('disabled')
+
+    $(`.type_card.id-${idx} .typeCard_next`).on('click', function(){
+      if(currentIdx < slideCount - 5) {
+        moveSlideCard(currentIdx += 5, idx);
+      }
+    });
+
+    $(`.type_card.id-${idx} .typeCard_prev`).on('click', function(){
+      if(currentIdx > 0) {
+        moveSlideCard(currentIdx -= 5, idx);
+      }
+    });
+  }); 
+
+  $('.type_notice').each(function(idx, _){
+    var currentIdx = 0;
+    var firstCard = $(`.type_notice.id-${idx} .item_notice`).first();
+    var lastCard = $(`.type_notice.id-${idx} .item_notice`).last();
+    var slideCount = $(`.type_notice.id-${idx} .item_notice`).length / 4;
+
+    currentIdx === 0 && (firstCard.addClass('on'),lastCard.removeClass('on'));
+    firstCard.hasClass('on') && $('.typeNotice_prev').addClass('disabled')
+
+    $(`.type_notice.id-${idx} .typeNotice_next`).on('click', function(){
+      if(currentIdx < slideCount - 3) {
+        moveSlideNotice(currentIdx += 1, idx);
+      }
+    });
+
+    $(`.type_notice.id-${idx} .typeNotice_prev`).on('click', function(){
+      if(currentIdx > 0) {
+        moveSlideNotice(currentIdx -= 1, idx);
+      }
+    });
+  });
+};
+/** // 매인 페이지 각 색션마다 슬라이드 기능 구현 */
