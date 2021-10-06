@@ -84,7 +84,12 @@
         });
     });
   </script>
-  <script>hljs.highlightAll();</script>
+  <script>
+    $(document).ready(function(){
+      hljs.highlightAll();
+      $('.hljs').scrollbar();
+    });
+  </script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
   <s_t3>
@@ -552,7 +557,7 @@
                   </div>
 
                   <!-- 에디터 영역 -->
-                  <div class="article_view area_view">
+                  <div class="article_view area_view scrollbar-inner">
                     [##_article_rep_desc_##]
                   </div>
 

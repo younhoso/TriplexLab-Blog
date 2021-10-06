@@ -204,7 +204,7 @@ $(function() {
   $('.article_view pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
   $('.code_btn').on('click', function(){
     var hljsTxt = $(this).next('.hljs').text();
-    navigator.clipboard.writeText(hljsTxt);/* 텍스트 필드 안의 텍스트 복사 */
+    navigator.clipboard.writeText(hljsTxt);/* 텍스트 클립보드 복사 */
     $(this).attr('data-txt', 'Copied !')
   });
   /* // code Copy */
