@@ -238,9 +238,10 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_pink .thema_apply .box_sns .list_sns li a:hover {opacity: 0.4;}
 .theme_pink .share_temp .txt {background:#ff567a;color:#fff;}
 .theme_pink .subscribe .txt {background:#ff567a;color:#fff;}
-.theme_pink .bg_them_mode .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#ff567a;}
-.theme_pink .bg_them_mode .tbas_inner .btn_inner .line_inner i:first-child {background:#ff567a;}
-.theme_pink .bg_them_mode .area_paging .link_num span.selected {background:#ff567a;}
+.theme_pink .box_header .header_icon_inner .icon.ic-bell-1.on::after {background:#ff567a;}
+.theme_pink main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#ff567a;}
+.theme_pink main .tbas_inner .btn_inner .line_inner i:first-child {background:#ff567a;}
+.theme_pink main .area_paging .link_num span.selected {background:#ff567a;}
 .theme_pink .mo_footer_menu .plus a {background:#ff567a;box-shadow: 0 4px 12px rgb(255 86 122 / 40%);}
 .theme_pink .area_category .title_section span{color:#ff567a;}
 .theme_pink .article_view a{color:#ff567a}
@@ -260,9 +261,10 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_blue .thema_apply .box_sns .list_sns li a:hover {opacity: 0.4;}
 .theme_blue .share_temp .txt {background:#004fff;color:#fff;}
 .theme_blue .subscribe .txt {background:#004fff;color:#fff;}
-.theme_blue .bg_them_mode .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#004fff;}
-.theme_blue .bg_them_mode .tbas_inner .btn_inner .line_inner i:first-child {background:#004fff;}
-.theme_blue .bg_them_mode .area_paging .link_num span.selected {background:#004fff;}
+.theme_blue .box_header .header_icon_inner .icon.ic-bell-1.on::after {background:#004fff;}
+.theme_blue main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#004fff;}
+.theme_blue main .tbas_inner .btn_inner .line_inner i:first-child {background:#004fff;}
+.theme_blue main .area_paging .link_num span.selected {background:#004fff;}
 .theme_blue .mo_footer_menu .plus a {background:#004fff; box-shadow: 0 4px 12px rgb(0 79 255 / 40%);}
 .theme_blue .area_category .title_section span{color:#004fff;}
 .theme_blue .article_view a{color:#004fff;}
@@ -282,9 +284,10 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_green .thema_apply .box_sns .list_sns li a:hover {opacity: 0.4;}
 .theme_green .share_temp .txt {background:#11998e;color:#fff;}
 .theme_green .subscribe .txt {background:#11998e;color:#fff;}
-.theme_green .bg_them_mode .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#11998e;}
-.theme_green .bg_them_mode .tbas_inner .btn_inner .line_inner i:first-child {background:#11998e;}
-.theme_green .bg_them_mode .area_paging .link_num span.selected {background:#11998e;}
+.theme_green .box_header .header_icon_inner .icon.ic-bell-1.on::after {background:#11998e;}
+.theme_green main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#11998e;}
+.theme_green main .tbas_inner .btn_inner .line_inner i:first-child {background:#11998e;}
+.theme_green main .area_paging .link_num span.selected {background:#11998e;}
 .theme_green .mo_footer_menu .plus a {background:#11998e;box-shadow: 0 4px 12px rgb(17 153 142 / 40%);}
 .theme_green .area_category .title_section span{color:#11998e}
 .theme_green .article_view a{color:#11998e}
@@ -304,9 +307,10 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_gray .thema_apply .box_sns .list_sns li a:hover {opacity: 0.4;}
 .theme_gray .share_temp .txt {background:#1d2129;color:#fff;}
 .theme_gray .subscribe .txt {background:#1d2129;color:#fff;}
-.theme_gray .bg_them_mode .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#1d2129;}
-.theme_gray .bg_them_mode .tbas_inner .btn_inner .line_inner i:first-child {background:#1d2129;}
-.theme_gray .bg_them_mode .area_paging .link_num span.selected {background:#1d2129;}
+.theme_gray .box_header .header_icon_inner .icon.ic-bell-1.on::after {background:#1d2129;}
+.theme_gray main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#1d2129;}
+.theme_gray main .tbas_inner .btn_inner .line_inner i:first-child {background:#1d2129;}
+.theme_gray main .area_paging .link_num span.selected {background:#1d2129;}
 .theme_gray .mo_footer_menu .plus a {background:#1d2129;box-shadow: 0 4px 12px rgb(29 33 41 / 40%);}
 .theme_gray .area_category .title_section span{color:#1d2129}
 .theme_gray .article_view a{color:#1d2129}
@@ -329,9 +333,10 @@ body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-o
 .theme_orange .thema_apply .box_sns .list_sns li a:hover {opacity: 0.4;}
 .theme_orange .share_temp .txt {background:#f60;color:#fff;}
 .theme_orange .subscribe .txt {background:#f60;color:#fff;}
-.theme_orange .bg_them_mode .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#f60;}
-.theme_orange .bg_them_mode .tbas_inner .btn_inner .line_inner i:first-child {background:#f60;}
-.theme_orange .bg_them_mode .area_paging .link_num span.selected {background:#f60;}
+.theme_orange .box_header .header_icon_inner .icon.ic-bell-1.on::after {background:#f60;}
+.theme_orange main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#f60;}
+.theme_orange main .tbas_inner .btn_inner .line_inner i:first-child {background:#f60;}
+.theme_orange main .area_paging .link_num span.selected {background:#f60;}
 .theme_orange .mo_footer_menu .plus a {background:#f60;box-shadow: 0 4px 12px rgb(255 102 0 / 40%);}
 .theme_orange .area_category .title_section span{color:#f60;}
 .theme_orange .article_view a{color:#f60}
@@ -897,7 +902,7 @@ figure[data-ke-type=emoticon][data-ke-align=alignCenter]{width: 140px;}
   .icon{width:38px;height:38px;display:inline-block;border-radius:50%;text-align:center;line-height:38px;cursor:pointer;}
 
   .header_icon_inner .icon{font-size:18px;font-weight:400}
-  .header_icon_inner .icon.ic-bell-1.on::after{content: '';display: inline-block;vertical-align: text-top; width: 5px; height: 5px; border-radius: 50%; background-color: #f60;}
+  .header_icon_inner .icon.ic-bell-1.on::after{content: '';display: inline-block;vertical-align: text-top; width: 5px; height: 5px; border-radius: 50%;}
   .header_icon_inner .icon.theme{display:none}
   .header_icon_inner .icon.theme.on{display:inline-block}
 
