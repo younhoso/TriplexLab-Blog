@@ -397,12 +397,6 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
     $('.postbtn_like .uoc-icon').trigger('click');
     !$('.postbtn_like .uoc-icon').hasClass('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //클릭 이벤트 시점에 변경
   });
-
-  // var sideUl = document.querySelector('.detail_side ul');
-  // sideUl.addEventListener('click', function(e){
-  //   e.target.classList.contains('bg_them_mode') ? e.target.classList.add('on') : null
-  //   e.target.getElementsByTagName('i') ? e.target.closest('.bg_them_mode').classList.add('on') : null
-  // });
   
   // 감시자 인스턴스 생성
   var observer = new MutationObserver(callback);
