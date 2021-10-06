@@ -32,18 +32,15 @@
   <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
   <link rel="stylesheet" href="./images/swiper.min.css"/>
   <link rel="stylesheet" href="./style.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-	<script charset="UTF-8" src="./images/swiper.min.js"></script>
-  <script charset="UTF-8" src="https://unpkg.com/vh-check/dist/vh-check.min.js"></script>
-  <script charset="UTF-8" src="./images/highlight.min.js"></script>
-	<script >
+  <script charset="UTF-8" src="./images/plugins.min.js"></script>
+  <script >
     $(function(){
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
       var docfrag = document.createDocumentFragment();
-       
-       var templateIE = function(browser, version) {
+        
+        var templateIE = function(browser, version) {
         var div = document.createElement('div');
         div.classList.add('result_inner');
         var h2 = document.createElement('h2');
@@ -55,8 +52,8 @@
         
         body.innerHTML = divInner.innerHTML;
         window.location = 'microsoft-edge:' + window.location.href;
-       };
-
+        };
+  
         var detectIE = function () {
           var ua = window.navigator.userAgent;
           var msie = ua.indexOf('MSIE');
@@ -73,7 +70,7 @@
           // 다른 브라우저 리턴
           return false;
         };
-
+  
         // IE 또는 Edge 브라우저 버전 가져오기
         var version = detectIE();
         
@@ -81,10 +78,12 @@
           return templateIE('IE', version);
         }
         /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
+  
+        $('.article_view').find('table').each(function (idx, el) {
+          $(el).wrap('<div class="table-overflow">')
+        });
     });
   </script>
-  <script charset="UTF-8" src="./images/gsap.min.js"></script>
-  <script charset="UTF-8" src="./images/common.js"></script>
   <script>hljs.highlightAll();</script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
@@ -1048,9 +1047,5 @@
     <!-- // wrap -->
   </s_t3>
 </body>
-<script>
-  $('.article_view').find('table').each(function (idx, el) {
-    $(el).wrap('<div class="table-overflow">')
-  });
-</script>
+<script charset="UTF-8" src="./images/common.js"></script>
 </html>
