@@ -209,10 +209,16 @@ $(function() {
   /* code Copy */
   $('.article_view pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
   $('.code_btn').on('click', function(){
-    var hljsTxt = $(this).next('.hljs').text();
+    var self = $(this);
+    var hljsTxt = self.next('.hljs').text();
     navigator.clipboard.writeText(hljsTxt);/* 텍스트 클립보드 복사 */
-    $(this).attr('data-txt', 'Copied !')
+    self.attr('data-txt', 'Copied !');
+
+    setTimeout(function(){
+      self.attr('data-txt', 'Copy');
+    },2000);
   });
+  
   /* // code Copy */
   /* // 서식 관리 tabs */
   
