@@ -609,7 +609,6 @@ aside .tag_board{width:100%}
 .no-img{background:#e6e6e6 url(images/ico_no.svg) no-repeat center!important;background-size:30px 30px!important}
 .btn-for-guest{display:none}
 .btn-for-user{display:none}
-.area_cover{margin-top:268px}
 .area_cover a{text-decoration:none}
 .area_cover button{border:0;border-radius:0;background-color:transparent;cursor:pointer;overflow:visible}
 @media screen and (max-width:1025px){
@@ -618,7 +617,7 @@ aside .tag_board{width:100%}
 .title_list_section {font-size:48px;font-weight: 900;margin-bottom: 10px;}
 .title_section{position:relative;width:100%;margin:0 0 10px 0;font-size:24px;font-weight:900;color:inherit;}
 .txt_list_description {font-size:18px;}
-.type_featured{position:relative;margin-top:120px}
+.type_featured{position:relative;}
 .type_featured:after{content:'';display:block;clear:both}
 .type_featured .slide_zone{position:relative;width:100%;border-radius: 0.2em;}
 .type_featured .inner_main_slide{position:absolute;left:0;right:0;max-width:1180px;margin:0 auto;padding:0 80px}
