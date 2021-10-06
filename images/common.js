@@ -118,10 +118,9 @@ $(function() {
   function sidebarMenuSet(idx){
     if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
   };
-
+  
   var _self = $('.list_category .category_list > li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
   function sidebarMenuGet(){
-    $('.tt_category > li').attr('data-menu', JSON.parse(sessionStorage.getItem('menu')));
     _self.addClass('active').siblings('li').removeClass('active');
   };
   
@@ -130,7 +129,7 @@ $(function() {
     sidebarMenuSet(idx);
   });
 
-  /** menu 여부 체크 (최초 렌더링 시점) */
+  /** category_list 해당 카테로기 활성화 (최초 렌더링 시점) */
   JSON.parse(sessionStorage.getItem('menu')) && sidebarMenuGet();
 
   var $location = $(location),
@@ -142,7 +141,23 @@ $(function() {
   } else {
     _self.removeClass('active');
   };
+  /** // category_list 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
+  var categoryDetailTit = $('.info_text > span').text();
+  var fruits = new Array();
+  $('.list_category .category_list > li').each(function(idx, el){
+    var categoryTit = $(el).find('a').text().trim();
+    fruits.push(categoryTit)
+  });
+  if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('categoryList', JSON.stringify(fruits))}
 
+  $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
+    if(el === categoryDetailTit){
+      $('.list_category .category_list > li').eq(idx).addClass('active');
+    }
+  });
+  /** // 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
+  
   var windowWidth = $( window ).width();
   function setScreenSize() {
     var vw = 0;
@@ -213,6 +228,8 @@ $(function() {
     !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
   });
   /* // 공지 사항 */
+
+
 });
 
 
