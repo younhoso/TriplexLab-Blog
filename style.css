@@ -152,14 +152,14 @@ i {
   
 }
 [data-dark=true]{
-  --g-bg-color: #343639;
+  --g-bg-color: #16181b;
   --s-bg-color: #222529;
   --s-bg-color-3: #292929;
   --s-menu-tabs : #383b40;
   --color-level-1: #fff;
   --color-level-2: #e6e6e6;
   --color-level-3: #C5CAD5;
-  --border-color: #656565;
+  --border-color: #36393d;
   --border-color-2: #656565;
 }
 
