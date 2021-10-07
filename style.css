@@ -568,7 +568,7 @@ aside .tag_board{width:100%}
 .area_reply ul{list-style:none;margin:0;padding:0}
 .area_reply a{text-decoration:none}
 .area_reply .box_reply_info{margin:40px 0 20px 0}
-.area_reply .reply_events{margin:0;font-size:16px;font-weight:900;color:#333}
+.area_reply .reply_events{margin:0;font-size:16px;font-weight:900;}
 .area_reply .btn_more{margin-top:5px;padding:3px 0 0 15px;border:0;background-color:transparent;background-size:10px 10px;font-size:16px;font-weight:600;cursor:pointer}
 .area_reply .item_reply{padding:30px 0;border-bottom:1px solid #eee}
 .area_reply li:first-child{padding-top:0}
