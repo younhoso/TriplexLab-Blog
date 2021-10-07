@@ -425,7 +425,7 @@ html{box-sizing:border-box}
 .area_sidebar .list_sns{font-size:14px;margin-top:15px;}
 .area_sidebar .add_link a {height: 40px;line-height: 40px;padding: 0 26px;box-sizing: border-box;display: block;margin-bottom:28px;font-size:16px;font-weight:600;}
 .area_sidebar .add_link a:hover{background-color: var(--border-color-2);}
-.area_sidebar .add_link,.area_sidebar .box_sns{margin-bottom:40px}
+.area_sidebar .category .category_list li:last-child, .area_sidebar .add_link li:last-child, .area_sidebar .box_sns li:last-child{margin-bottom:40px}
 .area_sidebar .sidebar_tit{font-size:14px;font-weight:600;padding: 0 26px;color: #777;box-sizing: border-box;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color-level-1);vertical-align:-2px}
@@ -434,7 +434,6 @@ html{box-sizing:border-box}
 .area_sidebar .link_tool:first-child::before{content:''}
 .area_sidebar .link_tool:before{content:'｜';position:absolute;top:3px;bottom:0;left:-48px;right:0;width:10px;margin-left:20px;font-size:11px;font-weight:lighter;color:#d3d4d7}
 .area_sidebar .link_tit{display:none}
-.category {margin:40px 0;}
 .category .list_category {margin-top: 15px;}
 @media screen and (max-width:768px){
 .area_sidebar .inner_sidebar{width:100%;left:0}
@@ -922,7 +921,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .api .api_inner > li{margin-bottom:10px}
   .api .api_inner > li a{margin-bottom:0;display:block;padding:5px 0 5px 12px;font-size:14px;font-weight:400;}
 
-  .sidebar_menu .sidebar_menu_tabs{width: auto;margin: 0 20px; border-radius:1.2em;cursor:pointer;}
+  .sidebar_menu .sidebar_menu_tabs{width: auto;margin: 0 20px; border-radius:1.2em;cursor:pointer; margin-bottom: 40px;}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes{height:42px;display:flex;justify-content:space-around;align-items:center;color:#fff;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme{width:40%;height:30px;line-height:30px;font-weight: 600;text-align:center;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme:nth-child(2):after{content:'';display:inline-block;width:1px;height:14px;background-color:#fff;position:absolute;top:28%;right:calc(100% * -.15)}
@@ -1027,8 +1026,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .box_sns .list_sns li .icon_common {display: inline-block; vertical-align: middle; margin-right: 8px;}
   .area_sidebar .box_sns .list_sns li .icon_txt {display: inline-block; vertical-align: middle;}
   .area_sidebar .sidebar_contents{min-height:auto;}
-  .area_sidebar .skin_link {width: 260px; height: 273px; margin: 0 auto;pointer-events: none;}
-  .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; margin-top: -12px;opacity: 0.6;}
+  .area_sidebar .skin_link {width: 260px;margin: 0 auto;pointer-events: none;}
+  .area_sidebar .skin_link::after{content: attr(data-tit);display: block; text-align: center; font-size: 12px; margin-top: 10px;opacity: 0.6;}
   .area_sidebar .skin_link a {display: block;}
 
   .mo_footer_menu{display:block;position:fixed;bottom:20px;right:20px;z-index:21}
