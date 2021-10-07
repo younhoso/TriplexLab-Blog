@@ -425,7 +425,7 @@ html{box-sizing:border-box}
 .area_sidebar .list_sns{font-size:14px;margin-top:15px;}
 .area_sidebar .add_link a {height: 40px;line-height: 40px;padding: 0 26px;box-sizing: border-box;display: block;margin-bottom:28px;font-size:16px;font-weight:600;}
 .area_sidebar .add_link a:hover{background-color: var(--border-color-2);}
-.area_sidebar .category .category_list li:last-child, .area_sidebar .add_link li:last-child, .area_sidebar .box_sns li:last-child{margin-bottom:40px}
+.area_sidebar .category .category_list li:last-child, .area_sidebar .add_link li:last-child, .area_sidebar .box_sns li:last-child, .area_sidebar .box_gnb li:last-child ,.area_sidebar .add_link a {margin-bottom:28px}
 .area_sidebar .sidebar_tit{font-size:14px;font-weight:600;padding: 0 26px;color: #777;box-sizing: border-box;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color-level-1);vertical-align:-2px}
@@ -930,7 +930,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .DARK{transform: translateX(calc(var(--vw, 1vw) * 50));}
   .icon.ic-sun, .ic-moon{width:20px;height:30px;line-height:30px;vertical-align:bottom;margin-right:5px;}
 
-  .box_gnb li:last-child{padding-bottom:40px;}
   .box_gnb.on{display:block}
   .box_gnb h3{display:block;margin-top:10px;padding:15px 0 12px 0;font-size:18px;font-weight:700;-webkit-transition:all .2s ease-out;transition:all .2s ease-out}
   .box_gnb .t_menu_category a{height:44px;line-height:44px;padding:0 26px;box-sizing:border-box;display:block;margin-bottom: 0;}
@@ -1020,7 +1019,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
   .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none; width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
-  .area_sidebar .box_sns .list_sns li{font-size:16px;font-weight: 600; }
+  .area_sidebar .box_sns .list_sns li{font-size:16px;font-weight: 600;}
   .area_sidebar .box_sns .list_sns li a{height:44px;line-height:44px;padding:0 26px;box-sizing:border-box;display:block;padding:0 26px;box-sizing:border-box; -webkit-transition: background-color .25s ease; transition: background-color .25s ease;}
   .area_sidebar .box_sns .list_sns li a:hover {background-color: var(--border-color-2);}
   .area_sidebar .box_sns .list_sns li .icon_common {display: inline-block; vertical-align: middle; margin-right: 8px;}
