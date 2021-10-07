@@ -445,11 +445,11 @@ html{box-sizing:border-box}
 .area_popup .search_header{max-width: 1180px; margin: 0 auto; padding:60px 40px 0 40px;}
 .area_popup .search_header:after{content:'';display:block;clear:both;}
 .area_popup .title_logo{float:left;margin:0;font-size:24px;font-weight:900;}
-.area_popup .link_logo{font-size: 32px; color:#333;text-decoration:none;}
+.area_popup .link_logo{font-size: 32px; text-decoration:none;}
 .area_popup .area_search .btn_close{float:right;width:40px;height:40px;background:0 0;border:none;font-size:24px;cursor:pointer;}
 .area_popup .search_content{max-width:1180px;margin:60px auto;padding:0 40px;font-size:0}
 .area_popup .search_content:after{content:'';display:block;clear:both}
-.area_popup .box_form{position:relative;display: flex;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid rgba(0,0,0,.15)}
+.area_popup .box_form{position:relative;display: flex;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid var(--border-color)}
 .area_popup .box_form .icon-Search{display:inline-block;margin-right:23px;font-size:36px;vertical-align:-10px}
 .area_popup .box_form .inp_search{width:80%;margin-top:5px;border:none;font-size:24px;font-weight:900;line-height:1;color: var(--color-level-1);}
 .area_popup .box_form .inp_search + .btn_search_del{display: none;}
