@@ -191,7 +191,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_pink .thema_apply .slick-active button{background:#ff567a}
 .theme_pink .thema_apply .btn_register{background:#ff567a;color:#fff}
 .theme_pink .thema_apply .btn_register{background:#ff567a;color:#fff}
-.theme_pink .thema_apply .title_sidebar{color:#333;font-weight:600}
 .theme_pink .thema_apply .box_tag a:hover{border:1px solid #ff567a;color:#ff567a;}
 .theme_pink .thema_apply .tabs_itmes li:first-child {background:#ff567a;}
 .theme_pink .thema_apply .category_list > li a:hover,
@@ -216,7 +215,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_blue .thema_apply .slick-active button{background:#004fff;}
 .theme_blue .thema_apply .btn_register{background:#004fff;color:#fff}
 .theme_blue .thema_apply .btn_register{background:#004fff;color:#fff}
-.theme_blue .thema_apply .title_sidebar{color:#004fff}
 .theme_blue .thema_apply .box_tag a:hover{border:1px solid #004fff;color:#004fff;}
 .theme_blue .thema_apply .tabs_itmes li:first-child {background:#004fff;}
 .theme_blue .thema_apply .category_list > li a:hover,
@@ -241,7 +239,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_green .thema_apply .slick-active button{background:#11998e}
 .theme_green .thema_apply .btn_register{background:#11998e;color:#fff}
 .theme_green .thema_apply .btn_register{background:#11998e;color:#fff}
-.theme_green .thema_apply .title_sidebar{color:#11998e}
 .theme_green .thema_apply .box_tag a:hover{border:1px solid #11998e;color:#11998e}
 .theme_green .thema_apply .tabs_itmes li:first-child {background:#11998e;}
 .theme_green .thema_apply .category_list > li a:hover,
@@ -266,7 +263,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_gray .thema_apply .slick-active button{background:#1d2129}
 .theme_gray .thema_apply .btn_register{background:#1d2129;color:#fff}
 .theme_gray .thema_apply .btn_register{background:#1d2129;color:#fff}
-.theme_gray .thema_apply .title_sidebar{color:#1d2129}
 .theme_gray .thema_apply .box_tag a:hover{border:1px solid #1d2129;color:#1d2129}
 .theme_gray .thema_apply .tabs_itmes li:first-child {background:#1d2129;}
 .theme_gray .thema_apply .category_list > li a:hover,
@@ -295,7 +291,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_orange .thema_apply .slick-active button{background:#f60}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
-.theme_orange .thema_apply .title_sidebar{font-weight:600}
 .theme_orange .thema_apply .tabs_itmes li:first-child {background:#f60;}
 .theme_orange .thema_apply .category_list > li a:hover,
 .theme_orange .thema_apply .box_sns .list_sns li a:hover,
@@ -421,7 +416,7 @@ html{box-sizing:border-box}
 .area_popup .box_form .btn_search_del{position:absolute;top:0;right:0;width:36px;height:36px;padding:6px;border:none;background-color:transparent;cursor:pointer;fill-opacity:1;}
 .area_popup .box_form .btn_search_del #textDelBtnSvgMask {fill: var(--color-level-1)}
 .area_popup .box_form .btn_search_del .svg_bg {fill: var(--color-level-1)}
-.area_popup .title_sidebar{margin:51px 0 29px 0;font-size:18px}
+.area_popup .title_sidebar{margin-top: 32px;font-size: 18px;font-weight: 900;}
 .area_popup .tag_zone{min-height:150px;box-sizing:border-box;vertical-align:top}
 .list_sidebar{margin:0;padding:0;list-style:none}
 aside .list_sidebar .item_sidebar{padding-top:10px;box-sizing:border-box;margin-bottom:10px;border-radius:.8em}
@@ -448,7 +443,6 @@ aside .tag_board{width:100%}
 .area_popup .box_form .btn_search_del{top:10px;right:20px}
 .area_popup .search_content{margin-top:34px;padding:0}
 .area_popup .box_form{margin:0 -24px;padding:0 20px 25px 20px}
-.area_popup .title_sidebar{margin-top:32px;font-size:18px}
 .area_popup .tag_board,.area_popup .tag_zone{width:100%}
 .area_popup .item_sidebar{margin-bottom:10px;display: inline-block;}
 
