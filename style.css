@@ -20,7 +20,7 @@
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:700; src: local('☺'), url('images/NotoSansKR-Bold.woff') format('woff'), url('images/NotoSansKR-Bold.woff2') format('woff2'); font-display: swap;}
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:900; src: local('☺'), url('images/NotoSansKR-Black.woff') format('woff'), url('images/NotoSansKR-Black.woff2') format('woff2'); font-display: swap;}
 
-/* html{line-height:1.15;-webkit-text-size-adjust:100%} */
+/* css reset */
 body,html{height:100%}
 body{margin:0;-ms-overflow-style:none;scrollbar-width:none;overflow:auto;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:none;}
 body::-webkit-scrollbar{display:none}
@@ -72,7 +72,7 @@ progress{vertical-align:baseline}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 template{display:none}
 [hidden]{display:none}
-
+/* // css reset */
 
 @media screen and (min-width:320px){
   .wrapper {max-width: 1680px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;position: relative;}
@@ -384,7 +384,7 @@ html{box-sizing:border-box}
 .area_sidebar .sidebar_tit{font-size:14px;font-weight:600;padding: 0 26px;color: #777;box-sizing: border-box;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color-level-1);vertical-align:-2px}
-.area_sidebar .link_tool{position:relative;display:inline-block;margin-left:45px;font-size:14px;font-weight:700;}
+.area_sidebar .link_tool{position:relative;display:inline-block;margin-left:45px;font-size:14px;font-weight:700;white-space: nowrap;}
 .area_sidebar .link_tool:first-child{margin-left:0}
 .area_sidebar .link_tool:first-child::before{content:''}
 .area_sidebar .link_tool:before{content:'｜';position:absolute;top:3px;bottom:0;left:-48px;right:0;width:10px;margin-left:20px;font-size:11px;font-weight:lighter;color:#d3d4d7}
