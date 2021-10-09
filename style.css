@@ -508,7 +508,7 @@ aside .tag_board{width:100%}
 .area_related .list_related:after{content:'';display:block;clear:both}
 .area_related .item_related{float:left;width:25%;margin-bottom:40px}
 .area_related .link_related{display:block;margin:0 8px}
-.area_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%}
+.area_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 0.4em;}
 .area_related .link_related strong{display:block;max-height:45px;margin:12px 0 0;line-height:1.47;font-size:16px;font-weight:500;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .area_related .info{display:inline-block;font-size:13px;}
 @media screen and (max-width:1025px){
@@ -1139,9 +1139,12 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .code_btn:before{display:block;font-size:12px;content:attr(data-txt);color:#e6e6e6; padding-right: 10px;}
   #tt-body-page .code_btn .ic-copy {font-size: 12px;}
   #tt-body-page .hljs{font-family: 'InputMono'; font-size: 14px; font-weight: 500; overflow:auto; border-radius:0;border-radius:.4em;min-width:100%;max-height:480px;width:auto;padding:1em 1.2em;box-sizing:border-box;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;color:#eee;-ms-overflow-style:none;scrollbar-width:none; overflow: scroll;-ms-overflow-style: none;}
-  #tt-body-page .hljs::-webkit-scrollbar { width: 0 !important;display: none;
-}
+  #tt-body-page .hljs::-webkit-scrollbar { width: 0 !important;display: none;}
   /* //code 에디터 Copy */
+  /* 다운로드 블럭 */
+  figure.fileblock .filename, #tt-body-page figure.fileblock .filename {color: var(--color-level-1);}
+  /* //다운로드 블럭 */
+
 
   /* search 페이지 */
   #tt-body-search .txt_list_description{display: none;}
@@ -1192,6 +1195,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .hljs > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
   .hljs > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
   /* // SCROLLBAR MAC OS X */
+
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
