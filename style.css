@@ -722,7 +722,7 @@ aside .tag_board{width:100%}
   .category_type_notice .link_category .text,.list_type_notice .link_notice .text{width:200px;font-size:12px;line-height:1.5;-webkit-line-clamp:1;}
   .category_type_notice .info,.type_notice .info{flex: 1;padding-top:0;}
 }
-.area_category{max-width:1280px;margin:0 auto;padding:80px 24px 0 24px;}
+.area_category{max-width:1280px;margin:0 auto;padding:40px 24px 0 24px;}
 .area_category a{text-decoration:none}
 .area_category .category_cover {display: flex;align-items: center;justify-content: space-between;}
 .area_category .list_image_bg{width: 55%;}
@@ -1019,7 +1019,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 /* ---- PC 매인페이지 ST ---- */
 @media screen and (min-width:1025px){
   #wrap{padding-left:300px; padding-top: 58px;}
-  #main {padding-bottom: 120px;}
   #tt-body-index #main {padding-bottom: 0; padding-top: 40px;}
   #tt-body-page #main {min-height: 1140px;}
   #container{position:relative}
