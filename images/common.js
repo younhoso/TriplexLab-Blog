@@ -1,14 +1,66 @@
 $(function() {
-  var menuIcons = ['ic-html', 'ic-js', 'ic-uiux' ,'ic-etc'];
-  var social = ['ic-github', 'ic-gitbook'];
+  var searchForm = $('#search-form');
+  var searchInput = $('#search-form input');
+  var searchList = $('#search-list');
+  var allDelete = $('.allDelete'); 
+  var txt = $('.search-inner .txt');
+  var TODOS_KEY = "search";
+  var searCH = new Array();
   
-  $('.category_list > li a').each(function(idx, el){
-    $(el).prepend(`<i class="${menuIcons[idx]}"></i>`);
-  });
+  function saveToDos(name, val) { //item을 localStorage에 저장합니다.
+    typeof(Storage) !== 'undefined' && localStorage.setItem(name, JSON.stringify(val));
+  };
 
-  $('.list_sns > li a').each(function(idx, el){
-    $(el).prepend(`<i class="${social[idx]} icon_common"></i>`);
-  });
+  function getToDos(name){
+    return JSON.parse(localStorage.getItem(name));
+  }
+
+  function deleteToDo(e) { //각각의 item을 삭제 
+    const li = e.target.parentElement;
+    li.remove();
+    searCH = searCH.filter((search) => search.id !== parseInt(li.id));
+    searCH.length === 0 && (txt.innerText = '최근검색어 내역이 없습니다.');
+    saveToDos(TODOS_KEY, searCH);
+  };
+
+  function paintToDo(newItem) { //화면에 뿌림 
+    var {id, text} = newItem;
+    var item = document.createElement("li");
+    var span = document.createElement("span"); 
+    var button = document.createElement("button"); 
+    item.id = id; 
+    span.innerText = text; 
+    button.innerText = '❌';
+    $(button).on("click", deleteToDo); 
+    // allDelete.addEventListener("click", allDeleteToDo); 
+    item.append(span); 
+    item.append(button); 
+    searchList.append(item);
+    newItem !== null && allDelete.removeClass('off');
+  };
+
+  function handleToDoSubmit(e) { //form 전송 
+    e.preventDefault();
+    window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
+    var newSearchItem = searchInput.val();
+    searchInput.value = '';
+    var newSearchObj = { id: Date.now(), text: newSearchItem }; 
+    searCH.push(newSearchObj);
+    
+    //text 중복제거
+    var newSearch = searCH.filter( 
+      (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
+    );
+    saveToDos(TODOS_KEY, newSearch);
+  };
+  
+  $(searchForm).on('submit', handleToDoSubmit);
+  var savedToDos = getToDos(TODOS_KEY);
+  if(savedToDos !== null) { 
+    var items = savedToDos.sort((a,b) => parseInt(b.id) - parseInt(a.id));
+    searCH = items //전에 있던 items들을 계속 가지도 있다록 합니다. 
+    items.forEach(paintToDo);
+  }
 
   $('.share_js').on('click', function(){
     $('.share_temp').addClass('on');
@@ -137,7 +189,7 @@ $(function() {
     _self.addClass('active').siblings('li').removeClass('active');
   };
   
-  $('.category_list > li > a').on('click', function(e){
+  $('.category_list > li > a').on('click', function(){
     var idx = $('.category_list > li > a').index(this);
     sidebarMenuSet(idx);
   });
@@ -191,7 +243,7 @@ $(function() {
     $('body').css('overflow', 'hidden');
   });
 
-  $('.close_icon').on('click', function(e) {
+  $('.close_icon').on('click', function() {
     $('.area_sidebar').removeClass('on');
     $('body').css('overflow', '');
   });
@@ -291,7 +343,7 @@ function slider_control() {
             $(".swiper-progress-bar").eq(0).addClass("animate");
             $(".swiper-progress-bar").eq(0).addClass("active");
           },
-          slideChangeTransitionStart: function (el) {
+          slideChangeTransitionStart: function () {
             $(".swiper-progress-bar").removeClass("animate");
             $(".swiper-progress-bar").removeClass("active");
             $(".swiper-progress-bar").eq(0).addClass("active");
@@ -404,7 +456,7 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
     mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
   };
   // 공감 클릭 이벤트 연결
-  $('.detail_side .util_like').click(function (e) {
+  $('.detail_side .util_like').click(function () {
     $('.postbtn_like .uoc-icon').trigger('click');
     !$('.postbtn_like .uoc-icon').hasClass('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //클릭 이벤트 시점에 변경
   });
