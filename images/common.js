@@ -7,34 +7,43 @@ $(function() {
   var TODOS_KEY = "search";
   var searCH = new Array();
   
-  function saveToDos(name, val) { //item을 localStorage에 저장합니다.
+  function saveStorage(name, val) { //item을 localStorage에 저장합니다.
     typeof(Storage) !== 'undefined' && localStorage.setItem(name, JSON.stringify(val));
   };
 
-  function getToDos(name){
+  function getStorage(name){
     return JSON.parse(localStorage.getItem(name));
-  }
-
-  function deleteToDo(e) { //각각의 item을 삭제 
-    const li = e.target.parentElement;
-    li.remove();
-    searCH = searCH.filter((search) => search.id !== parseInt(li.id));
-    searCH.length === 0 && (txt.innerText = '최근검색어 내역이 없습니다.');
-    saveToDos(TODOS_KEY, searCH);
   };
 
-  function paintToDo(newItem) { //화면에 뿌림 
+  function allDeleteStorage() { //전체 item을 삭제 
+    localStorage.removeItem(TODOS_KEY); 
+    txt.html('최근검색어 내역이 없습니다.');
+    searchList.remove();
+  };
+
+  function deleteStorage(e) { //각각의 item을 삭제 
+    const li = e.target.parentElement.parentElement;
+    li.remove();
+    searCH = searCH.filter((search) => search.id !== parseInt(li.id));
+    searCH.length === 0 && (searchList.remove(), txt.html('최근검색어 내역이 없습니다.'));
+    saveStorage(TODOS_KEY, searCH);
+  };
+
+  function paintStorage(newItem) { //화면에 뿌림 
     var {id, text} = newItem;
     var item = document.createElement("li");
-    var span = document.createElement("span"); 
-    var button = document.createElement("button"); 
+    var div = document.createElement("div"); 
+    var i = document.createElement("i"); 
+    var a = document.createElement("a");
     item.id = id; 
-    span.innerText = text; 
-    button.innerText = '❌';
-    $(button).on("click", deleteToDo); 
-    // allDelete.addEventListener("click", allDeleteToDo); 
-    item.append(span); 
-    item.append(button); 
+    item.classList.add('item_sidebar');
+    a.innerText = text;
+    a.setAttribute('href', '/search/'+text)
+    i.classList.add('ic-close-10');
+    $(i).on("click", deleteStorage); 
+    $(allDelete).on("click", allDeleteStorage);
+    div.append(a, i)
+    item.append(div); 
     searchList.append(item);
     newItem !== null && allDelete.removeClass('off');
   };
@@ -51,15 +60,15 @@ $(function() {
     var newSearch = searCH.filter( 
       (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
     );
-    saveToDos(TODOS_KEY, newSearch);
+    saveStorage(TODOS_KEY, newSearch);
   };
   
   $(searchForm).on('submit', handleToDoSubmit);
-  var savedToDos = getToDos(TODOS_KEY);
-  if(savedToDos !== null) { 
-    var items = savedToDos.sort((a,b) => parseInt(b.id) - parseInt(a.id));
+  var savedStorage = getStorage(TODOS_KEY);
+  if(savedStorage !== null) { 
+    var items = savedStorage.sort((a,b) => parseInt(b.id) - parseInt(a.id));
     searCH = items //전에 있던 items들을 계속 가지도 있다록 합니다. 
-    items.forEach(paintToDo);
+    items.forEach(paintStorage);
   }
 
   $('.share_js').on('click', function(){

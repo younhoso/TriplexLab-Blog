@@ -405,7 +405,10 @@ html{box-sizing:border-box}
 .area_popup .area_search .btn_close{float:right;width:40px;height:40px;background:0 0;border:none;font-size:24px;cursor:pointer;}
 .area_popup .search_content{max-width:1180px;margin:60px auto;padding:0 40px;font-size:0}
 .area_popup .search_content:after{content:'';display:block;clear:both}
+.area_popup .search_content form {margin-bottom: 32px;}
 .area_popup .search_content > div {margin-bottom: 32px;}
+.area_popup .search_content > div .off {display: none;}
+.area_popup .search_content > div .txt {font-size: 18px; font-weight: 600; margin-top: 28px;}
 .area_popup .box_form{position:relative;display: flex;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid var(--border-color)}
 .area_popup .box_form .icon-Search{display:inline-block;margin-right:23px;font-size:36px;vertical-align:-10px}
 .area_popup .box_form .inp_search{width:80%;margin-top:5px;border:none;font-size:24px;font-weight:900;line-height:1;color: var(--color-level-1);}
@@ -414,13 +417,13 @@ html{box-sizing:border-box}
 .area_popup .box_form .btn_search_del{position:absolute;top:0;right:0;width:36px;height:36px;padding:6px;border:none;background-color:transparent;cursor:pointer;fill-opacity:1;}
 .area_popup .box_form .btn_search_del #textDelBtnSvgMask {fill: var(--color-level-1)}
 .area_popup .box_form .btn_search_del .svg_bg {fill: var(--color-level-1)}
-.area_popup .title_sidebar{font-size: 18px;font-weight: 900;}
+.area_popup .title_sidebar{font-size: 26px;font-weight: 900;}
 .area_popup .title_sidebar.ab {display: inline-block;vertical-align: middle;}
-.area_popup .close_btn {font-size: 12px; display: inline-block; margin-left: 20px; vertical-align: middle; cursor: pointer;}
-.area_popup .search-list {}
+.area_popup .close_btn {font-size: 16px; display: inline-block; margin-left: 20px; vertical-align: middle; cursor: pointer;}
 .area_popup .search-list li{display: inline-block;margin: 10px 10px 10px 0;}
-.area_popup .search-list li span{font-size:16px;overflow:hidden; vertical-align: middle;}
-.area_popup .search-list li span + button {font-size: 12px; vertical-align: middle;}
+.area_popup .search-list li > div {display: flex; align-items: center;}
+.area_popup .search-list li a{font-size:16px;overflow:hidden; vertical-align: middle;}
+.area_popup .search-list li a + i {font-size: 16px; vertical-align: middle;margin-left: 6px;color: #999; cursor: pointer;}
 .area_popup .tag_zone{min-height:150px;box-sizing:border-box;vertical-align:top}
 .list_sidebar{margin:0;padding:0;list-style:none}
 aside .list_sidebar .item_sidebar{padding-top:10px;box-sizing:border-box;margin-bottom:10px;border-radius:.8em}
@@ -574,7 +577,7 @@ aside .tag_board{width:100%}
 @media screen and (max-width:768px){
 .area_common{margin-top:36px;padding-top:60px}
 }
-.item-thumbnail{background-color:#e6e6e6;}
+.item-thumbnail{border: 1px solid var(--border-color);}
 .no-img{background:#e6e6e6 url(images/ico_no.svg) no-repeat center!important;background-size:30px 30px!important}
 .btn-for-guest{display:none}
 .btn-for-user{display:none}
@@ -665,7 +668,7 @@ aside .tag_board{width:100%}
 .list_type_card{margin:0;padding:0;list-style:none;display: flex;}
 .list_type_card .item_card{display:inline-block;width:19.4%;height:100%;vertical-align:top;flex-shrink:0;position:relative;transition-property:transform;}
 .list_type_card .item_card strong{display:block;margin:18px 8px 6px 0;font-size:16px;font-weight:700;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
-.list_type_card .item_card .thumnail{display:block;width:100%;min-height:138px;background-size:cover;background-position:50% 50%;border-radius:.2em;}
+.list_type_card .item_card .thumnail{display:block;width:100%;min-height:138px;background-size:cover;background-position:50% 50%;border-radius:.2em;background-color: #e6e6e6;}
 .list_post .item_post .thumnail {display:block;width:100%;min-height:138px;background-position:50% 50%;border-radius:.2em;}
 .list_type_card .item_card .text{max-height:78px;margin:0;font-size:14px;color:inherit;line-height:1.71;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 @media screen and (max-width:1025px){
@@ -678,7 +681,7 @@ aside .tag_board{width:100%}
 .list_type_card .item_card .thumnail{padding-top:65%}
 }
 .list_type_banner{margin:0;padding:0;list-style:none}
-.list_type_banner .link_banner{position:relative;display:block;border-radius: 0.2em;height:100%;font-size:24px;color:#333;transition:all .2s ease-out;background-position: 100% 100%;background-size: 50%;overflow: hidden; background-repeat: no-repeat;}
+.list_type_banner .link_banner{position:relative;display:block;border-radius: 0.2em;height:100%;font-size:24px;transition:all .2s ease-out;background-position: 100% 100%;background-size: 50%;overflow: hidden; background-repeat: no-repeat;}
 .list_type_banner .box_content{width:70%;padding:47px 45px 50px 30px;}
 .list_type_banner .link_banner strong{display:block;max-height:58px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
 .list_type_banner .link_banner .btn_go{position:absolute;left:50px;bottom:48px;width:42px;height:42px;background:#000;border-radius:42px;font-size:17px;font-weight:400;color:#fff;}
@@ -701,7 +704,7 @@ aside .tag_board{width:100%}
 .type_notice{width:100%;padding-top: 50px;padding-bottom: 20px;overflow:hidden;pointer-events: auto;}
 .type_notice:after{content:'';display:block;clear:both}
 
-.category_type_notice .thumnail,.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.2em}
+.category_type_notice .thumnail,.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.2em;background-color: #e6e6e6;}
 .category_type_notice .info,.type_notice .info{overflow:hidden;}
 .category_type_notice .list_category:after,.list_type_notice:after{content:'';display:block;clear:both;}
 .category_type_notice .item_category:after,.list_type_notice .item_notice:after{content:'';display:block;clear:both}
@@ -738,7 +741,7 @@ aside .tag_board{width:100%}
 .area_category .title_section{text-align:left}
 }
 .category_type_related .list_category{list-style:none;margin:0 -8px;padding-top:60px;border:none;box-sizing:border-box;font-size:0}
-.category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 6px;}
+.category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 6px;background-color: #e6e6e6;}
 .category_type_related .item_category{display:inline-block;width:25%;margin-bottom:54px;vertical-align:top}
 .category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;}
 .category_type_related .box_content{width:100%}
@@ -1154,6 +1157,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
   /* search 페이지 */
   #tt-body-search .txt_list_description{display: none;}
+  #tt-body-search .area_category .list_image_bg{display: none;}
   /* // search 페이지 */
   
   /* tag 페이지 */

@@ -250,13 +250,12 @@
           </div>
 
           <div class="search_content">
-            <form action="" method="get">
+            <form action="" method="get" id="search-form">
               <legend><span class="blind">컨텐츠 검색</span></legend>
               <div class="box_form">
                 <span class="icon-Search"></span>
                 <s_search>
-                  <input type="text" name="[##_search_name_##]" title="검색어 입력" placeholder="SEARCH" value="" class="inp_search"
-                    onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+                  <input type="text" name="[##_search_name_##]" title="검색어 입력" placeholder="SEARCH" value="" class="inp_search"/>
                 </s_search>
                 <button type="button" title="검색어 삭제" class="btn_search_del">
                   <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 36 36" class="img_svg">
@@ -265,10 +264,10 @@
                     </defs>
                     <g fill="none" fill-rule="evenodd" transform="translate(-2 -2)">
                       <path d="M0 0h40v40H0z" />
-                      <mask id="textDelBtnSvgMask">
+                      <mask id="textDelBtnSvgMask" fill="#fff">
                         <use xlink:href="#textDelBtnSvg" />
                       </mask>
-                      <g mask="url(#textDelBtnSvgMask)" class="svg_bg">
+                      <g fill="#000" fill-opacity="1" mask="url(#textDelBtnSvgMask)" class="svg_bg">
                         <path d="M0 0h40v40H0z" />
                       </g>
                     </g>
@@ -278,6 +277,17 @@
             </form>
 
             <s_sidebar>
+              <s_sidebar_element>
+                <!-- 최근 검색어 -->
+                <div class="search-inner"> 
+                  <div class="allDelete off"> 
+                    <h3 class="title_sidebar ab">최근 검색어</h3>
+                    <span class="close_btn">모두 지우기 <i class="ic-close-10"></i></span> 
+                  </div>
+                  <p class="txt"></p> 
+                  <ul id="search-list" class="search-list"></ul> 
+                </div>
+              </s_sidebar_element>
               <s_sidebar_element>
                 <!-- 인기 검색어 (태그)-->
                 <div class="tag_zone">
