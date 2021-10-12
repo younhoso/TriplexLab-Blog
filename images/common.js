@@ -280,10 +280,10 @@ $(function() {
     var self = $(this);
     var hljsTxt = self.next('.hljs').text();
     navigator.clipboard.writeText(hljsTxt);/* 텍스트 클립보드 복사 */
-    self.attr('data-txt', 'Copied !');
+    self.attr('data-txt', 'Copied !').addClass('on');
 
     setTimeout(function(){
-      self.attr('data-txt', 'Copy');
+      self.attr('data-txt', 'Copy').removeClass('on');
     },2000);
   });
   
