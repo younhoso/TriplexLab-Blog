@@ -665,7 +665,7 @@ aside .tag_board{width:100%}
 .type_card:hover .arrow_inner {opacity: 1;}
 .type_card .type_card_prev.disabled, .type_card .type_card_next.disabled{opacity: .35; cursor: none; pointer-events: none;}
 .pagination_type_card .swiper-pagination-bullet{margin: 0 4px;}
-.list_type_card{margin:0;padding:0;list-style:none;display: flex; -webkit-transition: transform 0.5s ease-in-out; transition: transform 0.5s ease-in-out;}
+.list_type_card{margin:0;padding:0;list-style:none;display: flex; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
 .list_type_card .item_card{display:inline-block;width:19.4%;height:100%;vertical-align:top;flex-shrink:0;position:relative;transition-property:transform;}
 .list_type_card .item_card strong{display:block;margin:18px 8px 6px 0;font-size:16px;font-weight:700;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
 .list_type_card .item_card .thumnail{display:block;width:100%;min-height:138px;background-size:cover;background-position:50% 50%;border-radius:.2em;background-color: #e6e6e6;}
@@ -926,7 +926,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .typeCard_next.disabled,.typeCard_prev.disabled{opacity:.35;cursor:auto;pointer-events:none;}
   
   .type_notice .swiper_type_notice {width:100%;height:280px;margin-left:auto;margin-right:auto;position:relative;list-style:none;padding:0;z-index:1;pointer-events: auto;}
-  .category_type_notice .list_category,.list_type_notice{margin:0;padding:0;list-style:none;pointer-events:auto;display:flex;height:calc(4 * 54px + 16px * (4 - 1));flex-flow:column wrap;-webkit-transition: transform 0.5s ease-in-out;transition: transform 0.5s ease-in-out;}
+  .category_type_notice .list_category,.list_type_notice{margin:0;padding:0;list-style:none;pointer-events:auto;display:flex;height:calc(4 * 54px + 16px * (4 - 1));flex-flow:column wrap;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
   .category_type_notice .list_category,.list_type_notice::-webkit-scrollbar { display: none; }
   .category_type_notice .item_category,.list_type_notice .item_notice{ width: 95%; height:calc((100% - 20px)/ 4);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;pointer-events: auto;}
 
