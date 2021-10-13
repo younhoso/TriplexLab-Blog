@@ -1,6 +1,11 @@
 import Slide from './slide.js';
 
 $(function() {
+  display_control();
+  slider_control();
+  detail_side();
+  thumnailLoaded();
+
   var searchForm = $('#search-form');
   var searchInput = $('#search-form input');
   var searchList = $('#search-list');
@@ -118,9 +123,7 @@ $(function() {
     $(cur).addClass('id-'+idx);
   },0);
   
-  display_control();
-  slider_control();
-  detail_side();
+  
 
   $('.tab_btn').on('click', function(){
     $('.tab_item').siblings().removeClass('active');
@@ -482,7 +485,8 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   /* 공감 수 변경 시 처리 */
   var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
   var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
-  function callback(mutationsList) {  
+  function callback(mutationsList) {
+    console.log(mutationsList)
     var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
     if(mutationsList[0].type === 'attributes') {
       $('.detail_side .util_like .txt_count').text(txt_like);
@@ -507,4 +511,24 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   },450);
 }
 /* 공감 아이콘 클릭 이벤트 처리 */
+};
+
+/** 모든 리스트에 섬네일들 Lazy-Loading 만들기 */
+function thumnailLoaded() {
+  var target = Array.from(document.querySelectorAll('.thumnail')); // 감시할 대상자
+  function callback(entries, observer) {
+    entries.forEach(function(entry){
+      // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
+      if (entry.intersectionRatio > 0) {
+        entry.target.style.backgroundImage = `url(${entry.target.dataset.src})`;
+         // 이미지를 불러왔다면 타켓 엘리먼트에 대한 관찰을 멈춘다.
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  var io = new IntersectionObserver(callback)
+  
+  target.forEach(function(el, idx){
+    io.observe(el)
+  });
 };
