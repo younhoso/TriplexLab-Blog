@@ -29,7 +29,7 @@ body,button,input,select,strong,table,textarea{font-family:'Montserrat','Noto Sa
 h1{font-size:2em;margin:.67em 0}
 h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}
 fieldset,iframe{border:0;padding:.35em .75em .625em}
-img{width:100%;border:0;border-style:none;vertical-align:middle}
+img{border:0;border-style:none;vertical-align:middle;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 dl,li,menu,ol,ul{list-style:none}
 address,em{font-style:normal}
@@ -365,7 +365,7 @@ html{box-sizing:border-box}
 .area_sidebar button{background:0 0;border:0;border-radius:0;overflow:visible;cursor:pointer;}
 .area_sidebar .sidebar_header{margin:50px 0 50px 0;padding: 0 40px; box-sizing: border-box;}
 .area_sidebar .sidebar_header:after{content:'';display:block;clear:both}
-.area_sidebar .title_logo{float:left;margin:0;font-size:24px;font-weight:800;display: block;}
+.area_sidebar .title_logo{margin:0;font-size:24px;font-weight:800;}
 .area_sidebar .btn_close{float:right;width:48px;font-size:24px;text-align:right;padding:0 7px 2px 7px}
 .area_sidebar .tt_category:after{content:'';display:block;clear:both}
 .area_sidebar .link_item .c_cnt{float: right;}
@@ -443,6 +443,8 @@ aside .tag_board{width:100%}
 .tag_recomme .item_sidebar{display: inline-block; margin: 0 10px 0 0;border-radius: 1rem; border: 1px solid rgba(0,0,0,.15); padding: 5px 15px;}
 .tag_popularity .item_sidebar{display: inline-block; margin: 0 10px 0 0;border-radius: 1rem; border: 1px solid rgba(0,0,0,.15); padding: 5px 15px;}
 @media screen and (max-width:1025px){
+.area_sidebar .title_logo{width: 100%;display: flex; font-size:20px;justify-content: space-between;align-items: center;}
+
 .area_popup .area_search{padding-left:24px;padding-right:24px}
 .area_popup .search_header{margin:24px -10px 24px 0;padding:1px 0 0}
 .area_popup .box_form .icon-Search{display:none}
@@ -981,7 +983,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar::-webkit-scrollbar{display:none}
   .area_sidebar.on{top:0;display: block;}
   .area_sidebar .sidebar_header .link_logo {display: inline-block;}
-  .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none; width:10%; border-radius:50%;overflow:hidden; vertical-align: middle;}
+  .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: none;}
+  .area_sidebar .inner_sidebar .sidebar_header .img_logo img {border-radius: 50%;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
   .area_sidebar .box_sns .list_sns li{font-size:16px;font-weight: 600;}
   .area_sidebar .box_sns .list_sns li a{height:44px;line-height:44px;padding:0 26px;box-sizing:border-box;display:block;padding:0 26px;box-sizing:border-box; -webkit-transition: background-color .25s ease; transition: background-color .25s ease;}
@@ -1082,7 +1085,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .sidebar_contents{min-height:80%}
   .area_sidebar .sidebar_header .link_logo {display: block;}
   .area_sidebar .inner_sidebar .sidebar_header {text-align: center;}
-  .area_sidebar .inner_sidebar .sidebar_header .img_logo{width: 32%;height: 70px;display: block; margin: 0 auto 10px auto;}
+  .area_sidebar .inner_sidebar .sidebar_header .img_logo{display: block; margin-bottom: 10px;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: block;}
 
   .mo_footer_menu{display:none}
