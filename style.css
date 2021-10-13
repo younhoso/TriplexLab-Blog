@@ -521,7 +521,7 @@ aside .tag_board{width:100%}
 .area_related .list_related:after{content:'';display:block;clear:both}
 .area_related .item_related{float:left;width:25%;margin-bottom:40px}
 .area_related .link_related{display:block;margin:0 8px}
-.area_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 0.4em;background-color: #e6e6e6;}
+.area_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 0.4em;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover;}
 .area_related .link_related strong{display:block;max-height:45px;margin:12px 0 0;line-height:1.47;font-size:16px;font-weight:500;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .area_related .info{display:inline-block;font-size:13px;}
 @media screen and (max-width:1025px){
