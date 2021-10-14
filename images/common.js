@@ -25,6 +25,7 @@ $(function() {
   function allDeleteStorage() { //전체 item을 삭제 
     localStorage.removeItem(TODOS_KEY); 
     txt.html('최근검색어 내역이 없습니다.');
+    txt.show();
     searchList.remove();
   };
 
@@ -32,7 +33,7 @@ $(function() {
     const li = e.target.parentElement.parentElement;
     li.remove();
     searCH = searCH.filter((search) => search.id !== parseInt(li.id));
-    searCH.length === 0 && (searchList.remove(), txt.html('최근검색어 내역이 없습니다.'));
+    searCH.length === 0 && (searchList.remove(), txt.html('최근검색어 내역이 없습니다.'), txt.show());
     saveStorage(TODOS_KEY, searCH);
   };
 
