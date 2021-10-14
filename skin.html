@@ -5,7 +5,7 @@
   <meta name="title" content="[##_page_title_##] :: [##_title_##]" />
   <meta name="description" Content="[##_desc_##]" />
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=5 user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
   <!-- // General META -->
   <meta property="og:site_name" content="FE Developer TriplexLab(트리플엑스랩)" />
@@ -32,9 +32,8 @@
   <link rel="stylesheet" href="./images/swiper.min.css"/>
   <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
   <link rel="stylesheet" href="./style.css"/>
-  <script charset="UTF-8" src="./images/plugins.min.js"></script>
-  <script >
-    $(function(){
+  <script>
+    (function(){
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
@@ -78,14 +77,7 @@
           return templateIE('IE', version);
         }
         /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
-  
-        $('.article_view').find('table').each(function (idx, el) {
-          $(el).wrap('<div class="table-overflow">')
-        });
-
-        hljs.highlightAll();
-        $('.hljs').scrollbar();
-    });
+    })();
   </script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
@@ -170,7 +162,7 @@
               <s_sidebar_element>
                 <!-- 카테고리 -->
                 <div class="category">
-                  <h3 class="sidebar_tit">Menu</h3>
+                  <h2 class="sidebar_tit">Menu</h2>
                   <div class="list_category color">
                     [##_category_list_##]
                   </div>
@@ -186,7 +178,7 @@
                 <div class="sidebar_sns">
                   <!-- 링크 -->
                   <div class="box_sns">
-                    <h3 class="sidebar_tit">Social Channels</h3>
+                    <h2 class="sidebar_tit">Social Channels</h2>
                     <ul class="list_sns">
                       <s_link_rep>
                         <li>
@@ -206,7 +198,7 @@
               <s_sidebar_element>
                 <!-- TriplexLab SKIN(링크) -->
                 <div class="skin_link" data-tit="TriplexLab 블로그 SKIN (준비중)">
-                  <a href="/category/SKIN" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/3222964/skin/images/skin.png" alt="TriplexLab 블로그 SKIN" width="260" height="200"></a>
+                  <a href="/category/SKIN" target="_blank"><img src="https://tistory4.daumcdn.net/tistory/3222964/skin/images/skin.webp" alt="TriplexLab 블로그 SKIN" style="width: 100%;"></a>
                 </div>
               </s_sidebar_element>
               <s_sidebar_element>
@@ -357,9 +349,9 @@
                           <div class="swiper-progress-bar">
                             <span class="slide_progress-bar"></span>
                           </div>
-                          <ul class="swiper-wrapper">
+                          <div class="swiper-wrapper">
                             <s_cover_item>
-                              <li class="slide_item swiper-slide">
+                              <div class="slide_item swiper-slide">
                                 <a href="[##_cover_item_url_##]" class="link_detail">
                                   <div class="link_slide" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>');">
                                     <div class="bg_gradient">
@@ -370,9 +362,9 @@
                                     </div>
                                   </div>
                                 </a>
-                              </li>
+                              </div>
                             </s_cover_item>
-                          </ul>
+                          </div>
                           <div class="home-wrap__control control_b">
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -493,7 +485,7 @@
                     <div class="wrapper">
                       <h2 class="title_section">[##_cover_title_##]</h2>
                         <div class="inWrapper">
-                            <ui class="list_type_notice">
+                            <ul class="list_type_notice">
                               <s_cover_item>
                                 <li class="item_notice">
                                   <a href="[##_cover_item_url_##]" class="link_notice" tabindex="-1">
@@ -505,7 +497,7 @@
                                   </a>
                                 </li>
                               </s_cover_item>
-                            </ui>
+                            </ul>
                         </div>  
                         <div class="typeNotice_next bg_them_mode color border_mode"><i class="ic-right-thin"></i></div>
                         <div class="typeNotice_prev bg_them_mode color border_mode"><i class="ic-left-thin"></i></div>
@@ -1058,6 +1050,18 @@
     <!-- // wrap -->
   </s_t3>
 </body>
-<script type="module" charset="UTF-8" src="./images/common.js"></script>
+
+<script charset="UTF-8" src="./images/plugins.min.js"></script>
+<script charset="UTF-8" src="./images/common.js" type="module"></script>
 <script charset="UTF-8" src="./images/menuIcon.js"></script>
+<script charset="UTF-8" src="./images/highlight.min.js"></script>
+<script charset="UTF-8">hljs.highlightAll();</script>
+<script charset="UTF-8">
+  $(function(){
+    $('.hljs').scrollbar();
+    $('.article_view').find('table').each(function (idx, el) {
+      $(el).wrap('<div class="table-overflow">')
+    });
+  });
+</script>
 </html>
