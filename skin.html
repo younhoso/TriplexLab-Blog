@@ -32,6 +32,20 @@
   <link rel="stylesheet" href="./images/swiper.min.css"/>
   <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
   <link rel="stylesheet" href="./style.css"/>
+  <script charset="UTF-8" src="./images/plugins.min.js"></script>
+  <script charset="UTF-8" src="./images/common.js" type="module"></script>
+  <script charset="UTF-8" src="./images/highlight.min.js"></script>
+  <script charset="UTF-8">hljs.highlightAll();</script>
+  <script charset="UTF-8">
+    $(function(){
+      $('.hljs').scrollbar();
+      $('.article_view').find('table').each(function (idx, el) {
+        $(el).wrap('<div class="table-overflow">')
+      });
+      $('#editEntry').attr('title', '[##_title_##]');
+      $('#lightbox').remove();
+    });
+  </script>
   <script>
     (function(){
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
@@ -1050,18 +1064,4 @@
     <!-- // wrap -->
   </s_t3>
 </body>
-
-<script charset="UTF-8" src="./images/plugins.min.js"></script>
-<script charset="UTF-8" src="./images/common.js" type="module"></script>
-<script charset="UTF-8" src="./images/menuIcon.js"></script>
-<script charset="UTF-8" src="./images/highlight.min.js"></script>
-<script charset="UTF-8">hljs.highlightAll();</script>
-<script charset="UTF-8">
-  $(function(){
-    $('.hljs').scrollbar();
-    $('.article_view').find('table').each(function (idx, el) {
-      $(el).wrap('<div class="table-overflow">')
-    });
-  });
-</script>
 </html>
