@@ -165,7 +165,6 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .bg_them_mode {background-color: var(--g-bg-color);}
 .color {color: var(--color-level-1);}
 .color-2 {color: var(--color-level-2);}
-.sidebar_menu_tabs {background-color: var(--s-menu-tabs);}
 .border_mode {border:1px solid var(--border-color);}
 .border_b_mode {border-bottom:1px solid var(--border-color);}
 .shadow {box-shadow:var(--shadow);}
@@ -192,12 +191,12 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_pink .thema_apply .btn_register{background:#ff567a;color:#fff}
 .theme_pink .thema_apply .btn_register{background:#ff567a;color:#fff}
 .theme_pink .thema_apply .box_tag a:hover{border:1px solid #ff567a;color:#ff567a;}
-.theme_pink .thema_apply .tabs_itmes li:first-child {background:#ff567a;}
 .theme_pink .thema_apply .category_list > li a:hover,
 .theme_pink .thema_apply .box_sns .list_sns li a:hover,
 .theme_pink .box_gnb .t_menu_category a:hover {opacity: 0.4;}
 .theme_pink .share_temp .txt {background:#ff567a;color:#fff;}
 .theme_pink .subscribe .txt {background:#ff567a;color:#fff;}
+.theme_pink .sidebar_menu .sidebar_menu_tabs {background:#ff567a;color:#fff; box-shadow:0 4px 12px rgb(255, 86, 122, 0.4);}
 .theme_pink .direction .previous:hover, .theme_pink .direction .next:hover{border-color: #ff567a; color: #ff567a;}
 .theme_pink .box_header .header_icon_inner .icon.ic-bell.on::after {background:#ff567a;}
 .theme_pink main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#ff567a;}
@@ -215,12 +214,12 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_blue .thema_apply .slick-active button{background:#004fff;}
 .theme_blue .thema_apply .btn_register{background:#004fff;color:#fff}
 .theme_blue .thema_apply .btn_register{background:#004fff;color:#fff}
-.theme_blue .thema_apply .tabs_itmes li:first-child {background:#004fff;}
 .theme_blue .thema_apply .category_list > li a:hover,
 .theme_blue .thema_apply .box_sns .list_sns li a:hover,
 .theme_blue .box_gnb .t_menu_category a:hover {opacity: 0.4;}
 .theme_blue .share_temp .txt {background:#004fff;color:#fff;}
 .theme_blue .subscribe .txt {background:#004fff;color:#fff;}
+.theme_blue .sidebar_menu .sidebar_menu_tabs {background:#004fff;color:#fff;box-shadow: 0 4px 12px rgba(0, 79, 255, 0.4);}
 .theme_blue .direction .previous:hover, .theme_blue .direction .next:hover{border-color: #004fff; color: #004fff;}
 .theme_blue .box_header .header_icon_inner .icon.ic-bell.on::after {background:#004fff;}
 .theme_blue main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#004fff;}
@@ -238,12 +237,12 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_green .thema_apply .slick-active button{background:#11998e}
 .theme_green .thema_apply .btn_register{background:#11998e;color:#fff}
 .theme_green .thema_apply .btn_register{background:#11998e;color:#fff}
-.theme_green .thema_apply .tabs_itmes li:first-child {background:#11998e;}
 .theme_green .thema_apply .category_list > li a:hover,
 .theme_green .thema_apply .box_sns .list_sns li a:hover,
 .theme_green .box_gnb .t_menu_category a:hover {opacity: 0.4;}
 .theme_green .share_temp .txt {background:#11998e;color:#fff;}
 .theme_green .subscribe .txt {background:#11998e;color:#fff;}
+.theme_green .sidebar_menu .sidebar_menu_tabs {background:#11998e;color:#fff; box-shadow: 0 4px 12px rgb(17, 153, 142, 0.4);}
 .theme_green .direction .previous:hover, .theme_green .direction .next:hover{border-color: #11998e; color: #11998e;}
 .theme_green .box_header .header_icon_inner .icon.ic-bell.on::after {background:#11998e;}
 .theme_green main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#11998e;}
@@ -261,12 +260,12 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_gray .thema_apply .slick-active button{background:#1d2129}
 .theme_gray .thema_apply .btn_register{background:#1d2129;color:#fff}
 .theme_gray .thema_apply .btn_register{background:#1d2129;color:#fff}
-.theme_gray .thema_apply .tabs_itmes li:first-child {background:#1d2129;}
 .theme_gray .thema_apply .category_list > li a:hover,
 .theme_gray .thema_apply .box_sns .list_sns li a:hover,
 .theme_gray .box_gnb .t_menu_category a:hover {opacity: 0.4;}
 .theme_gray .share_temp .txt {background:#1d2129;color:#fff;}
 .theme_gray .subscribe .txt {background:#1d2129;color:#fff;}
+.theme_gray .sidebar_menu .sidebar_menu_tabs {background:#1d2129;color:#fff;box-shadow: 0 4px 12px rgb(29, 33, 41, 0.4);}
 .theme_gray .direction .previous:hover, .theme_gray .direction .next:hover{border-color: #1d2129; color: #1d2129;}
 .theme_gray .box_header .header_icon_inner .icon.ic-bell.on::after {background:#1d2129;}
 .theme_gray main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#1d2129;}
@@ -288,12 +287,12 @@ i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;fo
 .theme_orange .thema_apply .slick-active button{background:#f60}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
 .theme_orange .thema_apply .btn_register{background:#f60;color:#fff}
-.theme_orange .thema_apply .tabs_itmes li:first-child {background:#f60;}
 .theme_orange .thema_apply .category_list > li a:hover,
 .theme_orange .thema_apply .box_sns .list_sns li a:hover,
 .theme_orange .box_gnb .t_menu_category a:hover {opacity: 0.4;}
 .theme_orange .share_temp .txt {background:#f60;color:#fff;}
 .theme_orange .subscribe .txt {background:#f60;color:#fff;}
+.theme_orange .sidebar_menu .sidebar_menu_tabs {background:#f60;color:#fff;box-shadow: 0 4px 12px rgb(255, 102, 0, 0.4);}
 .theme_orange .direction .previous:hover, .theme_orange .direction .next:hover{border-color: #f60; color: #f60;}
 .theme_orange .box_header .header_icon_inner .icon.ic-bell.on::after {background:#f60;}
 .theme_orange main .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {background:#f60;}
@@ -382,7 +381,7 @@ html{box-sizing:border-box}
 .area_sidebar .add_link a {height: 40px;line-height: 40px;padding: 0 26px;box-sizing: border-box;display: block;margin-bottom:28px;font-size:16px;font-weight:600;}
 .area_sidebar .add_link a:hover{background-color: var(--border-color-2);}
 .area_sidebar .category .category_list li:last-child, .area_sidebar .add_link li:last-child, .area_sidebar .box_sns li:last-child, .area_sidebar .box_gnb li:last-child ,.area_sidebar .add_link a {margin-bottom:28px}
-.area_sidebar .sidebar_tit{font-size:14px;font-weight:600;padding: 0 26px;box-sizing: border-box;}
+.area_sidebar .sidebar_tit{font-size:16px;font-weight:600;padding: 0 26px;box-sizing: border-box;}
 .area_sidebar .btn_search{margin-top:12px;padding:10px 0;background-color:transparent;font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
 .area_sidebar .icon-Search{margin-left:5px;font-size:20px;color: var(--color-level-1);vertical-align:-2px}
 .area_sidebar .link_tool{position:relative;display:inline-block;margin-left:45px;font-size:14px;font-weight:700;white-space: nowrap;}
@@ -892,12 +891,13 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .api .api_inner > li a{margin-bottom:0;display:block;padding:5px 0 5px 12px;font-size:14px;font-weight:400;}
 
   .sidebar_menu .sidebar_menu_tabs{width: auto;margin: 0 20px; border-radius:1.2em;cursor:pointer; margin-bottom: 40px;}
-  .sidebar_menu .sidebar_menu_tabs .tabs_itmes{height:42px;display:flex;justify-content:space-around;align-items:center;color:#fff;position:relative}
+  .sidebar_menu .sidebar_menu_tabs .tabs_itmes{height:42px;display:flex;justify-content:space-around;align-items:center;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme{width:40%;height:30px;line-height:30px;font-weight: 600;text-align:center;position:relative}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .tab_itme:nth-child(2):after{content:'';display:inline-block;width:1px;height:14px;background-color:#fff;position:absolute;top:28%;right:calc(100% * -.15)}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes li:first-child{height:26px;width:38%;border-radius:1.2em;position:absolute;top:19%;left:calc(100% * .06); -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); -webkit-transition: transform 0.02s ease-in-out; transition: transform 0.02s ease-in-out;}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .LIGHT{transform: translateX(0px);}
   .sidebar_menu .sidebar_menu_tabs .tabs_itmes .DARK{transform: translateX(calc(var(--vw, 1vw) * 50));}
+  .sidebar_menu .sidebar_menu_tabs .tabs_itmes li:first-child {border: 1px solid #fff;}
   .icon.ic-sun, .ic-moon{width:20px;height:30px;line-height:30px;vertical-align:bottom;margin-right:5px;}
 
   .box_gnb.on{display:block}
