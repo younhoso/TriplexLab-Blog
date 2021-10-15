@@ -5,7 +5,6 @@ $(function() {
   slider_control();
   detail_side();
   thumnailLoaded();
-
   var searchForm = $('#search-form');
   var searchInput = $('#search-form input');
   var searchList = $('#search-list');
@@ -124,13 +123,20 @@ $(function() {
     $(cur).addClass('id-'+idx);
   },0);
 
+  var windowWidth = $( window ).width();
+  var tabBtnWidth = $('.tab_btn:first-child').width();
+  $('.line_inner i:first-child').css({'width':tabBtnWidth, 'opacity': 1});
+  var rect = document.querySelector('.tbas_inner').getBoundingClientRect();
   $('.tab_btn').on('click', function(){
+    var selfWidth = $(this).width();
     $('.tab_item').siblings().removeClass('active');
     var dataTab = $(this).data('tabs');
     $(this).addClass('on').siblings().removeClass('on');
-    $('.visitant').hasClass("on") && ($('.line_inner i:first-child').attr('class', dataTab), $('.tab_item').eq(0).addClass('active'));
-    $('.story').hasClass("on") && ($('.line_inner i:first-child').attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
-    return false;
+    $('.visitant').hasClass("on") && ($('.line_inner i:first-child').css({'width':selfWidth, 'opacity': 1}).attr('class', dataTab), $('.tab_item').eq(0).addClass('active'));
+    $('.story').hasClass("on") && ($('.line_inner i:first-child').css({'width':selfWidth, 'opacity': 1}).attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
+
+    //모바일 해상도일때 경우
+    windowWidth <= 1025 && $('#root').animate({scrollTop: rect.top}, 500);
   });
 
   $('.header_icon_inner').on('click', function(e) {
@@ -239,7 +245,7 @@ $(function() {
   $('#tt-body-page').length && ($('figure img').attr('alt', imgText), $('.link_ccl').attr('rel', 'noopener'));
   /** // 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
   
-  var windowWidth = $( window ).width();
+  
   function setScreenSize() {
     var vw = 0;
     var vh = window.innerHeight * 0.01;
