@@ -123,8 +123,6 @@ $(function() {
   arr_notice.reduce(function(acc,cur,idx){
     $(cur).addClass('id-'+idx);
   },0);
-  
-  
 
   $('.tab_btn').on('click', function(){
     $('.tab_item').siblings().removeClass('active');
@@ -236,6 +234,10 @@ $(function() {
     }
   });
   /** // 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
+  /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
+  var imgText = $('figure figcaption').html();
+  $('#tt-body-page').length && ($('figure img').attr('alt', imgText), $('.link_ccl').attr('rel', 'noopener'));
+  /** // 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
   
   var windowWidth = $( window ).width();
   function setScreenSize() {
@@ -361,6 +363,7 @@ function slider_control() {
   (function(){
     var swiperOptions = {
       loop: false,
+      
       watchSlidesProgress: true,
       pagination: {
         el: '.swiper-pagination',
