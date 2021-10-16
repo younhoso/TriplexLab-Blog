@@ -1163,7 +1163,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .tabs_inner span.JAVASCRIPT {width: 130px; transform: translateX(122px);} 
   /* //서식 관리 */
   /* code 에디터 Copy */
-  #tt-body-page .code_btn {display: flex; font-family: 'Montserrat'; font-weight: 600; position: absolute; top: 10px; right: 10px; color: #e6e6e6;z-index: 1;background-color: #000;border-radius: .4em;padding: 8px;}
+  #tt-body-page .code_btn {display: flex; font-family: 'Montserrat'; font-weight: 600; position: absolute; top: 10px; right: 20px; color: #e6e6e6;z-index: 1;background-color: #000;border-radius: .4em;padding: 8px;}
   #tt-body-page .code_btn:before{display:block;font-size:12px;content:attr(data-txt);color:#e6e6e6; padding-right: 10px;}
   #tt-body-page .code_btn.on {border: 1px solid #26cb7c;color: #26cb7c;}
   #tt-body-page .code_btn.on::before {color: #26cb7c;}
