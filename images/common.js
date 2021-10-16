@@ -290,7 +290,7 @@ $(function() {
   });
   /* // 서식 관리 tabs */
   /* code Copy */
-  $('.article_view pre').prepend('<button class="code_btn" data-txt="Copy"><i class="ic-copy"></i></button>');
+  $('.article_view pre').prepend('<button class="code_btn" data-txt="Copy" aria-label="Code Copy"><i class="ic-copy"></i></button>');
   $('.code_btn').on('click', function(){
     var self = $(this);
     var hljsTxt = self.next('.hljs').text();
