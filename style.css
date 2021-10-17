@@ -807,9 +807,9 @@ aside .tag_board{width:100%}
 .area_view .article_header .title_post{width:100%;font-size:28px;line-height:38px}
 }
 .article_view{max-width:940px;margin:40px auto 0 auto;padding: 0 20px; box-sizing: border-box;}
-.article_view p{font-size:16px;line-height:1.88;color: var(--color-level-1);margin-top: 1em;}
+.article_view p{font-size:16px;line-height:1.88;margin-top: 1em;}
 .article_view video {border: 1px solid #e6e6e6;}
-.article_view h1,.article_view h2,.article_view h3,.article_view h4{font-weight:900;color: var(--color-level-1);}
+.article_view h1,.article_view h2,.article_view h3,.article_view h4,.article_view p{color:var(--color-level-1)}
 .article_view h1{font-size:32px;line-height:1.33;margin-top: 2em;}
 .article_view h2{font-size:24px;line-height:1.38;margin-top: 2em;}
 .article_view h3{font-size:20px;line-height:1.4;margin-top: 2em;}
@@ -844,7 +844,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 .article_view .table-overflow{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .article_view .table-overflow{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .article_view img{max-width:100%}
-.protected_form input{border:1px solid #e1e1e1;padding:9px 14px;font-size:14px}
+.protected_form input{border:1px solid #e1e1e1;padding:9px 14px;font-size:14px;}
+
 @media screen and (max-width:743px){
 .article_view iframe{width:100%;height:56vw;-ms-height:56vmax}
 }
@@ -1149,7 +1150,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .detail_side {display: none;}
   #tt-body-page .area_paging {display: none;}
 
-
   #tt-body-page .direction{width:auto;margin:0;display:block;padding:0;column-gap:24px;grid-template-rows:auto;grid-template-areas:"previous next";grid-template-columns:1fr 1fr;}
   #tt-body-page .direction p {font-size: 12px;font-weight: 400; line-height: 1.625;}
   #tt-body-page .direction h3 {font-size: 16px; font-weight: 600; line-height: 1.5; width: 240px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
@@ -1180,7 +1180,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   /* 다운로드 블럭 */
   figure.fileblock .filename, #tt-body-page figure.fileblock .filename {color: var(--color-level-1);}
   /* //다운로드 블럭 */
-
 
   /* search 페이지 */
   #tt-body-search .txt_list_description{display: none;}
@@ -1233,7 +1232,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .hljs > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
   .hljs > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
   /* // SCROLLBAR MAC OS X */
-
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
