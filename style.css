@@ -559,7 +559,7 @@ aside .tag_board{width:100%}
 .area_reply .thumbnail_reply img{width:100%;height:100%;border-radius:50%}
 .area_reply .box_reply_content{overflow:hidden;}
 .area_reply .box_reply_content .user > img {display: none;}
-.area_reply .item_reply .user a{display:inline-block;margin-bottom:8px;font-size:16px;font-weight:700;color:#333}
+.area_reply .item_reply .user a{display:inline-block;margin-bottom:8px;font-size:16px;font-weight:700;}
 .area_reply .item_reply .date{display:inline-block;padding-top:10px;padding-left:3px}
 .area_reply .item_reply .date a{font-weight:300;font-size:14px;padding-left:4px}
 .area_reply .box_reply_content .txt{margin:10px 0 0 0;font-size:16px}
@@ -567,10 +567,10 @@ aside .tag_board{width:100%}
 .area_reply .modify a{color:#9b9b9b}
 .area_reply .modify .slash{color:#e1e1e1}
 .area_reply .list_reply_comment{margin-top:30px!important}
-.area_reply .ico_commnent{float:left;width:43px;margin-right:10px;color:rgba(51,51,51,.6);text-align:right}
+.area_reply .ico_commnent{float:left;width:43px;margin-right:10px;text-align:right;}
 .area_reply .item_comment{padding:10px}
-.area_reply .reply_write:after{content:'';display:block;clear:both}
-.area_reply .form_content{padding-bottom:10px}
+.area_reply .reply_write:after{content:'';display:block;clear:both;}
+.area_reply .form_content{padding-bottom:10px;}
 .area_reply .form_content textarea{width:100%;height:140px;padding:12px 14px;border:1px solid var(--border-color);font-size:14px;vertical-align:top;resize: none;color: var(--color-level-1);}
 .area_reply .form_guest{margin:0 -4px}
 .area_reply .form_guest:after{content:'';display:block;clear:both}
@@ -587,7 +587,6 @@ aside .tag_board{width:100%}
 .list_reply_comment .ico_commnent{width:10px}
 .list_reply_comment li:first-child{padding-top:30px}
 .item_comment.reply{padding:15px}
-.list_reply_comment .item_comment{background:#fafafa}
 .list_reply .item_reply .user a{margin-bottom:5px}
 .list_reply .item_reply .date{display:block;padding:0;font-size:14px}
 .list_reply .item_reply .dot{display:none}
