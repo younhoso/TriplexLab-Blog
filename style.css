@@ -86,32 +86,35 @@ template{display:none}
   .banner_wrapper {max-width: 1680px; margin: 0 auto; padding: 0 40px;}
   .wrapper {padding: 0 40px;}
 }
-@font-face{font-family:ic-font;src:url(images/ic-font.eot?c0e1kl);src:url(images/ic-font.eot?c0e1kl#iefix) format('embedded-opentype'),url(images/ic-font.ttf?c0e1kl) format('truetype'),url(images/ic-font.woff?c0e1kl) format('woff'),url(images/ic-font.svg?c0e1kl#ic-font) format('svg');font-weight:400;font-style:normal;font-display:swap;}
-i{font-family:ic-font!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.ic-html:before{content:"\e900"}
-.ic-js:before{content:"\e901"}
-.ic-uiux:before{content:"\e902"}
-.ic-bell:before{content:"\e904"}
-.ic-copy:before{content:"\e906"}
-.ic-right-thin:before{content:"\e907"}
-.ic-left-thin:before{content:"\e908"}
-.ic-plus-thin:before{content:"\e909"}
-.ic-gitbook:before{content:"\e90a"}
-.ic-tr-1:before{content:"\e90b"}
-.ic-sun:before{content:"\e90c"}
-.ic-search:before{content:"\e90d"}
-.ic-play:before{content:"\e90f"}
-.ic-pause:before{content:"\e910"}
-.ic-moon:before{content:"\e911"}
-.ic-close-10:before{content:"\e912"}
-.ic-close-thin:before{content:"\e913"}
-.ic-github:before{content:"\e914"}
-.ic-comment-bg:before{content:"\e915"}
-.ic-like-bg:before{content:"\e916"}
-.ic-comment:before{content:"\e917"}
-.ic-like:before{content:"\e918"}
-.ic-share:before{content:"\e919"}
-.ic-file:before{content:"\e926"}
+
+@font-face{font-family:ic-font;src:url(images/ic-font.eot?mwl1di);src:url(images/ic-font.eot?mwl1di#iefix) format('embedded-opentype'),url(images/ic-font.ttf?mwl1di) format('truetype'),url(images/ic-font.woff?mwl1di) format('woff'),url(images/ic-font.svg?mwl1di#ic-font) format('svg');font-weight:400;font-style:normal;font-display:swap;}
+i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.ic-kakao-bg:before{content:"\e905";}
+.ic-kakao:before{content:"\e90e";}
+.ic-html:before{content:"\e900";}
+.ic-js:before{content:"\e901";}
+.ic-uiux:before{content:"\e902";}
+.ic-bell:before{content:"\e904";}
+.ic-copy:before{content:"\e906";}
+.ic-right-thin:before{content:"\e907";}
+.ic-left-thin:before{content:"\e908";}
+.ic-plus-thin:before{content:"\e909";}
+.ic-gitbook:before{content:"\e90a";}
+.ic-tr-1:before{content:"\e90b";}
+.ic-sun:before{content:"\e90c";}
+.ic-search:before{content:"\e90d";}
+.ic-play:before{content:"\e90f";}
+.ic-pause:before{content:"\e910";}
+.ic-moon:before{content:"\e911";}
+.ic-close-10:before{content:"\e912";}
+.ic-close-thin:before{content:"\e913";}
+.ic-github:before{content:"\e914";}
+.ic-comment-bg:before{content:"\e915";}
+.ic-like-bg:before{content:"\e916";}
+.ic-comment:before{content:"\e917";}
+.ic-like:before{content:"\e918";}
+.ic-share:before{content:"\e919";}
+.ic-file:before{content:"\e926";}
 
 .icon_common{ font-size: 16px;}
 
@@ -1261,6 +1264,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .detail_side .side_item.item1 {top: 100px; }
   #tt-body-page .detail_side .side_item.item2 {top: 150px;}
   #tt-body-page .detail_side .side_item.item3 {top: 200px;}
+  #tt-body-page .detail_side .side_item.item4 {top: 250px;}
   #tt-body-page .detail_side .side_item::before{content:attr(data-title);display:block;position:absolute;right:45px;top:50%;transform:translateY(-50%);text-align:right;padding:9px;font-size:14px;opacity:0;visibility:hidden;text-overflow:ellipsis;white-space:nowrap;background-color:#000;color:#fff;font-weight:600;border-radius:.5em; z-index: 5;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out;}
   #tt-body-page .detail_side .side_item::after{content:'';display:block;width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid #000;position:absolute;top:34%;right:40px;opacity:0;visibility:hidden;z-index: 4; -webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out;}
  

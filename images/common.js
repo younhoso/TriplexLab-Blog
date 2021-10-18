@@ -92,6 +92,45 @@ $(function() {
     navigator.clipboard.writeText(input.val());
   });
 
+  /** 상세페이지 Kakao공유 기능 */
+  var detailInfoObj = { 
+    tit: $('.area_article').attr('aria-label'),
+    link: $('.area_article').data('link'),
+    image: $('.inner_header').data('image'),
+    tag: $('.tag_content a').map((_,el) => el.innerText)
+  };
+  if(document.getElementById('tt-body-page')){
+    var {tit, link, image, tag} = detailInfoObj;
+    var tags = [...tag].reduce((acc, cur) => acc + ('#'+cur), '') || '#'+$('.tit_logo').html();
+    /* Kakao.Link */
+    Kakao.Link.createDefaultButton({
+      container: '.kakao_js',
+      objectType: 'feed',
+      content: {
+        title: tit,
+        description: tags,
+        imageUrl: image,
+        link: {
+          mobileWebUrl: link,
+          webUrl: link,
+        },
+      },
+      social: {
+        commentCount: 45
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: link,
+            webUrl: link,
+          },
+        }
+      ],
+    }); /* Kakao.Link // */
+  };
+  /** 상세페이지 Kakao공유 기능 // */
+
   $('.comment').on('click', function(){
     $('html, body').animate({
       scrollTop: $(document).height()
