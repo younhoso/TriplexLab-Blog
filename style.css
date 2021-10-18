@@ -954,7 +954,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   
   .type_notice .swiper_type_notice {width:100%;height:280px;margin-left:auto;margin-right:auto;position:relative;list-style:none;padding:0;z-index:1;pointer-events: auto;}
   .category_type_notice .list_category,.list_type_notice{margin:0;padding:0;list-style:none;pointer-events:auto;display:flex;height:calc(4 * 54px + 16px * (4 - 1));flex-flow:column wrap;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
-  .category_type_notice .list_category,.list_type_notice::-webkit-scrollbar { display: none; }
   .category_type_notice .item_category,.list_type_notice .item_notice{ width: 95%; height:calc((100% - 20px)/ 4);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;pointer-events: auto;}
 
   .list_type_card .item_card a {display: block;padding:0 10px 0 0;outline: none;}

@@ -43,14 +43,11 @@
       $('.article_view').find('table').each(function (idx, el) {
         $(el).wrap('<div class="table-overflow">')
       });
-      $('#editEntry').attr('title', '[##_title_##]');
-      $('.lb-cancel').attr('href' , '#0')
-      $('#tt-body-page .area_paging').remove();
-      $('.wrap_btn').eq(0).find('.btn_post').attr('aria-label', '관리자 버튼');
     });
   </script>
   <script>
     (function(){
+      window.onload = function() {
       /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
       var body = document.querySelector('body'); 
       var divInner = document.createElement('div');
@@ -94,6 +91,23 @@
           return templateIE('IE', version);
         }
         /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
+
+        /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
+        var editEntry = document.querySelector('#editEntry');
+        var cancel = document.querySelector('.lb-cancel');
+        var wrapBtn = Array.from(document.querySelectorAll('.wrap_btn'));
+        var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
+        
+        editEntry && editEntry.setAttribute('title', '[##_title_##]');
+        cancel && cancel.setAttribute('href', 'javascript:;')
+        pageEl && (pageEl.map(function(el){
+          return el.setAttribute('href', 'javascript:;');
+        }));
+        wrapBtn && (wrapBtn.map(function(){
+          return wrapBtn[0].setAttribute('aria-label', '관리자 버튼');
+        }));
+        /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
+      };
     })();
   </script>
 </head>
