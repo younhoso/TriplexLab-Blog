@@ -26,9 +26,6 @@
   <!-- Semantic Tag META // -->
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]"/>
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/AvenirLTStd/AvenirLTStd.css"/>
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/SpoqaHanSans/SpoqaHanSans.css"/>
-  <link rel="stylesheet" href="https://t1.daumcdn.net/tistory_admin/static/font/icomoon/icomoon.css"/>
   <link rel="stylesheet" href="./images/swiper.min.css"/>
   <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
   <link rel="stylesheet" href="./style.css"/>
@@ -267,13 +264,14 @@
                 <a href="[##_blog_link_##]" title="[##_title_##]" class="link_logo">
                   <s_if_var_logoImage>
                     <img src="[##_var_logoImage_##]" class="img_logo" alt="[##_title_##]">
+                    <strong>[##_title_##]</strong>
                   </s_if_var_logoImage>
                   <s_not_var_logoImage>
-                    [##_title_##]
+                    <strong>[##_title_##]</strong>
                   </s_not_var_logoImage>
                 </a>
               </h1>
-              <button type="button" class="btn_close" title="닫기"><span class="icon-Close"></span></button>
+              <button type="button" class="btn_close" title="닫기"><i class="ic-close-thin"></i></button>
             </div>
 
             <div class="search_content">

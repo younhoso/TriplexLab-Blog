@@ -101,8 +101,10 @@ $(function() {
     tag: $('.tag_content a').map((_,el) => el.innerText),
     count: $('.list_reply .item_reply').map((_,el) => el)
   };
-  if(document.getElementById('tt-body-page')){
-    var commInfo = document.querySelector('#comment').getBoundingClientRect();
+  
+  var kakao_js = document.querySelector('.kakao_js');
+  if(kakao_js){
+    var commInfo = comment.getBoundingClientRect();
     var {tit, link, image, tag, count} = detailInfoObj;
     var tags = [...tag].reduce((acc, cur) => acc + ('#'+cur), '') || '#'+$('.tit_logo').html();
     /* Kakao.Link */
@@ -132,7 +134,10 @@ $(function() {
         ],
     }); /* Kakao.Link // */
   /** 상세페이지 Kakao공유 기능 // */
-  
+  }
+
+  var comment_js = document.querySelector('.comment_js');
+  if(comment_js){
      /** 상세페이지 comment 기능 */
     $('.comment_js').on('click', function(){
       $("#root").animate({ scrollTop: commInfo.top }, 500);
