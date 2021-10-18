@@ -92,15 +92,18 @@ $(function() {
     navigator.clipboard.writeText(input.val());
   });
 
+ 
   /** 상세페이지 Kakao공유 기능 */
   var detailInfoObj = { 
     tit: $('.area_article').attr('aria-label'),
     link: $('.area_article').data('link'),
     image: $('.inner_header').data('image'),
-    tag: $('.tag_content a').map((_,el) => el.innerText)
+    tag: $('.tag_content a').map((_,el) => el.innerText),
+    count: $('.list_reply .item_reply').map((_,el) => el)
   };
   if(document.getElementById('tt-body-page')){
-    var {tit, link, image, tag} = detailInfoObj;
+    var commInfo = document.querySelector('#comment').getBoundingClientRect();
+    var {tit, link, image, tag, count} = detailInfoObj;
     var tags = [...tag].reduce((acc, cur) => acc + ('#'+cur), '') || '#'+$('.tit_logo').html();
     /* Kakao.Link */
     Kakao.Link.createDefaultButton({
@@ -111,33 +114,35 @@ $(function() {
         description: tags,
         imageUrl: image,
         link: {
-          mobileWebUrl: link,
-          webUrl: link,
+          mobileWebUrl: window.location.origin+link,
+          webUrl: window.location.origin+link,
         },
       },
       social: {
-        commentCount: 45
+        commentCount: [...count].length
       },
       buttons: [
         {
           title: '웹으로 보기',
-          link: {
-            mobileWebUrl: link,
-            webUrl: link,
-          },
-        }
-      ],
+            link: {
+              mobileWebUrl: window.location.origin+link,
+              webUrl: window.location.origin+link,
+            },
+          }
+        ],
     }); /* Kakao.Link // */
-  };
   /** 상세페이지 Kakao공유 기능 // */
+  
+     /** 상세페이지 comment 기능 */
+    $('.comment_js').on('click', function(){
+      $("#root").animate({ scrollTop: commInfo.top }, 500);
+      $('#comment').focus();
+      return false;
+    });
+    /** 상세페이지 comment 기능 // */
+  };
+  
 
-  $('.comment').on('click', function(){
-    $('html, body').animate({
-      scrollTop: $(document).height()
-    }, 500);
-    $('#comment').focus();
-    return false;
-  });
   var arr_card = Array.from($('.type_card'));
   arr_card.reduce(function(acc,cur,idx){
     $(cur).addClass('id-'+idx);
