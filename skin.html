@@ -168,10 +168,13 @@
           <div class="sidebar_header">
             <h1 class="title_logo">
               <a href="[##_blog_link_##]" title="[##_title_##]" class="link_logo">
-                <div class="img_logo toggle_dark"><img src="[##_image_##]" alt="[##_title_##]" width="70" height="70"></div>
-                <div class="tit_logo">
-                  [##_title_##]
-                </div>
+                <s_if_var_logoImage>
+                  <img src="[##_var_logoImage_##]" class="img_logo" alt="[##_title_##]">
+                  <strong>[##_title_##]</strong>
+                </s_if_var_logoImage>
+                <s_not_var_logoImage>
+                  <strong>[##_title_##]</strong>
+                </s_not_var_logoImage>
               </a>
               <div class="close_icon">
                 <i class="ic-close-thin"></i>
@@ -762,7 +765,10 @@
                   <div class="detail_side"> <!-- 블로그 post 영역 -->
                     <div class="share_temp">
                       <input type="text" value="">
-                      <p class="txt"><strong>링크를 클립보드에 복사했습니다. 👏</strong></p>
+                      <p class="txt"><strong>[##_var_msg_copy_##]</strong></p>
+                    </div>
+                    <div class="like_temp">
+                      <p class="txt"><strong>[##_var_msg_post_like_##]</strong></p>
                     </div>
                     <ul class="bg color">
                       <li class="util_like util side_item item1" data-title="Like"><span class="common border_mode bg_them_mode"><i class="ic-like"></i></span><span class="txt_count">-</span></li>
@@ -774,7 +780,7 @@
                   <!-- detail_side // -->
               </s_permalink_article_rep>
 
-              <s_page_rep>
+              <s_page_rep> <!-- 페이지 영역 -->
                 <div class="area_article color">
                   <div class="article_header">
                     <div class="inner_header" style="background-image:url('<s_article_rep_thumbnail>[##_notice_rep_thumbnail_url_##]</s_article_rep_thumbnail>')">
@@ -788,17 +794,8 @@
                   <div class="article_view">
                     [##_article_rep_desc_##]
                   </div>
-                  <div class="detail_side"> <!-- API 상세 페이지 영역 -->
-                    <div class="share_temp">
-                      <input type="text" value="">
-                      <p class="txt_copy"><strong>링크를 클립보드에 복사했습니다. 👍</strong></p>
-                    </div>
-                    <ul class="bg color">
-                      <li class="side_item item1" data-title="Share"><span class="share_js common border_mode"><i class="ic-share"></i></span></li>
-                    </ul>
-                  </div> <!-- API 상세 페이지 영역 // -->
                 </div>  
-              </s_page_rep>
+              </s_page_rep> <!-- 페이지 영역 // -->
             </s_article_rep>
             <!-- // area_view -->
 

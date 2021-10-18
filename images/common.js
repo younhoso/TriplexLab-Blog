@@ -536,7 +536,10 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   // 공감 클릭 이벤트 연결
   $('.detail_side .util_like').click(function () {
     $('.postbtn_like .uoc-icon').trigger('click');
-    !$('.postbtn_like .uoc-icon').hasClass('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //클릭 이벤트 시점에 변경
+    !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'),$('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
+    setTimeout(function(){
+      $('.like_temp').removeClass('on');
+    },2000);
   });
   
   // 감시자 인스턴스 생성
@@ -544,9 +547,7 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   // 감시할 대상 Node를 전달하여 감시 시작
   observer.observe(targetNode, config);
   /* 공감 수 변경 시 처리 // */
-  setTimeout(function(){
-    $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
-  },450);
+  $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
 }
 /* 공감 아이콘 클릭 이벤트 처리 */
 };

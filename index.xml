@@ -88,118 +88,104 @@
 		</item>
 	</cover>
 	<variables>
-		<variable>
-			<name>logoImage</name>
-			<label>로고 (높이 48px)</label>
-			<description></description>
-			<type>IMAGE</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>colorSet</name>
-			<label>컬러셋</label>
-			<description></description>
-			<type>SELECT</type>
-			<option>
-				<![CDATA[
-				[
-					{"name":"theme_pink", "label":"핑크", "value":"theme_pink"},
-					{"name":"theme_blue", "label":"블루", "value":"theme_blue"},
-					{"name":"theme_green", "label":"그린", "value":"theme_green"},
-					{"name":"theme_gray", "label":"그레이", "value":"theme_gray"},
-					{"name":"theme_orange", "label":"주황색", "value":"theme_orange"}
-				]
-			]]>
-			</option>
-			<default>theme_orange</default>
-		</variable>
-		<variable>
-			<name>listType</name>
-			<label>글 목록 형태</label>
-			<description></description>
-			<type>SELECT</type>
-			<option>
-				<![CDATA[
-				[
-					{"name":"related", "label":"블로그형", "value":"related"},
-					{"name":"notice", "label":"리스트형", "value":"notice"}
-				]
-			]]>
-			</option>
-			<default>related</default>
-		</variable>
-		<variable>
-			<name>footerCopyright</name>
-			<label>하단 카피라이트</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default>© 2018 TISTORY. All rights reserved.</default>
-		</variable>
-		<variable>
-			<name>footerLink1Name</name>
-			<label>하단 링크1 이름</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default>티스토리</default>
-		</variable>
-		<variable>
-			<name>footerLink1Url</name>
-			<label>하단 링크1 URL</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default>https://www.tistory.com/</default>
-		</variable>
-		<variable>
-			<name>footerLink2Name</name>
-			<label>하단 링크2 이름</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>footerLink2Url</name>
-			<label>하단 링크2 URL</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>footerLink3Name</name>
-			<label>하단 링크3 이름</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>footerLink3Url</name>
-			<label>하단 링크3 URL</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>footerLink4Name</name>
-			<label>하단 링크4 이름</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
-		<variable>
-			<name>footerLink4Url</name>
-			<label>하단 링크4 URL</label>
-			<description></description>
-			<type>STRING</type>
-			<option></option>
-			<default></default>
-		</variable>
+		<variablegroup name="추가 설정">
+			<variable>
+				<name>logoImage</name>
+				<label>로고 (높이 48px)</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>colorSet</name>
+				<label>컬러셋</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"theme_pink", "label":"핑크", "value":"theme_pink"},
+						{"name":"theme_blue", "label":"블루", "value":"theme_blue"},
+						{"name":"theme_green", "label":"그린", "value":"theme_green"},
+						{"name":"theme_gray", "label":"그레이", "value":"theme_gray"},
+						{"name":"theme_orange", "label":"주황색", "value":"theme_orange"}
+					]
+				]]>
+				</option>
+				<default>theme_blue</default>
+			</variable>
+			<variable>
+				<name>listType</name>
+				<label>글 목록 형태</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"related", "label":"블로그형", "value":"related"},
+						{"name":"notice", "label":"리스트형", "value":"notice"}
+					]
+				]]>
+				</option>
+				<default>related</default>
+			</variable>
+			<variable>
+				<name>footerCopyright</name>
+				<label>하단 카피라이트</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>© 2018 TISTORY. All rights reserved.</default>
+			</variable>
+			<variable>
+				<name>footerLink1Name</name>
+				<label>하단 링크1 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>티스토리</default>
+			</variable>
+			<variable>
+				<name>footerLink1Url</name>
+				<label>하단 링크1 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>https://www.tistory.com/</default>
+			</variable>
+			<variable>
+				<name>footerLink2Name</name>
+				<label>하단 링크2 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink2Url</name>
+				<label>하단 링크2 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+		<variablegroup name="메시지">        
+		  <variable>
+            <name>msg_copy</name>
+            <label>복사</label>
+            <description></description>
+            <type>STRING</type>
+            <default>포스팅 주소를 복사했습니다</default>
+          </variable>
+          <variable>
+            <name>msg_post_like</name>
+            <label>공감</label>
+            <description></description>
+            <type>STRING</type>
+            <default>소중한 공감 감사합니다</default>
+          </variable>              
+      	</variablegroup>   
 	</variables>
 </skin>
