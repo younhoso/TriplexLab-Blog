@@ -91,21 +91,6 @@ $(function() {
      /* 텍스트 필드 안의 텍스트 복사 */
     navigator.clipboard.writeText(input.val());
   });
-  $('.txt_state').on('click', function(){
-    $('.thankyou').addClass('on');
-    $('.cancel').addClass('on');
-    setTimeout(function(){
-      $('.thankyou').removeClass('on');
-      $('.cancel').removeClass('on');
-    },2000);
-    var input = $('.detail_side input');
-    
-    input.val(window.location.href);
-    input.select();
-
-     /* 텍스트 필드 안의 텍스트 복사 */
-    navigator.clipboard.writeText(input.val());
-  });
 
   $('.comment').on('click', function(){
     $('html, body').animate({
@@ -496,7 +481,6 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
   var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
   function callback(mutationsList) {
-    console.log(mutationsList)
     var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
     if(mutationsList[0].type === 'attributes') {
       $('.detail_side .util_like .txt_count').text(txt_like);

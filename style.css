@@ -14,6 +14,7 @@
 @font-face { font-family:'Montserrat'; font-style:normal; font-weight:900; src: local('☺'), url('images/Montserrat-Black.woff') format('woff'), url('images/Montserrat-Black.woff2') format('woff2'); font-display: swap;}
 
 /****************************** Noto Sans KR FONT ******************************/
+@font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:200; src: local('☺'), url('images/NotoSansKR-Thin.woff') format('woff'), url('images/NotoSansKR-Thin.woff2') format('woff2'); font-display: swap;}
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:300; src: local('☺'), url('images/NotoSansKR-Light.woff') format('woff'), url('images/NotoSansKR-Light.woff2') format('woff2'); font-display: swap;}
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:400; src: local('☺'), url('images/NotoSansKR-Regular.woff') format('woff'), url('images/NotoSansKR-Regular.woff2') format('woff2'); font-display: swap;}
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:500; src: local('☺'), url('images/NotoSansKR-Medium.woff') format('woff'), url('images/NotoSansKR-Medium.woff2') format('woff2'); font-display: swap;}

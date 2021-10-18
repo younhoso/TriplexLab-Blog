@@ -44,7 +44,7 @@
         $(el).wrap('<div class="table-overflow">')
       });
       $('#editEntry').attr('title', '[##_title_##]');
-      $('#lightbox').remove();
+      $('.lb-cancel').attr('href' , '#0')
       $('#tt-body-page .area_paging').remove();
       $('.wrap_btn').eq(0).find('.btn_post').attr('aria-label', '관리자 버튼');
     });
