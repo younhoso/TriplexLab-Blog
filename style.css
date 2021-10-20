@@ -442,7 +442,7 @@ html{box-sizing:border-box}
 .area_popup .search_content > div .off {display: none;}
 .area_popup .search_content > div .txt {display: none; font-size: 18px; font-weight: 600; margin-top: 28px;}
 .area_popup .box_form{position:relative;display: flex;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid var(--border-color)}
-.area_popup .box_form .icon-Search{display:inline-block;margin-right:23px;font-size:36px;vertical-align:-10px}
+.area_popup .box_form .icon-Search{display:inline-block;font-size:36px;vertical-align:-10px}
 .area_popup .box_form .inp_search{width:80%;margin-top:5px;border:none;font-size:24px;font-weight:900;line-height:1;color: var(--color-level-1);}
 .area_popup .box_form .inp_search + .btn_search_del{display: none;}
 .area_popup .box_form .inp_search.active + .btn_search_del{display: block;}
@@ -477,7 +477,8 @@ aside .tag_board{width:100%}
 .area_sidebar .title_logo{width: 95%;display: flex; font-size:20px;justify-content: space-between;align-items: center;}
 
 .area_popup .area_search{padding-left:24px;padding-right:24px}
-.area_popup .search_header{margin:24px -10px 24px 0;padding:1px 0 0}
+.area_popup .search_header{margin:24px -10px 24px 0;padding:1px 0 0;display:flex;justify-content:space-between;align-items:center;}
+.area_popup .search_header:after{display:none;}
 .area_popup .box_form .icon-Search{display:none}
 .area_popup .box_form .inp_search{margin-top:20px;font-size:18px}
 .area_popup .box_form .btn_search_del{top:10px;right:20px}
@@ -487,8 +488,8 @@ aside .tag_board{width:100%}
 .area_popup .item_sidebar{margin-bottom:10px;display: inline-block;}
 
 .area_popup div:nth-child(3),.area_popup div:nth-child(4),.area_popup div:nth-child(5){padding:0}
-.area_popup .area_search .btn_close{margin:-2px 0 0;text-align:right;padding:0 7px 2px 7px;height:30px}
-.area_popup .title_logo{font-weight:900;font-size:20px}
+.area_popup .area_search .btn_close{padding:0 7px;font-size: 20px;}
+.area_popup .title_logo{font-weight:900;font-size:20px;}
 }
 #footer{clear:both;padding:50px 0 50px 0;font-size:14px;font-weight:400;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
