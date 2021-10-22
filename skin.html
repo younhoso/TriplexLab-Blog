@@ -91,7 +91,7 @@
         /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
         var editEntry = document.querySelector('#editEntry');
         var cancel = document.querySelector('.lb-cancel');
-        var wrapBtn = Array.from(document.querySelectorAll('.wrap_btn'));
+        var postBtn = Array.from(document.querySelectorAll('.btn_post'));
         var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
         
         editEntry && editEntry.setAttribute('title', '[##_title_##]');
@@ -99,8 +99,8 @@
         pageEl && (pageEl.map(function(el){
           return el.setAttribute('href', 'javascript:;');
         }));
-        wrapBtn && (wrapBtn.map(function(){
-          return wrapBtn[0].setAttribute('aria-label', '관리자 버튼');
+        postBtn && (postBtn.map(function(_,idx){
+          return postBtn[0].setAttribute('aria-label', '관리자 버튼'), postBtn[idx].setAttribute('id', `reaction${idx}`);
         }));
         /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
       };
@@ -1144,12 +1144,6 @@
             <s_if_var_footerLink2Name>
               <a href="[##_var_footerLink2Url_##]" class="link_footer">[##_var_footerLink2Name_##]</a>
             </s_if_var_footerLink2Name>
-            <s_if_var_footerLink3Name>
-              <a href="[##_var_footerLink3Url_##]" class="link_footer">[##_var_footerLink3Name_##]</a>
-            </s_if_var_footerLink3Name>
-            <s_if_var_footerLink4Name>
-              <a href="[##_var_footerLink4Url_##]" class="link_footer">[##_var_footerLink4Name_##]</a>
-            </s_if_var_footerLink4Name>
           </div>
           <div>
             <address>[##_var_footerCopyright_##]</address>

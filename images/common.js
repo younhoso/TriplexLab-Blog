@@ -461,8 +461,7 @@ function thumnailLoaded() {
   var target = Array.from(document.querySelectorAll('.thumnail')); // 감시할 대상자
   function callback(entries, observer) {
     entries.forEach(function(entry){
-      // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
-      if (entry.intersectionRatio > 0) {
+      if (entry.intersectionRatio > 0) { // 관찰 대상이 viewport 안에 들어온 경우
         entry.target.style.backgroundImage = `url(${entry.target.dataset.src})`;
          // 이미지를 불러왔다면 타켓 엘리먼트에 대한 관찰을 멈춘다.
         observer.unobserve(entry.target);
