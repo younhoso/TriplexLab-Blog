@@ -355,7 +355,7 @@ $(function() {
   });
   /* // 공지 사항 */
 
-  // 메인 페이지 Slide 기능 Card영역 같은 경우 inithandCard 메소드 실행!
+  // 메인 페이지 Slide 기능 Card영역
   new Slide({
     targets: {
       startEl: '.type_card',
@@ -366,9 +366,9 @@ $(function() {
       prevEl: ".typeCard_prev",
     },
     additems: 5, //움직일 아이템 개수를 정의합니다.
-  }).inithandCard();
+  }).inithand();
 
-  // 메인 페이지 Slide 기능 Notice영역 같은 경우 inithandNotice 메소드 실행!
+  // 메인 페이지 Slide 기능 Notice영역
   new Slide({
     targets: {
       startEl: '.type_notice',
@@ -379,7 +379,20 @@ $(function() {
       prevEl: ".typeNotice_prev",
     },
     additems: 1, //움직일 아이템 개수를 정의합니다.
-  }).inithandNotice();
+  }).inithand();
+
+  // 메인 페이지 Slide 기능 Post영역
+  new Slide({
+    targets: {
+      startEl: '.type_post',
+      endEl: '.item_post',
+    },
+    navigation: {
+      nextEl: ".typePost_next",
+      prevEl: ".typePost_prev",
+    },
+    additems: 8, //움직일 아이템 개수를 정의합니다.
+  }).inithand();
 });
 
 function setCookie(name, value, day) {

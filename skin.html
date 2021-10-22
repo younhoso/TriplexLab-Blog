@@ -553,23 +553,27 @@
 
                   <s_cover name='post'>
                     <!-- type_post -->
-                    <div class="type_post">
-                      <h2 class="title_section">[##_cover_title_##]</h2>
-
-                      <ul class="list_post">
-                        <s_cover_item>
-                          <li class="item_post">
-                            <a href="[##_cover_item_url_##]" class="link_post item-thumbnail" tabindex="-1" style="background-image:url('<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>')">
-                              <div class="info">
-                                <strong class="name">[##_cover_item_title_##]</strong>
-                                <s_cover_item_article_info>
-                                  <span class="date">[##_cover_item_date_##]</span>
-                                </s_cover_item_article_info>
-                              </div>
-                            </a>
-                          </li>
-                        </s_cover_item>
-                      </ul>
+                    <div class="type_post border_b_mode">
+                      <div class="wrapper">
+                        <h2 class="title_section">[##_cover_title_##]</h2>
+                        <div class="inWrapper">
+                          <ul class="list_post">
+                            <s_cover_item>
+                              <li class="item_post">
+                                <a href="[##_cover_item_url_##]" class="link_post" tabindex="-1">
+                                  <span class="thumnail item-thumbnail" data-src="<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>"></span>
+                                  <strong class="name">[##_cover_item_title_##]</strong>
+                                  <s_cover_item_article_info>
+                                    <span class="date">[##_cover_item_date_##]</span>
+                                  </s_cover_item_article_info>
+                                </a>
+                              </li>
+                            </s_cover_item>
+                          </ul>
+                        </div>
+                        <div class="typePost_next bg_them_mode color border_mode"><i class="ic-right-thin"></i></div>
+                        <div class="typePost_prev bg_them_mode color border_mode"><i class="ic-left-thin"></i></div>
+                      </div>
                     </div>
                     <!-- // type_post -->
                   </s_cover>
