@@ -295,9 +295,13 @@ $(function() {
     el.innerText = el.innerText.substr(0, 11);
   })
 
-  $('.mo_footer_menu').on('click', 'a', function() {
-    $('.area_sidebar').addClass('on');
-    $('body').css('overflow', 'hidden');
+  $('.mo_footer_menu').on('click', 'a', function(e) {
+    if($(e.target).hasClass('ic-plus-thin')){
+      $('.area_sidebar').addClass('on');  
+      $('body').css('overflow', 'hidden');
+    }
+    $(e.target).hasClass('ic-plus-thin') && ($('.area_sidebar').addClass('on'), $('body').css('overflow', 'hidden'));
+    $(e.target).hasClass('ic-arrow-top') && ($('#root').scrollTop(0));
   });
 
   $('.close_icon').on('click', function() {
@@ -350,8 +354,16 @@ $(function() {
     $('.notice_template').removeClass('on');
   });
 
-  $(window).on('scroll', function() {
+  var lastScrollY = 0;
+  function moblieScroll(){
+    var moFooterMenu = $('.mo_footer_menu');
+    // 스크롤 방향의 조건
+    $('#root').scrollTop() > lastScrollY ? moFooterMenu.addClass('on') : moFooterMenu.removeClass('on')
+    lastScrollY = $('#root').scrollTop(); // 마지막 스크롤 방향 위치 감지
+  };
+  $('#root').on('scroll', function() {
     !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
+    moblieScroll();
   });
   /* // 공지 사항 */
 
