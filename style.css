@@ -87,9 +87,8 @@ template{display:none}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face{font-family:'ic-font';src:url('images/ic-font.eot?iws7jd');src:url('images/ic-font.eot?iws7jd#iefix') format('embedded-opentype'),url('images/ic-font.ttf?iws7jd') format('truetype'),url('images/ic-font.woff?iws7jd') format('woff'),url('images/ic-font.svg?iws7jd#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
+@font-face{font-family:'ic-font';src:url('images/ic-font.eot?gamhfj');src:url('images/ic-font.eot?gamhfj#iefix') format('embedded-opentype'),url('images/ic-font.ttf?gamhfj') format('truetype'),url('images/ic-font.woff?gamhfj') format('woff'),url('images/ic-font.svg?gamhfj#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
 i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.ic-arrow-top:before{content:"\e900";}
 .ic-html:before{content:"\e901";}
 .ic-js:before{content:"\e902";}
 .ic-uiux:before{content:"\e903";}
@@ -399,7 +398,7 @@ html{box-sizing:border-box}
 .area_sidebar .tt_category:after{content:'';display:block;clear:both}
 .area_sidebar .link_item .c_cnt{float: right;}
 .area_sidebar .box_gnb .category_list>li:last-child{display:none;}
-.area_sidebar .link_sub_item{display:block;padding:5px 0 5px 12px;font-size:14px;font-weight:400;}
+.area_sidebar .link_sub_item{display:block;padding:5px 0 5px 12px;font-size:14px;font-weight:600;opacity: 0.7;}
 .area_sidebar .t_menu_category a,.area_sidebar .t_menu_guestbook a,.area_sidebar .t_menu_home a,.area_sidebar .t_menu_link_1 a,.area_sidebar .t_menu_link_10 a,.area_sidebar .t_menu_link_2 a,.area_sidebar .t_menu_link_3 a,.area_sidebar .t_menu_link_4 a,.area_sidebar .t_menu_link_5 a,.area_sidebar .t_menu_link_6 a,.area_sidebar .t_menu_link_7 a,.area_sidebar .t_menu_link_8 a,.area_sidebar .t_menu_link_9 a,.area_sidebar .t_menu_location a,.area_sidebar .t_menu_medialog a,.area_sidebar .t_menu_page a,.area_sidebar .t_menu_tag a{display:block;margin-bottom:28px;font-size:16px;font-weight:400;transition:all .2s ease-out;}
 .area_sidebar .tt_category .link_sub_item:hover{text-decoration:underline}
 .area_sidebar .sidebar_menu:after{content:'';display:block;clear:both}
@@ -780,7 +779,8 @@ aside .tag_board{width:100%}
 .category_type_related .item_category{display:inline-block;width:25%;margin-bottom:54px;vertical-align:top}
 .category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;}
 .category_type_related .box_content{width:100%}
-.category_type_related .link_category strong{display:block;margin:18px 0 6px 0;line-height:28px;font-size:18px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.category_type_related .link_category strong{display:block; margin:18px 0 6px 0;line-height:28px;font-size:18px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.category_type_related .link_category strong img {width: 15px !important;}
 .category_type_related .link_related .info{display:inline-block;margin-top:20px;font-size:14px;line-height:1.71}
 .category_type_related .link_category .text{max-height:70px;margin:0 0 13px 0;font-size:14px;line-height:20px;overflow:hidden;opacity:.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;width:95%}
 .category_type_related .link_category .date{display:block;font-size:13px;line-height:20px;}
@@ -1033,12 +1033,12 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .skin_link a img {aspect-ratio: attr(width) / attr(height);}
 
   .mo_footer_menu{display:block;position:fixed;bottom:20px;right:20px;z-index:21}
-  .mo_footer_menu .plus a {display: inline-block; box-sizing: border-box; padding: 0.28em;border-radius:50%;}
-  .mo_footer_menu .icon{font-size:22px;color:#fff;}
-  .mo_footer_menu .icon.ic-arrow-top {display: none;}
+  .mo_footer_menu .plus a {display: inline-block; box-sizing: border-box; padding: 0.08em;border-radius:50%;}
+  .mo_footer_menu .icon{font-size:16px;color:#fff;}
+  .mo_footer_menu .icon.ic-right-thin {display: none; -webkit-transform: rotate(-90deg); transform: rotate(-90deg);font-weight: 600;}
   
   .mo_footer_menu.on .icon.ic-plus-thin {display: none;}
-  .mo_footer_menu.on .ic-arrow-top {display: block;}
+  .mo_footer_menu.on .ic-right-thin {display: block;}
 
   .category_inner{display:block}
   .category_inner .category_list .link_item{display:none}
