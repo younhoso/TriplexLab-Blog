@@ -90,7 +90,6 @@ $(function() {
      /* 텍스트 필드 안의 텍스트 복사 */
     navigator.clipboard.writeText(input.val());
   });
-
  
   /** 상세페이지 Kakao공유 기능 */
   var detailInfoObj = { 
@@ -237,18 +236,18 @@ $(function() {
     if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
   };
   
-  var _self = $('.list_category .category_list > li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
+  /** category list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  var _self = $('.list_category .category_list li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
   function sidebarMenuGet(){
     _self.addClass('active').siblings('li').removeClass('active');
   };
   
-  $('.category_list > li > a').on('click', function(){
-    var idx = $('.category_list > li > a').index(this);
+  $('.category_list > li a').on('click', function(){
+    var idx = $('.category_list > li a').index(this);
     sidebarMenuSet(idx);
   });
 
-  /** category_list 해당 카테로기 활성화 (최초 렌더링 시점) */
-  JSON.parse(sessionStorage.getItem('menu')) && sidebarMenuGet();
+  sessionStorage.getItem('menuIdx') && sidebarMenuGet();
 
   var $location = $(location),
       pathname = $location.attr('pathname'),
@@ -259,19 +258,33 @@ $(function() {
   } else {
     _self.removeClass('active');
   };
-  /** // category_list 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** // category list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
   /** 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
   var categoryDetailTit = $('.info_text > span').text();
   var fruits = new Array();
+  var fruitsSub = new Array();
   $('.list_category .category_list > li').each(function(idx, el){
-    var categoryTit = $(el).find('a').text().trim();
+    var categoryTit = $(el).find('> a').text().trim();
     fruits.push(categoryTit)
+    
+    $(el).find('.sub_category_list > li').each(function(idx, el){
+      var categorySubTit = $(el).find('> a').text().trim();
+      fruitsSub.push(categoryTit+'/'+categorySubTit)
+    });
   });
-  if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('categoryList', JSON.stringify(fruits))}
 
+  if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('categoryList', JSON.stringify(fruits))}
+  if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('categoryListSub', JSON.stringify(fruitsSub))}
+  
   $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
     if(el === categoryDetailTit){
       $('.list_category .category_list > li').eq(idx).addClass('active');
+    }
+  });
+
+  $.each(JSON.parse(sessionStorage.getItem('categoryListSub')), function(idx, el){
+    if(el === categoryDetailTit){
+      $('.list_category .category_list > li .sub_category_list > li').eq(idx).addClass('active');
     }
   });
   /** // 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
