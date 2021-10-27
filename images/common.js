@@ -310,7 +310,7 @@ $(function() {
 
   $('.mo_footer_menu').on('click', 'a', function(e) {
     $(e.target).hasClass('ic-plus-thin') && ($('.area_sidebar').addClass('on'), $('body').css('overflow', 'hidden'));
-    $(e.target).hasClass('ic-right-thin') && ($('#root').scrollTop(0));
+    $(e.target).hasClass('top') && ($('#root').scrollTop(0));
   });
 
   $('.close_icon').on('click', function() {

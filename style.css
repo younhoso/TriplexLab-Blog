@@ -1042,11 +1042,12 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
   .mo_footer_menu{display:block;position:fixed;bottom:20px;right:20px;z-index:21}
   .mo_footer_menu .plus a {display: inline-block; box-sizing: border-box; padding: 0.08em;border-radius:50%;}
-  .mo_footer_menu .icon{font-size:16px;color:#fff;}
-  .mo_footer_menu .icon.ic-right-thin {display: none; -webkit-transform: rotate(-90deg); transform: rotate(-90deg);font-weight: 600;}
+  .mo_footer_menu .icon{font-size:16px;color:#fff; position: relative;}
+  .mo_footer_menu .icon.top {display: none;}
+  .mo_footer_menu .icon.top::before{content:'';width:10px;height:10px;border-right:1px solid #fff;border-top:1px solid #fff;-webkit-transform:translate(-50%,-25%) rotate(-45deg);transform:translate(-50%,-25%) rotate(-45deg);position:absolute;top:50%;left:50%}
   
   .mo_footer_menu.on .icon.ic-plus-thin {display: none;}
-  .mo_footer_menu.on .ic-right-thin {display: block;}
+  .mo_footer_menu.on .top {display: block;}
 
   .category_inner{display:block}
   .category_inner .category_list .link_item{display:none}
