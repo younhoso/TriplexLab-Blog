@@ -87,34 +87,35 @@ template{display:none}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face{font-family:'ic-font';src:url('images/ic-font.eot?gamhfj');src:url('images/ic-font.eot?gamhfj#iefix') format('embedded-opentype'),url('images/ic-font.ttf?gamhfj') format('truetype'),url('images/ic-font.woff?gamhfj') format('woff'),url('images/ic-font.svg?gamhfj#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
+@font-face{font-family:'ic-font';src:url('images/ic-font.eot?nv50c9');src:url('images/ic-font.eot?nv50c9#iefix') format('embedded-opentype'),url('images/ic-font.ttf?nv50c9') format('truetype'),url('images/ic-font.woff?nv50c9') format('woff'),url('images/ic-font.svg?nv50c9#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
 i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.ic-html:before{content:"\e901";}
-.ic-js:before{content:"\e902";}
-.ic-uiux:before{content:"\e903";}
-.ic-bell:before{content:"\e904";}
-.ic-kakao-bg:before{content:"\e905";}
-.ic-copy:before{content:"\e906";}
-.ic-right-thin:before{content:"\e907";}
-.ic-left-thin:before{content:"\e908";}
-.ic-plus-thin:before{content:"\e909";}
-.ic-gitbook:before{content:"\e90a";}
-.ic-tr-1:before{content:"\e90b";}
-.ic-sun:before{content:"\e90c";}
-.ic-search:before{content:"\e90d";}
-.ic-kakao:before{content:"\e90e";}
-.ic-play:before{content:"\e90f";}
-.ic-pause:before{content:"\e910";}
-.ic-moon:before{content:"\e911";}
-.ic-close-10:before{content:"\e912";}
-.ic-close-thin:before{content:"\e913";}
-.ic-github:before{content:"\e914";}
-.ic-comment-bg:before{content:"\e915";}
-.ic-like-bg:before{content:"\e916";}
-.ic-comment:before{content:"\e917";}
-.ic-like:before{content:"\e918";}
-.ic-share:before{content:"\e919";}
-.ic-file:before{content:"\e926";}
+.ic-connection:before{content:"\e900";}
+.ic-server:before{content:"\e901";}
+.ic-html:before{content:"\e902";}
+.ic-js:before{content:"\e903";}
+.ic-uiux:before{content:"\e904";}
+.ic-bell:before{content:"\e905";}
+.ic-kakao-bg:before{content:"\e906";}
+.ic-copy:before{content:"\e907";}
+.ic-right-thin:before{content:"\e908";}
+.ic-left-thin:before{content:"\e909";}
+.ic-plus-thin:before{content:"\e90a";}
+.ic-gitbook:before{content:"\e90b";}
+.ic-tr-1:before{content:"\e90c";}
+.ic-sun:before{content:"\e90d";}
+.ic-search:before{content:"\e90e";}
+.ic-kakao:before{content:"\e90f";}
+.ic-play:before{content:"\e910";}
+.ic-pause:before{content:"\e911";}
+.ic-moon:before{content:"\e912";}
+.ic-close-10:before{content:"\e913";}
+.ic-close-thin:before{content:"\e914";}
+.ic-github:before{content:"\e915";}
+.ic-comment-bg:before{content:"\e916";}
+.ic-like-bg:before{content:"\e917";}
+.ic-comment:before{content:"\e918";}
+.ic-like:before{content:"\e919";}
+.ic-share:before{content:"\e91a";}
 
 .icon_common{ font-size: 16px;}
 
@@ -1051,9 +1052,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .category_inner .category_list .link_item{display:none}
   .sub_category_list .link_sub_item img{display:none}
   .category_list .link_item img{width: auto;}
-  .category .category_list .sub_category_list .link_sub_item {margin-left: 30px; position: relative;}
-  .category .category_list .sub_category_list .link_sub_item::before {content: '';display: block; width: 1px; height: 22px; background-color: var(--color-level-1); position: absolute; top: 0; left: 5px;}
-  .category .category_list .sub_category_list .link_sub_item::after {content: '';display: block; width: 16px; height: 1px; background-color:var(--color-level-1); position: absolute; top: 22px; left: 5px;}
+  .category .category_list .sub_category_list .link_sub_item {margin-left: 25px;}
 
   .close_icon{cursor:pointer;}
 	.close_icon i {font-weight: 600;}

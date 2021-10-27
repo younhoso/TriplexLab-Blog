@@ -1,5 +1,5 @@
 $(function(){
-  var menuIcons = ['ic-html', 'ic-js', 'ic-uiux', 'ic-file'];
+  var menuIcons = ['ic-html', 'ic-js', 'ic-connection', 'ic-uiux', 'ic-server'];
   var social = ['ic-github', 'ic-gitbook'];
 
   $('.category_list > li > a').each(function(idx, el){
