@@ -26,13 +26,9 @@
   <!-- Semantic Tag META // -->
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]"/>
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
-  <link rel="stylesheet" href="./images/github-dark-dimmed.min.css">
   <link rel="stylesheet" href="./style.css"/>
   <script charset="UTF-8" src="./images/jQuery.min.js"></script>
   <script charset="UTF-8" src="./images/menuIcon.js"></script>
-  <script charset="UTF-8" src="./images/highlight.min.js"></script>
-  <script charset="UTF-8" src="./images/common.js"></script>
-  <script charset="UTF-8">hljs.highlightAll();</script>
   <script charset="UTF-8">
     $(function(){
       $('.article_view').find('table').each(function (idx, el) {
@@ -86,34 +82,10 @@
           return templateIE('IE', version);
         }
         /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
-
-        /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
-        var editEntry = document.querySelector('#editEntry');
-        var cancel = document.querySelector('.lb-cancel');
-        var postBtn = Array.from(document.querySelectorAll('.btn_post'));
-        var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
-        var iframe = Array.from(document.querySelectorAll('iframe'));
-        
-        editEntry && editEntry.setAttribute('title', '[##_title_##]');
-        cancel && cancel.setAttribute('href', 'javascript:;')
-        pageEl && (pageEl.map(function(el){
-          return el.setAttribute('href', 'javascript:;');
-        }));
-        postBtn && (postBtn.map(function(_,idx){
-          return postBtn[0].setAttribute('aria-label', '관리자 버튼'), postBtn[idx].setAttribute('id', `reaction${idx}`);
-        }));
-
-        iframe && (iframe.map(function(el) {
-            var els = el.nextElementSibling;
-            if (els.nodeName === 'FIGCAPTION'){
-              var txt = els.innerHTML
-              return el.setAttribute('title', txt);
-            }
-        }));
-        /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
       };
     })();
   </script>
+  <script charset="UTF-8" src="./images/common.js"></script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
   <div id="root">
@@ -588,7 +560,10 @@
 
             <!-- area_view -->
             <s_article_rep>
+              <link rel="stylesheet" href="./images/github-dark-dimmed.min.css" />
               <script charset="UTF-8" src="./images/scrollbar.min.js"></script>
+              <script charset="UTF-8" src="./images/highlight.min.js"></script>
+              <script charset="UTF-8">hljs.highlightAll();</script>
               <script> 
                 $(function(){ 
                   $('.hljs').scrollbar();

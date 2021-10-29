@@ -1,6 +1,5 @@
-import Slide from './slide.js';
-
 $(function() {
+  tistoryLighthouseCheck();
   display_control();
   detail_side();
   thumnailLoaded();
@@ -379,31 +378,31 @@ function getCookie(name) {
 };
 
 function display_control() {
-// 박스 헤더
-if ($('#main .area_cover').children(':first-child').hasClass('type_featured')) {
-  $('#wrap').addClass('white');
-} else if ($('#main .area_cover').length > 0) {
-  $('#main .area_cover').addClass('cover_margin');
-}
+  // 박스 헤더
+  if ($('#main .area_cover').children(':first-child').hasClass('type_featured')) {
+    $('#wrap').addClass('white');
+  } else if ($('#main .area_cover').length > 0) {
+    $('#main .area_cover').addClass('cover_margin');
+  }
 
-// 글 출력이 있는 경우
-if ($('.area_view').length != false) {
-  if($('#main > .area_cover:first-child > .type_featured:first-child, .type_article_header_cover').length) { $('#wrap').addClass('white');}
-}
+  // 글 출력이 있는 경우
+  if ($('.area_view').length != false) {
+    if($('#main > .area_cover:first-child > .type_featured:first-child, .type_article_header_cover').length) { $('#wrap').addClass('white');}
+  }
 
-// 로그인, 로그아웃 버튼 처리
-if (window.T.config.USER.name) {
-  $('.btn-for-user').show();
-} else {
-  $('.btn-for-guest').show();
-}
+  // 로그인, 로그아웃 버튼 처리
+  if (window.T.config.USER.name) {
+    $('.btn-for-user').show();
+  } else {
+    $('.btn-for-guest').show();
+  }
 
-$('.btn-for-guest [data-action="login"]').click(function() {
-  document.location.href = 'https://www.tistory.com/auth/login?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
-});
-$('.btn-for-user [data-action="logout"]').click(function() {
-  document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
-});
+  $('.btn-for-guest [data-action="login"]').click(function() {
+    document.location.href = 'https://www.tistory.com/auth/login?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
+  });
+  $('.btn-for-user [data-action="logout"]').click(function() {
+    document.location.href = 'https://www.tistory.com/auth/logout?redirectUrl=' + encodeURIComponent(window.TistoryBlog.url);
+  });
 };
 
 function callback(mutationsList) {
@@ -418,31 +417,30 @@ function callback(mutationsList) {
 
 function utilLike() {
   $('.postbtn_like .uoc-icon').trigger('click');
-  !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'),$('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
+  !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'), $('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
   setTimeout(function(){
     $('.like_temp').removeClass('on');
   },2000);
 };
 
 function detail_side(){
-$('.btn_post').attr('id','reaction'); //Node 대상 찾기 위해서 이미로 id 넣어줌.
-/* 공감 아이콘 클릭 이벤트 처리 */
-if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
-  /* 공감 수 변경 시 처리 */
-  var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
-  var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
+  /* 공감 아이콘 클릭 이벤트 처리 */
+  if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
+    /* 공감 수 변경 시 처리 */
+    var targetNode = document.getElementById('reaction0'); // 감시할 대상 Node
+    var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
   
-  // 공감 클릭 이벤트 연결
-  $('.detail_side .util_like').on('click', utilLike);
-  
-  // 감시자 인스턴스 생성
-  var observer = new MutationObserver(callback);
-  // 감시할 대상 Node를 전달하여 감시 시작
-  observer.observe(targetNode, config);
-  /* 공감 수 변경 시 처리 // */
-  $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
-}
-/* 공감 아이콘 클릭 이벤트 처리 */
+    // 공감 클릭 이벤트 연결
+    $('.detail_side .util_like').on('click', utilLike);
+    
+    // 감시자 인스턴스 생성lighthouse
+    var observer = new MutationObserver(callback);
+    // 감시할 대상 Node를 전달하여 감시 시작
+    observer.observe(targetNode, config);
+    /* 공감 개수 변경 시 처리 // */
+    $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
+  }
+  /* 공감 아이콘 클릭 이벤트 처리 */
 };
 
 /** 모든 리스트에 섬네일들 Lazy-Loading 만들기 */
@@ -463,3 +461,31 @@ function thumnailLoaded() {
     io.observe(el)
   });
 };
+
+
+/* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
+function tistoryLighthouseCheck() {
+    var editEntry = document.querySelector('#editEntry');
+    var cancel = document.querySelector('.lb-cancel');
+    var postBtn = Array.from(document.querySelectorAll('.btn_post'));
+    var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
+    var iframe = Array.from(document.querySelectorAll('iframe'));
+    
+    editEntry && editEntry.setAttribute('title', '[##_title_##]');
+    cancel && cancel.setAttribute('href', 'javascript:;')
+    pageEl && (pageEl.map(function(el){
+      return el.setAttribute('href', 'javascript:;');
+    }));
+    postBtn && (postBtn.map(function(_,idx){
+      return postBtn[0].setAttribute('aria-label', '관리자 버튼'), postBtn[idx].setAttribute('id', `reaction${idx}`);
+    }));
+  
+    iframe && (iframe.map(function(el) {
+        var els = el.nextElementSibling;
+        if (els.nodeName === 'FIGCAPTION'){
+          var txt = els.innerHTML
+          return el.setAttribute('title', txt);
+        }
+    }));
+};
+/* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
