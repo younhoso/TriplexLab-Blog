@@ -958,7 +958,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .swi_btn i {color:#fff; padding: 10px; font-size: 12px; cursor:pointer;}
   .swiper-container-horizontal>.swiper-pagination-progressbar,.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{width:calc(100% * .45);top:auto;height:4px;left:30px;bottom:20px}
   .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {font-size: 12px; font-weight: 600; left: 30px;}
-  .swiper-pagination-progressbar{background:rgba(228,228,228,.4);}
+  .swiper-pagination-progressbar{background:rgba(228,228,228,.4) !important;}
   .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{height: 2px;}
   .typeNotice_next{width:32px;height:32px;top:0;right:0;position:absolute;line-height:32px;border-radius:50%;box-shadow:0 5px 8px 0 rgb(33 37 41 / 5%); text-align:center;-webkit-transform:translate(-20px,-10px);transform:translate(-20px,-10px); cursor: pointer;z-index: 1;outline: none;}
   .typeNotice_next .ic-right-thin{font-size: 14px; font-weight: 600;}
@@ -1095,7 +1095,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .swiper-progress-bar {width: 92%; top: unset; bottom: 12%; left: 50%; -webkit-transform: translate(-50%, -10%); transform: translate(-50%, -10%);}
   .swi_btn {line-height: 40px;}
   .swiper-container-horizontal>.swiper-pagination-progressbar,.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{left: 60px;}
-  .swiper-pagination{width:92%;height:2px;position:absolute;top:unset;bottom:60px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
+  .swiper-pagination{width:92%;height:2px;position:absolute !important;top:unset;bottom:60px;left:50%;-webkit-transform:translateX(-50%) !important;transform:translateX(-50%) !important;}
   .swiper-container-horizontal>.swiper-scrollbar {opacity: 0; -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;}
   .swiper_type_banner:hover.swiper-container-horizontal > .swiper-scrollbar{opacity: 1;}
   .swiper_type_card:hover.swiper-container-horizontal > .swiper-scrollbar{opacity: 1;}

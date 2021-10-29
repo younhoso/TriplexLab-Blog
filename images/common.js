@@ -145,16 +145,6 @@ $(function() {
     /** 상세페이지 comment 기능 // */
   };
   
-
-  var arr_card = Array.from($('.type_card'));
-  arr_card.reduce(function(acc,cur,idx){
-    $(cur).addClass('id-'+idx);
-  },0);
-  var arr_notice = Array.from($('.type_notice'));
-  arr_notice.reduce(function(acc,cur,idx){
-    $(cur).addClass('id-'+idx);
-  },0);
-
   var windowWidth = $( window ).width();
   var tabBtnWidth = $('.tab_btn:first-child').width();
   $('.line_inner i:first-child').css({'width':tabBtnWidth, 'opacity': 1});
@@ -375,45 +365,6 @@ $(function() {
     moblieScroll();
   });
   /* // 공지 사항 */
-
-  // 메인 페이지 Slide 기능 Card영역
-  new Slide({
-    targets: {
-      startEl: '.type_card',
-      endEl: '.item_card',
-    },
-    navigation: {
-      nextEl: ".typeCard_next",
-      prevEl: ".typeCard_prev",
-    },
-    additems: 5, //움직일 아이템 개수를 정의합니다.
-  }).inithand();
-
-  // 메인 페이지 Slide 기능 Notice영역
-  new Slide({
-    targets: {
-      startEl: '.type_notice',
-      endEl: '.item_notice',
-    },
-    navigation: {
-      nextEl: ".typeNotice_next",
-      prevEl: ".typeNotice_prev",
-    },
-    additems: 1, //움직일 아이템 개수를 정의합니다.
-  }).inithand();
-
-  // 메인 페이지 Slide 기능 Post영역
-  new Slide({
-    targets: {
-      startEl: '.type_post',
-      endEl: '.item_post',
-    },
-    navigation: {
-      nextEl: ".typePost_next",
-      prevEl: ".typePost_prev",
-    },
-    additems: 8, //움직일 아이템 개수를 정의합니다.
-  }).inithand();
 });
 
 function setCookie(name, value, day) {
@@ -455,6 +406,24 @@ $('.btn-for-user [data-action="logout"]').click(function() {
 });
 };
 
+function callback(mutationsList) {
+  var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
+  if(mutationsList[0].type === 'attributes') {
+    $('.detail_side .util_like .txt_count').text(txt_like);
+  } else {
+    console.log(txt_like)
+  }
+  mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
+};
+
+function utilLike() {
+  $('.postbtn_like .uoc-icon').trigger('click');
+  !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'),$('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
+  setTimeout(function(){
+    $('.like_temp').removeClass('on');
+  },2000);
+};
+
 function detail_side(){
 $('.btn_post').attr('id','reaction'); //Node 대상 찾기 위해서 이미로 id 넣어줌.
 /* 공감 아이콘 클릭 이벤트 처리 */
@@ -462,23 +431,9 @@ if ($('.postbtn_like .uoc-icon').hasClass('btn_post')) {
   /* 공감 수 변경 시 처리 */
   var targetNode = document.getElementById('reaction'); // 감시할 대상 Node
   var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
-  function callback(mutationsList) {
-    var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
-    if(mutationsList[0].type === 'attributes') {
-      $('.detail_side .util_like .txt_count').text(txt_like);
-    } else {
-      console.log(txt_like)
-    }
-    mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
-  };
+  
   // 공감 클릭 이벤트 연결
-  $('.detail_side .util_like').click(function () {
-    $('.postbtn_like .uoc-icon').trigger('click');
-    !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'),$('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
-    setTimeout(function(){
-      $('.like_temp').removeClass('on');
-    },2000);
-  });
+  $('.detail_side .util_like').on('click', utilLike);
   
   // 감시자 인스턴스 생성
   var observer = new MutationObserver(callback);
