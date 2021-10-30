@@ -1,8 +1,8 @@
 $(function() {
   tistoryLighthouseCheck();
   display_control();
-  detail_side();
   thumnailLoaded();
+  detail_side();
   var searchForm = $('#search-form');
   var searchInput = $('#search-form input');
   var searchList = $('#search-list');
@@ -438,7 +438,10 @@ function detail_side(){
     // 감시할 대상 Node를 전달하여 감시 시작
     observer.observe(targetNode, config);
     /* 공감 개수 변경 시 처리 // */
-    $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
+
+    setTimeout(function(){
+      $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
+    },100);
   }
   /* 공감 아이콘 클릭 이벤트 처리 */
 };
