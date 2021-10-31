@@ -3,6 +3,7 @@ $(function() {
   display_control();
   thumnailLoaded();
   detail_side();
+  
   var searchForm = $('#search-form');
   var searchInput = $('#search-form input');
   var searchList = $('#search-list');

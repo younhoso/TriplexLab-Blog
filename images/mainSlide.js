@@ -55,21 +55,9 @@ new Slide({
     prevEl: ".typePost_prev",
   },
   additems: 8, //움직일 아이템 개수를 정의합니다.
-})
+});
 
-const windowWidth = window.screen.width;
-function hexToRgb(hex) {
-    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    const hexCode = hex.replace(shorthandRegex, function(m, r, g, b) {
-        return r + r + g + g + b + b;
-    });
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexCode);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-};
+  const windowWidth = window.screen.width;
 
   function slider_control() {
     const interleaveOffset = 0.5;
