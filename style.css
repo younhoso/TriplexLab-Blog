@@ -742,7 +742,7 @@ aside .tag_board{width:100%}
 .type_notice{width:100%;padding-top: 50px;padding-bottom: 20px;overflow:hidden;pointer-events: auto;}
 .type_notice:after{content:'';display:block;clear:both}
 
-.category_type_notice .thumnail,.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.2em;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover;}
+.category_type_notice .thumnail,.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.2em;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.2s ease-in; transition: background-image 0.2s ease-in;}
 .category_type_notice .info,.type_notice .info{overflow:hidden;}
 .category_type_notice .list_category:after,.list_type_notice:after{content:'';display:block;clear:both;}
 .category_type_notice .item_category:after,.list_type_notice .item_notice:after{content:'';display:block;clear:both}
@@ -781,7 +781,7 @@ aside .tag_board{width:100%}
 .area_category .category_cover {display: block;}
 }
 .category_type_related .list_category{list-style:none;margin:0 -8px;padding-top:60px;border:none;box-sizing:border-box;font-size:0}
-.category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 6px;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover;}
+.category_type_related .thumnail{display:block;width:100%;padding-top:50%;background-size:cover;background-position:50% 50%;border-radius: 6px;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.2s ease-in; transition: background-image 0.2s ease-in;}
 .category_type_related .item_category{display:inline-block;width:25%;margin-bottom:54px;vertical-align:top}
 .category_type_related .link_category{display:block;padding:0 8px;background:0 0!important;}
 .category_type_related .box_content{width:100%}
