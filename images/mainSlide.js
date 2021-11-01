@@ -61,7 +61,6 @@ new Slide({
 
   function slider_control() {
     const interleaveOffset = 0.5;
-    const progressBar = document.querySelector('.swiper-progress-bar');
     const slide_data = $('.slide_zone').data('slide');
     
     /* 매인 배너 영역 Swiper기능 */
@@ -84,27 +83,12 @@ new Slide({
           prevEl: ".swiper-button-prev"
         },
         on: {
-            init: function () {
-              progressBar.classList.remove("animate");
-              progressBar.classList.remove("active");
-              progressBar.classList.add("animate");
-              progressBar.classList.add("active");
-            },
-            slideChangeTransitionStart: function () {
-              progressBar.classList.remove("animate");
-              progressBar.classList.remove("active");
-              progressBar.classList.add("active");
-            },
-            slideChangeTransitionEnd: function () {
-              progressBar.classList.add("animate");
-            },
             progress: function() {
               const swiper = this;
               swiper.slides.reduce(function(acc,cur,idx){
                 const slideProgress = swiper.slides[idx].progress;
                 const innerOffset = swiper.width * interleaveOffset;
                 const innerTranslate = slideProgress * innerOffset;
-                progressBar.style.background = `rgba(${slide_data.color[idx].text},0.3)`;
 
                 swiper.slides[idx].querySelector('.link_slide').style.transform = `translate3d(${innerTranslate}px, 0, 0)`;
                 swiper.slides[idx].querySelector('.link_slide').style.backgroundColor = slide_data.color[idx].bg;

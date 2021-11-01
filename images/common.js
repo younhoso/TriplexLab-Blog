@@ -82,7 +82,7 @@ $(function() {
     setTimeout(function(){
       $('.share_temp').removeClass('on');
     },2000);
-    var input = $('.detail_side input');
+    var input = $('.clipboard');
     
     input.val(window.location.href);
     input.select();
@@ -163,7 +163,7 @@ $(function() {
     });
   } 
   
-  $('.header_icon_inner').on('click', function(e) {
+  $('.header_pc_icon_inner').on('click', function(e) {
     $(e.target).hasClass('ic-search') && ( $('.area_popup').fadeIn(), $('body').css('overflow', 'hidden'), $('input.inp_search').focus() );
   });
 
@@ -191,16 +191,6 @@ $(function() {
   }
    /* // notice 페이지 리로드시점 */
 
-  $('.tab_itme').on('click', function(e) {
-    $(e.currentTarget).siblings('.tab_itme').removeClass('on');
-    $('.box_gnb').siblings().removeClass('on');
-    $(e.currentTarget).addClass('on');
-
-    $('.light').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.box_gnb').eq(0).addClass('on'));
-    $('.dark').hasClass("on") && ($('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.box_gnb').eq(1).addClass('on'));
-    return false;
-  });
-
   /** darkMode 여부 체크 */
   var darkModeN = function() {
     var darkmode = false;
@@ -212,12 +202,22 @@ $(function() {
     if(typeof(Storage) !== 'undefined'){localStorage.setItem('darkMode', JSON.stringify(darkmode));}
     $('html').attr('data-dark', JSON.parse(localStorage.getItem('darkMode')));
   };
-
+  /** 사이드바 darkMode 여부 식별 및 상태에 맞에 식별 */
   $('.tab_itme').on('click', function() {
-    /** // 클릭이벤트 시점에서의 darkMode 여부 체크(최초 렌더링 시점과의 반대) */
-    $('.light').hasClass('on') ? darkModeN() : darkModeY()
+    if(JSON.parse(localStorage.getItem('darkMode'))){
+      $('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.box_gnb').eq(0).addClass('on');
+      $('.mo_footer_menu .themMode').find('i').attr('class', 'ic-moon'); 
+      $('.mo_footer_menu .themMode').find('p').text('DARK');
+      darkModeN();
+    } else {
+      $('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.box_gnb').eq(1).addClass('on');
+      $('.mo_footer_menu .themMode').find('i').attr('class', 'ic-sun'); 
+      $('.mo_footer_menu .themMode').find('p').text('LIGHT');
+      darkModeY();
+    }
+    return false;
   });
-
+  /** 사이드바 darkMode 여부 식별 및 상태에 맞에 식별 //*/
   /** darkMode 여부 체크 (최초 렌더링 시점)*/
   JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
   /** // darkMode 여부 체크  */
@@ -298,9 +298,24 @@ $(function() {
     el.innerText = el.innerText.substr(0, 11);
   })
 
-  $('.mo_footer_menu').on('click', 'a', function(e) {
-    $(e.target).hasClass('ic-moreMenu') && ($('.area_sidebar').addClass('on'), $('body').css('overflow', 'hidden'));
+  /** 모바일 하단 매뉴 상태 변화에 맞는 식별 */
+  $('.mo_footer_menu').on('click', '.menu', function(e) {
+    $(e.currentTarget).hasClass('moreMenu') && ($('.area_sidebar').addClass('on'), $('body').css('overflow', 'hidden'));
+    if($(e.currentTarget).hasClass('themMode')){
+      if(JSON.parse(localStorage.getItem('darkMode'))){
+        $(e.currentTarget).find('i').attr('class', 'ic-moon'); 
+        $(e.currentTarget).find('p').text('DARK');
+        $('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.box_gnb').eq(0).addClass('on');
+        darkModeN()
+      } else {
+        $(e.currentTarget).find('i').attr('class', 'ic-sun'); 
+        $(e.currentTarget).find('p').text('LIGHT');
+        $('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.box_gnb').eq(1).addClass('on');
+        darkModeY()
+      }
+    }
   });
+  /** 모바일 하단 매뉴 상태 변화에 맞는 식별 // */
 
   $('.close_icon').on('click', function() {
     $('.area_sidebar').removeClass('on');

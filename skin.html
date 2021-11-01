@@ -101,7 +101,7 @@
               </a>
             </div>
             <!--  로고 // -->
-            <div class="header_icon_inner">
+            <div class="header_pc_icon_inner">
               <i class="icon ic-search"></i>
               <i class="icon ic-bell notice_js on"></i>
             </div>
@@ -359,10 +359,6 @@
                         <div class="wrapper p-top">
                           <!-- slide_zone -->
                           <div class="slide_zone swiper-container" data-slide='{"color":[{"id":"3","text":"#fff","bg":"#1b1d18","gradient":"6,1,0"},{"id":"2","text":"#333","bg":"#f6eee8","gradient":"246,238,232"}, {"id":"1","text":"#fff","bg":"#1b1d18","gradient":"6,1,0"}]}'>
-                            <!-- Progressbar -->
-                            <div class="swiper-progress-bar">
-                              <span class="slide_progress-bar"></span>
-                            </div>
                             <div class="swiper-wrapper">
                               <s_cover_item>
                                 <div class="slide_item swiper-slide">
@@ -751,10 +747,6 @@
                   <!-- article_content -->
                   <!-- // detail_side -->
                   <div class="detail_side"> <!-- 블로그 post 영역 -->
-                    <div class="share_temp">
-                      <input type="text" value="">
-                      <p class="txt"><strong>[##_var_msg_copy_##]</strong></p>
-                    </div>
                     <div class="like_temp">
                       <p class="txt"><strong>[##_var_msg_post_like_##]</strong></p>
                     </div>
@@ -1045,24 +1037,22 @@
           <div>
             <address>[##_var_footerCopyright_##]</address>
           </div>
-
         </footer>
         <!-- // footer -->
 
-        <!-- 모비일 하단 메뉴 플로팅 버튼 -->
-          <div class="mo_footer_menu">
-            <div class="menu plus">
-              <a href="#0">
-                <i class="icon ic-moreMenu"></i>
-                <i class="icon top"></i>
-              </a>
-            </div>
-          </div>
-        <!-- // 모비일 하단 메뉴 플로팅 버튼 -->
-        <!-- pc 우측 하단 플로팅 버튼 -->
-        <div class=""><i class="top"></i></div>
-        <div class=""><i class="bottom"></i></div>
-        <!-- pc 우측 하단 플로팅 버튼 -->
+        <!-- 모비일 하단 메뉴 -->
+        <div class="mo_footer_menu bg_them_mode">
+            <div class="menu home_mo"><a href="/" title="[##_title_##]" class="logo"><i class="ic-tr"></i><p>HOME</p></a></div>
+            <div class="menu share_js"><a href="#none"><i class="ic-share"></i><p>SHARE</p></a></div>  
+            <div class="menu themMode"><a href="#0"><i class="ic-moon"></i><p>DARK</p></a></div>
+            <div class="menu moreMenu"><a href="#0"><i class="ic-moreMenu"></i><p>MENU</p></a></div>
+        </div>
+        <!-- // 모비일 하단 메뉴 -->
+
+        <input class="clipboard" type="text" value="" inputmode="none"/>
+        <div class="share_temp">
+          <p class="txt"><strong>[##_var_msg_copy_##]</strong></p>
+        </div>
       </div>
       <!-- // wrap -->
     </s_t3>
