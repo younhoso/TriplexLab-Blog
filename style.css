@@ -87,21 +87,21 @@ template{display:none}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face{font-family:'ic-font';src:url('images/ic-font.eot?nv50c9');src:url('images/ic-font.eot?nv50c9#iefix') format('embedded-opentype'),url('images/ic-font.ttf?nv50c9') format('truetype'),url('images/ic-font.woff?nv50c9') format('woff'),url('images/ic-font.svg?nv50c9#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
+@font-face{font-family:'ic-font';src:url('images/ic-font.eot?cr4wfh');src:url('images/ic-font.eot?cr4wfh#iefix') format('embedded-opentype'),url('images/ic-font.ttf?cr4wfh') format('truetype'),url('images/ic-font.woff?cr4wfh') format('woff'),url('images/ic-font.svg?cr4wfh#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
 i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.ic-connection:before{content:"\e900";}
-.ic-server:before{content:"\e901";}
-.ic-html:before{content:"\e902";}
-.ic-js:before{content:"\e903";}
-.ic-uiux:before{content:"\e904";}
-.ic-bell:before{content:"\e905";}
-.ic-kakao-bg:before{content:"\e906";}
-.ic-copy:before{content:"\e907";}
-.ic-right-thin:before{content:"\e908";}
-.ic-left-thin:before{content:"\e909";}
-.ic-plus-thin:before{content:"\e90a";}
+.ic-moreMenu:before{content:"\e900";}
+.ic-connection:before{content:"\e901";}
+.ic-server:before{content:"\e902";}
+.ic-html:before{content:"\e903";}
+.ic-js:before{content:"\e904";}
+.ic-uiux:before{content:"\e905";}
+.ic-bell:before{content:"\e906";}
+.ic-kakao-bg:before{content:"\e907";}
+.ic-copy:before{content:"\e908";}
+.ic-right-thin:before{content:"\e909";}
+.ic-left-thin:before{content:"\e90a";}
 .ic-gitbook:before{content:"\e90b";}
-.ic-tr-1:before{content:"\e90c";}
+.ic-tr:before{content:"\e90c";}
 .ic-sun:before{content:"\e90d";}
 .ic-search:before{content:"\e90e";}
 .ic-kakao:before{content:"\e90f";}
@@ -1022,10 +1022,10 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .tt_category > li .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
   .tt_category > li .category_list > li .sub_category_list > li::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
   
-  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden; overflow-y: auto; position:absolute;top:20px;left:0; box-sizing: border-box;z-index:33;display: none;}
+  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden; overflow-y: auto; position:absolute;top:20px;left:0; box-sizing: border-box;z-index:33;opacity: 0; visibility: hidden; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
   .area_sidebar .box_tool{ padding:40px 26px; box-sizing: border-box; text-align: left;}
   .area_sidebar::-webkit-scrollbar{display:none}
-  .area_sidebar.on{top:0;display: block;}
+  .area_sidebar.on{top:0;opacity: 1; visibility: initial;}
   .area_sidebar .inner_sidebar .sidebar_header .link_logo .img_logo{display: none; aspect-ratio: attr(width) / attr(height); }
   .area_sidebar .inner_sidebar .sidebar_header .link_logo strong {font-size: 24px;}
   .area_sidebar .inner_sidebar .sidebar_header .tit_logo{display: inline-block; vertical-align: middle;}
