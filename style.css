@@ -1137,7 +1137,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
 
-  .share_temp {width: 16%;}
+  .share_temp {width: 280px;}
 
   .tt_category > li .category_list > li.active::before {top: 0;right: 0;}
   .tt_category > li .category_list > li .sub_category_list > li::before {top: 0;right: 0;}
