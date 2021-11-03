@@ -7,6 +7,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=5 user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FFV1QDF4H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1FFV1QDF4H');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics //-->
   <!-- // General META -->
   <meta property="og:site_name" content="FE Developer TriplexLab(트리플엑스랩)" />
   <meta property="og:title" content="FE Developer TriplexLab(트리플엑스랩)" />
@@ -17,7 +27,6 @@
   <!-- General META //-->
   <!-- // 검색 META -->
   <meta name="google-site-verification" content="9n0H_JqjI6GZHg0_RugmhN7joYixHIFEDu_enfGx_UU" />
-  <meta name="naver-site-verification" content="c3d2ebcf772efaad5528a05a89b6ba660f1d5c73" />
   <meta name="msvalidate.01" content="CEED5D3CEF725E60A1B0CC143BC0BA8B" />
   <!-- 검색 META // -->
   <!-- // Semantic Tag META -->
@@ -33,6 +42,9 @@
     $(function(){
       $('.article_view').find('table').each(function (idx, el) {
         $(el).wrap('<div class="table-overflow">')
+      });
+      $('img[alt="N"]').each(function(){
+        $(this).replaceWith('<p class="newItem">N</p>')
       });
     });
   </script>

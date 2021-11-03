@@ -215,6 +215,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_pink .article_view .footnote a{color:#fdb0aa!important;}
 .theme_pink .tab_btn.on{color:#fdb0aa;}
 .theme_pink .layer_tooltip {background-color: #fdb0aa;}
+.theme_pink .newItem {background-color: #fdb0aa;}
 .theme_blue .thema_apply .link_detail{background:#004fff}
 .theme_blue .thema_apply .btn_arrow:hover{background-color:#004fff;color:#fff}
 .theme_blue .thema_apply .active::before{background:#004fff;}
@@ -243,6 +244,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_blue .article_view .footnote a{color:#004fff!important;}
 .theme_blue .tab_btn.on{color:#004fff;}
 .theme_blue .layer_tooltip {background-color: #004fff;}
+.theme_blue .newItem {background-color: #004fff;}
 .theme_green .thema_apply .link_detail{background:#11998e}
 .theme_green .thema_apply .btn_arrow:hover{background-color:#11998e;color:#fff}
 .theme_green .thema_apply .active::before{background:#11998e}
@@ -271,6 +273,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_green .article_view .footnote a{color:#11998e!important;}
 .theme_green .tab_btn.on{color:#11998e;}
 .theme_green .layer_tooltip {background-color: #11998e;}
+.theme_green .newItem {background-color: #11998e;}
 .theme_gray .thema_apply .link_detail{background:#545c65}
 .theme_gray .thema_apply .btn_arrow:hover{background-color:#545c65;color:#fff}
 .theme_gray .thema_apply .active::before{background:#545c65}
@@ -300,6 +303,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_gray .article_view .footnote a{color:#545c65!important;}
 .theme_gray .tab_btn.on{color:#545c65;}
 .theme_gray .layer_tooltip {background-color: #545c65;}
+.theme_gray .newItem {background-color: #545c65;}
 .theme_orange .thema_apply .active::before{background:#f60;}
 .theme_orange .tt_category > li .category_list > li.active > a {color: #f60;}
 .theme_orange .tt_category > li .category_list .sub_category_list > li.active > a {color: #f60;}
@@ -315,7 +319,6 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_orange .thema_apply .category_list > li a:hover,
 .theme_orange .thema_apply .box_sns .list_sns li a:hover,
 .theme_orange .box_gnb .t_menu_category a:hover {opacity: 0.4;}
-.theme_orange .share_temp .txt {background:#f60;color:#fff;}
 .theme_orange .like_temp .txt {background:#f60;color:#fff;}
 .theme_orange .subscribe .txt {background:#f60;color:#fff;}
 .theme_orange .sidebar_menu .sidebar_menu_tabs {background:#f60;color:#fff;box-shadow: 0 4px 12px rgb(255, 102, 0, 0.4);}
@@ -326,13 +329,13 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_orange main .area_paging .link_num span.selected {background:#f60;}
 .theme_orange .mo_footer_menu .plus a {background:#f60;box-shadow: 0 4px 12px rgb(255 102 0 / 40%);}
 .theme_orange .area_category .title_section span{color:#f60;}
-.theme_orange .article_view a{color:#f60}
-.theme_orange .article_view a{color:#f60}
-.theme_orange .article_view blockquote{color:#f60}
-.theme_orange .article_view .moreless_fold span,.theme_orange .article_view .moreless_top span{color:#f60}
+.theme_orange .article_view a{color:#f60;}
+.theme_orange .article_view blockquote{color:#f60;}
+.theme_orange .article_view .moreless_fold span,.theme_orange .article_view .moreless_top span{color:#f60;}
 .theme_orange .article_view .footnote a{color:#f60!important;}
 .theme_orange .tab_btn.on{color:#f60;}
 .theme_orange .layer_tooltip {background-color: #f60;}
+.theme_orange .newItem {background-color: #f60;}
 @media screen and (max-width:1025px){
 .theme_pink .thema_apply .selected{color:#fdb0aa!important}
 .theme_blue .thema_apply .selected{color:#4167d9!important}
@@ -498,7 +501,7 @@ aside .tag_board{width:100%}
 .area_popup .area_search .btn_close{padding:0 7px;font-size: 20px;}
 .area_popup .title_logo{font-weight:900;font-size:20px;}
 }
-#footer{clear:both;padding-top:50px;padding-bottom:70px;font-size:14px;font-weight:400;border-top: 1px solid var(--border-color);}
+#footer{clear:both;padding-top:50px;padding-bottom:70px;font-size:14px;font-weight:400;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:inherit;line-height:1.27;text-decoration:none;z-index:21}
 #footer address{margin-top:20px;font-size:14px;font-style:normal;text-align:center}
@@ -889,11 +892,13 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 .list_index.category_type_related:first-child{margin-top:120px}
 .list_index.category_type_related .link_category{padding:0}
 }
-.area_view .absent_post{margin-top:240px}
+.area_view .absent_post{margin-top:240px;}
 @media screen and (max-width:1025px){
-.area_view .absent_post{margin:200px 0 90px 0}
+  .area_view .absent_post{margin:200px 0 90px 0;}
 }
-.revenue_unit_wrap.position_list{max-width:1180px;margin:30px auto}
+.newItem{display:inline-block;line-height:1px;text-align:center;position:relative;color:#fff;font-size:10px;font-weight:600;right:-4px;border-radius:1em;padding:.7em .4em;}
+.bridge{display:inline-block;margin:0 0 -4px -10px;padding:.5em;border-radius:1em;}
+.revenue_unit_wrap.position_list{max-width:1180px;margin:30px auto;}
 .arrow_inner .type_banner_prev.swiper-button-disabled, .arrow_inner .type_banner_next.swiper-button-disabled {opacity: .35;cursor: auto;pointer-events: none;}
 
 .layer_tooltip {border-radius: 0.5em!important;}
@@ -902,10 +907,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
 .clipboard {overflow:hidden; line-height:0; font-size:0; text-indent:-1000px; position: absolute;}
 
-.share_temp {width: 76%; text-align: center; position:fixed;bottom:0;left:50%; z-index: 22;opacity: 0; visibility: hidden; -webkit-transform: translate(-50%, -30%); transform: translate(-50%, -30%); -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
-.share_temp.on {opacity: 1; visibility:initial; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
-.share_temp input {height: 0;text-indent: -99999px;}
-.share_temp .txt{padding:20px;border-radius: 0.5em;box-sizing:border-box; -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%);}
+
 /* ---- MO 매인페이지 ST ---- */
 @media screen and (min-width:320px){
   #wrap{padding-left:0;}
@@ -1020,6 +1022,11 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .tab_item {display: none; padding: 20px; box-sizing: border-box;}
   .tab_item.active {display: block;}
 
+  .share_temp {width: 90%; text-align: center; position:fixed;bottom:0;left:50%; z-index: 22;opacity: 0; visibility: hidden; -webkit-transform: translate(-50%, -30%); transform: translate(-50%, -30%); -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+  .share_temp.on {opacity: 1; visibility:initial; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+  .share_temp input {height: 0;text-indent: -99999px;}
+  .share_temp .txt{padding:20px;border-radius: 0.5em;box-sizing:border-box; -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%);}
+
   .tt_category > li .category_list > li.active {position: relative;}
   .tt_category > li .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
   .tt_category > li .category_list > li .sub_category_list > li::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
@@ -1074,7 +1081,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .typeCard_next, .typeCard_prev {display: none;}
 
   #tt-body-index .area_category .category_cover {display: none;}
-  #tt-body-index #footer{border-top: none;}
 }
 /* ---- MO 매인페이지 ED ---- */
 /* ---- PC 매인페이지 ST ---- */
@@ -1130,6 +1136,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .counter .count .txt{margin-top:0;display:flex;justify-content: space-between;align-items: baseline;}
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
+
+  .share_temp {width: 16%;}
 
   .tt_category > li .category_list > li.active::before {top: 0;right: 0;}
   .tt_category > li .category_list > li .sub_category_list > li::before {top: 0;right: 0;}
