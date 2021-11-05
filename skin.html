@@ -35,8 +35,10 @@
   <!-- Semantic Tag META // -->
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]"/>
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
+  <link rel="stylesheet" href="./images/swiper.min.css" />
   <link rel="stylesheet" href="./style.css"/>
   <script charset="UTF-8" src="./images/jQuery.min.js"></script>
+  <script charset="UTF-8" src="./images/swiper.min.js"></script>
   <script charset="UTF-8" src="./images/menuIcon.js"></script>
   <script charset="UTF-8">
     $(function(){
@@ -97,6 +99,7 @@
       };
     })();
   </script>
+  <script charset="UTF-8" src="./images/instafeed.min.js"></script>
   <script charset="UTF-8" src="./images/common.js"></script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
@@ -220,9 +223,43 @@
                 </s_sidebar_element>
                 <s_sidebar_element>
                   <!-- TriplexLab SKIN(링크) -->
-                  <div class="skin_link" data-tit="TriplexLab 블로그 SKIN (준비중)">
-                    <a href="/category/SKIN" target="_blank"><img src="https://tistory4.daumcdn.net/tistory/3222964/skin/images/skin.webp" alt="TriplexLab 블로그 SKIN" width="260" height="169"></a>
+                  <div class="skin_link swiper_skin">
+                    <div class="swiper-wrapper" id="skin_link"></div>
+                    <div class="swiper-page"></div>
                   </div>
+                  <script>
+                    (function(){
+                      /* sidebar 영역 Swiper기능 */
+                      function sidebar_slide(){
+                        const swiperOptions = {
+                          pagination: {
+                            el: ".swiper-page",
+                          },
+                        };
+                        
+                        new Swiper('.swiper_skin', swiperOptions);
+                      };
+                      /* sidebar 영역 Swiper기능 */
+                      /* sidebar 영역 인스타그램 api 연결 */
+                      function instagramAPI() {
+                        var feed = new Instafeed({
+                          accessToken: 'IGQVJYQi0wdnZAJQmRwcUpLdkEwbGg5blRSNDFqejBveElremF6emQ4OXV4TWRnZAFU1RFNqR1BhYVotWDZAwSmFfZAl9idHBOM0hiRDJpWGwxMng0aFZAhVUxNUUtiZAWdGaTh0ZA0NQY2ZAFZAjV5Yzh5Nm5fbAZDZD',
+                          target:'skin_link',
+                          limit : 3,
+                          template: '<li class="item swiper-slide">'+
+                                      '<a href="{{link}}">'+
+                                      '<img title="{{caption}}" src="{{image}}"/>'+
+                                      '</a>'+
+                                  '</li>'
+                        });
+                        feed.run()
+                      };
+                      /* sidebar 영역 인스타그램 api 연결 // */
+
+                      sidebar_slide();
+                      instagramAPI();
+                    })();
+                  </script>
                 </s_sidebar_element>
                 <s_sidebar_element>
                   <!-- 관리 -->
@@ -359,8 +396,6 @@
         <main id="main" class="bg_them_mode color border_b_mode">
             <!-- area_cover -->
             <s_cover_group>
-              <link rel="stylesheet" href="./images/swiper.min.css" />
-              <script charset="UTF-8" src="./images/swiper.min.js"></script>
               <script charset="UTF-8" src="./images/mainSlide.js" type="module"></script>
               <div class="area_cover">
                 <s_cover_rep>

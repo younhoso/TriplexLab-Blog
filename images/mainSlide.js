@@ -57,13 +57,15 @@ new Slide({
   additems: 8, //움직일 아이템 개수를 정의합니다.
 });
 
+
   const windowWidth = window.screen.width;
 
-  function slider_control() {
+   /* 매인 배너 영역 Swiper기능 */
+  var slider_control = function() {
     const interleaveOffset = 0.5;
     const slide_data = $('.slide_zone').data('slide');
     
-    /* 매인 배너 영역 Swiper기능 */
+   
       const swiperOptions = {
         loop: false,
         
@@ -121,8 +123,8 @@ new Slide({
       }
 
       new Swiper('.swiper-container', swiperOptions);
-    /* 매인 배너 영역 Swiper기능 // */
   };
+  /* 매인 배너 영역 Swiper기능 // */
 
   slider_control();
 })();
