@@ -223,9 +223,12 @@
                 </s_sidebar_element>
                 <s_sidebar_element>
                   <!-- TriplexLab SKIN(링크) -->
-                  <div class="skin_link swiper_skin">
-                    <div class="swiper-wrapper" id="skin_link"></div>
-                    <div class="swiper-page"></div>
+                  <div class="skin_link_inner" aria-label="TriplexLab instagram">
+                    <div class="skin_link swiper_skin">
+                      <div class="swiper-wrapper" id="skin_link"></div>
+                      <div class="swiper-page"></div>
+                    </div>
+                    <div class="skin_Tit">TriplexLab instagram</div>
                   </div>
                   <script>
                     (function(){
@@ -248,11 +251,11 @@
                           limit : 3,
                           template: '<li class="item swiper-slide">'+
                                       '<a href="{{link}}">'+
-                                      '<img title="{{caption}}" src="{{image}}"/>'+
+                                      '<div class="bg_img" style="background-image: url({{image}});"></div>'+
                                       '</a>'+
                                   '</li>'
                         });
-                        feed.run()
+                        feed.run();
                       };
                       /* sidebar 영역 인스타그램 api 연결 // */
 
