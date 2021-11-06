@@ -39,8 +39,9 @@
   <link rel="stylesheet" href="./style.css"/>
   <script charset="UTF-8" src="./images/jQuery.min.js"></script>
   <script charset="UTF-8" src="./images/swiper.min.js"></script>
-  <script charset="UTF-8" src="./images/menuIcon.js"></script>
-  <script charset="UTF-8">
+  <script charset="UTF-8" src="./images/instafeed.min.js"></script>
+  <script defer charset="UTF-8" src="./images/menuIcon.js"></script>
+  <script defer charset="UTF-8">
     $(function(){
       $('.article_view').find('table').each(function (idx, el) {
         $(el).wrap('<div class="table-overflow">')
@@ -99,8 +100,7 @@
       };
     })();
   </script>
-  <script charset="UTF-8" src="./images/instafeed.min.js"></script>
-  <script charset="UTF-8" src="./images/common.js"></script>
+  <script defer type="module" charset="UTF-8" src="./images/common.js"></script>
 </head>
 <body id="[##_body_id_##]" class="[##_var_colorSet_##]">
   <div id="root">
@@ -230,7 +230,8 @@
                     </div>
                     <div class="skin_Tit">TriplexLab instagram</div>
                   </div>
-                  <script>
+                  <script type="module">
+                    import {_getCookie} from './images/cookie.js';
                     (function(){
                       /* sidebar 영역 Swiper기능 */
                       function sidebar_slide(){
@@ -246,7 +247,7 @@
                       /* sidebar 영역 인스타그램 api 연결 */
                       function instagramAPI() {
                         var feed = new Instafeed({
-                          accessToken: 'IGQVJYQi0wdnZAJQmRwcUpLdkEwbGg5blRSNDFqejBveElremF6emQ4OXV4TWRnZAFU1RFNqR1BhYVotWDZAwSmFfZAl9idHBOM0hiRDJpWGwxMng0aFZAhVUxNUUtiZAWdGaTh0ZA0NQY2ZAFZAjV5Yzh5Nm5fbAZDZD',
+                          accessToken: _getCookie('_noti'),
                           target:'skin_link',
                           limit : 3,
                           template: '<li class="item swiper-slide">'+
@@ -399,7 +400,7 @@
         <main id="main" class="bg_them_mode color border_b_mode">
             <!-- area_cover -->
             <s_cover_group>
-              <script charset="UTF-8" src="./images/mainSlide.js" type="module"></script>
+              <script defer charset="UTF-8" src="./images/mainSlide.js" type="module"></script>
               <div class="area_cover">
                 <s_cover_rep>
                   <s_cover name='featured'> <!-- type_featured -->

@@ -1,3 +1,5 @@
+import {_setCookie} from './cookie.js';
+
 $(function() {
   tistoryLighthouseCheck();
   display_control();
@@ -355,7 +357,7 @@ $(function() {
   
   /* 공지 사항 */
   $('.notice_js').on('click', function() {
-    setCookie('bell', 'Y', 5);
+    _setCookie('bell', 'Y', 5);
     $(this).removeClass('on');
     $('.notice_template').addClass('on');
     var frag = document.getElementsByTagName('template')[0];
@@ -372,17 +374,6 @@ $(function() {
   });
   /* // 공지 사항 */
 });
-
-function setCookie(name, value, day) {
-  var date = new Date(); 
-  date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000); 
-  document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/'; 
-};
-
-function getCookie(name) { 
-  var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
-  return value? value[2] : null; 
-};
 
 function display_control() {
   // 박스 헤더

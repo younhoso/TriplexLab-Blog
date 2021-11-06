@@ -87,7 +87,7 @@ template{display:none}
   .wrapper {padding: 0 40px;}
 }
 
-@font-face{font-family:'ic-font';src:url('images/ic-font.eot?l10sef');src:url('images/ic-font.eot?l10sef#iefix') format('embedded-opentype'),url('images/ic-font.ttf?l10sef') format('truetype'),url('images/ic-font.woff?l10sef') format('woff'),url('images/ic-font.svg?l10sef#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:block;}
+@font-face{font-family:'ic-font';src:url('images/ic-font.eot?l10sef');src:url('images/ic-font.eot?l10sef#iefix') format('embedded-opentype'),url('images/ic-font.ttf?l10sef') format('truetype'),url('images/ic-font.woff?l10sef') format('woff'),url('images/ic-font.svg?l10sef#ic-font') format('svg');font-weight:normal;font-style:normal;font-display:swap;}
 i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .ic-home:before{content:"\e910";}
 .ic-moreMenu:before{content:"\e900";}
@@ -1051,10 +1051,10 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .box_sns .list_sns li .icon_txt {display: inline-block; vertical-align: middle;}
   .area_sidebar .sidebar_contents{min-height:auto;}
   .area_sidebar .skin_link_inner {position: relative;}
-  .area_sidebar .skin_link {width: 85%;min-width: 250px; margin: 0 auto;overflow: hidden;position: relative;border-radius: 0.6em;box-shadow: 0 4px 12px rgb(0 0 0 / 30%);}
-  .area_sidebar .skin_link .item {width: 100%;overflow: hidden;border-radius: 0.6em;}
+  .area_sidebar .skin_link {width: 85%;min-width: 250px; margin: 0 auto;overflow: hidden;position: relative;border-radius: 0.4em;box-shadow: 0 4px 12px rgb(0 0 0 / 30%);}
+  .area_sidebar .skin_link .item {width: 100%;}
   .area_sidebar .skin_link .item a {display: block;}
-  .area_sidebar .skin_link .item a .bg_img{width:100%;height: calc(var(--vh, 1vh)*20);background-size:cover;background-position:center;background-repeat: no-repeat;}
+  .area_sidebar .skin_link .item a .bg_img{width:100%;height: calc(var(--vh, 1vh)*24);background-size:cover;background-position:center;background-repeat: no-repeat;overflow:hidden;border-radius: 0.4em;}
   .area_sidebar .skin_link_inner .skin_Tit {text-align: center; font-size: 12px; margin-top: 16px;}
 
   .mo_footer_menu{width:100%;height:60px;line-height:60px;display:flex;position:fixed;left:0;bottom:0;z-index:21;justify-content:space-around;align-items:center;border-top: 1px solid var(--border-color);}
