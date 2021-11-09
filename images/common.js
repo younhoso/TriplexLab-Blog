@@ -389,6 +389,19 @@ $(function() {
   };
   $("#root").on('scroll', docHeight);
   /* post 문서 스크롤 맨 하단 감지 // */
+
+  /* 스크롤 방향 감지 */
+  var lastScrollY = 0;
+  function moblieScroll(){
+    var moFooterMenu = $('.box_header');
+    // 스크롤 방향의 조건
+    $('#root').scrollTop() > lastScrollY ? moFooterMenu.addClass('on') : moFooterMenu.removeClass('on')
+    lastScrollY = $('#root').scrollTop(); // 마지막 스크롤 방향 위치 감지
+  };
+  $('#root').on('scroll', function() {
+    moblieScroll();
+  });
+  /* 스크롤 방향 감지 // */
 });
 
 function display_control() {
