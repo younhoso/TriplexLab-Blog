@@ -393,6 +393,7 @@ $(function() {
   /* 스크롤 방향 감지 */
   var lastScrollY = 0;
   function moblieScroll(){
+    if(lastScrollY < 0) return // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
     var moFooterMenu = $('.box_header');
     // 스크롤 방향의 조건
     $('#root').scrollTop() > lastScrollY ? moFooterMenu.addClass('on') : moFooterMenu.removeClass('on')

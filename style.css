@@ -386,7 +386,7 @@ html{box-sizing:border-box}
 .box_header .btn_menu,.box_header .btn_search{width:22px;background-size:22px auto}
 .box_header .btn_menu{right:24px}
 .box_header .btn_search{right:60px}
-.box_header{position:relative;padding-left: 0;}
+.box_header {padding-left: 0;}
 .box_header .header_inner {justify-content: space-between;padding: 10px 0;}
 .box_header .header_inner .icon{width:38px;height:38px;display:inline-block;border-radius:50%;text-align:center;line-height:38px;outline:none;cursor:pointer;}
 .box_header .logo {display: block;font-size: 20px;}
@@ -918,7 +918,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
 /* ---- MO 매인페이지 ST ---- */
 @media screen and (min-width:320px){
-  #wrap{padding-left:0;background-color: var(--g-bg-color);}
+  #wrap{padding-left:0;padding-top: 58px;background-color: var(--g-bg-color);}
   #main{min-height: 85vh; padding-bottom: 40px;}
   #container{position:static}
   #container::before{content:'';width:100%;height:100vh;position:fixed;top:0;left:0;z-index:-1;-webkit-transition:background-color .5s ease;transition:background-color .5s ease}
@@ -1090,7 +1090,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 /* ---- MO 매인페이지 ED ---- */
 /* ---- PC 매인페이지 ST ---- */
 @media screen and (min-width:1025px){
-  #wrap{padding-left:300px; padding-top: 58px;}
+  #wrap{padding-left:300px;}
   #tt-body-index #main {padding-bottom: 0; padding-top: 40px;}
   #tt-body-page #main {min-height: 1140px;}
   #container{position:relative}
