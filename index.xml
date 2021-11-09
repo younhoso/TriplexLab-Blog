@@ -179,10 +179,17 @@
             <type>STRING</type>
             <default>포스팅 주소를 복사했습니다</default>
           </variable>
+		  <variable>
+            <name>msg_post_like1</name>
+            <label>공감1</label>
+            <description>스크롤 맨하단으로 이동했을때</description>
+            <type>STRING</type>
+            <default>도움이 되었다면 공감 부탁드립니다.</default>
+          </variable>
           <variable>
-            <name>msg_post_like</name>
-            <label>공감</label>
-            <description></description>
+            <name>msg_post_like2</name>
+            <label>공감2</label>
+            <description>좋아요 버튼 눌렀을때</description>
             <type>STRING</type>
             <default>소중한 공감 감사합니다</default>
           </variable>              

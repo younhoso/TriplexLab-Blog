@@ -366,6 +366,29 @@ $(function() {
     !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
   });
   /*  공지 사항 // */
+  /* post 문서 스크롤 맨 하단 감지 */
+  var isVisible = true;
+  function docHeight() {
+    var scrollTop;
+    var innerHeight;
+    var scrollHeight;
+
+    if($(this).find('article').hasClass('area_article')){
+      scrollTop = $(this).scrollTop();
+      innerHeight = $(this).innerHeight();
+      scrollHeight = $(this).prop('scrollHeight');
+    };
+
+    if (scrollTop + innerHeight >= scrollHeight && isVisible) {
+      $('.share_like1').addClass('on');
+      setTimeout(function(){
+        $('.share_like1').removeClass('on');
+        isVisible = false; //문서 로드후 딱 한번만 실행 시키기 위함
+      },2000);
+    };
+  };
+  $("#root").on('scroll', docHeight);
+  /* post 문서 스크롤 맨 하단 감지 // */
 });
 
 function display_control() {
@@ -412,7 +435,7 @@ function utilLike() {
   !$('.postbtn_like .uoc-icon').hasClass('like_on') ? ($('.item1 i').attr('class', 'ic-like-bg'), $('.like_temp').addClass('on')) : ($('.item1 i').attr('class', 'ic-like')); //클릭 이벤트 시점에 변경
   setTimeout(function(){
     $('.like_temp').removeClass('on');
-  },2000);
+  },2500);
 };
 
 function detail_side(){
