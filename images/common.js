@@ -392,16 +392,16 @@ $(function() {
 
   /* 스크롤 방향 감지 */
   var lastScrollY = 0;
-  function moblieScroll(){
-    if(lastScrollY < 0) return // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
-    var moFooterMenu = $('.box_header');
-    // 스크롤 방향의 조건
-    $('#root').scrollTop() > lastScrollY ? moFooterMenu.addClass('on') : moFooterMenu.removeClass('on')
-    lastScrollY = $('#root').scrollTop(); // 마지막 스크롤 방향 위치 감지
+  function moblieScroll(e){
+    var moHeaderMenu = $('.box_header');
+    if(windowWidth <= 1025){ //모바일 해상도일때 경우
+      // 스크롤 방향의 조건
+      $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
+      if(lastScrollY < 0) moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
+      lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
+    }
   };
-  $('#root').on('scroll', function() {
-    moblieScroll();
-  });
+  $('#root').on('scroll', moblieScroll);
   /* 스크롤 방향 감지 // */
 });
 
