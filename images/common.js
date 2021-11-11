@@ -397,9 +397,11 @@ $(function() {
     if(windowWidth <= 1025){ //모바일 해상도일때 경우
       // 스크롤 방향의 조건
       $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
-      if(lastScrollY < 0) moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
-      lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
+      lastScrollY < 0 && moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
+    } else { //PC 해상도일때 경우
+      $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
     }
+    lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
   };
   $('#root').on('scroll', moblieScroll);
   /* 스크롤 방향 감지 // */
