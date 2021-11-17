@@ -457,12 +457,12 @@ html{box-sizing:border-box}
 .area_popup .search_content > div .allDelete {display: flex;justify-items: center;align-items: center;}
 .area_popup .search_content > div .off {display: none;}
 .area_popup .search_content > div .txt {display: none; font-size: 18px; font-weight: 600; margin-top: 28px;}
-.area_popup .box_form{position:relative;display: flex;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid var(--border-color)}
+.area_popup .box_form{position:relative;display: flex;align-items: center;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid var(--border-color)}
 .area_popup .box_form .icon-Search{display:inline-block;font-size:36px;vertical-align:-10px}
-.area_popup .box_form .inp_search{width:80%;margin-top:5px;border:none;font-size:24px;font-weight:900;line-height:1;color: var(--color-level-1);}
+.area_popup .box_form .inp_search{width:97%;height: 44px; line-height:44px;margin-top:5px;padding: 10px;box-sizing: border-box;border:none;font-size:24px;font-weight:900;color: var(--color-level-1);}
 .area_popup .box_form .inp_search + .btn_search_del{display: none;}
 .area_popup .box_form .inp_search.active + .btn_search_del{display: block;}
-.area_popup .box_form .btn_search_del{position:absolute;top:0;right:0;width:36px;height:36px;padding:6px;border:none;background-color:transparent;cursor:pointer;fill-opacity:1;}
+.area_popup .box_form .btn_search_del{padding:6px;}
 .area_popup .box_form .btn_search_del #textDelBtnSvgMask {fill: var(--color-level-1)}
 .area_popup .box_form .btn_search_del .svg_bg {fill: var(--color-level-1)}
 .area_popup .title_sidebar{font-size: 26px;font-weight: 500;}
