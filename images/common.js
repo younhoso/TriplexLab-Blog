@@ -60,7 +60,7 @@ $(function() {
     e.preventDefault();
     window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
     var newSearchItem = searchInput.val();
-    searchInput.value = '';
+    searchInput.val('');
     var newSearchObj = { id: Date.now(), text: newSearchItem }; 
     searCH.push(newSearchObj);
     
