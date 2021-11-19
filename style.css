@@ -720,7 +720,7 @@ aside .tag_board{width:100%}
 .list_type_card{margin:0;padding:0;list-style:none;display: flex; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
 .list_type_card .item_card{display:inline-block;width:19.4%;height:100%;vertical-align:top;flex-shrink:0;position:relative;transition-property:transform;}
 .list_type_card .item_card strong{display:block;margin:18px 8px 6px 0;font-size:16px;font-weight:700;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
-.list_type_card .item_card .thumnail{display:block;width:100%;min-height:138px;border-radius:.6em; background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.2s ease-in; transition: background-image 0.2s ease-in;}
+.list_type_card .item_card .thumnail{display:block;width:100%;min-height:138px;border-radius:.6em; background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.1s linear; transition: background-image 0.1s linear;}
 .list_post .item_post .thumnail {display:block;width:100%;min-height:138px;background-position:50% 50%;border-radius:.6em;}
 .list_type_card .item_card .text{max-height:78px;margin:0;font-size:14px;color:inherit;line-height:1.71;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 @media screen and (max-width:1025px){
@@ -748,7 +748,7 @@ aside .tag_board{width:100%}
   .type_banner{padding: 0 0 30px 0;}
   .type_banner .wrapper {padding: 0;}
   .list_type_banner .box_content{width:100%;padding:20px}
-  .list_type_banner .link_banner strong{display:block;margin:0;text-overflow:ellipsis;white-space:nowrap;font-size:26px;overflow:hidden}
+  .list_type_banner .link_banner strong{display:block;margin:0;text-overflow:ellipsis;white-space:nowrap;font-size:26px;overflow:hidden;}
   .list_type_banner .link_banner .btn_go{display:none}
   .type_banner .arrow_inner {display: none;}
   .type_banner .swiper_type_banner {min-height:auto; height: auto;}
@@ -756,7 +756,7 @@ aside .tag_board{width:100%}
 .type_notice{width:100%;padding-top: 50px;padding-bottom: 20px;overflow:hidden;pointer-events: auto;}
 .type_notice:after{content:'';display:block;clear:both}
 
-.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.4em;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.2s ease-in; transition: background-image 0.2s ease-in;}
+.type_notice .thumnail{flex: none; display:block;width:75px;padding-top: 50px;margin-right:14px;background-size:cover;background-position:50% 50%;border-radius:.4em;background:url('images/thumnail-bg.png') no-repeat center center var(--s-bg-color); background-size: cover; -webkit-transition: background-image 0.1s linear; transition: background-image 0.1s linear;}
 .type_notice .info{overflow:hidden;}
 .list_type_notice:after{content:'';display:block;clear:both;}
 .list_type_notice .item_notice:after{content:'';display:block;clear:both}
