@@ -523,3 +523,21 @@ function tistoryLighthouseCheck() {
 };
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
 
+/* tag localStorage에 저장 */
+var tagItem = Array.from(document.querySelectorAll('.item_sidebar'));
+function tagToDoSubmit(txt) { //tagform localStorage 저장
+  console.log(txt);
+
+};
+
+// 해당 tag txt가져와서 공백 제거
+tagItem.forEach(function(el, idx){
+  el.addEventListener('click', function(e){
+    var txtBlank = e.currentTarget.textContent;
+    var txt = txtBlank.replace(/\s+/g, ""); //모든 공백 없애기
+    tagToDoSubmit(txt);
+  });
+});
+/* tag localStorage에 저장 //*/
+
+
