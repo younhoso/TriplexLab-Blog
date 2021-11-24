@@ -11,6 +11,7 @@ $(function() {
   var searchList = $('#search-list');
   var allDelete = $('.allDelete'); 
   var txt = $('.search-inner .txt');
+  var tagItem = $('.search-inner .item_sidebar');
   var TODOS_KEY = "search";
   var searCH = new Array();
   
@@ -37,7 +38,7 @@ $(function() {
     saveStorage(TODOS_KEY, searCH);
   };
 
-  function paintStorage(newItem) { //화면에 뿌림 
+  function paintStorage(newItem) { //각각의 item 화면에 뿌림 
     var {id, text} = newItem;
     var item = document.createElement("li");
     var div = document.createElement("div"); 
@@ -56,14 +57,28 @@ $(function() {
     newItem !== null && allDelete.removeClass('off');
   };
 
+
+  /* tag localStorage에 저장 */
+  function tagToDoSubmit(txt) { //tagform localStorage 저장
+    // 해당 tag txt가져와서 공백 제거
+    console.log(txt);
+    txt.addEventListener('click', function(e){
+      var txtBlank = e.currentTarget.textContent;
+      return txtBlank.replace(/\s+/g, ""); //모든 공백 없애기
+    });
+  };
+  console.log(tagToDoSubmit(tagItem));
+
+  /* tag localStorage에 저장 //*/
   function handleToDoSubmit(e) { //form 전송 
     e.preventDefault();
     window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
     var newSearchItem = searchInput.val();
     searchInput.val('');
-    var newSearchObj = { id: Date.now(), text: newSearchItem }; 
+    var newSearchObj = { id: Date.now(), text: newSearchItem, tab: tagItem }; 
     searCH.push(newSearchObj);
-    
+
+
     //text 중복제거
     var newSearch = searCH.filter( 
       (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
@@ -71,6 +86,7 @@ $(function() {
     saveStorage(TODOS_KEY, newSearch);
   };
   
+
   $(searchForm).on('submit', handleToDoSubmit);
   var savedStorage = getStorage(TODOS_KEY);
   if(savedStorage !== null) { 
@@ -523,21 +539,5 @@ function tistoryLighthouseCheck() {
 };
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
 
-/* tag localStorage에 저장 */
-var tagItem = Array.from(document.querySelectorAll('.item_sidebar'));
-function tagToDoSubmit(txt) { //tagform localStorage 저장
-  console.log(txt);
-
-};
-
-// 해당 tag txt가져와서 공백 제거
-tagItem.forEach(function(el, idx){
-  el.addEventListener('click', function(e){
-    var txtBlank = e.currentTarget.textContent;
-    var txt = txtBlank.replace(/\s+/g, ""); //모든 공백 없애기
-    tagToDoSubmit(txt);
-  });
-});
-/* tag localStorage에 저장 //*/
 
 
