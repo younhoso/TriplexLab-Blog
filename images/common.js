@@ -11,7 +11,7 @@ $(function() {
   var searchList = $('#search-list');
   var allDelete = $('.allDelete'); 
   var txt = $('.search-inner .txt');
-  var tagItem = $('.search-inner .item_sidebar');
+  var tagItem = $('.item_sidebar');
   var TODOS_KEY = "search";
   var searCH = new Array();
   
@@ -57,35 +57,28 @@ $(function() {
     newItem !== null && allDelete.removeClass('off');
   };
 
-
-  /* tag localStorage에 저장 */
-  function tagToDoSubmit(txt) { //tagform localStorage 저장
-    // 해당 tag txt가져와서 공백 제거
-    console.log(txt);
-    txt.addEventListener('click', function(e){
-      var txtBlank = e.currentTarget.textContent;
-      return txtBlank.replace(/\s+/g, ""); //모든 공백 없애기
-    });
-  };
-  console.log(tagToDoSubmit(tagItem));
-
-  /* tag localStorage에 저장 //*/
+ 
+  tagItem.on('click', function(e){
+    var txtBlank = e.currentTarget.textContent;
+    var valTag = txtBlank.replace(/\s+/g, ""); //모든 공백 없애기
+    $('#tag_search').val(valTag); // tag_search val값 저장
+  });  /* tag localStorage에 저장 //*/
+  
   function handleToDoSubmit(e) { //form 전송 
     e.preventDefault();
     window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
-    var newSearchItem = searchInput.val();
+    window.location.href='/tag/'+looseURIEncode(document.querySelector('#tag_search').value);
     searchInput.val('');
-    var newSearchObj = { id: Date.now(), text: newSearchItem, tab: tagItem }; 
-    searCH.push(newSearchObj);
-
-
-    //text 중복제거
-    var newSearch = searCH.filter( 
-      (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
-    );
-    saveStorage(TODOS_KEY, newSearch);
   };
-  
+
+  var newSearchObj = { id: Date.now(), text: searchInput.val(), tab: $('#tag_search').val() }; 
+  searCH.push(newSearchObj);
+
+  //text 중복제거
+  var newSearch = searCH.filter( 
+    (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
+  );
+  saveStorage(TODOS_KEY, newSearch);
 
   $(searchForm).on('submit', handleToDoSubmit);
   var savedStorage = getStorage(TODOS_KEY);
