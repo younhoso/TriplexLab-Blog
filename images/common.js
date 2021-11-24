@@ -38,7 +38,7 @@ $(function() {
     saveStorage(TODOS_KEY, searCH);
   };
 
-  function paintStorage(newItem) { //각각의 item 화면에 뿌림 
+  function paintStorage(newItem) { //각각의 item 화면에 뿌림
     var {id, text} = newItem;
     var item = document.createElement("li");
     var div = document.createElement("div"); 
