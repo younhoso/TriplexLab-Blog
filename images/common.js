@@ -230,7 +230,7 @@ $(function() {
   });
   /** 사이드바 darkMode 여부 식별 및 상태에 맞에 식별 //*/
   /** darkMode 여부 체크 (최초 렌더링 시점)*/
-  JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'))
+  JSON.parse(localStorage.getItem('darkMode')) ? (darkModeY(), $('.dark').addClass('on'), $('.tabs_itmes li:first-child').attr('class', 'DARK'), $('.mo_footer_menu .menu.themMode').find('i').attr('class', 'ic-sun')) : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'), $('.mo_footer_menu .menu.themMode').find('i').attr('class', 'ic-moon'))
   /** // darkMode 여부 체크 (최초 렌더링 시점)*/
 
   function sidebarMenuSet(idx){
