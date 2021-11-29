@@ -44,7 +44,7 @@ $(function() {
     var div = document.createElement("div"); 
     var i = document.createElement("i"); 
     var a = document.createElement("a");
-    item.id = id; 
+    item.id = id;
     item.classList.add('item_sidebar');
     a.innerText = text;
     a.setAttribute('href', '/search/'+text)
@@ -52,7 +52,7 @@ $(function() {
     $(i).on("click", deleteStorage); 
     $(allDelete).on("click", allDeleteStorage);
     div.append(a, i)
-    item.append(div); 
+    item.append(div);
     searchList.append(item);
     newItem !== null && allDelete.removeClass('off');
   };
@@ -69,16 +69,16 @@ $(function() {
     window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
     window.location.href='/tag/'+looseURIEncode(document.querySelector('#tag_search').value);
     searchInput.val('');
-  };
+ 
+    var newSearchObj = { id: Date.now(), text: searchInput.val() }; 
+    searCH.push(newSearchObj);
 
-  var newSearchObj = { id: Date.now(), text: searchInput.val(), tab: $('#tag_search').val() }; 
-  searCH.push(newSearchObj);
-
-  //text 중복제거
-  var newSearch = searCH.filter( 
-    (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
-  );
-  saveStorage(TODOS_KEY, newSearch);
+    //text 중복제거
+    var newSearch = searCH.filter( 
+      (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
+    );
+    saveStorage(TODOS_KEY, newSearch);
+ };
 
   $(searchForm).on('submit', handleToDoSubmit);
   var savedStorage = getStorage(TODOS_KEY);
