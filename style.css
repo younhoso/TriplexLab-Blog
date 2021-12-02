@@ -215,7 +215,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_pink .article_view .footnote a{color:#fdb0aa!important;}
 .theme_pink .tab_btn.on{color:#fdb0aa;}
 .theme_pink .layer_tooltip {background-color: #fdb0aa;}
-.theme_pink .newItem {background-color: #fdb0aa;}
+.theme_pink .newItem {border: 1px solid #fdb0aa;}
 .theme_pink .skin_link .swiper-pagination-bullet-active{background-color:#fdb0aa;opacity: 1;}
 .theme_blue .thema_apply .link_detail{background:#004fff}
 .theme_blue .thema_apply .btn_arrow:hover{background-color:#004fff;color:#fff}
@@ -245,7 +245,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_blue .article_view .footnote a{color:#004fff!important;}
 .theme_blue .tab_btn.on{color:#004fff;}
 .theme_blue .layer_tooltip {background-color: #004fff;}
-.theme_blue .newItem {background-color: #004fff;}
+.theme_blue .newItem {border: 1px solid #004fff;}
 .theme_blue .skin_link .swiper-pagination-bullet-active{background-color:#004fff;opacity: 1;}
 .theme_green .thema_apply .link_detail{background:#11998e}
 .theme_green .thema_apply .btn_arrow:hover{background-color:#11998e;color:#fff}
@@ -275,7 +275,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_green .article_view .footnote a{color:#11998e!important;}
 .theme_green .tab_btn.on{color:#11998e;}
 .theme_green .layer_tooltip {background-color: #11998e;}
-.theme_green .newItem {background-color: #11998e;}
+.theme_green .newItem {border: 1px solid #11998e;}
 .theme_green .skin_link .swiper-pagination-bullet-active{background-color:#11998e;opacity: 1;}
 .theme_gray .thema_apply .link_detail{background:#545c65}
 .theme_gray .thema_apply .btn_arrow:hover{background-color:#545c65;color:#fff}
@@ -306,7 +306,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_gray .article_view .footnote a{color:#545c65!important;}
 .theme_gray .tab_btn.on{color:#545c65;}
 .theme_gray .layer_tooltip {background-color: #545c65;}
-.theme_gray .newItem {background-color: #545c65;}
+.theme_gray .newItem {border: 1px solid #545c65;}
 .theme_gray .skin_link .swiper-pagination-bullet-active{background-color:#545c65;opacity: 1;}
 .theme_orange .thema_apply .active::before{background:#f60;}
 .theme_orange .tt_category > li .category_list > li.active > a {color: #f60;}
@@ -339,7 +339,7 @@ i{font-family:'ic-font'!important;speak:never;font-style:normal;font-weight:norm
 .theme_orange .article_view .footnote a{color:#f60!important;}
 .theme_orange .tab_btn.on{color:#f60;}
 .theme_orange .layer_tooltip {background-color: #f60;}
-.theme_orange .newItem {background-color: #f60;}
+.theme_orange .newItem {border: 1px solid #f60;}
 .theme_orange .skin_link .swiper-pagination-bullet-active{background-color:#f60;opacity: 1;}
 @media screen and (max-width:1025px){
 .theme_pink .thema_apply .selected{color:#fdb0aa!important}
@@ -531,7 +531,6 @@ aside .tag_board{width:100%}
 .area_paging .link_num:last-child span:before{content:'';position:absolute;top:0;left:-10px;width:10px;height:29px;}
 .area_paging .link_num:last-child span.selected:before{background:0 0;}
 .area_paging .link_num:last-child .selected{background:0 0;}
-.area_paging .link_num span:not(.selected){display:none;}
 .area_paging .link_num:last-child span{display:inline-block;}
 .area_paging .link_ellipsis{display:none;}
 .area_paging .selected{background:0 0;}
@@ -904,7 +903,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 @media screen and (max-width:1025px){
   .area_view .absent_post{margin:200px 0 90px 0;}
 }
-.newItem{display:inline-block;line-height:1px;text-align:center;position:relative;color:#fff;font-size:10px;font-weight:600;right:-4px;border-radius:1em;padding:.7em .4em;}
+.newItem{display:inline-block;line-height:1px;text-align:center;position:relative;color:#f60;font-size:7px;font-weight:600;right:-4px;border-radius:0.6em;padding:.9em .5em;}
 .bridge{display:inline-block;margin:0 0 -4px -10px;padding:.5em;border-radius:1em;}
 .revenue_unit_wrap.position_list{max-width:1180px;margin:30px auto;}
 .arrow_inner .type_banner_prev.swiper-button-disabled, .arrow_inner .type_banner_next.swiper-button-disabled {opacity: .35;cursor: auto;pointer-events: none;}
