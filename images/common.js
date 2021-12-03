@@ -512,12 +512,16 @@ function thumnailLoaded() {
 function tistoryLighthouseCheck() {
     var editEntry = document.querySelector('#editEntry');
     var cancel = document.querySelector('.lb-cancel');
+    var declaration = Array.from(document.querySelectorAll('.area_reply .item_reply .date a'));
     var postBtn = Array.from(document.querySelectorAll('.btn_post'));
     var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
     var iframe = Array.from(document.querySelectorAll('iframe'));
     
     editEntry && editEntry.setAttribute('title', '[##_title_##]');
-    cancel && cancel.setAttribute('href', 'javascript:;')
+    cancel && cancel.setAttribute('href', 'javascript:;');
+    declaration && (declaration.map(function(el){
+      return el.remove();
+    }));
     pageEl && (pageEl.map(function(el){
       return el.setAttribute('href', 'javascript:;');
     }));
