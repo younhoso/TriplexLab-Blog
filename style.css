@@ -775,7 +775,7 @@ aside .tag_board{width:100%}
   .list_type_notice .link_notice .text{width:200px;font-size:12px;line-height:1.5;-webkit-line-clamp:1;}
   .type_notice .info{flex: 1;padding-top:0;}
 }
-.area_category{max-width:1280px;margin:0 auto;padding:40px 24px 0 24px;}
+.area_category{max-width:1360px;margin:0 auto;padding:40px 24px 0 24px;}
 .area_category a{text-decoration:none}
 .area_category .category_cover {display: flex;align-items: center;justify-content: space-between;}
 .area_category .list_image_bg{width: 55%;}
