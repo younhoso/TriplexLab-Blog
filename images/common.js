@@ -403,19 +403,19 @@ $(function() {
   /* post 문서 스크롤 맨 하단 감지 // */
 
   /* 스크롤 방향 감지 */
-  var lastScrollY = 0;
-  function moblieScroll(e){
-    var moHeaderMenu = $('.box_header');
-    if(windowWidth <= 1025){ //모바일 해상도일때 경우
-      // 스크롤 방향의 조건
-      $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
-      lastScrollY < 0 && moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
-    } else { //PC 해상도일때 경우
-      $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
-    }
-    lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
-  };
-  $('#root').on('scroll', moblieScroll);
+  // var lastScrollY = 0;
+  // function moblieScroll(e){
+  //   var moHeaderMenu = $('.box_header');
+  //   if(windowWidth <= 1025){ //모바일 해상도일때 경우
+  //     // 스크롤 방향의 조건
+  //     $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
+  //     lastScrollY < 0 && moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
+  //   } else { //PC 해상도일때 경우
+  //     $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
+  //   }
+  //   lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
+  // };
+  // $('#root').on('scroll', moblieScroll);
   /* 스크롤 방향 감지 // */
 });
 
@@ -529,15 +529,16 @@ function tistoryLighthouseCheck() {
       return postBtn[0].setAttribute('aria-label', '관리자 버튼'), postBtn[idx].setAttribute('id', `reaction${idx}`);
     }));
   
-    iframe && (iframe.map(function(el) {
-        var els = el.nextElementSibling;
-        if (els.nodeName === 'FIGCAPTION'){
-          var txt = els.innerHTML
-          return el.setAttribute('title', txt);
-        }
-    }));
+    // iframe && (iframe.map(function(el) {
+    //     var els = el.nextElementSibling;
+    //     if (els.nodeName === 'FIGCAPTION'){
+    //       var txt = els.innerHTML
+    //       return el.setAttribute('title', txt);
+    //     }
+    // }));
 };
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
+
 
 
 
