@@ -7,7 +7,7 @@ $(function() {
   detail_side();
   
   var searchForm = $('#search-form');
-  var searchInput = $('#search-form input');
+  var searchInput = $('#search-form .inp_search');
   var searchList = $('#search-list');
   var allDelete = $('.allDelete'); 
   var txt = $('.search-inner .txt');
@@ -56,7 +56,6 @@ $(function() {
     searchList.append(item);
     newItem !== null && allDelete.removeClass('off');
   };
-
  
   tagItem.on('click', function(e){
     var txtBlank = e.currentTarget.textContent;
@@ -67,17 +66,16 @@ $(function() {
   function handleToDoSubmit(e) { //form 전송 
     e.preventDefault();
     window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);
-    window.location.href='/tag/'+looseURIEncode(document.querySelector('#tag_search').value);
-    searchInput.val('');
- 
     var newSearchObj = { id: Date.now(), text: searchInput.val() }; 
+    
+    var duplicaterItem = searCH.find(list => list.text === searchInput.val()) 
+    if(duplicaterItem){ //text 중복제거
+      alert('이미 검색한 검색어 입니다.'); 
+      return;
+    }
     searCH.push(newSearchObj);
-
-    //text 중복제거
-    var newSearch = searCH.filter( 
-      (arr, index, callback) => index === callback.findIndex(t => t.text === arr.text)
-    );
-    saveStorage(TODOS_KEY, newSearch);
+    saveStorage(TODOS_KEY, searCH);
+    searchInput.val('');
  };
 
   $(searchForm).on('submit', handleToDoSubmit);
