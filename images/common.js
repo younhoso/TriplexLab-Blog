@@ -513,7 +513,7 @@ function tistoryLighthouseCheck() {
     var declaration = Array.from(document.querySelectorAll('.area_reply .item_reply .date a'));
     var postBtn = Array.from(document.querySelectorAll('.btn_post'));
     var pageEl = Array.from(document.querySelectorAll('.area_paging a:not([href])'));
-    var iframe = Array.from(document.querySelectorAll('iframe'));
+    var iframe = Array.from(document.querySelectorAll('#tt-body-page figure[data-ke-type="video"][data-video-host] iframe'));
     
     editEntry && editEntry.setAttribute('title', '[##_title_##]');
     cancel && cancel.setAttribute('href', 'javascript:;');
@@ -526,14 +526,14 @@ function tistoryLighthouseCheck() {
     postBtn && (postBtn.map(function(_,idx){
       return postBtn[0].setAttribute('aria-label', '관리자 버튼'), postBtn[idx].setAttribute('id', `reaction${idx}`);
     }));
-  
-    // iframe && (iframe.map(function(el) {
-    //     var els = el.nextElementSibling;
-    //     if (els.nodeName === 'FIGCAPTION'){
-    //       var txt = els.innerHTML
-    //       return el.setAttribute('title', txt);
-    //     }
-    // }));
+
+    iframe && (iframe.map(function(el) {
+        var els = el.nextElementSibling;
+        if (els.nodeName === 'FIGCAPTION'){
+          var txt = els.innerHTML
+          return el.setAttribute('title', txt);
+        }
+    }));
 };
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
 
