@@ -1,3 +1,5 @@
+[![main Blog](https://github.com/younhoso/TriplexLab-Blog/actions/workflows/main.yml/badge.svg)](https://github.com/younhoso/TriplexLab-Blog/actions/workflows/main.yml)
+
 # TriplexLab-Blog
 Tistory TriplexLab Blog
 
