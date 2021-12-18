@@ -386,7 +386,7 @@ html{box-sizing:border-box}
 .box_header .btn_menu{right:24px}
 .box_header .btn_search{right:60px}
 .box_header {padding-left: 0;}
-.box_header .header_inner {justify-content: space-between;padding: 10px 0;}
+.box_header .header_inner {justify-content: space-between;padding: 9px 0;}
 .box_header .header_inner .icon{width:38px;height:38px;display:inline-block;border-radius:50%;text-align:center;line-height:38px;outline:none;cursor:pointer;}
 .box_header .logo {display: block;font-size: 20px;}
 .box_header .logo img {border-radius: 50%;}
@@ -967,6 +967,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .swiper-container-vertical>.swiper-pagination-bullets{right:60px}
   .swiper-page{text-align:center;position:absolute;bottom:6px;left:50%;z-index:1;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
   .swiper-pagination-bullet {background-color: #000; opacity: 0.2; width:6px;height:6px;border-radius:50%;display:inline-block;margin: 0 4px;}
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {height: 2px !important;}
   .swiper-pagination .swiper-pagination-bullet{width:10px;height:10px;margin-bottom:10px;}
   .swi_btn{width: 33px;height: 100%; line-height: 33px;margin: 0;position:absolute;top:auto;left:auto;bottom:0;right:0;z-index:12;outline: none;}
   .swi_btn i {color:#fff; padding: 10px; font-size: 12px; cursor:pointer;}
@@ -1109,6 +1110,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
   .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {top: unset; left: 50%;bottom:12%;right:0; -webkit-transform: translate(-50%, 10%); transform: translate(-50%, 10%);}
   .swi_btn {line-height: 40px;}
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {height: 2px !important; left: 50% !important;}
   .swiper-container-horizontal>.swiper-pagination-progressbar,.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{left: 60px;}
   .swiper-container-horizontal>.swiper-scrollbar {opacity: 0; -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;}
   .swiper_type_banner:hover.swiper-container-horizontal > .swiper-scrollbar{opacity: 1;}

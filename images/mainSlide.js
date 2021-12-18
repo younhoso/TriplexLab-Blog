@@ -1,4 +1,5 @@
-import Slide from './slide.js'; 
+import Swiper from './swiper.min.js';
+import Slide from './slide.js';
 
 (function(){
   // 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여
