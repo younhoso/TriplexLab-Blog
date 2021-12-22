@@ -184,7 +184,7 @@
             <label>공감1</label>
             <description>스크롤 맨하단으로 이동했을때</description>
             <type>STRING</type>
-            <default>도움이 되었다면 공감 부탁드립니다.</default>
+            <default>이 글이 도움이 되었다면 공감 부탁드립니다.</default>
           </variable>
           <variable>
             <name>msg_post_like2</name>

@@ -542,7 +542,7 @@ aside .tag_board{width:100%}
 .area_view .article_header .inner_header{width:100%;height:546px;background-size:cover;background-position:50% 50%;text-align:center}
 .type_article_header_common .inner_header{height:520px;}
 .notice_header_cover .inner_header, .type_article_header_cover .inner_header{height: calc(100vh * 0.48);background-position: center;background-size: cover;position: relative;}
-.notice_header_cover .inner_header::before, .type_article_header_cover .inner_header::before{content: '';width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);display: block;position: absolute;}
+.notice_header_cover .inner_header::before, .type_article_header_cover .inner_header::before{content: '';width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.4);display: block;position: absolute;}
 .area_view .article_header .info_text{max-width:700px;margin:0 auto;left:0;right:0;color:#fff;z-index:10;text-align:center}
 .type_article_header_common .info_text{position:relative;display:flex;height:100%;-ms-display:flexbox;display:-webkit-flex;flex-direction:column;justify-content:center;z-index:20}
 .article_content{max-width:940px;margin:0 auto;padding: 0 20px;box-sizing: border-box;}
