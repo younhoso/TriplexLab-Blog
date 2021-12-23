@@ -1219,15 +1219,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .direction .next{display:flex;text-align:right; padding:16px;box-sizing: border-box;grid-area:previous/previous/previous/previous;place-self:stretch;box-shadow:rgb(116 129 141 / 10%) 0 3px 8px 0;align-items:center;cursor:pointer;position: relative;-webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out;}
   #tt-body-page .direction .next .right {flex: 0 0 auto;font-weight: 600;position:absolute;left: 20px;}
 
-  /* 서식 관리 */
-  #tt-body-page .tabs_inner {background-color: #282c34;border-top-left-radius: 0.4em;border-top-right-radius: 0.4em;border-bottom: 1px solid rgba(99, 95, 104, 0.3);position: relative;}
-  #tt-body-page .tabs_inner .btn_tabs{padding-left: 20px; padding-top: 20px; padding-bottom: 20px; color: #fff;opacity: 0.5; position: relative; z-index: 1; -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;}
-  #tt-body-page .tabs_inner .btn_tabs.on {cursor: auto; opacity: 1; font-weight: 600;}
-  #tt-body-page .tabs_inner span { width: 70px; height: 27px; display: inline-block; border-radius: 2em; background-color: #565656; position: absolute; top:15px; left: 9px; z-index: 0; -webkit-transition: all 0.18s ease-in-out; transition: all 0.18s ease-in-out;}
-  #tt-body-page .tabs_inner span.HTML {width: 70px; transform: translateX(0);}
-  #tt-body-page .tabs_inner span.CSS {width: 58px; transform: translateX(70px);}
-  #tt-body-page .tabs_inner span.JAVASCRIPT {width: 130px; transform: translateX(122px);} 
-  /* //서식 관리 */
   /* code 에디터 Copy */
   #tt-body-page .code_btn {display: flex; font-family: 'Montserrat'; font-weight: 600; position: absolute; top: 10px; right: 20px; color: #e6e6e6;z-index: 1;background-color: #000;border-radius: .4em;padding: 8px;}
   #tt-body-page .code_btn:before{display:block;font-size:12px;content:attr(data-txt);color:#e6e6e6; padding-right: 10px;}
