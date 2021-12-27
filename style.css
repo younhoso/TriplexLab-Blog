@@ -358,7 +358,7 @@ html{box-sizing:border-box}
 #main{width:100%;}
 .box_header .header_mo_defult_main {display: none;}
 .box_header{position:fixed;width:100%;z-index:21; padding-left: 300px;top: 0; -webkit-transition: top 0.25s ease-in-out; transition: top 0.25s ease-in-out; -webkit-box-shadow: rgb(0 0 0 / 8%) 0px 0px 8px; box-shadow: rgb(0 0 0 / 8%) 0px 0px 8px;}
-.box_header .header_inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+.box_header .header_inner{display:flex;justify-content:right;align-items:center;padding:14px 0;}
 .box_header .header_pc_icon_inner{margin-left:20px;display:block;-webkit-tap-highlight-color: transparent;display: block;}
 .box_header button{background-color:transparent}
 .box_header .logo {display: none;}
@@ -1090,9 +1090,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .typeCard_next, .typeCard_prev {display: none;}
 
   #tt-body-index .area_category .category_cover {display: none;}
-
-  /* // buymeacoffee */
-  .bmc-btn-container {display: none;}
 }
 /* ---- MO 매인페이지 min-width:320px ED ---- */
 /* ---- PC 매인페이지 min-width:1025px ST ---- */
@@ -1180,11 +1177,6 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   
   .notice_template {right: 60px;}
   .notice_template .notice_wrap {width:400px; right: -30px;}
-  
-  /* // buymeacoffee */
-  .bmc-btn-container {width: 10%; min-width: 180px; display: block; box-shadow: 0 0.2em 0.6em rgb(0 0 0 / 16%);border-radius: 0.6em;}
-  .bmc-btn-container img {width: 100%;}
-  /* buymeacoffee // */
 }
 /* ---- PC 매인페이지 min-width:1025px ED ---- */
 @media screen and (min-width:2048px){
