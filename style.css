@@ -506,11 +506,12 @@ aside .tag_board{width:100%}
 .area_popup .area_search .btn_close{padding:0 7px;font-size: 20px;}
 .area_popup .title_logo{font-weight:900;font-size:20px;}
 }
-#footer{clear:both;padding-top:50px;padding-bottom:70px;font-size:14px;font-weight:400;}
-#footer .inner_footer{max-width:1180px;margin:0 auto;padding:0 20px;text-align:center}
+#footer{height: 50px;line-height: 50px;font-size:12px;text-align: center;font-weight:400;}
+#footer .copyright {display: inline-block;}
+#footer .inner_footer{max-width:1180px;margin:0 auto;text-align:center;display: inline-block;}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:inherit;line-height:1.27;text-decoration:none;z-index:21}
-#footer address{margin-top:20px;font-size:14px;font-style:normal;text-align:center}
-#footer .inner_footer .link_footer:first-child{margin-left:0}
+#footer address{font-style:normal;text-align:center;}
+#footer .inner_footer .link_footer:first-child{margin-left:0;color: #f60;}
 
 .area_paging{text-align:center;}
 .area_paging a{text-decoration:none;}
@@ -522,7 +523,7 @@ aside .tag_board{width:100%}
 .area_paging .selected:hover{text-decoration:none;}
 .area_paging .paging_slash{display:none;}
 @media screen and (max-width:1025px){
-#footer {padding-bottom:calc(var(--vh, 1vh) * 16);}
+#footer {height:calc(var(--vh, 1vh) * 16);font-size: 11px;}
 .area_paging .link_page span{font-size:24px;font-weight:600;}
 .area_paging .link_num{font-size:14px;font-weight:900;}
 .area_paging .link_num span{position:relative;}
@@ -533,6 +534,9 @@ aside .tag_board{width:100%}
 .area_paging .link_num:last-child span{display:inline-block;}
 .area_paging .link_ellipsis{display:none;}
 .area_paging .selected{background:0 0;}
+}
+@media screen and (max-width:320px){
+  #footer{height:calc(var(--vh,1vh) * 23);line-height:3;}
 }
 .area_article {overflow-y: auto;}
 .area_article::-webkit-scrollbar{display:block;}
@@ -965,7 +969,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
 
   .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:4px 0;}
   .swiper-container-vertical>.swiper-pagination-bullets{right:60px}
-  .swiper-page{text-align:center;position:absolute;bottom:6px;left:50%;z-index:1;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
+  .swiper-page{text-align:center;position:absolute;bottom:6px;left:50%!important;z-index:1;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
   .swiper-pagination-bullet {background-color: #000; opacity: 0.2; width:6px;height:6px;border-radius:50%;display:inline-block;margin: 0 4px;}
   .swiper-pagination-progressbar.swiper-pagination-horizontal {height: 2px !important;}
   .swiper-pagination .swiper-pagination-bullet{width:10px;height:10px;margin-bottom:10px;}
@@ -1050,7 +1054,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .skin_link {width: 85%;min-width: 250px; margin: 0 auto;overflow: hidden;position: relative;border-radius: 0.4em;box-shadow: 0 4px 12px rgb(0 0 0 / 30%);}
   .area_sidebar .skin_link .item {width: 100%;}
   .area_sidebar .skin_link .item a {display: block;}
-  .area_sidebar .skin_link .item a .bg_img{width:100%;height: calc(var(--vh, 1vh)*24);background-size:cover;background-position:center;background-repeat: no-repeat;overflow:hidden;border-radius: 0.4em;}
+  .area_sidebar .skin_link .item a .bg_img{width:100%;height: calc(var(--vh, 1vh)*26);background-size:cover;background-position:center;background-repeat: no-repeat;overflow:hidden;border-radius: 0.4em;}
   .area_sidebar .skin_link_inner .skin_Tit {text-align: center; font-size: 12px; margin-top: 16px;}
 
   .mo_footer_menu{width:100%;height:60px;line-height:60px;display:flex;position:fixed;left:0;bottom:0;z-index:21;justify-content:space-around;align-items:center;border-top: 1px solid var(--border-color); -webkit-transition:bottom 0.25s ease-in-out; transition:bottom 0.25s ease-in-out;}
@@ -1164,7 +1168,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .skin_link {display: block;}
   .area_sidebar .skin_link .item {overflow: auto;border-radius: unset;}
 
-  .area_sidebar .skin_link .item a .bg_img {height: calc(var(--vh, 1vh)*10);}
+  .area_sidebar .skin_link .item a .bg_img {height: calc(var(--vh, 1vh)*18);}
 
   .mo_footer_menu{display:none}
   .category_inner{display:none}

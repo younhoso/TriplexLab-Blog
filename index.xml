@@ -136,7 +136,7 @@
 				<description></description>
 				<type>STRING</type>
 				<option></option>
-				<default>© 2018 TISTORY. All rights reserved.</default>
+				<default>© 2019 TriplexLab. All rights reserved.</default>
 			</variable>
 			<variable>
 				<name>footerLink1Name</name>
@@ -144,7 +144,7 @@
 				<description></description>
 				<type>STRING</type>
 				<option></option>
-				<default>티스토리</default>
+				<default>TriplexLab</default>
 			</variable>
 			<variable>
 				<name>footerLink1Url</name>
@@ -152,7 +152,7 @@
 				<description></description>
 				<type>STRING</type>
 				<option></option>
-				<default>https://www.tistory.com/</default>
+				<default>/</default>
 			</variable>
 			<variable>
 				<name>footerLink2Name</name>
