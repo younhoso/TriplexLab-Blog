@@ -407,7 +407,7 @@ function docHeight() {
   };
   if (scrollTop + innerHeight >= scrollHeight && isVisible) {
     $('.share_like1').addClass('on');
-    setTimeout(function(){
+    setTimeout(function(){ 
       $('.share_like1').removeClass('on');
       isVisible = false; //문서 로드후 딱 한번만 실행 시키기 위함
     },2000);
