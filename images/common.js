@@ -147,7 +147,7 @@ $(function() {
   if(comment_js){
      /** 상세페이지 comment 기능 */
     $('.comment_js').on('click', function(){
-      $("#root").animate({ scrollTop: commInfo.top }, 500);
+      $("html, body").animate({ scrollTop: commInfo.top }, 500);
       $('#comment').focus();
       return false;
     });
@@ -168,7 +168,7 @@ $(function() {
       $('.story').hasClass("on") && ($('.line_inner i:first-child').css({'width':selfWidth, 'opacity': 1}).attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
   
       //모바일 해상도일때 경우
-      windowWidth <= 1025 && $('#root').animate({scrollTop: rect.top}, 500);
+      windowWidth <= 1025 && $('html, body').animate({scrollTop: rect.top - 10}, 400);
     });
   } 
   
@@ -372,33 +372,10 @@ $(function() {
     $('.notice_template').removeClass('on');
   });
 
-  $('#root').on('scroll', function() {
+  $('html, body').on('scroll', function() {
     !$('.notice_template').hasClass('on') ? null : $('.notice_template').removeClass('on')
   });
   /*  공지 사항 // */
-  /* post 문서 스크롤 맨 하단 감지 */
-  var isVisible = true;
-  function docHeight() {
-    var scrollTop;
-    var innerHeight;
-    var scrollHeight;
-
-    if($(this).find('article').hasClass('area_article')){
-      scrollTop = $(this).scrollTop();
-      innerHeight = $(this).innerHeight();
-      scrollHeight = $(this).prop('scrollHeight');
-    };
-
-    if (scrollTop + innerHeight >= scrollHeight && isVisible) {
-      $('.share_like1').addClass('on');
-      setTimeout(function(){
-        $('.share_like1').removeClass('on');
-        isVisible = false; //문서 로드후 딱 한번만 실행 시키기 위함
-      },2000);
-    };
-  };
-  $("#root").on('scroll', docHeight);
-  /* post 문서 스크롤 맨 하단 감지 // */
 
   /* 스크롤 방향 감지 */
   // var lastScrollY = 0;
@@ -413,9 +390,32 @@ $(function() {
   //   }
   //   lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
   // };
-  // $('#root').on('scroll', moblieScroll);
+  // $('html, body').on('scroll', moblieScroll);
   /* 스크롤 방향 감지 // */
 });
+
+// /* post 문서 스크롤 맨 하단 감지 */
+var isVisible = true;
+function docHeight() {
+  var scrollTop = 0;
+  var innerHeight = 0;
+  var scrollHeight = 0;
+  if($('body').attr('id') === 'tt-body-page'){
+    scrollTop = $(document).scrollTop();
+    innerHeight = $(window).height();
+    scrollHeight = $(document).height();
+  };
+
+  if (scrollTop + innerHeight >= scrollHeight && isVisible) {
+    $('.share_like1').addClass('on');
+    setTimeout(function(){
+      $('.share_like1').removeClass('on');
+      isVisible = false; //문서 로드후 딱 한번만 실행 시키기 위함
+    },2000);
+  };
+};
+$(window).on('scroll', docHeight);
+ // /* post 문서 스크롤 맨 하단 감지 // */
 
 function display_control() {
   // 박스 헤더
