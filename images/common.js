@@ -397,13 +397,13 @@ $(function() {
 // /* post 문서 스크롤 맨 하단 감지 */
 var isVisible = true;
 function docHeight() {
-  var scrollTop = 0;
-  var innerHeight = 0;
-  var scrollHeight = 0;
+  var scrollTop;
+  var innerHeight;
+  var scrollHeight;
   if($('body').attr('id') === 'tt-body-page'){
-    scrollTop = window.scrollY;
-    innerHeight = window.innerHeight;
-    scrollHeight = document.getElementById('tt-body-page').scrollHeight;
+    scrollTop = $(document).scrollTop();
+    innerHeight = $(window).height();
+    scrollHeight = $(document).height();
   };
   if (scrollTop + innerHeight >= scrollHeight && isVisible) {
     $('.share_like1').addClass('on');
