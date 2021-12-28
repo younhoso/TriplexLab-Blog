@@ -22,7 +22,7 @@
 @font-face { font-family:'Noto Sans KR'; font-style:normal; font-weight:900; src: local('☺'), url('images/NotoSansKR-Black.woff') format('woff'), url('images/NotoSansKR-Black.woff2') format('woff2'); font-display: swap;}
 
 /* css reset */
-body,html{position:relative;-webkit-text-size-adjust:100%;color:#333;width: 100%;height: 100%;}
+html,body{position:relative;-webkit-text-size-adjust:100%;color:#333;width: 100%;height: 100%;}
 body{margin:0;overflow:auto;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:none;}
 blockquote,body,button,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,select,td,textarea,th,ul{margin:0;padding:0;box-sizing:border-box}
 body,button,input,select,strong,table,textarea{font-family:'Montserrat','Noto Sans KR','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움','dotum',sans-serif;font-size:16px;font-weight:400;word-break:keep-all;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -376,7 +376,8 @@ html{box-sizing:border-box;}
 .white .area_cover{margin-top:0}
 .white .type_featured{margin-top:0}
 @media screen and (max-width:1025px){
- body,html {width:100%;height:100%;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling: touch;}
+html,body {width:100%;height:100%; -webkit-overflow-scrolling: touch;}
+#main {overflow-x: hidden;}
 .box_header .title_logo{margin:-24px 0 0 24px;font-size:20px;padding-top:4px}
 .box_header .header_mo_defult_main {display: block;width: 100%;}
 .box_header .header_mo_defult_main .box_tag {display: flex;}
@@ -1033,7 +1034,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .tt_category > li .category_list > li.active::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
   .tt_category > li .category_list > li .sub_category_list > li::before {content: ''; display: inline-block; width: 3px; height: 44px;position: absolute;}
   
-  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden; overflow-y: auto; position:absolute;top:20px;left:0; box-sizing: border-box;z-index:33;opacity: 0; visibility: hidden; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+  .area_sidebar {width:100%;height:calc(var(--vh, 1vh) * 100);overflow-x: hidden; overflow-y: auto; position:fixed;top:20px;left:0; box-sizing: border-box;z-index:33;opacity: 0; visibility: hidden; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
   .area_sidebar .box_tool{ padding:40px 26px; box-sizing: border-box; text-align: left;}
   .area_sidebar::-webkit-scrollbar{display:none}
   .area_sidebar.on{top:0;opacity: 1; visibility: initial;}
