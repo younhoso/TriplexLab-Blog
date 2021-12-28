@@ -837,13 +837,13 @@ aside .tag_board{width:100%}
 .area_view .article_header .title_post{width:100%;font-size:28px;line-height:38px}
 }
 .article_view{max-width:940px;margin:20px auto 0 auto;padding: 0 20px; box-sizing: border-box;}
-.article_view p{font-size:16px;line-height:1.88;margin-top: 1em;}
+.article_view p{font-size:16px;line-height:1.88;margin-top: 1em;margin-bottom: 1.8em;}
 .article_view video {border: 1px solid #e6e6e6;}
 .article_view h1,.article_view h2,.article_view h3,.article_view h4,.article_view p{color:var(--color-level-1)}
 .article_view h1{font-size:32px;line-height:1.33;padding-top: 2em;}
 .article_view h2{font-size:26px;line-height:1.38;padding-top: 1.4em;}
 .article_view h3{font-size:23px;line-height:1.4;padding-top: 1em;}
-.article_view h4{font-size:20px;line-height:1.33;padding-top: 0.4em;}
+.article_view h4{font-size:20px;line-height:1.33;padding-top: 0.8em;}
 .article_view blockquote{margin:0;padding-left:19px;border-left:1px solid;font-size:16px;line-height:1.75;color: var(--color-level-1);}
 .article_view ol,.article_view ul{margin:0;padding:0 0 0 19px}
 .article_view ul{margin-top:18px}
@@ -1162,7 +1162,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .area_sidebar .skin_link {display: block;}
   .area_sidebar .skin_link .item {overflow: auto;border-radius: unset;}
 
-  .area_sidebar .skin_link .item a .bg_img {height: calc(var(--vh, 1vh)*18);}
+  .area_sidebar .skin_link .item a .bg_img {height: calc(var(--vh, 1vh)*16);}
 
   .mo_footer_menu{display:none}
   .category_inner{display:none}
