@@ -401,11 +401,10 @@ function docHeight() {
   var innerHeight = 0;
   var scrollHeight = 0;
   if($('body').attr('id') === 'tt-body-page'){
-    scrollTop = $(document).scrollTop();
-    innerHeight = $(window).height();
-    scrollHeight = $(document).height();
+    scrollTop = window.scrollY;
+    innerHeight = window.innerHeight;
+    scrollHeight = document.getElementById('tt-body-page').scrollHeight;
   };
-
   if (scrollTop + innerHeight >= scrollHeight && isVisible) {
     $('.share_like1').addClass('on');
     setTimeout(function(){
