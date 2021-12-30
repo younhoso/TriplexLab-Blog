@@ -168,12 +168,16 @@ $(function() {
       $('.story').hasClass("on") && ($('.line_inner i:first-child').css({'width':selfWidth, 'opacity': 1}).attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
   
       //모바일 해상도일때 경우
-      windowWidth <= 1025 && $('html, body').animate({scrollTop: rect.top - 30}, 300);
+      windowWidth <= 1025 && $('html, body').animate({scrollTop: rect.top - 125}, 300);
     });
   } 
   
   $('.header_pc_icon_inner').on('click', function(e) {
-    $(e.target).hasClass('ic-search') && ( $('.area_popup').fadeIn(), $('body').css('overflow', 'hidden'), $('input.inp_search').focus() );
+    // $(e.target).hasClass('ic-search') && ( $('.box_header').addClass('on').find("input.inp_search").focus() )
+    if($(e.target).hasClass('ic-search')){
+      $('.box_header').addClass('on').find("input.inp_search").focus();
+      return false;
+    }
   });
 
   // inp_search 인풋박스
@@ -186,10 +190,7 @@ $(function() {
     $('input.inp_search').removeClass('active').val('').focus();
   });
 
-  $('.btn_close').on('click', function () {
-    $('.area_popup').fadeOut();
-    $('body').css('overflow', '');
-  });
+  $('.back_btn').on('click', function () { $('.box_header').removeClass('on') });
 
   /* notice 페이지 리로드시점 */    
   var cookiedata = document.cookie;
@@ -392,6 +393,21 @@ $(function() {
   // };
   // $('html, body').on('scroll', moblieScroll);
   /* 스크롤 방향 감지 // */
+});
+
+$('.inp_search').on("keyup", function(e) {
+  if (this.value !== '' && e.keyCode === 13) { 
+    try{window.location.href='/search/'+document.getElementsByName('search')[0].value; document.getElementsByName('search')[0].value = '';return false;}
+    catch(e){
+    }
+  }
+});
+
+$('.inp_submit').on("click", function() {
+  if (document.querySelector('.inp_search').value !== '') { 
+    try{window.location.href='/search/'+document.getElementsByName('search')[0].value; document.getElementsByName('search')[0].value = '';return false;}
+    catch(e){}
+  }
 });
 
 // /* post 문서 스크롤 맨 하단 감지 */
