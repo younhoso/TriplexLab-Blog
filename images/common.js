@@ -168,7 +168,7 @@ $(function() {
       $('.story').hasClass("on") && ($('.line_inner i:first-child').css({'width':selfWidth, 'opacity': 1}).attr('class', dataTab), $('.tab_item').eq(1).addClass('active'));
   
       //모바일 해상도일때 경우
-      windowWidth <= 1025 && $('html, body').animate({scrollTop: rect.top - 10}, 400);
+      windowWidth <= 1025 && $('html, body').animate({scrollTop: rect.top - 30}, 300);
     });
   } 
   
