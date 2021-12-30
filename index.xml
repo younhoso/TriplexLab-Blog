@@ -86,6 +86,15 @@
 				<![CDATA[ 좌측 섬네일을 포함하는 일반적인 리스트 형태입니다. ]]>
 			</description>
 		</item>
+		<item>
+			<name>rolling</name>
+			<label>
+				<![CDATA[ 롤링 ]]>
+			</label>
+			<description>
+				<![CDATA[ 롤링 슬라이드 형태입니다. ]]>
+			</description>
+		</item>
 	</cover>
 	<variables>
 		<variablegroup name="추가 설정">
