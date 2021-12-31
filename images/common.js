@@ -173,17 +173,13 @@ $(function() {
   } 
   
   $('.header_pc_icon_inner').on('click', function(e) {
-    // $(e.target).hasClass('ic-search') && ( $('.box_header').addClass('on').find("input.inp_search").focus() )
-    if($(e.target).hasClass('ic-search')){
-      $('.box_header').addClass('on').find("input.inp_search").focus();
-      return false;
-    }
+    $(e.target).hasClass('ic-search') && ( $('.box_header').addClass('on').find("input.inp_search").focus() )
   });
 
   // inp_search 인풋박스
   $('input.inp_search').keyup(function() {
     var content = $(this).val();
-    content.length <= 0 ? $(this).removeClass('active') : $(this).addClass('active')
+    content.length <= 0 ? ($(this).removeClass('active'), $('.btn_search_del').hide()) : ($(this).addClass('active'), $('.btn_search_del').show())
   });
   // 검색어(인풋박스) 삭제
   $('.btn_search_del').click(function() {
