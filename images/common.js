@@ -176,15 +176,18 @@ $(function() {
     $(e.target).hasClass('ic-search') && ( $('.box_header').addClass('on').find("input.inp_search").focus() )
   });
 
-  // inp_search 인풋박스
+  /** inp_search 인풋박스 */
   $('input.inp_search').keyup(function() {
     var content = $(this).val();
     content.length <= 0 ? ($(this).removeClass('active'), $('.btn_search_del').hide()) : ($(this).addClass('active'), $('.btn_search_del').show())
   });
-  // 검색어(인풋박스) 삭제
+  /** // inp_search 인풋박스 */
+  /** 검색어(인풋박스) 삭제 */
   $('.btn_search_del').click(function() {
     $('input.inp_search').removeClass('active').val('').focus();
+    $(this).hide();
   });
+  /** // 검색어(인풋박스) 삭제 */
 
   $('.back_btn').on('click', function () { $('.box_header').removeClass('on') });
 
@@ -258,6 +261,13 @@ $(function() {
     _self.removeClass('active');
   };
   /** // category list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+
+  /** search list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  if(parts[1] === 'search' && $('.inp_search').val().length > 0){
+    $('.btn_search_del').show();
+  }
+  /** // search list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+
   /** 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
   var categoryDetailTit = $('.info_text > span').text();
   var fruits = new Array();
@@ -393,7 +403,7 @@ $(function() {
 
 $('.inp_search').on("keyup", function(e) {
   if (this.value !== '' && e.keyCode === 13) { 
-    try{window.location.href='/search/'+document.getElementsByName('search')[0].value; document.getElementsByName('search')[0].value = '';return false;}
+    try{window.location.href='/search/'+document.getElementsByName('search')[0].value;return false;}
     catch(e){
     }
   }
@@ -401,7 +411,7 @@ $('.inp_search').on("keyup", function(e) {
 
 $('.inp_submit').on("click", function() {
   if (document.querySelector('.inp_search').value !== '') { 
-    try{window.location.href='/search/'+document.getElementsByName('search')[0].value; document.getElementsByName('search')[0].value = '';return false;}
+    try{window.location.href='/search/'+document.getElementsByName('search')[0].value;return false;}
     catch(e){}
   }
 });
