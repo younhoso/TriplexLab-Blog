@@ -238,7 +238,7 @@ $(function() {
     if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
   };
   
-  /** category list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
   var _self = $('.list_category .category_list li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
   function sidebarMenuGet(){
     _self.addClass('active').siblings('li').removeClass('active');
@@ -260,21 +260,25 @@ $(function() {
   } else {
     _self.removeClass('active');
   };
-  /** // category list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** // category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
 
-  /** search list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** search list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
   if(parts[1] === 'search' && $('.inp_search').val().length > 0){
     $('.btn_search_del').show();
   }
-  /** // search list 페이지 해당 카테로기 활성화 (최초 렌더링 시점) */
+  /** // search list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
 
-  /** 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
-  var categoryDetailTit = $('.info_text > span').text();
+  /** 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/
+  var categoryDetailTit = $('.info_text > span').text().trim();
   var fruits = new Array();
   var fruitsSub = new Array();
+  function removeCharacters(str){ /**특문자 제거(정규표현식) 함수*/
+    str = String(str);
+    return str.replace(/[\s,n]/gim, '')
+  };
   $('.list_category .category_list > li').each(function(idx, el){
     var categoryTit = $(el).find('> a').text().trim();
-    fruits.push(categoryTit)
+    fruits.push(removeCharacters(categoryTit))
     
     $(el).find('.sub_category_list > li').each(function(idx, el){
       var categorySubTit = $(el).find('> a').text().trim();
@@ -287,6 +291,7 @@ $(function() {
   
   $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
     if(el === categoryDetailTit){
+      console.log($('.list_category .category_list > li').eq(idx))
       $('.list_category .category_list > li').eq(idx).addClass('active');
     }
   });
@@ -296,7 +301,7 @@ $(function() {
       $('.list_category .category_list > li .sub_category_list > li').eq(idx).addClass('active');
     }
   });
-  /** // 상세페이지에서 category_list 해당 카테로기 활성화 (상세페이지에서 렌더링 시점)*/ 
+  /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/ 
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
   var imgText = $('figure figcaption').html();
   $('#tt-body-page').length && ($('figure img').attr('alt', imgText), $('.link_ccl').attr('rel', 'noopener'));
