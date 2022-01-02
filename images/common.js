@@ -211,7 +211,6 @@ $(function() {
   
   $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
     if(el === categoryDetailTit){
-      console.log($('.list_category .category_list > li').eq(idx))
       $('.list_category .category_list > li').eq(idx).addClass('active');
     }
   });
@@ -397,7 +396,7 @@ function callback(mutationsList) {
   if(mutationsList[0].type === 'attributes') {
     $('.detail_side .util_like .txt_count').text(txt_like);
   } else {
-    console.log(txt_like);
+    // console.log(txt_like);
   }
   mutationsList[0].target.classList.contains('like_on') ? $('.item1 i').attr('class', 'ic-like-bg') : $('.item1 i').attr('class', 'ic-like'); //새로시점에 변경 유지
 };

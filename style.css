@@ -1241,6 +1241,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page figure[data-ke-type='video']{width: 100%;padding-top: 56%;}
   #tt-body-page figure[data-ke-type='video'][data-video-host] iframe{margin:0;width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;}
   #tt-body-page figure[data-ke-type='video'] figcaption{position:absolute;bottom:0;left:50%;-webkit-transform:translate(-50%,50%);transform:translate(-50%,50%);white-space: nowrap;}
+  #tt-body-page hr[data-ke-style], #tt-body-page hr[data-ke-style] {margin: 20px 0 0 0;}
+  #tt-body-page figure figcaption {color: var(--color-level-3);}
 
   /* 다운로드 블럭 */
   figure.fileblock .filename, #tt-body-page figure.fileblock .filename {color: var(--color-level-1);}
