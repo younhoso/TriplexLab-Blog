@@ -388,7 +388,8 @@ html{box-sizing:border-box;}
   .box_header .tagbox h3 {flex-shrink: 0;width: 100px;text-align: center;}
   .box_header .tagbox ul {display: flex; overflow-x: auto;}
   .box_header .tagbox ul::-webkit-scrollbar {display: none; /* Chrome, Safari, Opera*/}
-  .box_header .tagbox ul li a{display: inline-block; line-height: 1; border:1px solid var(--border-color);border-radius: 1em; margin: 0 4px; padding: 0.4em 0.5em;box-sizing: border-box;}
+  .box_header .tagbox ul li {display: inherit;}
+  .box_header .tagbox ul li a{display: inline-block; line-height: 1; border:1px solid var(--border-color);border-radius: 1em; margin: 0 4px; padding: 0.4em 0.5em;box-sizing: border-box; white-space: nowrap; overflow: hidden;}
 
   .box_header .logo {display: block; font-size: 20px; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
   .box_header .logo img {border-radius: 50%;}
@@ -480,9 +481,10 @@ aside .tag_board{width:100%}
 }
 #footer{height: 50px;line-height: 50px;font-size:12px;text-align: center;font-weight:400;}
 #footer .copyright {display: inline-block;}
+#footer .copyright a {color: #f60;}
 #footer .inner_footer{max-width:1180px;margin:0 auto;text-align:center;display: inline-block;}
 #footer .link_footer{position:relative;margin-left:24px;padding-bottom:3px;font-weight:700;text-decoration:none;color:inherit;line-height:1.27;text-decoration:none;z-index:21}
-#footer address{font-style:normal;text-align:center;}
+#footer address{font-weight: 600;font-style:normal;text-align:center;}
 #footer .inner_footer .link_footer:first-child{margin-left:0;color: #f60;}
 
 .area_paging{text-align:center;}

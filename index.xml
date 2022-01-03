@@ -145,39 +145,15 @@
 				<description></description>
 				<type>STRING</type>
 				<option></option>
-				<default>© 2019 TriplexLab. All rights reserved.</default>
+				<default>Copyright ⓒ 2019</default>
 			</variable>
 			<variable>
-				<name>footerLink1Name</name>
+				<name>footerCopyright2</name>
 				<label>하단 링크1 이름</label>
 				<description></description>
 				<type>STRING</type>
 				<option></option>
-				<default>TriplexLab</default>
-			</variable>
-			<variable>
-				<name>footerLink1Url</name>
-				<label>하단 링크1 URL</label>
-				<description></description>
-				<type>STRING</type>
-				<option></option>
-				<default>/</default>
-			</variable>
-			<variable>
-				<name>footerLink2Name</name>
-				<label>하단 링크2 이름</label>
-				<description></description>
-				<type>STRING</type>
-				<option></option>
-				<default></default>
-			</variable>
-			<variable>
-				<name>footerLink2Url</name>
-				<label>하단 링크2 URL</label>
-				<description></description>
-				<type>STRING</type>
-				<option></option>
-				<default></default>
+				<default>All Rights Reserved.</default>
 			</variable>
 		</variablegroup>
 		<variablegroup name="메시지">        
