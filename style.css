@@ -990,7 +990,8 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .tab_item.active {display: block;}
 
   .share_temp,.share_like1{width: 90%; text-align: center; position:fixed;bottom:0;left:50%; z-index: 22;opacity: 0; visibility: hidden; -webkit-transform: translate(-50%, -30%); transform: translate(-50%, -30%); -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
-  .share_temp.on, .share_like1.on {opacity: 1; visibility:initial; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+  .share_temp.on,.share_like1.on {opacity: 1; visibility:initial; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+  .share_temp strong,.share_like1 strong{font-size: 14px;}
   .share_temp input {height: 0;text-indent: -99999px;}
   .share_temp .txt, .post_like1{padding:20px;border-radius: 0.5em;box-sizing:border-box; -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 0 0 rgb(0 0 0 / 5%);}
 
@@ -1106,8 +1107,9 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   .counter .count .txt p {font-size: 22px;}
   .counter .count .txt strong {font-size: 22px;}
 
-  .share_temp{width: 320px;}
-  .share_like1 {width: 340px;}
+  .share_temp{min-width: 320px; width: auto;}
+  .share_like1 {min-width: 340px; width: auto;}
+  .share_temp strong,.share_like1 strong{font-size: 16px;}
 
   .tt_category > li .category_list > li.active::before {top: 0;right: 0;}
   .tt_category > li .category_list > li .sub_category_list > li::before {top: 0;right: 0;}
