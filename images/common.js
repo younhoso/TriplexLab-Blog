@@ -109,8 +109,6 @@ $(function() {
   });
   /** // 검색어(인풋박스) 삭제 */
 
-  $('.back_btn').on('click', function () { $('.box_header').removeClass('on') });
-
   /* notice 페이지 리로드시점 */    
   var cookiedata = document.cookie;
   if(cookiedata.indexOf('bell=Y') < 0){
@@ -339,6 +337,9 @@ $('.inp_submit').on("click", function() {
     catch(e){}
   }
 });
+
+$('.btn_search').on("click", function(){$('.box_header').addClass('on');});
+$('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
 // /* post 문서 스크롤 맨 하단 감지 */
 var isVisible = true;
