@@ -37,7 +37,6 @@
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico"/>
   <link rel="stylesheet" href="./style.css"/>
   <script charset="UTF-8" src="./images/jQuery.min.js"></script>
-  <script charset="UTF-8" src="./images/instafeed.min.js"></script>
   <script defer charset="UTF-8" src="./images/menuIcon.js"></script>
   <script defer charset="UTF-8">
     $(function(){
@@ -260,49 +259,9 @@
                 </div>
               </s_sidebar_element>
               <s_sidebar_element>
-                <link rel="stylesheet" href="./images/swiper.min.css">
-                <script type="module">
-                  import Swiper from './images/swiper.min.js';
-                  import {_getCookie} from './images/cookie.js';
-                  (function(){
-                    /* sidebar 영역 Swiper기능 */
-                    function sidebar_slide(){
-                      const swiperOptions = {
-                        pagination: {
-                          el: ".swiper-page",
-                        },
-                      };
-                      
-                      new Swiper('.swiper_skin', swiperOptions);
-                    };
-                    /* sidebar 영역 Swiper기능 */
-                    /* sidebar 영역 인스타그램 api 연결 */
-                    function instagramAPI() {
-                      var feed = new Instafeed({
-                        accessToken: _getCookie('_noti'),
-                        target:'skin_link',
-                        limit : 3,
-                        template: '<li class="item swiper-slide">'+
-                                    '<a href="{{link}}">'+
-                                    '<div class="bg_img" style="background-image: url({{image}});"></div>'+
-                                    '</a>'+
-                                '</li>'
-                      });
-                      feed.run();
-                    };
-                    /* sidebar 영역 인스타그램 api 연결 // */
-
-                    sidebar_slide();
-                    instagramAPI();
-                  })();
-                </script>
                 <!-- TriplexLab SKIN(링크) -->
-                <div class="skin_link_inner" aria-label="TriplexLab instagram">
-                  <div class="skin_link swiper_skin">
-                    <div class="swiper-wrapper" id="skin_link"></div>
-                    <div class="swiper-page"></div>
-                  </div>
-                  <div class="skin_Tit">TriplexLab instagram</div>
+                <div class="skin_link_inner" aria-label="">
+                  
                 </div>
               </s_sidebar_element>
               <s_sidebar_element>
@@ -358,6 +317,9 @@
                                     </div>
                                   </div>
                                 </a>
+                                <s_cover_item_article_info>
+                                  <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
+                                </s_cover_item_article_info>
                               </div>
                             </s_cover_item>
                           </div>
@@ -440,6 +402,7 @@
                                 <strong class="name">[##_cover_item_title_##]</strong>
                                 <s_cover_item_article_info>
                                   <span class="date">[##_cover_item_date_##]</span>
+                                  <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
                                 </s_cover_item_article_info>
                               </a>
                             </li>
@@ -467,6 +430,9 @@
                                 <strong>[##_cover_item_title_##]</strong>
                                 <p class="text">[##_cover_item_summary_##]</p>
                               </a>
+                              <s_cover_item_article_info>
+                                <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
+                              </s_cover_item_article_info>
                             </li>
                           </s_cover_item>
                         </ul>
@@ -519,6 +485,9 @@
                                   <strong>[##_cover_item_title_##]</strong>
                                 </div>
                               </a>
+                              <s_cover_item_article_info>
+                                <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
+                              </s_cover_item_article_info>
                             </li>
                           </s_cover_item>
                         </ul>
