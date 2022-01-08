@@ -152,13 +152,13 @@ $(function() {
   : (darkModeN(), $('.light').removeClass('on'), $('.tabs_itmes li:first-child').attr('class', 'LIGHT'), mobileMenuMode.find('i').attr('class', 'ic-moon'),  mobileMenuMode.find('p').text('DARK'))
   /** // darkMode 여부 체크 (최초 렌더링 시점)*/
 
-  function sidebarMenuSet(idx){
+  /** category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
+   function sidebarMenuSet(idx){
     if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
   };
-  
-  /** category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
+
   var _self = $('.list_category .category_list li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
-  function sidebarMenuGet(){
+  function sidebarMenu(){
     _self.addClass('active').siblings('li').removeClass('active');
   };
   
@@ -166,8 +166,15 @@ $(function() {
     var idx = $('.category_list > li a').index(this);
     sidebarMenuSet(idx);
   });
+  
+  /* 메인 페이지 type_card 각각의 섹션마다 data-num 가져와 menuIdx를 변경한다. */
+  $('.thumb-category a').on('click', function(){
+    var dataNum = $(this).closest('.type_card').data('num');
+    sidebarMenuSet(dataNum);
+  });
+  /* // 메인 페이지 type_card 각각의 섹션마다 data-num 가져와 menuIdx를 변경한다. */
 
-  sessionStorage.getItem('menuIdx') && sidebarMenuGet();
+  sessionStorage.getItem('menuIdx') && sidebarMenu();
 
   var $location = $(location),
       pathname = $location.attr('pathname'),
@@ -178,22 +185,18 @@ $(function() {
   } else {
     _self.removeClass('active');
   };
-  /** // category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
 
   /** search list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
   if(parts[1] === 'search' && $('.inp_search').val().length > 0){
     $('.btn_search_del').show();
   }
-  /** // search list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
+  /** // category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
 
   /** 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/
   var categoryDetailTit = $('.info_text > span').text().trim();
   var fruits = new Array();
   var fruitsSub = new Array();
-  function removeCharacters(str){ /**특문자 제거(정규표현식) 함수*/
-    str = String(str);
-    return str.replace(/[\s,n]/gim, '')
-  };
+  
   $('.list_category .category_list > li').each(function(idx, el){
     var categoryTit = $(el).find('> a').text().trim();
     fruits.push(removeCharacters(categoryTit))
@@ -209,7 +212,9 @@ $(function() {
   
   $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
     if(el === categoryDetailTit){
-      $('.list_category .category_list > li').eq(idx).addClass('active');
+      console.log($('.list_category .category_list > li').eq(idx).html())
+      $('.list_category .category_list > li').eq(idx).addClass('active')
+      return false;
     }
   });
 
@@ -223,6 +228,7 @@ $(function() {
   var imgText = $('figure figcaption').html();
   $('#tt-body-page').length && ($('figure img').attr('alt', imgText), $('.link_ccl').attr('rel', 'noopener'));
   /** // 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
+
   /** 윈도우창 리사이즈 함수 */ 
   function setScreenSize() {
     var vw = 0;
@@ -340,6 +346,11 @@ $('.inp_submit').on("click", function() {
 
 $('.btn_search').on("click", function(){$('.box_header').addClass('on');});
 $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
+
+function removeCharacters(str){ /**특문자 제거(정규표현식) 함수*/
+  str = String(str);
+  return str.replace(/[\s,n]/gim, '')
+};
 
 // /* post 문서 스크롤 맨 하단 감지 */
 var isVisible = true;

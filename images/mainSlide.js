@@ -2,8 +2,25 @@ import Swiper from './swiper.min.js';
 import Slide from './slide.js';
 
 (function(){
-  // 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여
+  /** 메인 페이지 type_card 각각의 섹션마다 data-num 추가*/
+  var arrCategoryList = JSON.parse(sessionStorage.getItem('categoryList'));
+  arrCategoryList.forEach((el, idx) => {
+    if(el === arrCategoryList[0]){
+      console.log($('.type_card'))
+      console.log($('.type_card').eq(0))
+
+      $('.type_card').eq(0).attr('data-num', idx)
+    } else if(el === arrCategoryList[1]){
+      $('.type_card').eq(1).attr('data-num', idx)
+    } else if(el === arrCategoryList[4]){
+      $('.type_card').eq(2).attr('data-num', idx)
+    }
+  });
+  /** // 메인 페이지 type_card 각각의 섹션마다 data-num 추가*/
+
+  /* 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여 */
   const arr_card = Array.from($('.type_card'));
+
   arr_card.reduce(function(acc,cur,idx){
     $(cur).addClass('id-'+idx);
   },0);
@@ -17,9 +34,9 @@ import Slide from './slide.js';
   arr_post.reduce(function(acc,cur,idx){
     $(cur).addClass('id-'+idx);
   },0);
-  // 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여
+  /* // 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여 */
 
-// 메인 페이지 Slide 기능 Card영역
+/** 메인 페이지 Slide 기능 Card영역 */
 new Slide({
   targets: {
     startEl: '.type_card',
@@ -32,7 +49,7 @@ new Slide({
   additems: 5, //움직일 아이템 개수를 정의합니다.
 })
 
-// 메인 페이지 Slide 기능 Notice영역
+/** 메인 페이지 Slide 기능 Notice영역 */
 new Slide({
   targets: {
     startEl: '.type_notice',
@@ -45,7 +62,7 @@ new Slide({
   additems: 1, //움직일 아이템 개수를 정의합니다.
 })
 
-// 메인 페이지 Slide 기능 Post영역
+/** 메인 페이지 Slide 기능 Post영역 */
 new Slide({
   targets: {
     startEl: '.type_post',
