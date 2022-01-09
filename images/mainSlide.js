@@ -3,21 +3,22 @@ import Slide from './slide.js';
 
 (function(){
   /** 메인 페이지 type_card 각각의 섹션마다 data-num 추가*/
-  var arrCategoryList = JSON.parse(sessionStorage.getItem('categoryList'));
-  arrCategoryList.forEach((el, idx) => {
-    if(el === arrCategoryList[0]){
-      console.log($('.type_card'))
-      console.log($('.type_card').eq(0))
-
+  var arrListNew = new Array()
+  $('.list_category .category_list > li').each(function(idx, el){
+    var categoryTit = $(el).find('> a').text().trim();
+    arrListNew.push(categoryTit)
+  });
+  arrListNew.forEach((el, idx) => {
+    if(el === arrListNew[0]){
       $('.type_card').eq(0).attr('data-num', idx)
-    } else if(el === arrCategoryList[1]){
+    } else if(el === arrListNew[1]){
       $('.type_card').eq(1).attr('data-num', idx)
-    } else if(el === arrCategoryList[4]){
+    } else if(el === arrListNew[4]){
       $('.type_card').eq(2).attr('data-num', idx)
     }
   });
+  
   /** // 메인 페이지 type_card 각각의 섹션마다 data-num 추가*/
-
   /* 메인 페이지 Slide 각각의 섹션마다 고유한 id값 부여 */
   const arr_card = Array.from($('.type_card'));
 

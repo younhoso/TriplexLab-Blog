@@ -153,15 +153,9 @@ $(function() {
   /** // darkMode 여부 체크 (최초 렌더링 시점)*/
 
   /** category list 페이지 해당 카테고리 활성화 (최초 렌더링 시점) */
-   function sidebarMenuSet(idx){
+  function sidebarMenuSet(idx){
     if(typeof(Storage) !== 'undefined'){sessionStorage.setItem('menuIdx', JSON.stringify(idx))}
   };
-
-  var _self = $('.list_category .category_list li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
-  function sidebarMenu(){
-    _self.addClass('active').siblings('li').removeClass('active');
-  };
-  
   $('.category_list > li a').on('click', function(){
     var idx = $('.category_list > li a').index(this);
     sidebarMenuSet(idx);
@@ -169,10 +163,15 @@ $(function() {
   
   /* 메인 페이지 type_card 각각의 섹션마다 data-num 가져와 menuIdx를 변경한다. */
   $('.thumb-category a').on('click', function(){
-    var dataNum = $(this).closest('.type_card').data('num');
+    var dataNum = parseInt($(this).closest('.type_card').attr('data-num'));
     sidebarMenuSet(dataNum);
   });
   /* // 메인 페이지 type_card 각각의 섹션마다 data-num 가져와 menuIdx를 변경한다. */
+
+  var _self = $('.list_category .category_list li').eq(JSON.parse(sessionStorage.getItem('menuIdx')));
+  function sidebarMenu(){
+    _self.addClass('active').siblings('li').removeClass('active');
+  };
 
   sessionStorage.getItem('menuIdx') && sidebarMenu();
 
@@ -212,7 +211,6 @@ $(function() {
   
   $.each(JSON.parse(sessionStorage.getItem('categoryList')), function(idx, el){
     if(el === categoryDetailTit){
-      console.log($('.list_category .category_list > li').eq(idx).html())
       $('.list_category .category_list > li').eq(idx).addClass('active')
       return false;
     }
