@@ -221,6 +221,35 @@ $(function() {
       $('.list_category .category_list > li .sub_category_list > li').eq(idx).addClass('active');
     }
   });
+
+  /** 상세페이지에서 제목, 부제목 영역 아이디값, tab메뉴 활성화 */
+  $('.article_view h2, .article_view h3').each(function(index, item){ 
+    $(item).attr('id', removeRegexr($(item).text()));
+
+    function contentTemplate() { 
+      if($(item)[0].localName === 'h2'){
+        return`<li class="list-item"> 
+          <a href="#${removeRegexr($(item).text())}">
+            ${removeBlankSpace($(item).text())}
+          </a>
+        </li>`; 
+      } else if($(item)[0].localName === 'h3'){
+        return`<li class="list-item"> 
+          <a class="list-item-r" href="#${removeRegexr($(item).text())}">
+            ${removeBlankSpace($(item).text())}
+          </a>
+        </li>`; 
+      }
+    };
+
+    $('.gtae_contents').append(contentTemplate());
+  });
+  
+  /** 상세페이지에서 아이디로 스크롤 하기 */
+  $('.list-item a').on('click', function(){
+    $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 137}, 500);
+    return false;
+  });
   /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/ 
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
   var imgText = $('figure figcaption').html();
@@ -345,7 +374,18 @@ $('.inp_submit').on("click", function() {
 $('.btn_search').on("click", function(){$('.box_header').addClass('on');});
 $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
-function removeCharacters(str){ /**특문자 제거(정규표현식) 함수*/
+
+function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 빈 공백 제거 함수*/
+  str = String(str);
+  return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
+};
+
+function removeBlankSpace(str){ /**빈 공백 제거(정규표현식) 함수*/
+  str = String(str);
+  return str.replace(/[\s]/gim, '')
+};
+
+function removeCharacters(str){ /**특문자 제거, 빈 공백 제거(정규표현식) 함수*/
   str = String(str);
   return str.replace(/[\s,n]/gim, '')
 };
@@ -368,6 +408,12 @@ function docHeight() {
       isVisible = false; //문서 로드후 딱 한번만 실행 시키기 위함
     },2000);
   };
+
+  if($('.article_view').offset().top <= scrollTop + 137){
+    $('#tt-body-page .gtae').addClass('is-fixed')
+  } else {
+    $('#tt-body-page .gtae').removeClass('is-fixed')
+  }
 };
 $(window).on('scroll', docHeight);
  // /* post 문서 스크롤 맨 하단 감지 // */
@@ -404,7 +450,7 @@ function display_control() {
 function callback(mutationsList) {
   var txt_like = mutationsList[0].target.querySelector('.txt_like').textContent;
   if(mutationsList[0].type === 'attributes') {
-    $('.detail_side .util_like .txt_count').text(txt_like);
+    $('.util_like .txt_count').text(txt_like);
   } else {
     // console.log(txt_like);
   }
@@ -427,7 +473,7 @@ function detail_side(){
     var config = { attributes: true, childList: true, subtree: true }; // 감시자 설정
   
     // 공감 클릭 이벤트 연결
-    $('.detail_side .util_like').on('click', utilLike);
+    $('.util_like').on('click', utilLike);
     
     // 감시자 인스턴스 생성lighthouse
     var observer = new MutationObserver(callback);
@@ -436,7 +482,7 @@ function detail_side(){
     /* 공감 개수 변경 시 처리 // */
 
     setTimeout(function(){
-      $('.detail_side .util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
+      $('.util_like .txt_count').text($('.postbtn_like .uoc-icon .txt_like').text());
     },100);
   }
   /* 공감 아이콘 클릭 이벤트 처리 */

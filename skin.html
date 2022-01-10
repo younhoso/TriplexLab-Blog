@@ -554,13 +554,26 @@
                               <span class="admin"><a href="#0" onclick="[##_s_ad_d_onclick_##]">삭제</a></span>
                             </div>
                           </s_ad_div>
+                          <ul class="color unit">
+                            <li class="share_js util side_item item2" data-title="Share"><span class="common border_mode bg_them_mode"><i class="ic-share"></i></span></li>
+                            <li class="kakao_js util side_item item3" data-title="kakao"><span class="common border_mode bg_them_mode"><i class="ic-kakao"></i></span></li>
+                            <li class="comment_js util side_item item4" data-title="Comment"><span class="common border_mode bg_them_mode"><i class="ic-comment"></i></span></li>
+                            <li class="util_like util side_item item1" data-title="Like"><span class="common border_mode bg_them_mode"><i class="ic-like"></i></span><span class="txt_count">-</span></li>
+                          </ul>
                         </div>
                       </div>
                   </div>
 
-                  <!-- 에디터 영역 -->
-                  <div class="article_view area_view scrollbar-inner">
-                    [##_article_rep_desc_##]
+                  <div class="body-page">
+                    <!-- 에디터 영역 -->
+                    <div class="article_view area_view scrollbar-inner">
+                      [##_article_rep_desc_##]
+                    </div>
+                    <div class="gtae">
+                      <div class="contentsTie">Contents</div>
+                      <ul class="gtae_contents">
+                      </ul>
+                    </div>
                   </div>
 
                   <!-- article_content -->
@@ -728,12 +741,6 @@
                   <div class="like_temp">
                     <p class="txt"><strong>[##_var_msg_post_like2_##]</strong></p>
                   </div>
-                  <ul class="bg color">
-                    <li class="util_like util side_item item1" data-title="Like"><span class="common border_mode bg_them_mode"><i class="ic-like"></i></span><span class="txt_count">-</span></li>
-                    <li class="share_js util side_item item2" data-title="Share"><span class="common border_mode bg_them_mode"><i class="ic-share"></i></span></li>
-                    <li class="kakao_js util side_item item3" data-title="kakao"><span class="common border_mode bg_them_mode"><i class="ic-kakao"></i></span></li>
-                    <li class="comment_js util side_item item4" data-title="Comment"><span class="common border_mode bg_them_mode"><i class="ic-comment"></i></span></li>
-                  </ul>
                 </div> <!-- 블로그 post 영역 // -->
                 <!-- detail_side // -->
             </s_permalink_article_rep>
@@ -969,17 +976,14 @@
                             <label><input type="checkbox" name="[##_guest_input_is_secret_##]"> 비공개</label>
                             <button type="button" class="btn_register" onclick="[##_guest_onclick_submit_##]">방명록 남기기</button>
                           </div>
-
                         </div>
                       </form>
                       <!-- // reply_write -->
                     </s_guest_input_form>
                   </div>
                   <!-- // reply_content -->
-
                 </div>
                 <!-- // area_reply -->
-
               </div>
               <!-- article_content -->
             </div>
