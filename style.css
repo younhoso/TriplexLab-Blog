@@ -1289,7 +1289,7 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .side_item::after{content:'';display:block;width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid #fff;border-left:10px solid transparent;transform:rotate(45deg);position:absolute;top:-26px;left:50%;opacity:0;visibility:hidden;z-index:4;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out;}
  
   #tt-body-page .body-page {position: relative;}
-  #tt-body-page .gtae{display: block; position: absolute; top: 32px; right: 20px;}
+  #tt-body-page .gtae{position: absolute; top: 32px; right: 20px;}
   #tt-body-page .gtae.is-fixed {position: fixed; top: 170px;}
   #tt-body-page .gtae::before {content: ''; display: block; width: 1px; height: 100%; position: absolute; top: 0; left: -10px; background-color: var(--s-bg-color);}
   #tt-body-page .gtae .contentsTie {margin-left: 10px; margin-bottom: 10px; font-weight: 900;}
@@ -1302,6 +1302,10 @@ figure[data-ke-type='opengraph'] div.og-text p.og-title, #tt-body-page figure[da
   #tt-body-page .direction .previous {margin-bottom: 0;}
 }
 /* ---- PC 상세페이지 ED ---- */
-@media screen and (min-width:1921px){
-  #tt-body-page .gtae{right: 180px;}
+@media screen and (min-width:1920px){
+  #tt-body-page .gtae{display: block;}
+}
+
+@media screen and (min-width:2560px){
+  #tt-body-page .gtae {right: 180px;}
 }
