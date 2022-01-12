@@ -224,18 +224,18 @@ $(function() {
 
   /** 상세페이지에서 제목, 부제목 영역 아이디값, tab메뉴 활성화 */
   $('.article_view h2, .article_view h3').each(function(index, item){ 
-    $(item).attr('id', removeRegexr($(item).text()));
+    $(item).attr('id', changeRegexr($(item).text()));
 
-    function contentTemplate() { 
+    function contentTemplate() {
       if($(item)[0].localName === 'h2'){
         return`<li class="list-item"> 
-          <a href="#${removeRegexr($(item).text())}">
+          <a href="#${changeRegexr($(item).text())}">
             ${removeBlankSpace($(item).text())}
           </a>
         </li>`; 
       } else if($(item)[0].localName === 'h3'){
         return`<li class="list-item"> 
-          <a class="list-item-r" href="#${removeRegexr($(item).text())}">
+          <a class="list-item-r" href="#${changeRegexr($(item).text())}">
             ${removeBlankSpace($(item).text())}
           </a>
         </li>`; 
@@ -247,8 +247,8 @@ $(function() {
   
   /** 상세페이지에서 아이디로 스크롤 하기 */
   $('.list-item a').on('click', function(){
+    console.log($($.attr(this, 'href')))
     $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 137}, 500);
-    return false;
   });
   /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/ 
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
@@ -374,19 +374,23 @@ $('.inp_submit').on("click", function() {
 $('.btn_search').on("click", function(){$('.box_header').addClass('on');});
 $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
+function changeRegexr(str){ /** []() 및 빈 공백 '-'변경(정규표현식) 함수*/
+  var str = String(str);
+  return str.replace(/[\[\]\(\)\s]/gim, '-')
+};
 
-function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 빈 공백 제거 함수*/
-  str = String(str);
+function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
+  var str = String(str);
   return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
 };
 
 function removeBlankSpace(str){ /**빈 공백 제거(정규표현식) 함수*/
-  str = String(str);
+  var str = String(str);
   return str.replace(/[\s]/gim, '')
 };
 
-function removeCharacters(str){ /**특문자 제거, 빈 공백 제거(정규표현식) 함수*/
-  str = String(str);
+function removeCharacters(str){ /**알파벳 n 및 빈 공백 제거(정규표현식) 함수*/
+  var str = String(str);
   return str.replace(/[\s,n]/gim, '')
 };
 
