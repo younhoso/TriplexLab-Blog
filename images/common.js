@@ -244,13 +244,21 @@ $(function() {
 
     $('.gtae_contents').append(contentTemplate());
   });
+  /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/ 
   
-  /** 상세페이지에서 아이디로 스크롤 하기 */
+  /** 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
+  var hash = window.location.hash;
+  if (hash && document.getElementById(decodeURI(hash).slice(1))) { // #값이 있을때만 실행됨
+    var $this = $(decodeURI(hash));
+    $('html, body').animate({scrollTop: $this.offset().top - 137}, 500)
+  }
+  /** // 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
+  /** 상세페이지에서 아이디영역으로 스크롤 이동*/
   $('.list-item a').on('click', function(){
-    console.log($($.attr(this, 'href')))
     $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 137}, 500);
   });
-  /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/ 
+  /** // 상세페이지에서 아이디영역으로 스크롤 이동*/
+  
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/ 
   var imgText = $('figure figcaption').html();
   $('#tt-body-page').length && ($('figure img').attr('alt', imgText), $('.link_ccl').attr('rel', 'noopener'));
@@ -376,13 +384,13 @@ $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
 function changeRegexr(str){ /** []() 및 빈 공백 '-'변경(정규표현식) 함수*/
   var str = String(str);
-  return str.replace(/[\[\]\(\)\s]/gim, '-')
+  return str.replace(/[\[\]\(\)\.\?/\s]/gim, '-')
 };
 
-function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
-  var str = String(str);
-  return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
-};
+// function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
+//   var str = String(str);
+//   return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
+// };
 
 function removeBlankSpace(str){ /**빈 공백 제거(정규표현식) 함수*/
   var str = String(str);
