@@ -384,7 +384,7 @@ $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
 function changeRegexr(str){ /** []() 및 빈 공백 '-'변경(정규표현식) 함수*/
   var str = String(str);
-  return str.replace(/[\[\]\(\)\.\?/\s]/gim, '-')
+  return str.replace(/[\[\]\(\)\.\?\*\!/\s]/gim, '-')
 };
 
 // function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/

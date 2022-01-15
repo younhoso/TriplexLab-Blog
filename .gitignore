@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # ETC
+.DS_Store
 skinSettings.set
 sidebar.info
 images/cookie.js
