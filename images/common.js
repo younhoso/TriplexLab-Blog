@@ -382,9 +382,9 @@ $('.inp_submit').on("click", function() {
 $('.btn_search').on("click", function(){$('.box_header').addClass('on');});
 $('.back_btn').on('click', function () {$('.box_header').removeClass('on');});
 
-function changeRegexr(str){ /** []() 및 빈 공백 '-'변경(정규표현식) 함수*/
+function changeRegexr(str){ /** 특수문자 및 빈 공백을 '-'로 변경(정규표현식)하는 함수. (단 []안에있는 문자와 이모지는 제외한다.)*/
   var str = String(str);
-  return str.replace(/[\[\]\(\)\.\?\*\!/\s]/gim, '-')
+  return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅😃☕️🎯🙌🎉📌📜🙏🙋‍♂️👨‍💻🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺]/gim, '-')
 };
 
 // function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
