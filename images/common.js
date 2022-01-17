@@ -501,7 +501,6 @@ function changeRegexr(str) {
     "-"
   );
 }
-
 // function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
 //   var str = String(str);
 //   return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
