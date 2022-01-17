@@ -444,7 +444,6 @@ $(function () {
   };
 
   const addEventToEl = (elList) => {
-    let lastScroll = 0;
     document.addEventListener("scroll", function () {
       const thisTop = $(document).scrollTop() + 137;
       if ($(".gtae").hasClass("is-fixed")) {
@@ -460,7 +459,6 @@ $(function () {
           }
         }
       }
-      lastScroll = window.scrollY;
     });
   };
 
