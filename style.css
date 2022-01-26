@@ -751,6 +751,7 @@ i {
   --g-bg-color: #fff;
   --s-bg-color: #e6e6e6;
   --s-bg-color-3: #eef2f6;
+  --s-bg-color-4: #f8f9fa;
   --s-menu-tabs: #bbb;
   --color-level-1: #333;
   --color-level-2: rgb(157, 170, 182);
@@ -763,6 +764,7 @@ i {
   --g-bg-color: #16181b;
   --s-bg-color: #222529;
   --s-bg-color-3: #292929;
+  --s-bg-color-4: #222529;
   --s-menu-tabs: #383b40;
   --color-level-1: #fff;
   --color-level-2: #e6e6e6;
@@ -1700,7 +1702,7 @@ html {
     display: block;
   }
   .box_header .search_content .header_pc_icon .icon {
-    background-color: var(--s-bg-color);
+    background-color: var(--s-bg-color-4);
   }
 }
 
@@ -5327,6 +5329,8 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     color: var(--color-level-1);
   }
   /* //다운로드 블럭 */
+
+  #tt-body-page .blockquoto {background-color: var(--s-bg-color-4);}
 
   /* search 페이지 */
   #tt-body-search .txt_list_description {
