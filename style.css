@@ -5760,7 +5760,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae .list-item-r {
     margin-left: 10px;
   }
-  #tt-body-page .gtae .list-item:hover {
+  #tt-body-page .gtae .list-item:hover, #tt-body-page .gtae .list-item a.active{
     color: #f60;
   }
 
