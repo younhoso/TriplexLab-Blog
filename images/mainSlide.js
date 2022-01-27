@@ -13,7 +13,7 @@ import Slide from './slide.js';
       $('.type_card').eq(0).attr('data-num', idx)
     } else if(el === arrListNew[1]){
       $('.type_card').eq(1).attr('data-num', idx)
-    } else if(el === arrListNew[4]){
+    } else if(el === arrListNew[5]){
       $('.type_card').eq(2).attr('data-num', idx)
     }
   });
