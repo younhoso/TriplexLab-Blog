@@ -2197,7 +2197,7 @@ aside .tag_board {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   display: block;
   position: absolute;
 }
@@ -5012,7 +5012,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     visibility: initial;
   }
   .area_sidebar .box_tool {
-    padding: 60px 0 40px 26px;
+    padding: 20px 0 40px 26px;
     text-align: left;
   }
   .area_sidebar .sidebar_contents {
