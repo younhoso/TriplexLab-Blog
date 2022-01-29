@@ -4553,7 +4553,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     transition: all 0.2s ease-in-out;
   }
   .area_sidebar .box_tool {
-    padding: 40px 26px;
+    padding: 20px 26px 40px 26px;
     box-sizing: border-box;
     text-align: left;
   }
@@ -5322,6 +5322,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page figure figcaption {
     color: var(--color-level-3);
   }
+  #tt-body-page iframe {border: 1px solid var(--border-color) !important;}
 
   /* 다운로드 블럭 */
   figure.fileblock .filename,
