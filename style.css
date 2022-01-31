@@ -5322,7 +5322,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page figure figcaption {
     color: var(--color-level-3);
   }
-  #tt-body-page iframe {border: 1px solid var(--border-color) !important;}
 
   /* 다운로드 블럭 */
   figure.fileblock .filename,
