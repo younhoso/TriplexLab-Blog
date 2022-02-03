@@ -277,9 +277,9 @@ $(function () {
   const contentTemplate = () => {
     const template = ElsArr.map((item, idx) => {
       $(item).attr({
-        "id": changeRegexr($(item).text()),
+        id: changeRegexr($(item).text()),
         "data-id": `tit-${idx}`,
-        "class": 'item'
+        class: "item",
       });
       if ($(ElsArr[idx])[0].localName === "h2") {
         return `<li class="list-item"> 
@@ -306,24 +306,24 @@ $(function () {
   /** 상세페이지에서 Contents네비 해당 스크롤위치 활성화 */
   const contentsScrollIs = () => {
     const win = $(window);
-    const navItems = Array.from(document.querySelectorAll('.gtae_contents a'));
-    const items = Array.from(document.querySelectorAll('#tt-body-page .item'));
-    
+    const navItems = Array.from(document.querySelectorAll(".gtae_contents a"));
+    const items = Array.from(document.querySelectorAll("#tt-body-page .item"));
+
     items.forEach((el) => {
-      if(win.scrollTop() >= $(el).offset().top - 173){
-        $('.gtae_contents a.active').removeClass('active');
-        const id = $(el).attr('id');
+      if (win.scrollTop() >= $(el).offset().top - 173) {
+        $(".gtae_contents a.active").removeClass("active");
+        const id = $(el).attr("id");
 
         navItems.forEach((el) => {
-          ($(el).attr('href') === '#'+id) && $(el).addClass('active');
+          $(el).attr("href") === "#" + id && $(el).addClass("active");
         });
-      } else if(win.scrollTop() <= $('.body-page').offset().top - 173) {
-        $('.gtae_contents a.active').removeClass('active');
+      } else if (win.scrollTop() <= $(".body-page").offset().top - 173) {
+        $(".gtae_contents a.active").removeClass("active");
       }
-    })
+    });
   };
   contentsScrollIs();
-  document.addEventListener('scroll', contentsScrollIs);
+  document.addEventListener("scroll", contentsScrollIs);
   /** // 상세페이지에서 Contents네비 해당 스크롤위치 활성화 */
 
   /** 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
@@ -336,10 +336,13 @@ $(function () {
   /** // 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
   /** 상세페이지에서 아이디영역으로 스크롤 이동*/
   $(document).on("click", "#tt-body-page .gtae_contents a", function () {
-    $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top - 137 },500);
-    
-    $('.gtae_contents a.active').removeClass('active');
-    $(this).addClass('active');
+    $("html, body").animate(
+      { scrollTop: $($(this).attr("href")).offset().top - 137 },
+      500
+    );
+
+    $(".gtae_contents a.active").removeClass("active");
+    $(this).addClass("active");
   });
   /** // 상세페이지에서 아이디영역으로 스크롤 이동*/
 
@@ -495,7 +498,7 @@ function changeRegexr(str) {
   /** 특수문자 및 빈 공백을 '-'로 변경(정규표현식)하는 함수. (단 []안에있는 문자와 이모지는 제외한다.)*/
   var str = String(str);
   return str.replace(
-    /[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅🔒😃☕️🎯🙌🎉📌📜🙏🙋‍♂️👨‍💻🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺📖]/gim,
+    /[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅🔒😃☕️🎯🙌🎉📌📜🙏🙋‍♂️👨‍💻🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺📖🎤]/gim,
     "-"
   );
 }
@@ -593,7 +596,7 @@ function callback(mutationsList) {
     // console.log(txt_like);
   }
   mutationsList[0].target.classList.contains("like_on")
-    ? $(".item1 i").attr("class", "ic-like-bg")
+    ? (console.log("1"), $(".item1 i").attr("class", "ic-like-bg"))
     : $(".item1 i").attr("class", "ic-like"); //새로시점에 변경 유지
 }
 
