@@ -5330,7 +5330,9 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   }
   /* //다운로드 블럭 */
 
-  #tt-body-page .blockquoto {background-color: var(--s-bg-color-4);}
+  #tt-body-page .blockquoto {
+    background-color: var(--s-bg-color-4);
+  }
 
   /* search 페이지 */
   #tt-body-search .txt_list_description {
@@ -5750,6 +5752,9 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae .gtae_contents {
     margin-left: 10px;
   }
+  #tt-body-page .gtae .gtae_contents .list-item {
+    position: relative;
+  }
   #tt-body-page .gtae a {
     width: 260px;
     display: inline-block;
@@ -5760,7 +5765,19 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae .list-item-r {
     margin-left: 10px;
   }
-  #tt-body-page .gtae .list-item:hover, #tt-body-page .gtae .list-item a.active{
+  #tt-body-page .gtae .list-item-r.active::before,
+  #tt-body-page .gtae .list-item a.active::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    background-color: #f60;
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+  #tt-body-page .gtae .list-item:hover,
+  #tt-body-page .gtae .list-item a.active {
     color: #f60;
   }
 

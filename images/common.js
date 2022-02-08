@@ -596,7 +596,7 @@ function callback(mutationsList) {
     // console.log(txt_like);
   }
   mutationsList[0].target.classList.contains("like_on")
-    ? (console.log("1"), $(".item1 i").attr("class", "ic-like-bg"))
+    ? $(".item1 i").attr("class", "ic-like-bg")
     : $(".item1 i").attr("class", "ic-like"); //새로시점에 변경 유지
 }
 
