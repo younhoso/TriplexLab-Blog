@@ -271,23 +271,21 @@ $(function () {
   );
 
   /** 상세페이지에서 제목, 부제목 영역 아이디값, tab메뉴 활성화 */
-  const h2El = Array.from(document.querySelectorAll(".article_view h2"));
-  const h3El = Array.from(document.querySelectorAll(".article_view h3"));
-  const ElsArr = [...h2El, ...h3El];
+  const elEs = Array.from(document.querySelectorAll(".article_view h2, .article_view h3"));
   const contentTemplate = () => {
-    const template = ElsArr.map((item, idx) => {
+    const template = elEs.map((item, idx) => {
       $(item).attr({
         id: changeRegexr($(item).text()),
         "data-id": `tit-${idx}`,
         class: "item",
       });
-      if ($(ElsArr[idx])[0].localName === "h2") {
+      if ($(elEs[idx])[0].localName === "h2") {
         return `<li class="list-item"> 
         <a href="#${changeRegexr($(item).text())}">
           ${removeBlankSpace($(item).text())}
         </a>
       </li>`;
-      } else if ($(ElsArr[idx])[0].localName === "h3") {
+      } else if ($(elEs[idx])[0].localName === "h3") {
         return `<li class="list-item"> 
           <a class="list-item-r" href="#${changeRegexr($(item).text())}">
             ${removeBlankSpace($(item).text())}
