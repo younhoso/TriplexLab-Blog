@@ -3675,10 +3675,11 @@ aside .tag_board {
   line-height: 1.33;
   padding-top: 2em;
 }
+.article_view h2:first-child {padding-top: 1.4em;}
 .article_view h2 {
   font-size: 26px;
   line-height: 1.38;
-  padding-top: 1.4em;
+  padding-top: 1em;
 }
 .article_view h3 {
   font-size: 23px;
@@ -3755,7 +3756,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   position: relative;
   margin-top: 1em;
   border-radius: 0.6em;
-  box-shadow: 0 0.3em 0.8em rgb(0 0 0 / 30%);
+  box-shadow: 0 0.1em 0.4em rgb(0 0 0 / 30%);
 }
 .article_view pre .code_btn {
   opacity: 0;
