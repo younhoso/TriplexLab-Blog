@@ -5335,6 +5335,8 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page hr[data-ke-style],
   #tt-body-page hr[data-ke-style] {
     margin: 20px 0 0 0;
+    border-top: 1px solid var(--border-color);
+    background: none;
   }
   #tt-body-page figure figcaption {
     color: var(--color-level-3);
