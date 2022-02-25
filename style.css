@@ -5536,6 +5536,14 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae {
     display: none;
   }
+
+  #tt-body-page .moreless-content {
+    background-color: var(--s-bg-color);
+    box-sizing: border-box;
+    padding: 0px 20px 30px 20px;
+    overflow: hidden;
+    border-radius: 0.6em;
+  }
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */

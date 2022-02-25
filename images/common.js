@@ -658,6 +658,8 @@ function thumnailLoaded() {
 function tistoryLighthouseCheck() {
   var editEntry = document.querySelector("#editEntry");
   var cancel = document.querySelector(".lb-cancel");
+  var lightbox = document.querySelector("#lightbox");
+  var lightboxOverlay = document.querySelector("#lightboxOverlay");
   var declaration = Array.from(
     document.querySelectorAll(".area_reply .item_reply .date a")
   );
@@ -697,5 +699,7 @@ function tistoryLighthouseCheck() {
         return el.setAttribute("title", txt);
       }
     });
+  lightbox.remove();
+  lightboxOverlay.remove();
 }
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 // */
