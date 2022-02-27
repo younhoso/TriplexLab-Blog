@@ -760,6 +760,7 @@ i {
   --s-bg-color: #e6e6e6;
   --s-bg-color-3: #eef2f6;
   --s-bg-color-4: #f8f9fa;
+  --s-bg-color-5: #fafafa;
   --s-menu-tabs: #bbb;
   --color-level-1: #333;
   --color-level-2: rgb(157, 170, 182);
@@ -773,6 +774,7 @@ i {
   --s-bg-color: #222529;
   --s-bg-color-3: #292929;
   --s-bg-color-4: #222529;
+  --s-bg-color-5: #202020;
   --s-menu-tabs: #383b40;
   --color-level-1: #fff;
   --color-level-2: #e6e6e6;
@@ -5538,11 +5540,15 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   }
 
   #tt-body-page .moreless-content {
-    background-color: var(--s-bg-color);
+    background-color: var(--s-bg-color-5);
+    border: 1px dashed var(--border-color);
     box-sizing: border-box;
     padding: 0px 20px 30px 20px;
     overflow: hidden;
     border-radius: 0.6em;
+  }
+  #tt-body-page div[data-ke-type="moreLess"]{
+    margin-top: 1em;
   }
 }
 /* ---- MO 상세페이지 ED ---- */
