@@ -5550,6 +5550,9 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page div[data-ke-type="moreLess"]{
     margin-top: 1em;
   }
+
+  #tt-body-page figure.imageblock, figure.imageblock {width: 100%; height: 100%;}
+  #tt-body-page .imageblock span{display: block;}
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
