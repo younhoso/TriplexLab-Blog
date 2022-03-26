@@ -5,11 +5,19 @@ $(function () {
   display_control();
   thumnailLoaded();
   detail_side();
-  if(document.querySelector('#tt-body-page')){
-    getHeadingData();
-    renderToc();
-    onClickMove();
-    onScrollMove();
+
+  const pathsname = window.location.pathname;
+  const parts_all = pathsname.split('/')
+  if(parts_all[1] === 'tag' || parts_all[1] === 'category' || parts_all[1] === 'notice'){
+    $(".notice_js").on("click", notice);
+    return false
+  } else {
+    if(document.querySelector('#tt-body-page')){
+      getHeadingData();
+      renderToc();
+      onClickMove();
+      onScrollMove();
+    }
   }
 
   $(".share_js").on("click", function () {
@@ -277,10 +285,10 @@ $(function () {
   );
 
   /** 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
-  var hash = window.location.hash;
+  const hash = window.location.hash;
   if (hash && document.getElementById(decodeURI(hash).slice(1))) {
     // #값이 있을때만 실행됨
-    var $this = $(decodeURI(hash));
+    const $this = $(decodeURI(hash));
     $("html, body").animate({ scrollTop: $this.offset().top - 137 }, 500);
   }
   /** // 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
@@ -293,16 +301,16 @@ $(function () {
   /** // 상세페이지에서 아이디영역으로 스크롤 이동*/
 
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/
-  var imgText = $("figure figcaption").html();
+  const imgText = $("figure figcaption").html();
   $("#tt-body-page").length &&
     ($("figure img").attr("alt", imgText),
     $(".link_ccl").attr("rel", "noopener"));
   /** // 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/
 
-  /** 윈도우창 리사이즈 함수 */
   function setScreenSize() {
-    var vw = 0;
-    var vh = window.innerHeight * 0.01;
+    /** 윈도우창 리사이즈 함수 */
+    let vw = 0;
+    let vh = window.innerHeight * 0.01;
     windowWidth <= 1025
       ? (vw = (window.innerWidth - 40) * 0.01)
       : (vw = ($(".area_sidebar").width() - 40) * 0.01);
@@ -377,22 +385,13 @@ $(function () {
   });
   /* // code Copy */
   /* 공지 사항 */
-  $(".notice_js").on("click", function () {
-    _setCookie("bell", "Y", 5);
-    $(this).removeClass("on");
-    $(".notice_template").addClass("on");
-    var frag = document.getElementsByTagName("template")[0];
-    var copy = frag.content.cloneNode(true);
-    $(".notice_template .contents").html(copy);
-  });
+  $(".notice_js").on("click", notice);
   $(".closeIcon").on("click", function () {
     $(".notice_template").removeClass("on");
   });
 
   $("html, body").on("scroll", function () {
-    !$(".notice_template").hasClass("on")
-      ? null
-      : $(".notice_template").removeClass("on");
+    !$(".notice_template").hasClass("on") ? null : $(".notice_template").removeClass("on");
   });
   /*  공지 사항 // */
 
@@ -602,7 +601,13 @@ function thumnailLoaded() {
 }
 /** 모든 리스트에 섬네일들 Lazy-Loading 만들기 // */
 
-
+function notice(e){
+  $(e.currentTarget).removeClass("on");
+  $(".notice_template").addClass("on");
+  var frag = document.getElementsByTagName("template")[0];
+  var copy = frag.content.cloneNode(true);
+  $(".notice_template .contents").html(copy);
+};
 
 /** 상세페이지에서 Contents네비 해당 스크롤 기능 */
 const entryWrapName = 'body-page'; // 본문글 전체 내용
