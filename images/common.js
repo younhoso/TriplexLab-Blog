@@ -5,6 +5,12 @@ $(function () {
   display_control();
   thumnailLoaded();
   detail_side();
+  if(document.querySelector('#tt-body-page')){
+    getHeadingData();
+    renderToc();
+    onClickMove();
+    onScrollMove();
+  }
 
   $(".share_js").on("click", function () {
     $(".share_temp").addClass("on");
@@ -270,60 +276,6 @@ $(function () {
     }
   );
 
-  /** 상세페이지에서 제목, 부제목 영역 아이디값, tab메뉴 활성화 */
-  const elEs = Array.from(document.querySelectorAll(".article_view h2, .article_view h3"));
-  const contentTemplate = () => {
-    const template = elEs.map((item, idx) => {
-      $(item).attr({
-        id: changeRegexr($(item).text()),
-        "data-id": `tit-${idx}`,
-        class: "item",
-      });
-      if ($(elEs[idx])[0].localName === "h2") {
-        return `<li class="list-item"> 
-        <a href="#${changeRegexr($(item).text())}">
-          ${removeBlankSpace($(item).text())}
-        </a>
-      </li>`;
-      } else if ($(elEs[idx])[0].localName === "h3") {
-        return `<li class="list-item"> 
-          <a class="list-item-r" href="#${changeRegexr($(item).text())}">
-            ${removeBlankSpace($(item).text())}
-          </a>
-        </li>`;
-      }
-    }).join("");
-    if (document.getElementById("tt-body-page")) {
-      document.querySelector("#tt-body-page .gtae_contents").innerHTML =
-        template;
-    }
-  };
-  contentTemplate();
-  /** // 상세페이지에서 category_list 해당 카테고리 활성화 (상세페이지에서 렌더링 시점)*/
-
-  /** 상세페이지에서 Contents네비 해당 스크롤위치 활성화 */
-  const contentsScrollIs = () => {
-    const win = $(window);
-    const navItems = Array.from(document.querySelectorAll(".gtae_contents a"));
-    const items = Array.from(document.querySelectorAll("#tt-body-page .item"));
-
-    items.forEach((el) => {
-      if (win.scrollTop() >= $(el).offset().top - 173) {
-        $(".gtae_contents a.active").removeClass("active");
-        const id = $(el).attr("id");
-
-        navItems.forEach((el) => {
-          $(el).attr("href") === "#" + id && $(el).addClass("active");
-        });
-      } else if (win.scrollTop() <= $(".body-page").offset().top - 173) {
-        $(".gtae_contents a.active").removeClass("active");
-      }
-    });
-  };
-  contentsScrollIs();
-  document.addEventListener("scroll", contentsScrollIs);
-  /** // 상세페이지에서 Contents네비 해당 스크롤위치 활성화 */
-
   /** 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
   var hash = window.location.hash;
   if (hash && document.getElementById(decodeURI(hash).slice(1))) {
@@ -333,14 +285,10 @@ $(function () {
   }
   /** // 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
   /** 상세페이지에서 아이디영역으로 스크롤 이동*/
-  $(document).on("click", "#tt-body-page .gtae_contents a", function () {
-    $("html, body").animate(
-      { scrollTop: $($(this).attr("href")).offset().top - 137 },
-      500
-    );
-
+  $(document).on("click", "#tt-body-page .gtae_contents > li", function (e) {
+    $("html, body").animate({ scrollTop: $($(e.target).attr("href")).offset().top - 137 },300);
     $(".gtae_contents a.active").removeClass("active");
-    $(this).addClass("active");
+    $(e.target).addClass("active");
   });
   /** // 상세페이지에서 아이디영역으로 스크롤 이동*/
 
@@ -653,6 +601,134 @@ function thumnailLoaded() {
   });
 }
 /** 모든 리스트에 섬네일들 Lazy-Loading 만들기 // */
+
+
+
+/** 상세페이지에서 Contents네비 해당 스크롤 기능 */
+const entryWrapName = 'body-page'; // 본문글 전체 내용
+const entryName = 'contents_style'; // 본문글 내용
+const navName = 'gtae_contents'; // 네비게이션 Wrap 이름 지정
+const headerName = 'box_header'; // 상단 헤더 클래스 이름
+const gap = 40; // toc 상단 위치값
+
+const TOC_CONST = { //스크롤 초기값
+  navItem: [],
+  offsetTops: [],
+  mainWrap: document.querySelector('.' + entryWrapName),
+  contentWrap: document.querySelector('.' + entryName),
+  navWrap: document.querySelector('.' + navName),
+  headings: [],
+  newHeadings: [],
+  navItemArr: [],
+  headerHeight: headerName != '' ? document.querySelector('.' + headerName).offsetHeight : 0,
+  scriptScroll: false,
+};
+
+function getHeadingData() {
+  const contentWrap = TOC_CONST.contentWrap;
+  let offsetTops = TOC_CONST.offsetTops;
+  let newHeadings = TOC_CONST.newHeadings;
+
+  const headings = contentWrap ? contentWrap.querySelectorAll('h1, h2, h3, h4') : [];
+  TOC_CONST.headings = headings;
+
+  Array.prototype.forEach.call(headings, function (item, index, headings) {
+    item.id = 'toc-link-' + index;
+    if (item.innerText.trim() == '') {
+      return;
+    }
+
+    offsetTops.push(parseInt(item.offsetTop + TOC_CONST.mainWrap.offsetTop - TOC_CONST.headerHeight - gap));
+    newHeadings.push({
+      name: item.localName,
+      index: parseInt(item.localName.substr(1)),
+      text: item.innerText,
+      id: item.id,
+      top: item.offsetTop + TOC_CONST.headerHeight + TOC_CONST.mainWrap.offsetTop,
+    });
+  });
+};
+/** 상세페이지에서 Contents네비 해당 스크롤 기능 */
+
+ function renderToc() {
+   /** 상세페이지 네비게이션 리스트 html 만들고 렌더링 */
+  const headings = Array.from(TOC_CONST.headings);
+  const temp_html = headings.map((item, idx) => {
+    return`<li class="list-item" target-idx=${idx}> 
+      <a href="#${item.id}">
+        ${item.innerText}
+      </a>
+    </li>`}).join("");
+
+  if (document.getElementById("tt-body-page")) {
+    document.querySelector("#tt-body-page .gtae_contents").innerHTML = temp_html;
+  }
+};
+
+function changeCurrent(targetIndex) {
+  const navItemArr = TOC_CONST.navItemArr;
+  navItemArr.forEach(function (item, index) {
+    if (index !== targetIndex) {
+      item.classList.remove('on');
+    } else {
+      item.classList.add('on');
+    }
+  });
+};
+
+function onClickMove() {
+  /* 클릭 시 스크롤 이동 */
+  const navWrap = TOC_CONST.navWrap;
+  const navItem = navWrap && navWrap.querySelectorAll('a');
+  const navItemArr = TOC_CONST.navItemArr;
+  Array.prototype.forEach.call(navItem, function (item) {
+    navItemArr.push(item);
+  });
+
+  navWrap.addEventListener('click', function (e) {
+    const targetElem = e.target.closest('li');
+    const offsetTops = TOC_CONST.offsetTops;
+    e.preventDefault();
+    if (targetElem.tagName != 'li') {
+      return;
+    }
+    const targetIdx = parseInt(targetElem.getAttribute('target-idx'));
+    TOC_CONST.scriptScroll = true;
+    changeCurrent(targetIdx);
+    $('html, body').animate({ scrollTop: offsetTops[targetIdx] }, 300, function () {
+      TOC_CONST.scriptScroll = false;
+    });
+  });
+};
+
+function onScrollMove() {
+  /* 스크롤 이벤트 */
+  const tocOnScroll = function (e) {
+    const scrollTop = e.target.scrollingElement && e.target.scrollingElement.scrollTop;
+    if (TOC_CONST.scriptScroll == true) {
+      return;
+    } else {
+      let targetIndex = 0;
+      const offsetTops = TOC_CONST.offsetTops;
+      offsetTops.forEach(function (item, idx) {
+        if (scrollTop >= item) {
+          targetIndex = idx;
+        }
+      });
+      changeCurrent(targetIndex);
+    }
+  };
+
+  let timer;
+  $(window).on('scroll', function (e) {
+    if (!timer) {
+      timer = setTimeout(function () {
+        timer = null;
+        tocOnScroll(e);
+      }, 400);
+    }
+  });
+};
 
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
 function tistoryLighthouseCheck() {

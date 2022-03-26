@@ -1440,13 +1440,22 @@ i {
   background-color: #f60;
   opacity: 1;
 }
-.theme_orange .gtae .list-item-r.active::before,
-.theme_orange .gtae .list-item a.active::before {
+.theme_orange .gtae .list-item a.on::before {
   background-color: #f60;
 }
 .theme_orange .gtae .list-item:hover,
-.theme_orange .gtae .list-item a.active {
+.theme_orange .gtae .list-item a.on {
   color: #f60;
+}
+.theme_orange .gtae .list-item a.on::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background-color: #f60;
 }
 @media screen and (max-width: 1025px) {
   .theme_pink .thema_apply .selected {
@@ -5788,9 +5797,8 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae .gtae_contents {
     margin-left: 10px;
   }
-  #tt-body-page .gtae .gtae_contents .list-item {
-    position: relative;
-  }
+  #tt-body-page .gtae .list-item {position: relative;}
+ 
   #tt-body-page .gtae a {
     width: 260px;
     display: inline-block;
