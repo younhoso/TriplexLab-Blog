@@ -6,19 +6,23 @@ $(function () {
   thumnailLoaded();
   detail_side();
 
-  const pathsname = window.location.pathname;
-  const parts_all = pathsname.split('/')
-  if(parts_all[1] === 'tag' || parts_all[1] === 'category' || parts_all[1] === 'notice'){
-    $(".notice_js").on("click", notice);
-    return false
-  } else {
-    if(document.querySelector('#tt-body-page')){
-      getHeadingData();
-      renderToc();
-      onClickMove();
-      onScrollMove();
-    }
-  }
+  getHeadingData();
+  renderToc();
+  onClickMove();
+  onScrollMove();
+  // const pathsname = window.location.pathname;
+  // const parts_all = pathsname.split('/')
+  // if(parts_all[1] === 'tag' || parts_all[1] === 'category' || parts_all[1] === 'notice'){
+  //   $(".notice_js").on("click", notice);
+  //   return false
+  // } else {
+  //   if(document.querySelector('#tt-body-page')){
+  //     getHeadingData();
+  //     renderToc();
+  //     onClickMove();
+  //     onScrollMove();
+  //   }
+  // }
 
   $(".share_js").on("click", function () {
     $(".share_temp").addClass("on");
@@ -643,14 +647,16 @@ function getHeadingData() {
       return;
     }
 
-    offsetTops.push(parseInt(item.offsetTop + TOC_CONST.mainWrap.offsetTop - TOC_CONST.headerHeight - gap));
-    newHeadings.push({
-      name: item.localName,
-      index: parseInt(item.localName.substr(1)),
-      text: item.innerText,
-      id: item.id,
-      top: item.offsetTop + TOC_CONST.headerHeight + TOC_CONST.mainWrap.offsetTop,
-    });
+    if(TOC_CONST.mainWrap){
+      offsetTops.push(parseInt(item.offsetTop + TOC_CONST.mainWrap.offsetTop - TOC_CONST.headerHeight - gap));
+      newHeadings.push({
+        name: item.localName,
+        index: parseInt(item.localName.substr(1)),
+        text: item.innerText,
+        id: item.id,
+        top: item.offsetTop + TOC_CONST.headerHeight + TOC_CONST.mainWrap.offsetTop,
+      });
+    }
   });
 };
 /** 상세페이지에서 Contents네비 해당 스크롤 기능 */
@@ -665,7 +671,7 @@ function getHeadingData() {
       </a>
     </li>`}).join("");
 
-  if (document.getElementById("tt-body-page")) {
+  if (document.querySelector("#tt-body-page .gtae_contents")) {
     document.querySelector("#tt-body-page .gtae_contents").innerHTML = temp_html;
   }
 };
@@ -684,11 +690,15 @@ function changeCurrent(targetIndex) {
 function onClickMove() {
   /* 클릭 시 스크롤 이동 */
   const navWrap = TOC_CONST.navWrap;
-  const navItem = navWrap && navWrap.querySelectorAll('a');
-  const navItemArr = TOC_CONST.navItemArr;
-  Array.prototype.forEach.call(navItem, function (item) {
-    navItemArr.push(item);
-  });
+  if(navWrap === null){
+    return false
+  } else {
+    const navItem = navWrap.querySelectorAll('a')
+    const navItemArr = TOC_CONST.navItemArr;
+    Array.prototype.forEach.call(navItem, function (item) {
+      navItemArr.push(item);
+    });
+  }
 
   navWrap.addEventListener('click', function (e) {
     const targetElem = e.target.closest('li');
