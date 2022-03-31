@@ -1445,10 +1445,10 @@ i {
 }
 .theme_orange .gtae .list-item:hover,
 .theme_orange .gtae .list-item a.on {
-  color: #f60;
+  color: #f60 !important;
 }
 .theme_orange .gtae .list-item a.on::before {
-  content: '';
+  content: "";
   display: block;
   width: 2px;
   height: 100%;
@@ -3686,7 +3686,9 @@ aside .tag_board {
   line-height: 1.33;
   padding-top: 2em;
 }
-.article_view h2:first-child {padding-top: 1.4em;}
+.article_view h2:first-child {
+  padding-top: 1.4em;
+}
 .article_view h2 {
   font-size: 26px;
   line-height: 1.38;
@@ -5102,6 +5104,10 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   .notice_template .notice_wrap {
     width: 400px;
   }
+
+  .area_sidebar .link_tool {
+    color: var(--color-level-1);
+  }
 }
 /* ---- PC 매인페이지 min-width:1025px ED ---- */
 @media screen and (min-width: 2048px) {
@@ -5556,12 +5562,18 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     overflow: hidden;
     border-radius: 0.6em;
   }
-  #tt-body-page div[data-ke-type="moreLess"]{
+  #tt-body-page div[data-ke-type="moreLess"] {
     margin-top: 1em;
   }
 
-  #tt-body-page figure.imageblock, figure.imageblock {width: 100%; height: 100%;}
-  #tt-body-page .imageblock span{display: block;}
+  #tt-body-page figure.imageblock,
+  figure.imageblock {
+    width: 100%;
+    height: 100%;
+  }
+  #tt-body-page .imageblock span {
+    display: block;
+  }
 }
 /* ---- MO 상세페이지 ED ---- */
 /* ---- PC 상세페이지 ST ---- */
@@ -5797,14 +5809,17 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae .gtae_contents {
     margin-left: 10px;
   }
-  #tt-body-page .gtae .list-item {position: relative;}
- 
+  #tt-body-page .gtae .list-item {
+    position: relative;
+  }
+
   #tt-body-page .gtae a {
     width: 260px;
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: var(--color-level-1);
   }
   #tt-body-page .gtae .list-item-r {
     margin-left: 10px;
