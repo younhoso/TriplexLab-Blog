@@ -1,5 +1,7 @@
 import { _setCookie } from "./cookie.js";
 
+const _tr = (select) => document.querySelector(select)
+
 $(function () {
   tistoryLighthouseCheck();
   display_control();
@@ -10,19 +12,19 @@ $(function () {
   renderToc();
   onClickMove();
   onScrollMove();
-
-  $(".share_js").on("click", function () {
-    $(".share_temp").addClass("on");
+  
+  _tr(".share_js").addEventListener("click", () => {
+    _tr(".share_temp").classList.add("on");
     setTimeout(function () {
-      $(".share_temp").removeClass("on");
+      _tr(".share_temp").classList.remove("on");
     }, 2000);
-    var input = $(".clipboard");
+    const input = _tr(".clipboard");
 
-    input.val(window.location.href);
-    input.select();
+    input.value = window.location.href;
+    input.selected;
 
     /* 텍스트 필드 안의 텍스트 복사 */
-    navigator.clipboard.writeText(input.val());
+    navigator.clipboard.writeText(input.value);
   });
 
   /** 상세페이지 Kakao공유 기능 */
