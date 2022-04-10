@@ -13,7 +13,7 @@ $(function () {
   onClickMove();
   onScrollMove();
   
-  _tr(".share_js").addEventListener("click", () => {
+  _tr(".mo_footer_menu .share_js").addEventListener("click", () => {
     _tr(".share_temp").classList.add("on");
     setTimeout(function () {
       _tr(".share_temp").classList.remove("on");
