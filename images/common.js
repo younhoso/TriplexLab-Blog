@@ -13,7 +13,9 @@ $(function () {
   onClickMove();
   onScrollMove();
   
-  _tr(".mo_footer_menu .share_js").addEventListener("click", () => {
+  
+  const share = window.innerWidth >= 1024 ? _tr(".share_js") : _tr(".mo_footer_menu .share_js")
+  share.addEventListener("click", () => {
     _tr(".share_temp").classList.add("on");
     setTimeout(function () {
       _tr(".share_temp").classList.remove("on");
@@ -437,24 +439,24 @@ $(".back_btn").on("click", function () {
   $(".box_header").removeClass("on");
 });
 
-function changeRegexr(str) {
-  /** 특수문자 및 빈 공백을 '-'로 변경(정규표현식)하는 함수. (단 []안에있는 문자와 이모지는 제외한다.)*/
-  var str = String(str);
-  return str.replace(
-    /[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅🔒😃☕️🎯🙌🎉📌📜🙏🙋‍♂️🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺📖🎤🧑🏽‍💻🧑🏻‍💻👨‍💻📔⚡️⛈🌩]/gim,
-    "-"
-  );
-}
+// function changeRegexr(str) {
+//   /** 특수문자 및 빈 공백을 '-'로 변경(정규표현식)하는 함수. (단 []안에있는 문자와 이모지는 제외한다.)*/
+//   var str = String(str);
+//   return str.replace(
+//     /[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅🔒😃☕️🎯🙌🎉📌📜🙏🙋‍♂️🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺📖🎤🧑🏽‍💻🧑🏻‍💻👨‍💻📔⚡️⛈🌩]/gim,
+//     "-"
+//   );
+// }
 // function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
 //   var str = String(str);
 //   return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
 // };
 
-function removeBlankSpace(str) {
-  /**빈 공백 제거(정규표현식) 함수*/
-  var str = String(str);
-  return str.replace(/[\s]/gim, "");
-}
+// function removeBlankSpace(str) {
+//   /**빈 공백 제거(정규표현식) 함수*/
+//   var str = String(str);
+//   return str.replace(/[\s]/gim, "");
+// }
 
 function removeCharacters(str) {
   /**알파벳 n 및 빈 공백 제거(정규표현식) 함수*/
