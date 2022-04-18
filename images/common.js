@@ -30,7 +30,7 @@ $(function () {
   });
 
   /** 상세페이지 Kakao공유 기능 */
-  var detailInfoObj = {
+  const detailInfoObj = {
     tit: $(".area_article").attr("aria-label"),
     link: $(".area_article").data("link"),
     image: $(".inner_header").data("image"),
@@ -38,11 +38,11 @@ $(function () {
     count: $(".list_reply .item_reply").map((_, el) => el),
   };
 
-  var kakao_js = document.querySelector(".kakao_js");
+  const commInfo = _tr('.area_reply')?.getBoundingClientRect();  
+  const kakao_js = document.querySelector(".kakao_js");
   if (kakao_js) {
-    var commInfo = comment.getBoundingClientRect();
-    var { tit, link, image, tag, count } = detailInfoObj;
-    var tags =
+    const { tit, link, image, tag, count } = detailInfoObj;
+    const tags =
       [...tag].reduce((acc, cur) => acc + ("#" + cur), "") ||
       "#" + $(".tit_logo").html();
     /* Kakao.Link */
@@ -74,26 +74,26 @@ $(function () {
     /** 상세페이지 Kakao공유 기능 // */
   }
 
-  var comment_js = document.querySelector(".comment_js");
+  const comment_js = document.querySelector(".comment_js");
   if (comment_js) {
     /** 상세페이지 comment 기능 */
     $(".comment_js").on("click", function () {
       $("html, body").animate({ scrollTop: commInfo.top }, 500);
-      $("#comment").focus();
+      // $("#comment").focus();
       return false;
     });
     /** 상세페이지 comment 기능 // */
   }
 
-  var windowWidth = $(window).width();
-  var tabBtnWidth = $(".tab_btn:first-child").width();
+  const windowWidth = $(window).width();
+  const tabBtnWidth = $(".tab_btn:first-child").width();
   $(".line_inner i:first-child").css({ width: tabBtnWidth, opacity: 1 });
   if (document.getElementById("tt-body-index")) {
-    var rect = document.querySelector(".tbas_inner").getBoundingClientRect();
+    const rect = document.querySelector(".tbas_inner").getBoundingClientRect();
     $(".tab_btn").on("click", function () {
-      var selfWidth = $(this).width();
+      const selfWidth = $(this).width();
       $(".tab_item").siblings().removeClass("active");
-      var dataTab = $(this).data("tabs");
+      const dataTab = $(this).data("tabs");
       $(this).addClass("on").siblings().removeClass("on");
       $(".visitant").hasClass("on") &&
         ($(".line_inner i:first-child")
@@ -119,7 +119,7 @@ $(function () {
 
   /** inp_search 인풋박스 */
   $("input.inp_search").keyup(function () {
-    var content = $(this).val();
+    const content = $(this).val();
     content.length <= 0
       ? ($(this).removeClass("active"), $(".btn_search_del").hide())
       : ($(this).addClass("active"), $(".btn_search_del").show());
