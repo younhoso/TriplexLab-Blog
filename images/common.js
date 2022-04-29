@@ -1,6 +1,6 @@
 import { _setCookie } from "./cookie.js";
 
-const _tr = (select) => document.querySelector(select)
+const _tr = (select) => document.querySelector(select);
 
 $(function () {
   tistoryLighthouseCheck();
@@ -10,11 +10,13 @@ $(function () {
 
   getHeadingData();
   renderToc();
-  onClickMove();
   onScrollMove();
-  
-  
-  const share = window.innerWidth >= 1024 ? _tr(".share_js") : _tr(".mo_footer_menu .share_js")
+  _tr("#tt-body-page .body-page") && onReloadMove();
+
+  const share =
+    window.innerWidth >= 1024
+      ? _tr(".share_js")
+      : _tr(".mo_footer_menu .share_js");
   share.addEventListener("click", () => {
     _tr(".share_temp").classList.add("on");
     setTimeout(function () {
@@ -38,7 +40,7 @@ $(function () {
     count: $(".list_reply .item_reply").map((_, el) => el),
   };
 
-  const commInfo = _tr('.area_reply')?.getBoundingClientRect();  
+  const commInfo = _tr(".area_reply")?.getBoundingClientRect();
   const kakao_js = document.querySelector(".kakao_js");
   if (kakao_js) {
     const { tit, link, image, tag, count } = detailInfoObj;
@@ -383,7 +385,7 @@ $(function () {
   });
   /* // code Copy */
   /* 공지 사항 */
-  $(".notice_js").on("click", notice);
+  _tr(".notice_js").addEventListener("click", notice);
   $(".closeIcon").on("click", function () {
     $(".notice_template").removeClass("on");
   });
@@ -601,13 +603,16 @@ function thumnailLoaded() {
 }
 /** 모든 리스트에 섬네일들 Lazy-Loading 만들기 // */
 
+/** 공지 사항 */
 function notice(e) {
-  $(e.currentTarget).removeClass("on");
-  $(".notice_template").addClass("on");
-  var frag = document.getElementsByTagName("template")[0];
-  var copy = frag.content.cloneNode(true);
-  $(".notice_template .contents").html(copy);
+  const temp = _tr("template").content;
+  e.currentTarget.classList.remove("on");
+  _tr(".notice_template").classList.add("on");
+  const clone = document.importNode(temp, true);
+  const copy = clone.querySelector(".tag_board");
+  _tr(".notice_template .contents").appendChild(copy);
 }
+/** // 공지 사항 */
 
 /** 상세페이지에서 Contents네비 해당 스크롤 기능 */
 const entryWrapName = "body-page"; // 본문글 전체 내용
@@ -644,7 +649,7 @@ function getHeadingData() {
 
   headings.forEach(function (item, index) {
     item.id = "toc-link-" + index;
-    if (item.innerText.trim() == "") {
+    if (item.innerText.trim() === "") {
       return;
     }
 
@@ -659,7 +664,7 @@ function getHeadingData() {
       );
       newHeadings.push({
         name: item.localName,
-        index: parseInt(item.localName.substr(1)),
+        index: parseInt(item.localName.substring(1)),
         text: item.innerText,
         id: item.id,
         top:
@@ -702,18 +707,15 @@ function changeCurrent(targetIndex) {
   });
 }
 
-function onClickMove() {
+function onReloadMove() {
   /* 클릭 시 스크롤 이동 */
   const navWrap = TOC_CONST.navWrap;
-  if (navWrap === null) {
-    return false;
-  } else {
-    const navItem = Array.from(navWrap.querySelectorAll("a"));
-    const navItemArr = TOC_CONST.navItemArr;
-    navItem.forEach((item) => {
-      navItemArr.push(item);
-    });
-  }
+  !navWrap.children.length && (_tr(".contentsTie").style.display = "none");
+  const navItem = Array.from(navWrap.querySelectorAll("a"));
+  const { navItemArr } = TOC_CONST;
+  navItem.forEach((item) => {
+    navItemArr.push(item);
+  });
 }
 
 function onScrollMove() {
