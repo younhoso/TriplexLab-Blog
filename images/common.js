@@ -680,6 +680,7 @@ function getHeadingData() {
 function renderToc() {
   /** 상세페이지 네비게이션 리스트 html 만들고 렌더링 */
   const headings = Array.from(TOC_CONST.headings);
+  console.log(headings);
   const temp_html = headings
     .map((item, idx) => {
       return `<li class="list-item" target-idx=${idx}> 
