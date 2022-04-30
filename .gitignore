@@ -107,4 +107,4 @@ dist
 .DS_Store
 skinSettings.set
 sidebar.info
-images/cookie.js
+cookie.js

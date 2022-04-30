@@ -90,8 +90,8 @@ $(function () {
   const windowWidth = $(window).width();
   const tabBtnWidth = $(".tab_btn:first-child").width();
   $(".line_inner i:first-child").css({ width: tabBtnWidth, opacity: 1 });
-  if (document.getElementById("tt-body-index")) {
-    const rect = document.querySelector(".tbas_inner").getBoundingClientRect();
+  if (_tr("#tt-body-index .tbas_inner")) {
+    const rect = _tr(".tbas_inner").getBoundingClientRect();
     $(".tab_btn").on("click", function () {
       const selfWidth = $(this).width();
       $(".tab_item").siblings().removeClass("active");
@@ -750,23 +750,25 @@ function onScrollMove() {
 
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
 function tistoryLighthouseCheck() {
-  var editEntry = document.querySelector("#editEntry");
-  var cancel = document.querySelector(".lb-cancel");
-  var lightbox = document.querySelector("#lightbox");
-  var lightboxOverlay = document.querySelector("#lightboxOverlay");
-  var declaration = Array.from(
+  const detail_category = _tr(".another_category");
+  const editEntry = document.querySelector("#editEntry");
+  const cancel = document.querySelector(".lb-cancel");
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxOverlay = document.querySelector("#lightboxOverlay");
+  const declaration = Array.from(
     document.querySelectorAll(".area_reply .item_reply .date a")
   );
-  var postBtn = Array.from(document.querySelectorAll(".btn_post"));
-  var pageEl = Array.from(
+  const postBtn = Array.from(document.querySelectorAll(".btn_post"));
+  const pageEl = Array.from(
     document.querySelectorAll(".area_paging a:not([href])")
   );
-  var iframe = Array.from(
+  const iframe = Array.from(
     document.querySelectorAll(
       '#tt-body-page figure[data-ke-type="video"][data-video-host] iframe'
     )
   );
 
+  detail_category && detail_category.remove();
   editEntry && editEntry.setAttribute("title", "[##_title_##]");
   cancel && cancel.setAttribute("href", "javascript:;");
   declaration &&
@@ -787,9 +789,9 @@ function tistoryLighthouseCheck() {
 
   iframe &&
     iframe.map(function (el) {
-      var els = el.nextElementSibling;
+      const els = el.nextElementSibling;
       if (els.nodeName === "FIGCAPTION") {
-        var txt = els.innerHTML;
+        const txt = els.innerHTML;
         return el.setAttribute("title", txt);
       }
     });
