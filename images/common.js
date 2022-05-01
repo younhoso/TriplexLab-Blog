@@ -396,22 +396,6 @@ $(function () {
       : $(".notice_template").removeClass("on");
   });
   /*  공지 사항 // */
-
-  /* 스크롤 방향 감지 */
-  // var lastScrollY = 0;
-  // function moblieScroll(e){
-  //   var moHeaderMenu = $('.box_header');
-  //   if(windowWidth <= 1025){ //모바일 해상도일때 경우
-  //     // 스크롤 방향의 조건
-  //     $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
-  //     lastScrollY < 0 && moHeaderMenu.removeClass('on'); // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
-  //   } else { //PC 해상도일때 경우
-  //     $(this).scrollTop() > lastScrollY ? moHeaderMenu.addClass('on') : moHeaderMenu.removeClass('on')
-  //   }
-  //   lastScrollY = $(this).scrollTop(); // 마지막 스크롤 방향 위치 감지
-  // };
-  // $('html, body').on('scroll', moblieScroll);
-  /* 스크롤 방향 감지 // */
 });
 
 $(".inp_search").on("keyup", function (e) {
@@ -440,25 +424,6 @@ $(".btn_search").on("click", function () {
 $(".back_btn").on("click", function () {
   $(".box_header").removeClass("on");
 });
-
-// function changeRegexr(str) {
-//   /** 특수문자 및 빈 공백을 '-'로 변경(정규표현식)하는 함수. (단 []안에있는 문자와 이모지는 제외한다.)*/
-//   var str = String(str);
-//   return str.replace(
-//     /[^a-zA-Z0-9ㄱ-ㅎ가-힣👇👉🔥👏👍✅🔒😃☕️🎯🙌🎉📌📜🙏🙋‍♂️🤟📡🧭😀👋🚵🚵‍♀️🚴‍♂️🦿😄😭🖱👈📺📖🎤🧑🏽‍💻🧑🏻‍💻👨‍💻📔⚡️⛈🌩]/gim,
-//     "-"
-//   );
-// }
-// function removeRegexr(str){ /**a-zA-Z0-9ㄱ-ㅎ가-힣를 제외한 나머지들 빈 공백 제거 함수*/
-//   var str = String(str);
-//   return str.replace(/[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim, '')
-// };
-
-// function removeBlankSpace(str) {
-//   /**빈 공백 제거(정규표현식) 함수*/
-//   var str = String(str);
-//   return str.replace(/[\s]/gim, "");
-// }
 
 function removeCharacters(str) {
   /**알파벳 n 및 빈 공백 제거(정규표현식) 함수*/
@@ -680,7 +645,6 @@ function getHeadingData() {
 function renderToc() {
   /** 상세페이지 네비게이션 리스트 html 만들고 렌더링 */
   const headings = Array.from(TOC_CONST.headings);
-  console.log(headings);
   const temp_html = headings
     .map((item, idx) => {
       return `<li class="list-item" target-idx=${idx}> 
