@@ -3662,7 +3662,7 @@ aside .tag_board {
 .article_view {
   max-width: 940px;
   margin: 20px auto 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 .article_view p {
@@ -5844,7 +5844,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   }
 }
 /* ---- PC 상세페이지 ED ---- */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1820px) {
   #tt-body-page .gtae {
     display: block;
   }
