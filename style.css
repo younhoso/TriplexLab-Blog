@@ -3662,7 +3662,7 @@ aside .tag_board {
 .article_view {
   max-width: 940px;
   margin: 20px auto 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 .article_view p {
@@ -5554,16 +5554,42 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     display: none;
   }
 
+  #tt-body-page div[data-ke-type="moreLess"] {
+    position: relative;
+    margin-top: 1em;
+  }
+  #tt-body-page div[data-ke-type="moreLess"]::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    border-bottom: 1px dashed var(--border-color);
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+  }
+  #tt-body-page div[data-ke-type="moreLess"] .btn-toggle-moreless {
+    background-color: var(--s-bg-color);
+    color: var(--color-level-1) !important;
+    display: inline-block;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+  }
+  #tt-body-page div[data-ke-type="moreLess"] .btn-toggle-moreless:hover {
+    opacity: 1;
+  }
+
   #tt-body-page .moreless-content {
     background-color: var(--s-bg-color-5);
     border: 1px dashed var(--border-color);
     box-sizing: border-box;
-    padding: 0px 20px 30px 20px;
+    padding: 10px 20px 30px 10px;
     overflow: hidden;
     border-radius: 0.6em;
-  }
-  #tt-body-page div[data-ke-type="moreLess"] {
-    margin-top: 1em;
+    margin-top: 10px;
   }
 
   #tt-body-page figure.imageblock,

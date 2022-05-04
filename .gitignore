@@ -105,6 +105,7 @@ dist
 
 # ETC
 .DS_Store
+판매용
 skinSettings.set
 sidebar.info
 cookie.js
