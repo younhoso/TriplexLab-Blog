@@ -427,16 +427,16 @@ $(".back_btn").on("click", function () {
 
 function removeCharacters(str) {
   /**알파벳 n 및 빈 공백 제거(정규표현식) 함수*/
-  var str = String(str);
+  const str = String(str);
   return str.replace(/[\s,n]/gim, "");
 }
 
 // /* post 문서 스크롤 맨 하단 감지 */
-var isVisible = true;
+let isVisible = true;
 function docHeight() {
-  var scrollTop;
-  var innerHeight;
-  var scrollHeight;
+  let scrollTop;
+  let innerHeight;
+  let scrollHeight;
   if (document.getElementById("tt-body-page")) {
     scrollTop = $(document).scrollTop();
     innerHeight = $(window).height();
@@ -456,7 +456,8 @@ function docHeight() {
     }, 2000);
   }
 }
-$(window).on("scroll", docHeight);
+
+window.addEventListener("scroll", docHeight);
 // /* post 문서 스크롤 맨 하단 감지 // */
 
 function display_control() {
