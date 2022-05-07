@@ -984,6 +984,10 @@ i {
   background-color: #fdb0aa;
   opacity: 1;
 }
+.theme_pink #footer .copyright a {
+  color: #fdb0aa;
+}
+
 .theme_blue .thema_apply .link_detail {
   background: #004fff;
 }
@@ -1093,6 +1097,10 @@ i {
   background-color: #004fff;
   opacity: 1;
 }
+.theme_blue #footer .copyright a {
+  color: #004fff;
+}
+
 .theme_green .thema_apply .link_detail {
   background: #11998e;
 }
@@ -1201,6 +1209,9 @@ i {
 .theme_green .skin_link .swiper-pagination-bullet-active {
   background-color: #11998e;
   opacity: 1;
+}
+.theme_green #footer .copyright a {
+  color: #11998e;
 }
 .theme_gray .thema_apply .link_detail {
   background: #545c65;
@@ -1313,6 +1324,9 @@ i {
 .theme_gray .skin_link .swiper-pagination-bullet-active {
   background-color: #545c65;
   opacity: 1;
+}
+.theme_gray #footer .copyright a {
+  color: #545c65;
 }
 .theme_orange .thema_apply .active::before {
   background: #f60;
@@ -1456,6 +1470,9 @@ i {
   top: 0;
   left: -20px;
   background-color: #f60;
+}
+.theme_orange #footer .copyright a {
+  color: #f60;
 }
 @media screen and (max-width: 1025px) {
   .theme_pink .thema_apply .selected {
@@ -2059,9 +2076,6 @@ aside .tag_board {
 }
 #footer .copyright {
   display: inline-block;
-}
-#footer .copyright a {
-  color: #f60;
 }
 #footer .inner_footer {
   max-width: 1180px;
