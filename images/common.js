@@ -427,8 +427,8 @@ $(".back_btn").on("click", function () {
 
 function removeCharacters(str) {
   /**알파벳 n 및 빈 공백 제거(정규표현식) 함수*/
-  const str = String(str);
-  return str.replace(/[\s,n]/gim, "");
+  const strw = String(str);
+  return strw.replace(/[\s,n]/gim, "");
 }
 
 // /* post 문서 스크롤 맨 하단 감지 */
