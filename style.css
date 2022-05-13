@@ -988,6 +988,10 @@ i {
   color: #fdb0aa;
 }
 
+.theme_pink .area_sidebar .link_item .c_cnt {
+  color: #fdb0aa;
+}
+
 .theme_blue .thema_apply .link_detail {
   background: #004fff;
 }
@@ -1098,6 +1102,9 @@ i {
   opacity: 1;
 }
 .theme_blue #footer .copyright a {
+  color: #004fff;
+}
+.theme_blue .area_sidebar .link_item .c_cnt {
   color: #004fff;
 }
 
@@ -1213,6 +1220,10 @@ i {
 .theme_green #footer .copyright a {
   color: #11998e;
 }
+.theme_green .area_sidebar .link_item .c_cnt {
+  color: #11998e;
+}
+
 .theme_gray .thema_apply .link_detail {
   background: #545c65;
 }
@@ -1328,6 +1339,10 @@ i {
 .theme_gray #footer .copyright a {
   color: #545c65;
 }
+.theme_gray .area_sidebar .link_item .c_cnt {
+  color: #545c65;
+}
+
 .theme_orange .thema_apply .active::before {
   background: #f60;
 }
@@ -1472,6 +1487,10 @@ i {
   background-color: #f60;
 }
 .theme_orange #footer .copyright a {
+  color: #f60;
+}
+
+.theme_orange .area_sidebar .link_item .c_cnt {
   color: #f60;
 }
 @media screen and (max-width: 1025px) {
@@ -1866,7 +1885,7 @@ html {
   clear: both;
 }
 .area_sidebar .link_item .c_cnt {
-  float: right;
+  font-size: 12px;
 }
 .area_sidebar .box_gnb .category_list > li:last-child {
   display: none;
@@ -3760,21 +3779,12 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   color: var(--color-level-1);
 }
 .article_view table {
-  border: 1px solid #dadce0;
   border-collapse: collapse;
 }
 .article_view table thead tr {
   background: rgba(0, 0, 0, 0.05);
   font-size: 16px;
   color: #000;
-}
-.article_view table tr td,
-.article_view table tr th {
-  padding: 7px;
-  border-left: 1px solid #dadce0;
-}
-.article_view table tr {
-  border-bottom: 1px solid #dadce0;
 }
 .article_view pre {
   background: rgba(0, 0, 0, 0.05);
@@ -5560,6 +5570,27 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     top: -11px;
   }
   /* // SCROLLBAR MAC OS X */
+  /* for block of numbers */
+  .hljs .hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  
+    text-align: center;
+    color: #ccc;
+    vertical-align: top;
+    width: 25px;
+  }
+  .hljs .hljs-ln-numbers .hljs-ln-n {
+    color: #555;
+  }
+  /* your custom style here */
+  .hljs .hljs-ln td.hljs-ln-code {
+    padding-left: 5px;
+  }
 
   #tt-body-page .unit {
     display: none;
@@ -5895,3 +5926,5 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     right: 180px;
   }
 }
+
+
