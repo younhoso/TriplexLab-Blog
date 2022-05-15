@@ -1519,6 +1519,10 @@ html {
 :before {
   box-sizing: inherit;
 }
+.adsense {
+  width: 250px;
+  margin: 0 auto;
+}
 #container {
   position: relative;
   width: 100%;
