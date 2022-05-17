@@ -1484,7 +1484,7 @@ i {
   height: 100%;
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -1px;
   background-color: #f60;
 }
 .theme_orange #footer .copyright a {
@@ -5861,21 +5861,11 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-page .gtae {
     position: absolute;
     top: 32px;
-    right: 20px;
+    right: 10px;
   }
   #tt-body-page .gtae.is-fixed {
     position: fixed;
     top: 170px;
-  }
-  #tt-body-page .gtae::before {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -10px;
-    background-color: var(--s-bg-color);
   }
   #tt-body-page .gtae .contentsTie {
     margin-left: 10px;
@@ -5883,10 +5873,16 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     font-weight: 900;
   }
   #tt-body-page .gtae .gtae_contents {
+    max-height: 580px;
     margin-left: 10px;
+    overflow-y: auto;
   }
   #tt-body-page .gtae .list-item {
     position: relative;
+    border-left: 1px solid var(--s-bg-color);
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 14px;
   }
 
   #tt-body-page .gtae a {
