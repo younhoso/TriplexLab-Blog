@@ -2293,6 +2293,7 @@ aside .tag_board {
 .area_tag {
   display: flex;
   align-items: baseline;
+  margin-top: 2em;
   margin-bottom: 2em;
   padding: 3px 0;
   border-top: 1px solid var(--border-color);
@@ -3755,14 +3756,12 @@ aside .tag_board {
   margin: 0;
   padding: 0 0 0 19px;
 }
-.article_view ul {
-  margin-top: 18px;
-}
 .article_view ul li {
   font-size: 16px;
   line-height: 24px;
   color: var(--color-level-1);
   word-break: break-all;
+  padding-bottom: 0.4rem;
 }
 .article_view ol {
   margin-bottom: 1em;
@@ -5653,6 +5652,25 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   }
   #tt-body-page .imageblock span {
     display: block;
+  }
+
+  #tt-body-page .coffee_Gift {
+    align-items: center;
+    background: #ffdb4d;
+    border-radius: 2rem;
+    color: #121212;
+    display: inline-flex;
+    font-weight: 700;
+    height: 32px;
+    justify-content: center;
+    margin-right: auto;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  #tt-body-page .coffee_Gift button{
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
   }
 }
 /* ---- MO 상세페이지 ED ---- */
