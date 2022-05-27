@@ -398,6 +398,19 @@ $(function () {
   /*  공지 사항 // */
 });
 
+_tr('.coffee_Gift').addEventListener('click', () => {
+  const temp = _tr(".qr_template").content;
+  const clone = document.importNode(temp, true);
+  const copy = clone.querySelector(".qr_inner");
+  _tr("#wrap").appendChild(copy);
+  
+  _tr('.qr_inner').addEventListener('click', (e) => {
+    if(e.target === e.currentTarget){
+      _tr("#wrap").removeChild(_tr('.qr_inner'));
+    }
+  });
+});
+
 $(".inp_search").on("keyup", function (e) {
   if (this.value !== "" && e.keyCode === 13) {
     try {

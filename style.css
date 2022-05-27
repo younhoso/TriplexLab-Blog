@@ -488,121 +488,122 @@ template {
     padding: 0 40px;
   }
 }
-
 @font-face {
-  font-family: "ic-font";
-  src: url("images/ic-font.eot?ojocy3");
-  src: url("images/ic-font.eot?ojocy3#iefix") format("embedded-opentype"),
-    url("images/ic-font.ttf?ojocy3") format("truetype"),
-    url("images/ic-font.woff?ojocy3") format("woff"),
-    url("images/ic-font.svg?ojocy3#ic-font") format("svg");
+  font-family: 'ic-font';
+  src:  url('images/ic-font.eot?tfmgt0');
+  src:  url('images/ic-font.eot?tfmgt0#iefix') format('embedded-opentype'),
+    url('images/ic-font.ttf?tfmgt0') format('truetype'),
+    url('images/ic-font.woff?tfmgt0') format('woff'),
+    url('images/ic-font.svg?tfmgt0#ic-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 i {
-  font-family: "ic-font" !important;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ic-font' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic-react:before {
-  content: "\e901";
-}
-.ic-moreMenu:before {
-  content: "\e902";
-}
-.ic-prev:before {
-  content: "\e903";
-}
-.ic-connection:before {
-  content: "\e904";
-}
-.ic-next:before {
-  content: "\e905";
-}
-.ic-server:before {
-  content: "\e906";
-}
-.ic-html:before {
-  content: "\e907";
-}
-.ic-js:before {
-  content: "\e908";
-}
-.ic-uiux:before {
-  content: "\e909";
-}
-.ic-bell:before {
-  content: "\e90a";
-}
-.ic-kakao-bg:before {
-  content: "\e90b";
-}
-.ic-copy:before {
-  content: "\e90c";
-}
-.ic-gitbook:before {
-  content: "\e90d";
-}
-.ic-tr:before {
-  content: "\e90e";
-}
-.ic-sun:before {
-  content: "\e90f";
-}
-.ic-search:before {
-  content: "\e910";
-}
-.ic-kakao:before {
-  content: "\e911";
-}
-.ic-home:before {
-  content: "\e912";
-}
-.ic-ts:before {
-  content: "\e913";
-}
-.ic-moon:before {
-  content: "\e914";
-}
-.ic-close-10:before {
-  content: "\e915";
-}
-.ic-close-thin:before {
-  content: "\e916";
-}
-.ic-github:before {
-  content: "\e917";
-}
-.ic-comment-bg:before {
-  content: "\e918";
-}
-.ic-like-bg:before {
-  content: "\e919";
-}
-.ic-comment:before {
-  content: "\e91a";
-}
-.ic-like:before {
-  content: "\e91b";
-}
-.ic-share:before {
-  content: "\e91c";
-}
-.ic-mike:before {
+.ic-coffee:before {
   content: "\e900";
 }
-
-.icon_common {
-  font-size: 16px;
+.ic-mike:before {
+  content: "\e901";
+}
+.ic-react:before {
+  content: "\e902";
+}
+.ic-moreMenu:before {
+  content: "\e903";
+}
+.ic-prev:before {
+  content: "\e904";
+}
+.ic-connection:before {
+  content: "\e905";
+}
+.ic-next:before {
+  content: "\e906";
+}
+.ic-server:before {
+  content: "\e907";
+}
+.ic-html:before {
+  content: "\e908";
+}
+.ic-js:before {
+  content: "\e909";
+}
+.ic-uiux:before {
+  content: "\e90a";
+}
+.ic-bell:before {
+  content: "\e90b";
+}
+.ic-kakao-bg:before {
+  content: "\e90c";
+}
+.ic-copy:before {
+  content: "\e90d";
+}
+.ic-gitbook:before {
+  content: "\e90e";
+}
+.ic-tr:before {
+  content: "\e90f";
+}
+.ic-sun:before {
+  content: "\e910";
+}
+.ic-search:before {
+  content: "\e911";
+}
+.ic-kakao:before {
+  content: "\e912";
+}
+.ic-home:before {
+  content: "\e913";
+}
+.ic-ts:before {
+  content: "\e914";
+}
+.ic-moon:before {
+  content: "\e915";
+}
+.ic-close-10:before {
+  content: "\e916";
+}
+.ic-close-thin:before {
+  content: "\e917";
+}
+.ic-github:before {
+  content: "\e918";
+}
+.ic-comment-bg:before {
+  content: "\e919";
+}
+.ic-like-bg:before {
+  content: "\e91a";
+}
+.ic-comment:before {
+  content: "\e91b";
+}
+.ic-like:before {
+  content: "\e91c";
+}
+.ic-share:before {
+  content: "\e91d";
 }
 
 @-webkit-keyframes rotate {
@@ -5671,6 +5672,27 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     font-weight: 600;
     font-size: 12px;
     white-space: nowrap;
+    margin: 0 0 0 5px;
+  }
+  #tt-body-page .qr_inner {
+    width: 100%;
+    height: 100vh;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 33;
+    background-color: #33333394;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+  #tt-body-page .qr_inner img {
+    width: 340px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 20;
   }
 }
 /* ---- MO 상세페이지 ED ---- */
