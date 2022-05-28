@@ -398,7 +398,7 @@ $(function () {
   /*  공지 사항 // */
 });
 
-_tr('.coffee_Gift').addEventListener('click', () => {
+_tr('.coffee_Gift')?.addEventListener('click', () => {
   const temp = _tr(".qr_template").content;
   const clone = document.importNode(temp, true);
   const copy = clone.querySelector(".qr_inner");
