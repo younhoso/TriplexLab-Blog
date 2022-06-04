@@ -980,6 +980,7 @@ i {
 }
 .theme_pink .newItem {
   border: 1px solid #fdb0aa;
+  color: #fdb0aa;
 }
 .theme_pink .skin_link .swiper-pagination-bullet-active {
   background-color: #fdb0aa;
@@ -1097,6 +1098,7 @@ i {
 }
 .theme_blue .newItem {
   border: 1px solid #004fff;
+  color: #004fff;
 }
 .theme_blue .skin_link .swiper-pagination-bullet-active {
   background-color: #004fff;
@@ -1213,6 +1215,7 @@ i {
 }
 .theme_green .newItem {
   border: 1px solid #11998e;
+  color: #11998e;
 }
 .theme_green .skin_link .swiper-pagination-bullet-active {
   background-color: #11998e;
@@ -1332,6 +1335,7 @@ i {
 }
 .theme_gray .newItem {
   border: 1px solid #545c65;
+  color: #545c65;
 }
 .theme_gray .skin_link .swiper-pagination-bullet-active {
   background-color: #545c65;
@@ -1465,6 +1469,7 @@ i {
 }
 .theme_orange .newItem {
   border: 1px solid #f60;
+  color: #f60;
 }
 .theme_orange .skin_link .swiper-pagination-bullet-active {
   background-color: #f60;
@@ -3932,7 +3937,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   line-height: 1px;
   text-align: center;
   position: relative;
-  color: #f60;
   font-size: 7px;
   font-weight: 900;
   top: -1px;
