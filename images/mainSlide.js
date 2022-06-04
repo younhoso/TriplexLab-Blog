@@ -95,10 +95,10 @@ new Slide({
           clickable: true,
         },
         speed: 500,
-        // autoplay: {
-        //   delay: 4600,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 3600,
+          disableOnInteraction: false,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
