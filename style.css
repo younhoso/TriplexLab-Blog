@@ -491,11 +491,11 @@ template {
 
 @font-face {
   font-family: 'ic-font';
-  src:  url('images/ic-font.eot?9bmo8j');
-  src:  url('images/ic-font.eot?9bmo8j#iefix') format('embedded-opentype'),
-    url('images/ic-font.ttf?9bmo8j') format('truetype'),
-    url('images/ic-font.woff?9bmo8j') format('woff'),
-    url('images/ic-font.svg?9bmo8j#ic-font') format('svg');
+  src:  url('images/ic-font.eot?uwf2gf');
+  src:  url('images/ic-font.eot?uwf2gf#iefix') format('embedded-opentype'),
+    url('images/ic-font.ttf?uwf2gf') format('truetype'),
+    url('images/ic-font.woff?uwf2gf') format('woff'),
+    url('images/ic-font.svg?uwf2gf#ic-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -516,6 +516,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ic-arrow-up:before {
+  content: "\e91f";
+}
 .ic-arrow-right:before {
   content: "\e900";
 }
@@ -4039,6 +4042,35 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   position: absolute;
 }
 
+.top-btn {
+  position: fixed;
+  z-index: 9;
+  overflow: hidden;
+  padding: 5px;
+}
+.top-btn button{
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+  box-shadow: 0 2px 6px #00000026;
+  background-color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-transform: translateX(60px);
+  transform: translateX(60px);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.top-btn button.on {
+  overflow: auto;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
 /* ---- MO 매인페이지 min-width:320px ST ---- */
 @media screen and (min-width: 320px) {
   #wrap {
@@ -4913,6 +4945,10 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   #tt-body-index .area_category .category_cover {
     display: none;
   }
+  .top-btn {
+    bottom: 70px;
+    right: 20px;
+  }
 }
 /* ---- MO 매인페이지 min-width:320px ED ---- */
 /* ---- PC 매인페이지 min-width:1025px ST ---- */
@@ -5213,6 +5249,11 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
 
   .area_sidebar .link_tool {
     color: var(--color-level-1);
+  }
+
+  .top-btn {
+    bottom: 20px;
+    right: 20px;
   }
 }
 /* ---- PC 매인페이지 min-width:1025px ED ---- */

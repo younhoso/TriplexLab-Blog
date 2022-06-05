@@ -398,6 +398,19 @@ $(function () {
   /*  공지 사항 // */
 });
 
+const onScroll = () => {
+  if(window.pageYOffset >= 240){
+    _tr('.top-btn_js button').classList.add('on')
+  } else {
+    _tr('.top-btn_js button').classList.remove('on')
+  }
+}
+window.addEventListener('scroll', onScroll);
+
+_tr('.top-btn_js').addEventListener('click', () => {
+  window.scrollTo(0, 0);
+});
+
 _tr('.coffee_Gift')?.addEventListener('click', () => {
   const temp = _tr(".qr_template").content;
   const clone = document.importNode(temp, true);
