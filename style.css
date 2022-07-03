@@ -491,11 +491,11 @@ template {
 
 @font-face {
   font-family: 'ic-font';
-  src:  url('images/ic-font.eot?uwf2gf');
-  src:  url('images/ic-font.eot?uwf2gf#iefix') format('embedded-opentype'),
-    url('images/ic-font.ttf?uwf2gf') format('truetype'),
-    url('images/ic-font.woff?uwf2gf') format('woff'),
-    url('images/ic-font.svg?uwf2gf#ic-font') format('svg');
+  src:  url('images/ic-font.eot?33xvzd');
+  src:  url('images/ic-font.eot?33xvzd#iefix') format('embedded-opentype'),
+    url('images/ic-font.ttf?33xvzd') format('truetype'),
+    url('images/ic-font.woff?33xvzd') format('woff'),
+    url('images/ic-font.svg?33xvzd#ic-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -516,102 +516,109 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic-arrow-up:before {
-  content: "\e91f";
-}
-.ic-arrow-right:before {
+.ic-apple:before {
   content: "\e900";
 }
-.ic-coffee:before {
+.ic-windows:before {
   content: "\e901";
 }
-.ic-mike:before {
+.ic-arrow-right:before {
   content: "\e902";
 }
-.ic-react:before {
+.ic-coffee:before {
   content: "\e903";
 }
-.ic-moreMenu:before {
+.ic-mike:before {
   content: "\e904";
 }
-.ic-prev:before {
+.ic-react:before {
   content: "\e905";
 }
-.ic-connection:before {
+.ic-moreMenu:before {
   content: "\e906";
 }
-.ic-next:before {
+.ic-prev:before {
   content: "\e907";
 }
-.ic-server:before {
+.ic-connection:before {
   content: "\e908";
 }
-.ic-html:before {
+.ic-next:before {
   content: "\e909";
 }
-.ic-js:before {
+.ic-server:before {
   content: "\e90a";
 }
-.ic-uiux:before {
+.ic-html:before {
   content: "\e90b";
 }
-.ic-bell:before {
+.ic-js:before {
   content: "\e90c";
 }
-.ic-kakao-bg:before {
+.ic-uiux:before {
   content: "\e90d";
 }
-.ic-copy:before {
+.ic-bell:before {
   content: "\e90e";
 }
-.ic-gitbook:before {
+.ic-kakao-bg:before {
   content: "\e90f";
 }
-.ic-tr:before {
+.ic-copy:before {
   content: "\e910";
 }
-.ic-sun:before {
+.ic-gitbook:before {
   content: "\e911";
 }
-.ic-search:before {
+.ic-tr:before {
   content: "\e912";
 }
-.ic-kakao:before {
+.ic-sun:before {
   content: "\e913";
 }
-.ic-home:before {
+.ic-search:before {
   content: "\e914";
 }
-.ic-ts:before {
+.ic-kakao:before {
   content: "\e915";
 }
-.ic-moon:before {
+.ic-home:before {
   content: "\e916";
 }
-.ic-close-10:before {
+.ic-ts:before {
   content: "\e917";
 }
-.ic-close-thin:before {
+.ic-moon:before {
   content: "\e918";
 }
-.ic-github:before {
+.ic-close-10:before {
   content: "\e919";
 }
-.ic-comment-bg:before {
+.ic-close-thin:before {
   content: "\e91a";
 }
-.ic-like-bg:before {
+.ic-github:before {
   content: "\e91b";
 }
-.ic-comment:before {
+.ic-comment-bg:before {
   content: "\e91c";
 }
-.ic-like:before {
+.ic-like-bg:before {
   content: "\e91d";
 }
-.ic-share:before {
+.ic-comment:before {
   content: "\e91e";
 }
+.ic-like:before {
+  content: "\e91f";
+}
+.ic-share:before {
+  content: "\e920";
+}
+.ic-arrow-up:before {
+  content: "\e921";
+}
+
 
 @-webkit-keyframes rotate {
   100% {
