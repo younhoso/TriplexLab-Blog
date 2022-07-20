@@ -4701,7 +4701,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     content: "";
     display: inline-block;
     width: 3px;
-    height: 44px;
+    height: 100%;
     position: absolute;
   }
   .tt_category > li .category_list > li .sub_category_list > li::before {
