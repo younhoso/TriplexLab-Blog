@@ -44,9 +44,9 @@ $(function () {
   const kakao_js = document.querySelector(".kakao_js");
   if (kakao_js) {
     const { tit, link, image, tag, count } = detailInfoObj;
-    const tags =
-      [...tag].reduce((acc, cur) => acc + ("#" + cur), "") ||
-      "#" + $(".tit_logo").html();
+    const tags = [...tag].reduce((acc, cur) => {
+                    return acc + ("#" + cur)
+                  },"");
     /* Kakao.Link */
     Kakao.Link.createDefaultButton({
       container: ".kakao_js",
