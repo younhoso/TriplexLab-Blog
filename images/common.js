@@ -74,7 +74,7 @@ $(function () {
       ],
     }); /* Kakao.Link // */
   }
-  kakao_js.addEventListener('click', kakaoLink);
+  kakao_js && kakao_js.addEventListener('click', kakaoLink);
   /** 상세페이지 Kakao공유 기능 // */
 
   const comment_js = document.querySelector(".comment_js");
@@ -782,7 +782,7 @@ function tistoryLighthouseCheck() {
 
   iframe &&
     iframe.map(function (el) {
-      const els = el.nextElementSibling;
+      const els = el.parentElement.nextElementSibling;
       if (els.nodeName === "FIGCAPTION") {
         const txt = els.innerHTML;
         return el.setAttribute("title", txt);

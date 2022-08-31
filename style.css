@@ -5485,7 +5485,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
 
   #tt-body-page figure[data-ke-type="video"] {
     width: 100%;
-    padding-top: 56%;
   }
   #tt-body-page figure[data-ke-type="video"][data-video-host] iframe {
     margin: 0;
