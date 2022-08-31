@@ -42,14 +42,14 @@ $(function () {
 
   const commInfo = _tr(".area_reply")?.getBoundingClientRect();
   const kakao_js = document.querySelector(".kakao_js");
-  if (kakao_js) {
+  const kakaoLink = () => {
     const { tit, link, image, tag, count } = detailInfoObj;
+    if(!image) alert('대표이미지가 있어야 합니다.')
     const tags = [...tag].reduce((acc, cur) => {
-                    return acc + ("#" + cur)
-                  },"");
+      return acc + ("#" + cur)
+    },"");
     /* Kakao.Link */
-    Kakao.Link.createDefaultButton({
-      container: ".kakao_js",
+    Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
         title: tit,
@@ -73,8 +73,9 @@ $(function () {
         },
       ],
     }); /* Kakao.Link // */
-    /** 상세페이지 Kakao공유 기능 // */
   }
+  kakao_js.addEventListener('click', kakaoLink);
+  /** 상세페이지 Kakao공유 기능 // */
 
   const comment_js = document.querySelector(".comment_js");
   if (comment_js) {
