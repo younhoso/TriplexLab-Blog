@@ -5773,7 +5773,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
 
   #tt-body-page figure.imageblock,
   figure.imageblock {
-    width: 100%;
+    width: auto;
     height: 100%;
   }
   #tt-body-page .imageblock span {
