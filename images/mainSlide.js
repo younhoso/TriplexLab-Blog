@@ -83,8 +83,6 @@ new Slide({
   var slider_control = function() {
     const interleaveOffset = 0.5;
     const slide_data = $('.slide_zone').data('slide');
-    
-   
       const swiperOptions = {
         loop: false,
         
@@ -95,10 +93,10 @@ new Slide({
           clickable: true,
         },
         speed: 500,
-        autoplay: {
-          delay: 3600,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 3600,
+        //   disableOnInteraction: false,
+        // },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"

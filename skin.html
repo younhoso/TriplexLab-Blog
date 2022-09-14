@@ -7,32 +7,6 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=5 user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FFV1QDF4H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1FFV1QDF4H');
-  </script>
-  <!-- // Global site tag (gtag.js) - Google Analytics -->
-  <!-- // General META -->
-  <meta property="og:site_name" content="FE Developer 트리플엑스랩 | TriplexLab" />
-  <meta property="og:title" content="트리플엑스랩 | TriplexLab" />
-  <meta property="og:description" content="Front 개발의 주된 내용을 한눈에 볼 수 있는 대표 블로그" />
-  <meta property="og:url" content="https://triplexlab.tistory.com/" />
-  <meta property="og:image" content="https://tistory1.daumcdn.net/tistory/3222964/skin/images/url.png"/>
-  <meta property="og:type" content="individual" />
-  <!-- General META //-->
-  <!-- // Search Console META -->
-  <meta name="google-site-verification" content="IfjC16KaKwYct9JsI6kzkZCbOzUmjNt2EkwUqRs7wtk" />
-  <meta name="naver-site-verification" content="c3d2ebcf772efaad5528a05a89b6ba660f1d5c73" />
-  <meta name="msvalidate.01" content="CEED5D3CEF725E60A1B0CC143BC0BA8B" />
-  <!-- Search Console META // -->
-  <!-- // Semantic Tag META -->
-  <meta name="keywords" content=“TriplexLab,트리플엑스랩,자바스크립트es6+,javascriptes6+,jses6+,typescript,frontdeveloperblog,frontdeveloper,blog,FE블로그,FE개발자,프론트앤드개발자,반응형,react,react라이브러리,jquery,jquery라이브러리,라이브러리,library,plugin”/>
-  <meta name="description" content="Front 개발의 주된 내용을 한눈에 볼 수 있는 대표 블로그" />
-  <!-- Semantic Tag META // -->
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]"/>
   <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico"/>
   <link rel="stylesheet" href="./style.css"/>
@@ -48,55 +22,6 @@
         $(this).replaceWith('<p class="newItem">N</p>')
       });
     });
-  </script>
-  <script>
-    (function(){
-      window.onload = function() {
-      /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
-      var body = document.querySelector('body'); 
-      var divInner = document.createElement('div');
-      var docfrag = document.createDocumentFragment();
-        
-        var templateIE = function(browser, version) {
-        var div = document.createElement('div');
-        div.classList.add('result_inner');
-        var h2 = document.createElement('h2');
-        h2.classList.add('tit')
-        h2.textContent = 'Sorry, '+browser+''+version+' browser does not support it.'
-        div.appendChild(h2);
-        docfrag.appendChild(div);
-        divInner.appendChild(docfrag.cloneNode(true));
-        
-        body.innerHTML = divInner.innerHTML;
-        window.location = 'microsoft-edge:' + window.location.href;
-        };
-  
-        var detectIE = function () {
-          var ua = window.navigator.userAgent;
-          var msie = ua.indexOf('MSIE');
-          if (msie > 0) {
-            // IE 10 이상 버전 채크
-            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-          }
-          var trident = ua.indexOf('Trident/');
-          if (trident > 0) {
-            // IE 11 버전 체크
-            var rv = ua.indexOf('rv:');
-            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-          }
-          // 다른 브라우저 리턴
-          return false;
-        };
-  
-        // IE 또는 Edge 브라우저 버전 가져오기
-        var version = detectIE();
-        
-        if (version) {
-          return templateIE('IE', version);
-        }
-        /* 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 // */
-      };
-    })();
   </script>
   <script defer type="module" charset="UTF-8" src="./images/common.js"></script>
 </head>
@@ -303,7 +228,7 @@
                     <div class="banner_wrapper">
                       <div class="wrapper p-top">
                         <!-- slide_zone -->
-                        <div class="slide_zone swiper-container" data-slide='{"color":[{"id":"3","text":"#fff","bg":"#0b0e0f","gradient":"10,13,14"},{"id":"2","text":"#fff","bg":"#050122","gradient":"5,1,34"},{"id":"1","text":"#fff","bg":"#1b1d18","gradient":"6,1,0"}]}'>
+                        <div class="slide_zone swiper-container" data-slide='{"color":[{"id":"3","text":"#fff","bg":"#050122","gradient":"5,1,34"},{"id":"2","text":"#fff","bg":"#1b1d18","gradient":"6,1,0"},{"id":"1","text":"#333","bg":"#f6eee8","gradient":"246,238,232"}]}'>
                           <div class="swiper-wrapper">
                             <s_cover_item>
                               <div class="slide_item swiper-slide">
@@ -388,34 +313,6 @@
                   </div>
                 </s_cover>
 
-                <s_cover name='post'>
-                  <!-- type_post -->
-                  <div class="type_post border_b_mode">
-                    <div class="wrapper">
-                      <h2 class="title_section">[##_cover_title_##]</h2>
-                      <div class="inWrapper">
-                        <ul class="list_post">
-                          <s_cover_item>
-                            <li class="item_post">
-                              <a href="[##_cover_item_url_##]" class="link_post">
-                                <span class="thumnail item-thumbnail" data-src="<s_cover_item_thumbnail>[##_cover_item_thumbnail_##]</s_cover_item_thumbnail>"></span>
-                                <strong class="name">[##_cover_item_title_##]</strong>
-                                <s_cover_item_article_info>
-                                  <span class="date">[##_cover_item_date_##]</span>
-                                  <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
-                                </s_cover_item_article_info>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                      <div class="typePost_next bg_them_mode color border_mode"><i class="ic-next"></i></div>
-                      <div class="typePost_prev bg_them_mode color border_mode"><i class="ic-prev"></i></div>
-                    </div>
-                  </div>
-                  <!-- // type_post -->
-                </s_cover>
-
                 <s_cover name='card'>
                   <!-- type_card -->
                   <div class="type_card border_b_mode">
@@ -469,32 +366,6 @@
                     </div>
                   </div>
                   <!-- // type_list -->
-                </s_cover>
-
-                <s_cover name='rolling'>
-                  <!-- type_rolling -->
-                  <div class="type_rolling border_b_mode">
-                    <div class="wrapper">
-                      <h2 class="title_section">[##_cover_title_##]</h2>
-                      <div class="inWrapper">
-                        <ul class="list_type_rolling">
-                          <s_cover_item>
-                            <li class="item_rolling">
-                              <a href="[##_cover_item_url_##]" class="link_rolling">
-                                <div class="info">
-                                  <strong>[##_cover_item_title_##]</strong>
-                                </div>
-                              </a>
-                              <s_cover_item_article_info>
-                                <div class="thumb-category"><a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a></div>
-                              </s_cover_item_article_info>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- // type_rolling -->
                 </s_cover>
               </s_cover_rep>
             </div>
@@ -557,7 +428,7 @@
                           <ul class="color unit">
                             <li class="share_js util side_item item2" data-title="Share"><span class="common border_mode bg_them_mode"><i class="ic-share"></i></span></li>
                             <li class="kakao_js util side_item item3" data-title="kakao"><span class="common border_mode bg_them_mode"><i class="ic-kakao"></i></span></li>
-                            <!-- <li class="comment_js util side_item item4" data-title="Comment"><span class="common border_mode bg_them_mode"><i class="ic-comment"></i></span></li> -->
+                            <li class="comment_js util side_item item4" data-title="Comment"><span class="common border_mode bg_them_mode"><i class="ic-comment"></i></span></li>
                             <li class="util_like util side_item item1" data-title="Like"><span class="common border_mode bg_them_mode"><i class="ic-like"></i></span><span class="txt_count">-</span></li>
                           </ul>
                         </div>
@@ -565,11 +436,6 @@
                   </div>
 
                   <div class="body-page">
-                    <template class="qr_template">
-                      <div class="qr_inner">
-                        <img src="https://tistory2.daumcdn.net/tistory/3222964/skin/images/coffee.jpg" alt="커피 한 잔 선물하기">
-                      </div>
-                    </template>
                     <!-- 에디터 영역 -->
                     <div class="article_view area_view scrollbar-inner">
                       [##_article_rep_desc_##]
@@ -582,10 +448,6 @@
                   </div>
                   <!-- article_content -->
                   <div class="article_content area_view">
-                    <div class="coffee_Gift">
-                      <i class="ic-coffee"></i>
-                      <button>커피 한 잔 선물하기</button>
-                    </div>
                     <s_tag_label>
                       <!-- area_tag -->
                       <div class="area_tag color">
@@ -634,16 +496,19 @@
                           </a>
                         </s_article_next>
                     </div>
-                    <!-- <div class="area_reply">
+                    <!-- area_reply -->
+                    <div class="area_reply">
 
                       <div class="box_reply_info">
                         <a href="#0" onclick="[##_article_rep_rp_link_##]" class="reply_events">댓글 <span>[##_article_rep_rp_cnt_##]</span></a>
                       </div>
 
+                      <!-- reply_content -->
                       <div class="reply_content">
                         <button type="button" class="btn_more btn_replymore" style="display:none;">+ 이전 댓글 더보기</button>
 
-                         <s_rp>
+                        <s_rp>
+                          <!-- box_comment_list -->
                           <div class="box_comment_list">
                             <s_rp_container>
                               <ul class="list_reply">
@@ -663,6 +528,7 @@
                                     </div>
 
                                     <s_rp2_container>
+                                      <!-- list_reply_comment -->
                                       <ul class="list_reply_comment">
                                         <s_rp2_rep>
                                           <li id='[##_rp_rep_id_##]' class="item_comment reply [##_rp_rep_class_##]">
@@ -682,25 +548,30 @@
                                           </li>
                                         </s_rp2_rep>
                                       </ul>
+                                      <!-- // list_reply_comment -->
                                     </s_rp2_container>
                                   </li>
                                 </s_rp_rep>
                               </ul>
                             </s_rp_container>
                           </div>
+                          <!-- // box_comment_list -->
 
                           <s_rp_input_form>
+                            <!-- reply_write -->
                             <form method="post">
                               <div class="reply_write">
                                 <s_rp_member>
                                   <s_rp_guest>
                                     <div class="form_guest">
+                                      <!-- name -->
                                       <div class="box_inp">
                                         <div class="inner_inp">
                                           <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" title="이름"
                                             placeholder="이름" class="inp_comment inp_name" />
                                         </div>
                                       </div>
+                                      <!-- password -->
                                       <div class="box_inp">
                                         <div class="inner_inp">
                                           <input type="password" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]"
@@ -721,13 +592,15 @@
 
                               </div>
                             </form>
+                            <!-- // reply_write -->
                           </s_rp_input_form>
-                        </s_rp> 
+                        </s_rp>
 
                       </div>
+                      <!-- // reply_content -->
 
-                    </div> -->
-
+                    </div>
+                    <!-- // area_reply -->
                   </div>
                   <!-- // article_content -->
 
@@ -1033,18 +906,11 @@
     </div>
     <!-- // 모비일 하단 메뉴 -->
   </s_t3>
-  <!-- TOP버튼 -->
   <div class="top-btn top-btn_js">
     <button>
       <i class="ic-arrow-up"></i>
       <p>TOP</p>
     </button>
   </div>
-  <!-- // TOP버튼 -->
-  <!-- 모달 영역 -->
-  <div>
-    
-  </div>
-  <!-- // 모달 영역 -->
 </body>
 </html>

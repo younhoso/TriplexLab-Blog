@@ -1,6 +1,7 @@
 import { _setCookie } from "./cookie.js";
 
 const _tr = (select) => document.querySelector(select);
+const _trs = (select) => Array.from(document.querySelectorAll(select));
 
 $(function () {
   tistoryLighthouseCheck();
@@ -412,6 +413,10 @@ _tr('.top-btn_js').addEventListener('click', () => {
   window.scrollTo(0, 0);
 });
 
+_trs('.category_list .sub_category_list li').forEach((el) => {
+  el.insertAdjacentHTML('afterbegin','<i class="ic-arrow-right"></i>');
+})
+
 _tr('.coffee_Gift')?.addEventListener('click', () => {
   const temp = _tr(".qr_template").content;
   const clone = document.importNode(temp, true);
@@ -782,7 +787,7 @@ function tistoryLighthouseCheck() {
 
   iframe &&
     iframe.map(function (el) {
-      const els = el.parentElement.nextElementSibling;
+      const els = el.nextElementSibling;
       if (els.nodeName === "FIGCAPTION") {
         const txt = els.innerHTML;
         return el.setAttribute("title", txt);
