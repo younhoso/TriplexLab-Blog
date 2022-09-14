@@ -1,138 +1,3 @@
-@charset "UTF-8";
-/****************************** InputMono FONT ******************************/
-@font-face {
-  font-family: "InputMono";
-  font-style: normal;
-  font-weight: 300;
-  src: local("☺"), url("images/InputMono-Light.woff") format("woff"),
-    url("images/InputMono-Light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "InputMono";
-  font-style: normal;
-  font-weight: 400;
-  src: local("☺"), url("images/InputMono-Regular.woff") format("woff"),
-    url("images/InputMono-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "InputMono";
-  font-style: normal;
-  font-weight: 500;
-  src: local("☺"), url("images/InputMono-Medium.woff") format("woff"),
-    url("images/InputMono-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-
-/****************************** Montserrat FONT ******************************/
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 300;
-  src: local("☺"), url("images/Montserrat-Light.woff") format("woff"),
-    url("images/Montserrat-Light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  src: local("☺"), url("images/Montserrat-Regular.woff") format("woff"),
-    url("images/Montserrat-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  src: local("☺"), url("images/Montserrat-Medium.woff") format("woff"),
-    url("images/Montserrat-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  src: local("☺"), url("images/Montserrat-SemiBold.woff") format("woff"),
-    url("images/Montserrat-SemiBold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  src: local("☺"), url("images/Montserrat-Bold.woff") format("woff"),
-    url("images/Montserrat-Bold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 800;
-  src: local("☺"), url("images/Montserrat-ExtraBold.woff") format("woff"),
-    url("images/Montserrat-ExtraBold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 900;
-  src: local("☺"), url("images/Montserrat-Black.woff") format("woff"),
-    url("images/Montserrat-Black.woff2") format("woff2");
-  font-display: swap;
-}
-
-/****************************** Noto Sans KR FONT ******************************/
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 200;
-  src: local("☺"), url("images/NotoSansKR-Thin.woff") format("woff"),
-    url("images/NotoSansKR-Thin.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 300;
-  src: local("☺"), url("images/NotoSansKR-Light.woff") format("woff"),
-    url("images/NotoSansKR-Light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  src: local("☺"), url("images/NotoSansKR-Regular.woff") format("woff"),
-    url("images/NotoSansKR-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  src: local("☺"), url("images/NotoSansKR-Medium.woff") format("woff"),
-    url("images/NotoSansKR-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 700;
-  src: local("☺"), url("images/NotoSansKR-Bold.woff") format("woff"),
-    url("images/NotoSansKR-Bold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 900;
-  src: local("☺"), url("images/NotoSansKR-Black.woff") format("woff"),
-    url("images/NotoSansKR-Black.woff2") format("woff2");
-  font-display: swap;
-}
-
 /* css reset */
 html,
 body {
@@ -491,11 +356,11 @@ template {
 
 @font-face {
   font-family: 'ic-font';
-  src:  url('images/ic-font.eot?33xvzd');
-  src:  url('images/ic-font.eot?33xvzd#iefix') format('embedded-opentype'),
-    url('images/ic-font.ttf?33xvzd') format('truetype'),
-    url('images/ic-font.woff?33xvzd') format('woff'),
-    url('images/ic-font.svg?33xvzd#ic-font') format('svg');
+  src:  url('images/ic-font.eot?6j2ja9');
+  src:  url('images/ic-font.eot?6j2ja9#iefix') format('embedded-opentype'),
+    url('images/ic-font.ttf?6j2ja9') format('truetype'),
+    url('images/ic-font.woff?6j2ja9') format('woff'),
+    url('images/ic-font.svg?6j2ja9#ic-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -516,107 +381,83 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic-apple:before {
-  content: "\e900";
-}
-.ic-windows:before {
-  content: "\e901";
-}
-.ic-arrow-right:before {
-  content: "\e902";
-}
-.ic-coffee:before {
-  content: "\e903";
-}
-.ic-mike:before {
-  content: "\e904";
-}
-.ic-react:before {
-  content: "\e905";
-}
-.ic-moreMenu:before {
-  content: "\e906";
-}
-.ic-prev:before {
-  content: "\e907";
-}
-.ic-connection:before {
-  content: "\e908";
-}
-.ic-next:before {
-  content: "\e909";
-}
-.ic-server:before {
-  content: "\e90a";
-}
-.ic-html:before {
-  content: "\e90b";
-}
-.ic-js:before {
-  content: "\e90c";
-}
-.ic-uiux:before {
-  content: "\e90d";
-}
-.ic-bell:before {
-  content: "\e90e";
-}
-.ic-kakao-bg:before {
-  content: "\e90f";
-}
-.ic-copy:before {
-  content: "\e910";
-}
-.ic-gitbook:before {
-  content: "\e911";
-}
-.ic-tr:before {
-  content: "\e912";
-}
-.ic-sun:before {
-  content: "\e913";
-}
-.ic-search:before {
-  content: "\e914";
-}
-.ic-kakao:before {
-  content: "\e915";
-}
-.ic-home:before {
-  content: "\e916";
-}
-.ic-ts:before {
-  content: "\e917";
-}
-.ic-moon:before {
-  content: "\e918";
-}
-.ic-close-10:before {
-  content: "\e919";
-}
-.ic-close-thin:before {
-  content: "\e91a";
-}
-.ic-github:before {
-  content: "\e91b";
-}
-.ic-comment-bg:before {
-  content: "\e91c";
-}
-.ic-like-bg:before {
-  content: "\e91d";
-}
-.ic-comment:before {
-  content: "\e91e";
-}
-.ic-like:before {
+.ic-arrow-up:before {
   content: "\e91f";
 }
-.ic-share:before {
-  content: "\e920";
+.ic-arrow-right:before {
+  content: "\e900";
 }
-.ic-arrow-up:before {
-  content: "\e921";
+.ic-coffee:before {
+  content: "\e901";
+}
+.ic-mike:before {
+  content: "\e902";
+}
+.ic-moreMenu:before {
+  content: "\e904";
+}
+.ic-prev:before {
+  content: "\e905";
+}
+.ic-next:before {
+  content: "\e907";
+}
+.ic-js:before {
+  content: "\e90a";
+}
+.ic-uiux:before {
+  content: "\e90b";
+}
+.ic-bell:before {
+  content: "\e90c";
+}
+.ic-kakao-bg:before {
+  content: "\e90d";
+}
+.ic-copy:before {
+  content: "\e90e";
+}
+.ic-gitbook:before {
+  content: "\e90f";
+}
+.ic-sun:before {
+  content: "\e911";
+}
+.ic-search:before {
+  content: "\e912";
+}
+.ic-kakao:before {
+  content: "\e913";
+}
+.ic-home:before {
+  content: "\e914";
+}
+.ic-moon:before {
+  content: "\e916";
+}
+.ic-close-10:before {
+  content: "\e917";
+}
+.ic-close-thin:before {
+  content: "\e918";
+}
+.ic-github:before {
+  content: "\e919";
+}
+.ic-comment-bg:before {
+  content: "\e91a";
+}
+.ic-like-bg:before {
+  content: "\e91b";
+}
+.ic-comment:before {
+  content: "\e91c";
+}
+.ic-like:before {
+  content: "\e91d";
+}
+.ic-share:before {
+  content: "\e91e";
 }
 
 
@@ -3834,7 +3675,6 @@ aside .tag_board {
   color: var(--color-level-1);
   word-break: break-all;
   padding-bottom: 0.4rem;
-  padding-top: 0.4rem;
 }
 .article_view ol {
   margin-bottom: 1em;
@@ -4702,7 +4542,7 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     content: "";
     display: inline-block;
     width: 3px;
-    height: 100%;
+    height: 44px;
     position: absolute;
   }
   .tt_category > li .category_list > li .sub_category_list > li::before {
@@ -5258,7 +5098,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
   .area_sidebar .link_tool {
     color: var(--color-level-1);
   }
-
   .top-btn {
     bottom: 20px;
     right: 20px;
@@ -5485,7 +5324,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
 
   #tt-body-page figure[data-ke-type="video"] {
     width: 100%;
-    padding-top: 56%;
   }
   #tt-body-page figure[data-ke-type="video"][data-video-host] iframe {
     margin: 0;

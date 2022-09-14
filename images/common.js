@@ -1,6 +1,7 @@
 import { _setCookie } from "./cookie.js";
 
 const _tr = (select) => document.querySelector(select);
+const _trs = (select) => Array.from(document.querySelectorAll(select));
 
 $(function () {
   tistoryLighthouseCheck();
@@ -42,14 +43,14 @@ $(function () {
 
   const commInfo = _tr(".area_reply")?.getBoundingClientRect();
   const kakao_js = document.querySelector(".kakao_js");
-  if (kakao_js) {
+  const kakaoLink = () => {
     const { tit, link, image, tag, count } = detailInfoObj;
-    const tags =
-      [...tag].reduce((acc, cur) => acc + ("#" + cur), "") ||
-      "#" + $(".tit_logo").html();
+    if(!image) alert('대표이미지가 있어야 합니다.')
+    const tags = [...tag].reduce((acc, cur) => {
+      return acc + ("#" + cur)
+    },"");
     /* Kakao.Link */
-    Kakao.Link.createDefaultButton({
-      container: ".kakao_js",
+    Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
         title: tit,
@@ -73,8 +74,9 @@ $(function () {
         },
       ],
     }); /* Kakao.Link // */
-    /** 상세페이지 Kakao공유 기능 // */
   }
+  kakao_js && kakao_js.addEventListener('click', kakaoLink);
+  /** 상세페이지 Kakao공유 기능 // */
 
   const comment_js = document.querySelector(".comment_js");
   if (comment_js) {
@@ -410,6 +412,10 @@ window.addEventListener('scroll', onScroll);
 _tr('.top-btn_js').addEventListener('click', () => {
   window.scrollTo(0, 0);
 });
+
+_trs('.category_list .sub_category_list li').forEach((el) => {
+  el.insertAdjacentHTML('afterbegin','<i class="ic-arrow-right"></i>');
+})
 
 _tr('.coffee_Gift')?.addEventListener('click', () => {
   const temp = _tr(".qr_template").content;
