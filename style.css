@@ -2310,8 +2310,7 @@ aside .tag_board {
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 0.4em;
-  background: url("images/thumnail-bg.png") no-repeat center center
-    var(--s-bg-color);
+  background: var(--s-bg-color);
   background-size: cover;
 }
 .area_related .link_related strong {
@@ -3055,8 +3054,7 @@ aside .tag_board {
   width: 100%;
   min-height: 138px;
   border-radius: 0.6em;
-  background: url("images/thumnail-bg.png") no-repeat center center
-    var(--s-bg-color);
+  background: var(--s-bg-color);
   background-size: cover;
   -webkit-transition: background-image 0.05s linear;
   transition: background-image 0.05s linear;
@@ -3233,8 +3231,7 @@ aside .tag_board {
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 0.4em;
-  background: url("images/thumnail-bg.png") no-repeat center center
-    var(--s-bg-color);
+  background: var(--s-bg-color);
   background-size: cover;
   -webkit-transition: background-image 0.05s linear;
   transition: background-image 0.05s linear;
@@ -3399,8 +3396,7 @@ aside .tag_board {
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 6px;
-  background: url("images/thumnail-bg.png") no-repeat center center
-    var(--s-bg-color);
+  background: var(--s-bg-color);
   background-size: cover;
   -webkit-transition: background-image 0.2s ease-in;
   transition: background-image 0.2s ease-in;
