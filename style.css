@@ -3607,7 +3607,7 @@ aside .tag_board {
   }
 }
 .article_view {
-  max-width: 940px;
+  max-width: 960px;
   margin: 20px auto 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
