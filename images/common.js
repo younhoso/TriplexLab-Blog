@@ -387,10 +387,8 @@ $(function () {
   });
   /* // code Copy */
   /* 공지 사항 */
-  _tr(".notice_js").addEventListener("click", notice);
-  $(".closeIcon").on("click", function () {
-    $(".notice_template").removeClass("on");
-  });
+  _tr(".notice_js").addEventListener("click", notice.add);
+  _tr(".closeIcon").addEventListener("click", notice.remove);
 
   $("html, body").on("scroll", function () {
     !$(".notice_template").hasClass("on")
@@ -602,13 +600,25 @@ function thumnailLoaded() {
 /** 모든 리스트에 섬네일들 Lazy-Loading 만들기 // */
 
 /** 공지 사항 */
-function notice(e) {
-  const temp = _tr("template").content;
-  e.currentTarget.classList.remove("on");
-  _tr(".notice_template").classList.add("on");
-  const clone = document.importNode(temp, true);
-  const copy = clone.querySelector(".tag_board");
-  _tr(".notice_template .contents").appendChild(copy);
+const notice = {
+  isNotice: true,
+  noticeGet: function() {
+    return notice.isNotice
+  },
+  noticeSet: function(val) {
+    notice.isNotice = val;
+  },
+  add: function() {
+    const temp = _tr("template").content;
+    _tr(".notice_template").classList.add("on");
+    const clone = document.importNode(temp, true);
+    const copy = clone.querySelector(".tag_board");
+    notice.noticeGet() && (_tr(".notice_template .contents").appendChild(copy));
+    notice.noticeSet(false);
+  },
+  remove: function() { 
+    _tr(".notice_template").classList.remove("on");
+  }
 }
 /** // 공지 사항 */
 
