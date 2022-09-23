@@ -796,13 +796,15 @@ function tistoryLighthouseCheck() {
     });
 
   iframe &&
-    iframe.map(function (el) {
-      const els = el.nextElementSibling;
-      if (els.nodeName === "FIGCAPTION") {
-        const txt = els.innerHTML;
-        return el.setAttribute("title", txt);
-      }
-    });
+    setTimeout(() => {
+      iframe.map(function (el) {
+        const els = el.parentElement.nextElementSibling;
+        if (els.nodeName === "FIGCAPTION") {
+          const txt = els.innerHTML;
+          return el.setAttribute("title", txt);
+        }
+      });
+    },1000);
   lightbox.remove();
   lightboxOverlay.remove();
 }
