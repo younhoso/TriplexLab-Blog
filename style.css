@@ -461,6 +461,15 @@ i {
 }
 
 
+@keyframes ssc-loading {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(100%);
+  }
+}
+
 @-webkit-keyframes rotate {
   100% {
     transform: rotate(360deg);
@@ -1745,7 +1754,9 @@ html {
   line-height: 40px;
   padding: 0 26px;
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .area_sidebar .category_list > li a:hover {
   background-color: var(--border-color-2);
@@ -1881,6 +1892,7 @@ html {
   margin-bottom: 0;
   position: relative;
 }
+
 .area_sidebar .sidebar_tit {
   font-size: 16px;
   font-weight: 800;
@@ -1917,6 +1929,7 @@ html {
 .area_sidebar .link_tit {
   display: none;
 }
+
 .category .list_category {
   margin-top: 15px;
 }
@@ -4651,6 +4664,59 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     text-align: center;
     font-size: 12px;
     margin-top: 16px;
+  }
+  
+  .area_sidebar .category.is-loading .sidebar_tit{
+    width: 220px;
+    height: 25px;
+    margin-left: 20px;
+    background-color: rgba(0,0,0,.17);
+    border-radius: 15px;
+    text-indent: -99999px;
+    position: relative;
+  }
+  .area_sidebar .category.is-loading .category_list{
+    position: relative;
+  }
+  .area_sidebar .category.is-loading .category_list > li a {
+    width: 220px;
+    margin: 10px auto 10px auto;
+    height: 18px;
+    background-color: rgba(0,0,0,.17);
+    border-radius: 15px;
+    text-indent: -99999px;
+    position: relative;
+  }
+  .area_sidebar .sidebar_sns.is-loading .sidebar_tit{
+    width: 220px;
+    height: 25px;
+    margin-left: 20px;
+    background-color: rgba(0,0,0,.17);
+    border-radius: 15px;
+    text-indent: -99999px;
+    position: relative;
+  }
+  .area_sidebar .sidebar_sns.is-loading .list_sns > li a {
+    width: 220px;
+    margin: 10px auto 10px auto;
+    height: 18px;
+    background-color: rgba(0,0,0,.17);
+    border-radius: 15px;
+    text-indent: -99999px;
+    position: relative;
+  }
+  
+  .area_sidebar .sidebar_sns.is-loading .sidebar_tit:after, .area_sidebar .sidebar_sns.is-loading .list_sns > li a:after, .area_sidebar .category.is-loading .sidebar_tit:after, .area_sidebar .category.is-loading .category_list > li a:after {
+    content: "";
+    animation: ssc-loading 1s ease-in infinite;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.3), transparent);
   }
 
   .mo_footer_menu {
