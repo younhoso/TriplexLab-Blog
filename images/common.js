@@ -13,6 +13,7 @@ $(function () {
   renderToc();
   onScrollMove();
   _tr("#tt-body-page .body-page") && onReloadMove();
+  categoryNumber();
 
   const share =
     window.innerWidth >= 1024
@@ -756,7 +757,16 @@ function onScrollMove() {
   });
 }
 
-/* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선  */
+function categoryNumber() {
+  const regexr = /[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim;
+  const cNumber = _trs(".c_cnt");
+  cNumber.forEach((el) => {
+    const cn = el.innerHTML.replace(regexr, '');
+    el.innerHTML = cn;
+  })
+};
+
+/* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 */
 function tistoryLighthouseCheck() {
   const detail_category = _tr(".another_category");
   const editEntry = document.querySelector("#editEntry");
