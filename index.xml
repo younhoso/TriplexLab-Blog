@@ -89,6 +89,14 @@
 				<default></default>
 			</variable>
 			<variable>
+				<name>blogName</name>
+				<label>블로그 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>블로그 이름</default>
+			</variable>
+			<variable>
 				<name>colorSet</name>
 				<label>컬러셋</label>
 				<description></description>
