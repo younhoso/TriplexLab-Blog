@@ -21,4 +21,4 @@ Tistory전용 Skin을 커스텀 마이징 하였습니다.\
 ![](https://img.shields.io/badge/jquery-1572B6?style=flat-square&logo=jquery&logoColor=white)
 
 ## TriplexLab Blog 사이트
-[TriplexLab 블로그](https://triplexlab.tistory.com/)
+[TriplexLab 블로그](https://triplexlab.tistory.com/126)
