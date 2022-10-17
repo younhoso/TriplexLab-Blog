@@ -5,13 +5,14 @@
 
 # TriplexLab Blog(v1)
 Tistory TriplexLab Blog
+![Tistory TriplexLab Blog](./triplexlabMockup.png)
 
 ## Introduction
 Tistory전용 Skin을 커스텀 마이징 하였습니다.\
 해당스킨은 무료입니다. 다운받으실때 Star을 한번씩 눌러주시면 감사하겠습니다.\
 별이 많으면 많을수록 업그레이드 하는데 큰 힘이 됩니다.😁👍🏻\
 프론트앤드의 기본 기술인 HTML, CSS, Javascript, jQuery를 사용하였습니다.\
-누구나 커스터마이징을 할 수 있습니다.(이용방법은 하단에 링크을 참고 해주세요😃)\
+그리고 누구나 커스터마이징을 할 수 있습니다.(이용방법은 하단에 링크을 참고 해주세요😃)\
 [TriplexLab SKIN(v1)](https://triplexlab.tistory.com/126)
 
 ## Tech Stack
