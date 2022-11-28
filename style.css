@@ -3707,6 +3707,11 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
 #tt-body-page figure[data-ke-type="opengraph"] div.og-text p.og-title {
   color: var(--color-level-1);
 }
+#tt-body-page iframe {
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  padding: 0;
+}
 .article_view table {
   border-collapse: collapse;
 }
