@@ -857,6 +857,9 @@ i {
 .theme_pink .area_sidebar .link_item .c_cnt {
   color: #fdb0aa;
 }
+.theme_pink .area_sidebar .sub_category_list .c_cnt {
+  color: #fdb0aa;
+}
 .theme_pink .gtae .list-item a.on {
   color: #fdb0aa !important;
 }
@@ -987,6 +990,9 @@ i {
 .theme_blue .area_sidebar .link_item .c_cnt {
   color: #004fff;
 }
+.theme_blue .area_sidebar .sub_category_list .c_cnt {
+  color: #004fff;
+}
 .theme_blue .gtae .list-item a.on {
   color: #004fff !important;
 }
@@ -1115,6 +1121,9 @@ i {
   color: #11998e;
 }
 .theme_green .area_sidebar .link_item .c_cnt {
+  color: #11998e;
+}
+.theme_green .area_sidebar .sub_category_list .c_cnt {
   color: #11998e;
 }
 .theme_green .gtae .list-item a.on {
@@ -1248,6 +1257,9 @@ i {
   color: #545c65;
 }
 .theme_gray .area_sidebar .link_item .c_cnt {
+  color: #545c65;
+}
+.theme_gray .area_sidebar .sub_category_list .c_cnt {
   color: #545c65;
 }
 .theme_gray .gtae .list-item a.on {
@@ -1410,6 +1422,10 @@ i {
 }
 
 .theme_orange .area_sidebar .link_item .c_cnt {
+  color: #f60;
+}
+
+.theme_orange .area_sidebar .sub_category_list .c_cnt {
   color: #f60;
 }
 @media screen and (max-width: 1025px) {
@@ -1817,11 +1833,13 @@ html {
   display: block;
   clear: both;
 }
-.area_sidebar .link_item .c_cnt {
+.area_sidebar .link_item .c_cnt, .area_sidebar .sub_category_list .c_cnt{
   font-size: 10px;
+  margin: 0 auto 0 5px;
   border: 1px solid;
   border-radius: 1rem;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.6rem;
+  line-height: 1.4;
 }
 .area_sidebar .box_gnb .category_list > li:last-child {
   display: none;
