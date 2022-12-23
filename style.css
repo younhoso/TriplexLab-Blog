@@ -3095,8 +3095,8 @@ aside .tag_board {
   border-radius: 0.6em;
   background: var(--s-bg-color);
   background-size: cover;
-  -webkit-transition: all 0.05s linear;
-  transition: all 0.05s linear;
+  -webkit-transition: all 0.22s ease;
+  transition: all 0.22s ease;
 }
 .list_type_card .item_card:hover .thumnail {
   opacity: 1;
