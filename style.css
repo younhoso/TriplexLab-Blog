@@ -338,6 +338,7 @@ template {
   .inWrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    padding-top: 10px;
   }
   .inWrapper::-webkit-scrollbar {
     display: none;
@@ -351,10 +352,6 @@ template {
   }
   .wrapper {
     padding: 0 40px;
-  }
-
-  .inWrapper {
-    overflow-x: unset;
   }
 }
 
