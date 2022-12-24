@@ -3992,9 +3992,6 @@ figure[data-ke-type="opengraph"] div.og-text p.og-title,
     z-index: 21;
     background-color: rgba(0, 0, 0, 0.7);
   }
-  .newItem {
-    top: -2px;
-  }
 
   .type_featured .slide_zone {
     max-height: 366px;
