@@ -610,12 +610,7 @@ const notice = {
     notice.isNotice = val;
   },
   add: function() {
-    const temp = _tr("template").content;
     _tr(".notice_template").classList.add("on");
-    const clone = document.importNode(temp, true);
-    const copy = clone.querySelector(".tag_board");
-    notice.noticeGet() && (_tr(".notice_template .contents").appendChild(copy));
-    notice.noticeSet(false);
   },
   remove: function() { 
     _tr(".notice_template").classList.remove("on");

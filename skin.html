@@ -84,7 +84,25 @@
                       <span class="closeIcon"><i class="ic-close-thin"></i></span>
                       <div class="inner">
                         <div class="contents">
-                        <!-- template s_sidebar 엘리먼트 바인딩 -->
+                          <!-- template s_sidebar 엘리먼트 바인딩 -->
+                          <notice-component>
+                              <div slot="content" class="notice">
+                                <s_sidebar>
+                                  <s_sidebar_element>
+                                    <!-- 공지사항 -->
+                                    <s_rct_notice>
+                                      <div class="tag_board">
+                                        <ul id="notice_list" class="list_sidebar">
+                                          <s_rct_notice_rep>
+                                            <li class="item_sidebar"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></li>
+                                          </s_rct_notice_rep>
+                                        </ul>
+                                      </div>
+                                    </s_rct_notice>
+                                  </s_sidebar_element>
+                                </s_sidebar>
+                              </div>
+                            </notice-component>
                         </div>
                       </div>
                     </div>
