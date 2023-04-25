@@ -677,11 +677,11 @@ i {
   font-size: 0.75rem; /* 12px */
   line-height: 1rem; /* 16px */
 }
-.text-sm{
+.text-sm {
   font-size: 0.875rem; /* 14px */
   line-height: 1.25rem; /* 20px */
 }
-.text-base{
+.text-base {
   font-size: 1rem; /* 16px */
   line-height: 1.5rem; /* 24px */
 }
@@ -702,15 +702,33 @@ i {
   line-height: 2.25rem; /* 36px */
 }
 
-.font-thin        {font-weight: 100;}
-.font-extralight  {font-weight: 200;}
-.font-light       {font-weight: 300;}
-.font-normal      {font-weight: 400;}
-.font-medium      {font-weight: 500;}
-.font-semibold    {font-weight: 600;}
-.font-bold        {font-weight: 700;}
-.font-extrabold   {font-weight: 800;}
-.font-black       {font-weight: 900;}
+.font-thin {
+  font-weight: 100;
+}
+.font-extralight {
+  font-weight: 200;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-black {
+  font-weight: 900;
+}
 /* Typography의 Font 관한 STYLE // */
 
 /* // 💩인터넷 익스플로러 ✨엣지(edge) 자동전환 */
@@ -901,10 +919,11 @@ i {
 .theme_pink .area_sidebar .sub_category_list .c_cnt {
   color: #fdb0aa;
 }
-.theme_pink .gtae .list-item a.on {
+.theme_orange .gtae .list-item:hover,
+.theme_orange .gtae .list-item.on a {
   color: #fdb0aa !important;
 }
-.theme_pink .gtae .list-item a.on::before {
+.theme_pink .gtae .list-item.on::before {
   content: "";
   display: block;
   width: 2px;
@@ -1034,10 +1053,11 @@ i {
 .theme_blue .area_sidebar .sub_category_list .c_cnt {
   color: #004fff;
 }
-.theme_blue .gtae .list-item a.on {
+.theme_blue .gtae .list-item:hover,
+.theme_blue .gtae .list-item.on a {
   color: #004fff !important;
 }
-.theme_blue .gtae .list-item a.on::before {
+.theme_blue .gtae .list-item.on::before {
   content: "";
   display: block;
   width: 2px;
@@ -1167,10 +1187,12 @@ i {
 .theme_green .area_sidebar .sub_category_list .c_cnt {
   color: #11998e;
 }
-.theme_green .gtae .list-item a.on {
+.theme_green .gtae .list-item:hover,
+.theme_green .gtae .list-item.on a {
   color: #11998e !important;
 }
-.theme_green .gtae .list-item a.on::before {
+
+.theme_green .gtae .list-item.on::before {
   content: "";
   display: block;
   width: 2px;
@@ -1303,10 +1325,11 @@ i {
 .theme_gray .area_sidebar .sub_category_list .c_cnt {
   color: #545c65;
 }
-.theme_gray .gtae .list-item a.on {
+.theme_gray .gtae .list-item:hover,
+.theme_gray .gtae .list-item.on a {
   color: #545c65 !important;
 }
-.theme_gray .gtae .list-item a.on::before {
+.theme_gray .gtae .list-item.on::before {
   content: "";
   display: block;
   width: 2px;
@@ -1445,10 +1468,10 @@ i {
   opacity: 1;
 }
 .theme_orange .gtae .list-item:hover,
-.theme_orange .gtae .list-item a.on {
+.theme_orange .gtae .list-item.on a {
   color: #f60 !important;
 }
-.theme_orange .gtae .list-item a.on::before {
+.theme_orange .gtae .list-item.on::before {
   content: "";
   display: block;
   width: 2px;

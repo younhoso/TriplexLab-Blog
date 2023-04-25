@@ -46,10 +46,10 @@ $(function () {
   const kakao_js = document.querySelector(".kakao_js");
   const kakaoLink = () => {
     const { tit, link, image, tag, count } = detailInfoObj;
-    if(!image) alert('대표이미지가 있어야 합니다.')
+    if (!image) alert("대표이미지가 있어야 합니다.");
     const tags = [...tag].reduce((acc, cur) => {
-      return acc + ("#" + cur)
-    },"");
+      return acc + ("#" + cur);
+    }, "");
     /* Kakao.Link */
     Kakao.Share.sendDefault({
       objectType: "feed",
@@ -75,8 +75,8 @@ $(function () {
         },
       ],
     }); /* Kakao.Link // */
-  }
-  kakao_js && kakao_js.addEventListener('click', kakaoLink);
+  };
+  kakao_js && kakao_js.addEventListener("click", kakaoLink);
   /** 상세페이지 Kakao공유 기능 // */
 
   const comment_js = document.querySelector(".comment_js");
@@ -400,31 +400,31 @@ $(function () {
 });
 
 const onScroll = () => {
-  if(window.pageYOffset >= 240){
-    _tr('.top-btn_js button').classList.add('on')
+  if (window.pageYOffset >= 240) {
+    _tr(".top-btn_js button").classList.add("on");
   } else {
-    _tr('.top-btn_js button').classList.remove('on')
+    _tr(".top-btn_js button").classList.remove("on");
   }
-}
-window.addEventListener('scroll', onScroll);
+};
+window.addEventListener("scroll", onScroll);
 
-_tr('.top-btn_js').addEventListener('click', () => {
+_tr(".top-btn_js").addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
 
-_trs('.category_list .sub_category_list li').forEach((el) => {
-  el.insertAdjacentHTML('afterbegin','<i class="ic-arrow-right"></i>');
-})
+_trs(".category_list .sub_category_list li").forEach((el) => {
+  el.insertAdjacentHTML("afterbegin", '<i class="ic-arrow-right"></i>');
+});
 
-_tr('.coffee_Gift')?.addEventListener('click', () => {
+_tr(".coffee_Gift")?.addEventListener("click", () => {
   const temp = _tr(".qr_template").content;
   const clone = document.importNode(temp, true);
   const copy = clone.querySelector(".qr_inner");
   _tr("#wrap").appendChild(copy);
-  
-  _tr('.qr_inner').addEventListener('click', (e) => {
-    if(e.target === e.currentTarget){
-      _tr("#wrap").removeChild(_tr('.qr_inner'));
+
+  _tr(".qr_inner").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+      _tr("#wrap").removeChild(_tr(".qr_inner"));
     }
   });
 });
@@ -603,19 +603,19 @@ function thumnailLoaded() {
 /** 공지 사항 */
 const notice = {
   isNotice: true,
-  noticeGet: function() {
-    return notice.isNotice
+  noticeGet: function () {
+    return notice.isNotice;
   },
-  noticeSet: function(val) {
+  noticeSet: function (val) {
     notice.isNotice = val;
   },
-  add: function() {
+  add: function () {
     _tr(".notice_template").classList.add("on");
   },
-  remove: function() { 
+  remove: function () {
     _tr(".notice_template").classList.remove("on");
-  }
-}
+  },
+};
 /** // 공지 사항 */
 
 /** 상세페이지에서 Contents네비 해당 스크롤 기능 */
@@ -647,16 +647,15 @@ function getHeadingData() {
   let newHeadings = TOC_CONST.newHeadings;
 
   const headings = contentWrap
-    ? Array.from(contentWrap.querySelectorAll("h1, h2, h3, h4"))
+    ? Array.from(contentWrap.querySelectorAll("h2, h3, h4"))
     : [];
   TOC_CONST.headings = headings;
 
   headings.forEach(function (item, index) {
-    item.id = "toc-link-" + index;
+    item.setAttribute("id", "toc-link-" + index);
     if (item.innerText.trim() === "") {
       return;
     }
-
     if (TOC_CONST.mainWrap) {
       offsetTops.push(
         parseInt(
@@ -686,7 +685,7 @@ function renderToc() {
   const headings = Array.from(TOC_CONST.headings);
   const temp_html = headings
     .map((item, idx) => {
-      return `<li class="list-item" target-idx=${idx}> 
+      return `<li class="list-item toc-link-${idx}"> 
       <a href="#${item.id}">
         ${item.innerText}
       </a>
@@ -700,14 +699,14 @@ function renderToc() {
   }
 }
 
-function changeCurrent(targetIndex) {
-  const navItemArr = TOC_CONST.navItemArr;
-  navItemArr.forEach(function (item, index) {
-    if (index !== targetIndex) {
-      item.classList.remove("on");
-    } else {
-      item.classList.add("on");
-    }
+function onReloadMove() {
+  /* 클릭 시 스크롤 이동 */
+  const navWrap = TOC_CONST.navWrap;
+  !navWrap.children.length && (_tr(".contentsTie").style.display = "none");
+  const navItem = Array.from(navWrap.querySelectorAll("a"));
+  const { navItemArr } = TOC_CONST;
+  navItem.forEach((item) => {
+    navItemArr.push(item);
   });
 }
 
@@ -724,31 +723,31 @@ function onReloadMove() {
 
 function onScrollMove() {
   /* 스크롤 이벤트 */
-  const tocOnScroll = function (e) {
-    const scrollTop =
-      e.target.scrollingElement && e.target.scrollingElement.scrollTop;
-    if (TOC_CONST.scriptScroll == true) {
-      return;
-    } else {
-      let targetIndex = 0;
-      const offsetTops = TOC_CONST.offsetTops;
-      offsetTops.forEach(function (item, idx) {
-        if (scrollTop >= item) {
-          targetIndex = idx;
-        }
-      });
-      changeCurrent(targetIndex);
-    }
+  const tocOnScroll = function (target) {
+    //class name이 highlights인걸 다 가져와서
+    const highlights = document.querySelectorAll(`.gtae .on`);
+    highlights.forEach((item) => {
+      //있으면 highlights를 없에버린다.
+      item.classList.remove("on");
+    });
+    //받아온 아이디값으로 메뉴에서 해당 아이디를 가진 객체에 highlights를 넣어준다.
+    document.querySelector(`.gtae .${target}`).classList.add("on");
   };
 
-  let timer;
-  $(window).on("scroll", function (e) {
-    if (!timer) {
-      timer = setTimeout(function () {
-        timer = null;
-        tocOnScroll(e);
-      }, 400);
-    }
+  window.addEventListener("scroll", () => {
+    //화면의 높이를 가져와서 3등분 한다.
+    //2등분해도 되고 항목이 3등분 지점안으로 올때 하이라이트를 줄려고 계산
+    let windowHeight = (window.innerHeight / 3).toFixed(0);
+    //본문에 다시 h태그를 가져온다.
+    TOC_CONST.headings.forEach((item) => {
+      //h태그 객체가 화면의 상단에서 얼마큼 떨어져 있는지 가져와서
+      let myPosition = item.getBoundingClientRect().top;
+      //그 거리가 -30에서 이전 화면의 높이 3등분 한 값보다 작으면
+      //함수실행 화면 상단에서 3분지1 지점 안으로 들어오면 작동하게끔
+      if (myPosition > -30 && myPosition < windowHeight) {
+        tocOnScroll(item.id);
+      }
+    });
   });
 }
 
@@ -756,10 +755,10 @@ function categoryNumber() {
   const regexr = /[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim;
   const cNumber = _trs(".c_cnt");
   cNumber.forEach((el) => {
-    const cn = el.innerHTML.replace(regexr, '');
+    const cn = el.innerHTML.replace(regexr, "");
     el.innerHTML = cn;
-  })
-};
+  });
+}
 
 /* 티스토리에서 자동 삽입되는 요소 중에 lighthouse 퍼포먼스 체크에 방해되는 요소들 개선 */
 function tistoryLighthouseCheck() {
@@ -809,7 +808,7 @@ function tistoryLighthouseCheck() {
           return el.setAttribute("title", txt);
         }
       });
-    },1000);
+    }, 1000);
   lightbox.remove();
   lightboxOverlay.remove();
 }
