@@ -414,6 +414,18 @@
                 <script charset="UTF-8" src="./images/highlight.min.js"></script>
                 <script charset="UTF-8">hljs.highlightAll();</script>
                 <script>$(function(){ $('.hljs').scrollbar();}); </script>
+                <script type="module">
+                  import ScrollMenu from "./images/scrollMenu.js";
+                  (function () {
+                    new ScrollMenu({
+                      targetMenu: "#tt-body-page .gtae_contents",
+                      targetView: "#tt-body-page .body-page .contents_style",
+                      addIdName: 'toc-link',
+                      addClassName: "is-active",
+                      menuNames: ["h2,h3,h4"],
+                    });
+                  })();
+                </script>
                 <!-- article_content -->
                 <article class="area_article" aria-label="[##_article_rep_title_##]" data-link="[##_article_rep_link_##]">
                   <!-- 뷰페이지 상단 type css 구분 / type_article_header_common or type_article_header_cover -->

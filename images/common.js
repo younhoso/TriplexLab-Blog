@@ -8,11 +8,6 @@ $(function () {
   display_control();
   thumnailLoaded();
   detail_side();
-
-  getHeadingData();
-  renderToc();
-  onScrollMove();
-  _tr("#tt-body-page .body-page") && onReloadMove();
   categoryNumber();
 
   const share =
@@ -283,25 +278,6 @@ $(function () {
       }
     }
   );
-
-  /** 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
-  const hash = window.location.hash;
-  if (hash && document.getElementById(decodeURI(hash).slice(1))) {
-    // #값이 있을때만 실행됨
-    const $this = $(decodeURI(hash));
-    $("html, body").animate({ scrollTop: $this.offset().top - 137 }, 300);
-  }
-  /** // 상세페이지에서 아이디영역으로 스크롤 이동 (상세페이지에서 렌더링 시점)*/
-  /** 상세페이지에서 아이디영역으로 스크롤 이동*/
-  $(document).on("click", "#tt-body-page .gtae_contents > li", function (e) {
-    if ($($(e.target)).prop("tagName") === "A") {
-      $("html, body").animate(
-        { scrollTop: $($(e.target).attr("href")).offset().top - 137 },
-        300
-      );
-    }
-  });
-  /** // 상세페이지에서 아이디영역으로 스크롤 이동*/
 
   /** 상세페이지에서 img alt 속성추가 및 저작관 표시작에 rel 적용 (상세페이지에서 렌더링 시점)*/
   const imgText = $("figure figcaption").html();
@@ -617,139 +593,6 @@ const notice = {
   },
 };
 /** // 공지 사항 */
-
-/** 상세페이지에서 Contents네비 해당 스크롤 기능 */
-const entryWrapName = "body-page"; // 본문글 전체 내용
-const entryName = "contents_style"; // 본문글 내용
-const navName = "gtae_contents"; // 네비게이션 Wrap 이름 지정
-const headerName = "box_header"; // 상단 헤더 클래스 이름
-const gap = 40; // toc 상단 위치값
-
-const TOC_CONST = {
-  //스크롤 초기값
-  navItem: [],
-  offsetTops: [],
-  mainWrap: document.querySelector("." + entryWrapName),
-  contentWrap: document.querySelector("." + entryName),
-  navWrap: document.querySelector("." + navName),
-  headings: [],
-  newHeadings: [],
-  navItemArr: [],
-  headerHeight:
-    headerName != ""
-      ? document.querySelector("." + headerName).offsetHeight
-      : 0,
-};
-
-function getHeadingData() {
-  const contentWrap = TOC_CONST.contentWrap;
-  let offsetTops = TOC_CONST.offsetTops;
-  let newHeadings = TOC_CONST.newHeadings;
-
-  const headings = contentWrap
-    ? Array.from(contentWrap.querySelectorAll("h2, h3, h4"))
-    : [];
-  TOC_CONST.headings = headings;
-
-  headings.forEach(function (item, index) {
-    item.setAttribute("id", "toc-link-" + index);
-    if (item.innerText.trim() === "") {
-      return;
-    }
-    if (TOC_CONST.mainWrap) {
-      offsetTops.push(
-        parseInt(
-          item.offsetTop +
-            TOC_CONST.mainWrap.offsetTop -
-            TOC_CONST.headerHeight -
-            gap
-        )
-      );
-      newHeadings.push({
-        name: item.localName,
-        index: parseInt(item.localName.substring(1)),
-        text: item.innerText,
-        id: item.id,
-        top:
-          item.offsetTop +
-          TOC_CONST.headerHeight +
-          TOC_CONST.mainWrap.offsetTop,
-      });
-    }
-  });
-}
-/** 상세페이지에서 Contents네비 해당 스크롤 기능 */
-
-function renderToc() {
-  /** 상세페이지 네비게이션 리스트 html 만들고 렌더링 */
-  const headings = Array.from(TOC_CONST.headings);
-  const temp_html = headings
-    .map((item, idx) => {
-      return `<li class="list-item toc-link-${idx}"> 
-      <a href="#${item.id}">
-        ${item.innerText}
-      </a>
-    </li>`;
-    })
-    .join("");
-
-  if (document.querySelector("#tt-body-page .gtae_contents")) {
-    document.querySelector("#tt-body-page .gtae_contents").innerHTML =
-      temp_html;
-  }
-}
-
-function onReloadMove() {
-  /* 클릭 시 스크롤 이동 */
-  const navWrap = TOC_CONST.navWrap;
-  !navWrap.children.length && (_tr(".contentsTie").style.display = "none");
-  const navItem = Array.from(navWrap.querySelectorAll("a"));
-  const { navItemArr } = TOC_CONST;
-  navItem.forEach((item) => {
-    navItemArr.push(item);
-  });
-}
-
-function onReloadMove() {
-  /* 클릭 시 스크롤 이동 */
-  const navWrap = TOC_CONST.navWrap;
-  !navWrap.children.length && (_tr(".contentsTie").style.display = "none");
-  const navItem = Array.from(navWrap.querySelectorAll("a"));
-  const { navItemArr } = TOC_CONST;
-  navItem.forEach((item) => {
-    navItemArr.push(item);
-  });
-}
-
-function onScrollMove() {
-  /* 스크롤 이벤트 */
-  const tocOnScroll = function (target) {
-    //class name이 highlights인걸 다 가져와서
-    const highlights = document.querySelectorAll(`.gtae .on`);
-    highlights.forEach((item) => {
-      //있으면 highlights를 없에버린다.
-      item.classList.remove("on");
-    });
-    //받아온 아이디값으로 메뉴에서 해당 아이디를 가진 객체에 highlights를 넣어준다.
-    document.querySelector(`.gtae .${target}`).classList.add("on");
-  };
-
-  window.addEventListener("scroll", () => {
-    //화면의 높이를 가져와서 3등분 한다.
-    //2등분해도 되고 항목이 3등분 지점안으로 올때 하이라이트를 줄려고 계산
-    let windowHeight = (window.innerHeight / 3).toFixed(0);
-    //본문에 다시 h태그를 가져온다.
-    TOC_CONST.headings.forEach((item) => {
-      //h태그 객체가 화면의 상단에서 얼마큼 떨어져 있는지 가져와서
-      let myPosition = item.getBoundingClientRect().top;
-      //그 거리가 -30에서 이전 화면의 높이 3등분 한 값보다 작으면
-      //함수실행 화면 상단에서 3분지1 지점 안으로 들어오면 작동하게끔
-      if (myPosition > -30 && myPosition < windowHeight) {
-        tocOnScroll(item.id);
-      }
-    });
-  });
-}
 
 function categoryNumber() {
   const regexr = /[^a-zA-Z0-9ㄱ-ㅎ가-힣]/gim;
