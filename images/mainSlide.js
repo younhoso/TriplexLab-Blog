@@ -73,7 +73,7 @@ new Slide({
     nextEl: ".typePost_next",
     prevEl: ".typePost_prev",
   },
-  additems: 8, //움직일 아이템 개수를 정의합니다.
+  additems: 5, //움직일 아이템 개수를 정의합니다.
 });
 
 

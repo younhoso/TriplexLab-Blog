@@ -72,7 +72,7 @@ export default class Slide {
               slideCount > 5 ? $(startEl+`.id-${idx} `+nextEl).removeClass('disabled') : $(startEl+`.id-${idx} `+nextEl).addClass('disabled');
             } else if(startEl === ".type_post"){
               slideCount = $(startEl+`.id-${idx} `+endEl).length;
-              slideCount > 8 ? $(startEl+`.id-${idx} `+nextEl).removeClass('disabled') : $(startEl+`.id-${idx} `+nextEl).addClass('disabled');
+              slideCount > 5 ? $(startEl+`.id-${idx} `+nextEl).removeClass('disabled') : $(startEl+`.id-${idx} `+nextEl).addClass('disabled');
             }
         });
     };

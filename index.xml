@@ -51,6 +51,15 @@
 			</description>
 		</item>
 		<item>
+			<name>post</name>
+			<label>
+				<![CDATA[ 갤러리 ]]>
+			</label>
+			<description>
+				<![CDATA[ 세로 직사각형 형태로 이미지를 출력합니다. 4배수 목록을 권장합니다. ]]>
+			</description>
+		</item>
+		<item>
 			<name>card</name>
 			<label>
 				<![CDATA[ 섬네일 리스트 ]]>
