@@ -80,7 +80,7 @@ select,
 strong,
 table,
 textarea {
-  font-family: "Montserrat", "Noto Sans KR", "맑은 고딕", "Malgun Gothic",
+  font-family:"맑은 고딕", "Malgun Gothic",
     "Apple SD Gothic Neo", "돋움", "dotum", sans-serif;
   font-size: 16px;
   font-weight: 400;
